@@ -3,7 +3,13 @@
 format: jb-book
 root: docs/index
 
-chapters:
-    - file: docs/examples
-    - file: docs/api
-    - file: docs/reports
+parts:
+ - caption: Central Bank interventions
+   chapters:
+   - file: docs/central_banking/theory.md
+   - file: docs/central_banking/practice.md
+   
+ - caption: Introduction to Python
+   chapters:
+   - file: docs/python_basics/python_intro.md
+   
