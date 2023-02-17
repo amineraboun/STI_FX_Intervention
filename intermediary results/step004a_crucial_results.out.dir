@@ -1,0 +1,8 @@
+'fig_combined_density1', (0, 30363)
+'fig_combined_density2', (30720, 30363)
+'forecasted_mean_w_df', (61440, 1592)
+'target_date', (63488, 25)
+'forecast_based_on_date', (64000, 25)
+'mean_selected_table', (64512, 1358)
+'forecasted_density_naive_df', (66048, 1038)
+'forecasted_mean_naive_df', (67584, 1189)
