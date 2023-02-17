@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "sti_fx_intervention"
+version = "0.0.0"
+description = "..."
+authors = ["Amine Raboun (Ph.D), Romain Lafarguette (Ph.D)"]
+readme = "readme.md"
+repository = "https://github.com/raboam/STI_FX_Intervention"
+
+
+[tool.poetry.dependencies]
+python = ">=3.9.0"
+
+
+[tool.poetry.dev-dependencies]
+
+
+[build-system]
+requires = ["poetry>=1.0.2"]
+build-backend = "poetry.masonry.api"
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "tests",
+]
+
+addopts="--verbose -s --tb native --strict --durations=20 --color yes"
+
+[tool.pylint]
+   [tool.pylint."FORMAT"]
+   max-line-length = 120
+   max-args = 5
