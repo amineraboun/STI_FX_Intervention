@@ -1,0 +1,75 @@
+x = -3.14
+print(abs(x)) # valeur absolue
+print(round(x)) # arrondi
+
+liste = [-2, 3, 1, 0, -4]
+
+print(min(liste)) # minimum
+print(max(liste)) # maximum
+print(len(liste)) # longueur
+print(sum(liste)) # somme des éléments
+
+liste = [False, False, True]
+
+print(any(liste)) # y-a-t'il au moins un élément True ?
+print(all(liste)) # est-ce-que tous les éléments sont True ?
+
+age = '32'
+type(age)
+
+age = int(age)
+type(age)
+
+age + 10
+
+tuple_1 = (1, 2, 3, 4)
+
+liste_1 = list(tuple_1) # convertir un tuple en liste
+
+type(liste_1)
+
+age = input('quel age avez-vous ?')
+
+type(age) # age est de type string. il faut penser a le convertir si on désire faire un calcul avec
+
+x = 25
+ville = 'Paris'
+
+message = 'il fait {} degrés a {}'.format(x, ville)
+print(message)
+
+message = f'il fait {x} degrées a {ville}'
+print(message)
+
+f = open('text.txt', 'w') # ouverture d'un objet fichier f
+f.write('hello')
+f.close() # il faut fermer notre fichier une fois le travail terminé
+
+f = open('text.txt', 'r')
+print(f.read())
+f.close() 
+
+with open('text.txt', 'r') as f:
+    print(f.read())
+
+# Ce bout de code permet d'écrire le fichier 
+with open('fichier.txt', 'w') as f:
+    for i in range(0, 20):
+        f.write(f'{i}: {i**2} \n')
+    f.close()
+
+# Écrivez ici le code pour lire le fichier et enregistrer chaque lignes dans une liste.
+
+# SOLUTION (non optimale)
+with open('fichier.txt','r') as f:
+    liste = f.read().splitlines()
+
+liste
+
+# SOLUTION (Améliorée)
+# Une meilleure facon de procéder est d'utiliser une liste comprehension !
+
+liste = [row.strip() for row in open('fichier.txt','r')]
+liste
+
+

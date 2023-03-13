@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>9/30 Programmation Orientée Objet avec Python &#8212; IMF - STI Risk Based Framework</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="10/30 Numpy : Tableau ndarray" href="10%20-%20Numpy%20%28les%20Bases%29.html" />
+    <link rel="prev" title="8/30 Modules de bases de Python" href="08%20-%20Modules%20de%20Bases.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">IMF - STI Risk Based Framework</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Central Bank interventions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../central_banking/theory.html">
+   Central Bank Interventions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../central_banking/practice.html">
+   Examples of Central Bank Interventions:
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../python_intro.html">
+   General Introduction to Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02%20-%20Variables%20et%20Fonctions.html">
+     Les Bases de Python - Variables et Fonctions (2/30)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03%20-%20Structures%20de%20Controles.html">
+     3/30 : Structures de Controle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04%20-%20Structures%20de%20donn%C3%A9es%20%28Listes%20et%20Tuples%29.html">
+     4/30 : Structure de données (Listes et Tuples)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05%20-%20Dictionnaires.html">
+     5/30 - Dictionnaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06%20-%20List%20Comprehension.html">
+     6/30 - List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07%20-%20Built-in%20Functions.html">
+     7/30 Built-in Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08%20-%20Modules%20de%20Bases.html">
+     8/30 Modules de bases de Python
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9/30 Programmation Orientée Objet avec Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10%20-%20Numpy%20%28les%20Bases%29.html">
+     10/30 Numpy : Tableau ndarray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">
+     11/30 Numpy : Slicing et Indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12%20-%20Numpy%20Maths%20et%20Statistiques.html">
+     12/30 Numpy : Mathématiques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13%20-%20Numpy%20Broadcasting.html">
+     13/30 Numpy et Broadcasting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14%20-%20Matplotlib%20%28les%20Bases%29.html">
+     14/30 Matplotlib : Graphiques de Base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15%20-%20Matplotlib%20Top%20Graphiques.html">
+     15/30 Matplotlib Top Graphiques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16%20-%20Scipy.html">
+     Machine Learning avec Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="17%20-%20Pandas%20%28les%20Bases%29.html">
+     17/30 Pandas (les Bases) Et Analyse du Titanic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18%20-%20Pandas%20et%20S%C3%A9ries%20Temporelles.html">
+     18/30 Pandas et séries temporelles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="19%20-%20Seaborn.html">
+     19/30 Visualisation de Données avec Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            IMF Experts
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/python_basics/notebooks/09 - Programmation Orientée Objet.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/raboam/STI_FX_Intervention"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/python_basics/notebooks/09 - Programmation Orientée Objet.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/docs/python_basics/notebooks/09 - Programmation Orientée Objet.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-des-sous-classes">
+   Créer des sous-classes
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>9/30 Programmation Orientée Objet avec Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-des-sous-classes">
+   Créer des sous-classes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/MachineLearnia/Python-tutoriel/blob/master/09%20-%20Programmation%20Orient%C3%A9e%20Objet.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="programmation-orientee-objet-avec-python">
+<h1>9/30 Programmation Orientée Objet avec Python<a class="headerlink" href="#programmation-orientee-objet-avec-python" title="Permalink to this headline">#</a></h1>
+<p>La programmation orientée objet est un <strong>paradigme</strong>, c’est a dire une facon de procéder pour écrire des programmes clairs et simples. Le principe est de modéliser les éléments de notre programmes (comme les tableaux et les listes) comme étant des des <strong>objets</strong> caractérisés par des <strong>attributs</strong> et capables d’effectuer des <strong>actions</strong>. Ces objets sont construits a partir de <strong>classes</strong> qui contiennent leur plan de fabrication.</p>
+<p>Dans le langage Python, presque tout est construit pour etre un objet : les listes, les dictionnaires, les tableaux numpy, etc.
+Par exemple quand on écrit : <em><strong>list.append()</strong></em>, on utilise en fait la méthode append() sur un objet liste.</p>
+<p>La documentation Python, Numpy, Pandas, Matplotlib, Sklearn, est donc en vaste majorité constituée de classes qu’il est important de savoir déchiffrer pour pouvoir apprendre soi-meme de nouvelles choses grace aux documentations.</p>
+<p>Voici donc comment créer simplement et efficacement des classes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">vehicule</span><span class="p">:</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Voici un exemple de classe &quot;vehicule&quot; qui contient le plan de conception</span>
+<span class="sd">  d&#39;objets &quot;véhicules&quot;</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="c1"># Une classe commence par une fonction initialisation qui contient les différents attributs</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">couleur</span><span class="o">=</span><span class="s1">&#39;noire&#39;</span><span class="p">,</span> <span class="n">vitesse</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">roues</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">couleur</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
+    
+  <span class="c1"># voici une méthode &quot;accelerer&quot; qui modifie un attribut de l&#39;objet</span>
+  <span class="k">def</span> <span class="nf">accelerer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">vitesse</span> <span class="o">+=</span> <span class="n">vitesse</span>
+
+  <span class="c1"># voici une autre méthode</span>
+  <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="c1"># voici une derniere méthode, tres souvent utilisée</span>
+  <span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;couleur: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">couleur</span><span class="si">}</span><span class="se">\n</span><span class="s1">roues: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">roues</span><span class="si">}</span><span class="se">\n</span><span class="s1">vitesse: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vitesse</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># création d&#39;un objet de la classe voiture</span>
+<span class="n">voiture_1</span> <span class="o">=</span> <span class="n">vehicule</span><span class="p">(</span><span class="n">couleur</span><span class="o">=</span><span class="s1">&#39;rouge&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voiture_1</span><span class="o">.</span><span class="n">accelerer</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voiture_1</span><span class="o">.</span><span class="n">afficher</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>couleur:rouge
+roues:4
+vitesse:100
+</pre></div>
+</div>
+</div>
+</div>
+<section id="creer-des-sous-classes">
+<h2>Créer des sous-classes<a class="headerlink" href="#creer-des-sous-classes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">voiture_electrique</span><span class="p">(</span><span class="n">vehicule</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  La classe moto hérite des méthodes et des attributs de la classe véhicule</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">couleur</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">vitesse</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">roues</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">autonomie</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">couleur</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">,</span> <span class="n">roues</span><span class="p">)</span> <span class="c1"># super() permet d&#39;utiliser la fonction de la classe &quot;parent&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">autonomie</span> <span class="o">=</span> <span class="n">autonomie</span>
+
+  <span class="c1"># Ré-écriture de certaines méthodes</span>
+  <span class="k">def</span> <span class="nf">accelerer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">accelerer</span><span class="p">(</span><span class="n">vitesse</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">autonomie</span> <span class="o">-=</span> <span class="mf">0.1</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">vitesse</span>
+
+  <span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">afficher</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;autonomie: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">autonomie</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voiture_2</span> <span class="o">=</span> <span class="n">voiture_electrique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">voiture_2</span><span class="o">.</span><span class="n">afficher</span><span class="p">()</span>
+
+<span class="n">voiture_2</span><span class="o">.</span><span class="n">accelerer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">voiture_2</span><span class="o">.</span><span class="n">afficher</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>couleur:black
+roues:4
+vitesse:0
+autonomie: 100
+couleur:black
+roues:4
+vitesse:10
+autonomie: 99.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/python_basics/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="08%20-%20Modules%20de%20Bases.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">8/30 Modules de bases de Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="10%20-%20Numpy%20%28les%20Bases%29.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">10/30 Numpy : Tableau ndarray</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Amine Raboun, Romain Lafarguette<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

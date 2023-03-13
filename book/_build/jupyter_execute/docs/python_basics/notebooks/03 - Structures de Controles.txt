@@ -1,0 +1,50 @@
+def test_du_signe(valeur):
+  if valeur < 0:
+    print('négatif')
+  elif valeur == 0:
+    print('nul')
+  else:
+    print('positif')
+
+test_du_signe(-2)
+
+valeur = -2
+print(valeur < 0) # le résultat de cette comparaison est True
+
+if valeur < 0:
+  print('négatif')
+
+x = 3
+y = -1
+if (x>0) and (y>0):
+  print('x et y sont positifs')
+else:
+  print('x et y ne sont pas tous les 2 positifs')
+
+# range(début, fin, pas) est une built-in fonction tres utile de python qui retourne un itérable.
+for i in range(0, 10):
+  print(i)
+
+# on peut s'amuser a combiner cette boucle avec notre fonction de tout a l'heure.
+for i in range(-10, 10, 2):
+  print(i)
+  test_du_signe(i)
+
+x = 0
+while x < 10:
+  print(x)
+  x += 1 # incrémente x de 1 (équivalent de x = x+1)
+
+# Solution
+
+def fibonacci(n):
+    # retourne une liste contenant la suite de fibonacci jusqu'a n
+    a = 0
+    b = 1
+    while b < n:
+      a, b = b, a+b
+      print(a)
+
+fibonacci(1000)
+
+

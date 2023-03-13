@@ -1,6 +1,9 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
+# Time-stamp: "Friday 17 February 2023, Amine Raboun"
 format: jb-book
+
+# index page
 root: docs/index
 
 parts:
@@ -12,4 +15,5 @@ parts:
  - caption: Introduction to Python
    chapters:
    - file: docs/python_basics/python_intro.md
-   
+     sections:
+     - glob: docs/python_basics/notebooks/*

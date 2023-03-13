@@ -1,0 +1,35 @@
+import math
+import statistics
+import random
+import os
+import glob
+
+print(math.pi)
+print(math.cos(2*math.pi))
+
+liste = [1, 4, 6, 2, 5]
+
+print(statistics.mean(liste)) # moyenne de la liste
+print(statistics.variance(liste)) # variance de la liste
+
+random.seed(0) # fixe le générateur aléatoire pour produire toujours le meme résultat
+
+print(random.choice(liste)) # choisit un élément au hasard dans la liste
+
+print(random.random()) # génére un nombre aléatoire entre 0 et 1
+
+print(random.randint(5, 10)) # génére un nombre entier aléatoire entre 5 et 10
+
+random.sample(range(100), 10) # retourne une liste de 10 nombres aléatoires entre 0 et 100
+
+print('liste de départ', liste)
+
+random.shuffle(liste) #mélange les éléments d'une liste
+
+print('liste mélangée', liste)
+
+os.getcwd() # affiche le répertoire de travail actuel
+
+print(glob.glob('*')) # contenu du repertoire de travail actuel
+
+

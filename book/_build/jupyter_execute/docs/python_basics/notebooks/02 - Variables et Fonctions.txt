@@ -1,0 +1,61 @@
+x = 3 # type int 
+y = 2.5 # type float
+prenom = 'Pierre' # type string
+z = True # type Bool
+
+# Opérations arithmétiques
+print('x + y =', x + y)
+print('x - y =', x - y)
+print('x / y =', x / y)
+print('x // y =', x // y) # division entiere (tres utile pour les tableaux Numpy)
+print('x * y =', x * y)
+print('x ^ y =', x ** y) # x puissance y
+
+# Opérations de comparaison
+print('égalité :', x == y)
+print('inégalité :', x != y)
+print('inférieur ou égal :', x <= y)
+print('supérieur ou égal :', x >= y)
+
+# Opérations Logiques
+print('ET :', False and True)
+print('OU :', False or True)
+print('OU exclusif :', False ^ True)
+
+# Exemple d'une fonction f(x) = x^2
+f = lambda x : x**2
+
+print(f(3))
+
+# Exemple d'une fonction g(x, y) = x^2 - y^2
+g = lambda x, y : x**2 - y**2
+
+print(g(4, 2))
+
+# une fonction a un nom, prend des entrées (arguments) et les transforme pour retourner un résultat
+
+def nom_de_la_fonction(argument_1, argument_2):
+   restultat = argument_1 + argument_2
+   return restultat
+
+nom_de_la_fonction(3, 2)
+
+# Exemple concret : fonction qui calcul l'energie potentielle d'un corps
+
+def e_potentielle(masse, hauteur, g=9.81):
+  energie = masse * hauteur * g 
+  return energie
+
+# ici g a une valeur par défaut donc nous ne sommes pas obligé de lui donner une valeur
+e_potentielle(masse=10, hauteur=10)
+
+# Solution :
+
+def e_potentielle(masse, hauteur, e_limite, g=9.81):
+  energie = masse * hauteur * g 
+  return energie > e_limite
+
+
+e_potentielle(masse=10, hauteur=10, e_limite=800)
+
+
