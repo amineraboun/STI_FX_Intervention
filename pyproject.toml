@@ -10,6 +10,7 @@ repository = "https://github.com/raboam/STI_FX_Intervention"
 [tool.poetry.dependencies]
 python = ">=3.9.0,<4.0"
 jupyter-book = "^0.13.2"
+varfxi = "^0.0.1"
 
 
 [tool.poetry.dev-dependencies]
