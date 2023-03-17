@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name="dc"
+name="sti"
 
 poetry install
 poetry run pip install ipykernel
