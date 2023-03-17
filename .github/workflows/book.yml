@@ -10,15 +10,24 @@ jobs:
     - uses: actions/checkout@v3
 
     # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
-
-    - name: Install jupyterbook
-      run: |
-        poetry install
-        poetry run pip install jupyter-book
+    -  name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.10'
+                  
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3.3
+        with:
+            virtualenvs-create: true
+            virtualenvs-in-project: true
+      
+      - name: Change version in pyproject.toml
+        run: |
+            echo ${{  github.ref_name }}
+            poetry version ${{  github.ref_name }}
+            poetry build
+            cat pyproject.toml      
+            
     - name: Clean Font-Manager
       run: |
         sudo echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
