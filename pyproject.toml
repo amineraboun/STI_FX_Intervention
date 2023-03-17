@@ -4,7 +4,7 @@ version = "0.0.0"
 description = "..."
 authors = ["Amine Raboun (Ph.D), Romain Lafarguette (Ph.D)"]
 readme = "readme.md"
-repository = "https://github.com/raboam/STI_FX_Intervention"
+repository = "https://github.com/amineraboun/STI_FX_Intervention"
 
 
 [tool.poetry.dependencies]
