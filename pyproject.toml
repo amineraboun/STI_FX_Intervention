@@ -22,17 +22,3 @@ statsmodels = "^0.13.5"
 [build-system]
 requires = ["poetry>=1.0.2"]
 build-backend = "poetry.masonry.api"
-
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-testpaths = [
-    "tests",
-]
-
-addopts="--verbose -s --tb native --strict --durations=20 --color yes"
-
-[tool.pylint]
-   [tool.pylint."FORMAT"]
-   max-line-length = 120
-   max-args = 5
