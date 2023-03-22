@@ -11,22 +11,22 @@ jobs:
 
     # Install dependencies
     -  name: Set up Python 3.9
-        uses: actions/setup-python@v4
-        with:
-            python-version: '3.9'
+       uses: actions/setup-python@v4
+       with:
+           python-version: '3.9'
                   
-      - name: Install Poetry
-        uses: snok/install-poetry@v1.3.3
-        with:
-            virtualenvs-create: true
-            virtualenvs-in-project: true
+    - name: Install Poetry
+      uses: snok/install-poetry@v1.3.3
+      with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
       
-      - name: Change version in pyproject.toml
-        run: |
-            echo ${{  github.ref_name }}
-            poetry version ${{  github.ref_name }}
-            poetry build
-            cat pyproject.toml      
+    - name: Change version in pyproject.toml
+      run: |
+        echo ${{  github.ref_name }}
+        poetry version ${{  github.ref_name }}
+        poetry build
+        cat pyproject.toml      
             
     - name: Clean Font-Manager
       run: |
