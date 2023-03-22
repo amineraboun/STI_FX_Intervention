@@ -19,6 +19,6 @@ statsmodels = "^0.13.5"
 [tool.poetry.dev-dependencies]
 
 
-[build-system]
-requires = ["poetry>=1.0.2"]
-build-backend = "poetry.masonry.api"
+#[build-system]
+#requires = ["poetry>=1.0.2"]
+#build-backend = "poetry.masonry.api"
