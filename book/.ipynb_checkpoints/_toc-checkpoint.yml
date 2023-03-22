@@ -9,11 +9,29 @@ root: docs/index
 parts:
  - caption: Central Bank interventions
    chapters:
-   - file: docs/central_banking/theory.md
-   - file: docs/central_banking/practice.md
+   - file: docs/Central-Banking/theory.md
+   - file: docs/Central-Banking/practice.md
    
  - caption: Introduction to Python
    chapters:
-   - file: docs/python_basics/python_intro.md
+   - file: docs/Python-Introduction/Lecture-content.md
      sections:
-     - glob: docs/python_basics/notebooks/*
+     - glob: docs/Python-Introduction/workshop/*
+ 
+ - caption: Key Statistical Concepts
+   chapters:
+   - file: docs/Key-Statistical-Concepts/Lecture-content.md
+     sections:
+     - glob: docs/Key-Statistical-Concepts/workshop/*
+     
+ - caption: Time Series Analysis
+   chapters:
+   - file: docs/Time-Series-Analysis/Lecture-content.md
+     sections:
+     - glob: docs/Time-Series-Analysis/workshop/*
+     
+ - caption: Volatility Modelling
+   chapters:
+   - file: docs/Volatility-Modelling/Lecture-content.md
+     sections:
+     - glob: docs/Volatility-Modelling/workshop/*
