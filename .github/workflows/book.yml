@@ -37,6 +37,7 @@ jobs:
         
     - name: Install the kernel
       run: |
+        poetry run pip install jupyter-book
         poetry run pip install ipykernel
         poetry run python -m ipykernel install --user --name="sti"
     # Build the book
