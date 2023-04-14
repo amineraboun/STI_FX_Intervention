@@ -1,0 +1,1273 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Forecasting with Exogenous Regressors &#8212; IMF - STI Risk Based Framework</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/univariate_forecasting_with_exogenous_variables';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Volatility Forecasting" href="univariate_volatility_forecasting.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="Value%20At%20Risk.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Central Bank interventions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Central-Banking/theory.html">Central Bank Interventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Central-Banking/practice.html">Examples of Central Bank Interventions:</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Python-Introduction/Lecture-content.html">General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/02%20-%20Variables%20et%20Fonctions.html">2: Python Basics - Variables and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/03%20-%20Structures%20de%20Controles.html">3 : Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/04%20-%20Structures%20de%20donn%C3%A9es%20%28Listes%20et%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/05%20-%20Dictionnaires.html">5: Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/06%20-%20List%20Comprehension.html">6: List Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/07%20-%20Built-in%20Functions.html">7: Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/08%20-%20Modules%20de%20Bases.html">8: Basic Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/09%20-%20Programmation%20Orient%C3%A9e%20Objet.html">9: Object Oriented Programming with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/10%20-%20Numpy%20%28les%20Bases%29.html">10: Numpy Tableau ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">11: Numpy - Slicing and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/12%20-%20Numpy%20Maths%20et%20Statistiques.html">12: Numpy - Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/13%20-%20Numpy%20Broadcasting.html">13: Numpy and Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/14%20-%20Matplotlib%20%28les%20Bases%29.html">14: Matplotlib - Graphiques de Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/15%20-%20Matplotlib%20Top%20Graphiques.html">15: Matplotlib Top Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/16%20-%20Scipy.html">16: Machine Learning with Scipy</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/17%20-%20Pandas%20%28les%20Bases%29.html">17: Pandas (the Basics) and Titanic Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/18%20-%20Pandas%20et%20S%C3%A9ries%20Temporelles.html">18: Pandas and Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Time Series Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Time-Series-Analysis/Lecture-content.html">Time Series Econometrics With Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/01-%20ACF%20vs%20PACF.html">1: ACF vs PACF</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/02-%20Augmented%20Dickey-Fuller%20Test.html">2: Augmented Dickey-Fuller Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/03-%20STL%20Decomposition.html">3: Seasonal-Trend Decomposition using LOESS (STL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/04-%20Time%20Series%20Data%20Preprocessing.html">4: Read the Data</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/05-%20MA%20Model.html">5: Generate Some Data</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/06-%20AR%20Model.html">6: AR Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/07-%20Model%20Selection.html">7: Model Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/08-%20ARMA%20Model.html">8: ARMa Model</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/09-%20SARIMA%20Model.html">9: SARIMA Model</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/10-%20Undo%20Stationary%20Transformations.html">10: Undo Stationarity Transformation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/11-%20Anomaly%20Detection.html">11: Anomaly Detection</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/12-%20Granger%20Causality.html">12: Granger Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html">13: VAR Model</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GARCH%20Model.html">GARCH(2,2) Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="GARCH%20Stock%20Modeling.html">GARCH Stock Forecasting</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_forecasting.html">Volatility Forecasting</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_modeling.html">ARCH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_scenarios.html">Volatility Scenarios</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/univariate_forecasting_with_exogenous_variables.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/univariate_forecasting_with_exogenous_variables.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/univariate_forecasting_with_exogenous_variables.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Forecasting with Exogenous Regressors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-data">Simulating data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data">Plotting the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting-the-x-values">Forecasting the X values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-model">Fitting the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-dict">Using a <code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-dataframe">Using <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-array">Using an <code class="docutils literal notranslate"><span class="pre">array</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#producing-multiple-forecasts">Producing multiple forecasts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x-input-array-sizes"><code class="docutils literal notranslate"><span class="pre">x</span></code> input array sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-cases-with-a-single-x-variable">Special Cases with a single <code class="docutils literal notranslate"><span class="pre">x</span></code> variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-out-of-sample-x">Static out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-out-of-sample-x">Simulating the out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="forecasting-with-exogenous-regressors">
+<h1>Forecasting with Exogenous Regressors<a class="headerlink" href="#forecasting-with-exogenous-regressors" title="Permalink to this heading">#</a></h1>
+<p>This notebook provides examples of the accepted data structures for passing the expected value of exogenous variables when these are included in the mean.  For example, consider an AR(1) with 2 exogenous variables. The mean dynamics are</p>
+<div class="math notranslate nohighlight">
+\[ Y_t = \phi_0 + \phi_1 Y_{t-1} + \beta_0 X_{0,t} + \beta_1 X_{1,t} + \epsilon_t. \]</div>
+<p>The <span class="math notranslate nohighlight">\(h\)</span>-step forecast, <span class="math notranslate nohighlight">\(E_{T}[Y_{t+h}]\)</span>, depends on the conditional expectation of <span class="math notranslate nohighlight">\(X_{0,T+h}\)</span> and <span class="math notranslate nohighlight">\(X_{1,T+h}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ E_{T}[Y_{T+h}] = \phi_0 + \phi_1 E_{T}[Y_{T+h-1}] + \beta_0 E_{T}[X_{0,T+h}] +\beta_1 E_{T}[X_{1,T+h}] \]</div>
+<p>where <span class="math notranslate nohighlight">\(E_{T}[Y_{T+h-1}]\)</span> has been recursively computed.</p>
+<p>In order to construct forecasts up to some horizon <span class="math notranslate nohighlight">\(h\)</span>, it is necessary to pass <span class="math notranslate nohighlight">\(2\times h\)</span> values (<span class="math notranslate nohighlight">\(h\)</span> for each series).  If using the features of <code class="docutils literal notranslate"><span class="pre">forecast</span></code> that allow many forecast to be specified, it necessary to supply <span class="math notranslate nohighlight">\(n \times 2 \times h\)</span> values.</p>
+<p>There are two general purpose data structures that can be used for any number of exogenous variables and any number steps ahead:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> - The values can be pass using a <code class="docutils literal notranslate"><span class="pre">dict</span></code> where the keys are the variable names and the values are 2-dimensional arrays. This is the most natural generalization of a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to 3-dimensions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array</span></code> - The vales can alternatively be passed as a 3-d NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code> where dimension 0 tracks the regressor index, dimension 1 is the time period and dimension 2 is the horizon.</p></li>
+</ul>
+<p>When a model contains a single exogenous regressor it is possible to use a 2-d array or <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> where dim0 tracks the time period where the forecast is generated and dimension 1 tracks the horizon.</p>
+<p>In the special case where a model contains a single regressor <em>and</em> the horizon is 1, then a 1-d array of pandas Series can be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial setup</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span>
+<span class="kn">from</span> <span class="nn">arch.__future__</span> <span class="kn">import</span> <span class="n">reindexing</span>
+
+<span class="n">seaborn</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;figure&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;savefig&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;sans-serif&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="simulating-data">
+<h2>Simulating data<a class="headerlink" href="#simulating-data" title="Permalink to this heading">#</a></h2>
+<p>Two <span class="math notranslate nohighlight">\(X\)</span> variables are simulated and are assumed to follow independent AR(1) processes. The data is then assumed to follow an ARX(1) with 2 exogenous regressors and GARCH(1,1) errors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arch.univariate</span> <span class="kn">import</span> <span class="n">ARX</span><span class="p">,</span> <span class="n">GARCH</span><span class="p">,</span> <span class="n">ZeroMean</span><span class="p">,</span> <span class="n">arch_model</span>
+
+<span class="n">burn</span> <span class="o">=</span> <span class="mi">250</span>
+
+<span class="n">x_mod</span> <span class="o">=</span> <span class="n">ARX</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">x_mod</span><span class="o">.</span><span class="n">simulate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nobs</span><span class="o">=</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">burn</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x_mod</span><span class="o">.</span><span class="n">simulate</span><span class="p">([</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nobs</span><span class="o">=</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">burn</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+
+<span class="n">resid_mod</span> <span class="o">=</span> <span class="n">ZeroMean</span><span class="p">(</span><span class="n">volatility</span><span class="o">=</span><span class="n">GARCH</span><span class="p">())</span>
+<span class="n">resids</span> <span class="o">=</span> <span class="n">resid_mod</span><span class="o">.</span><span class="n">simulate</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span> <span class="n">nobs</span><span class="o">=</span><span class="mi">1000</span> <span class="o">+</span> <span class="n">burn</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
+
+<span class="n">phi1</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">phi0</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">resids</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi0</span> <span class="o">+</span> <span class="n">phi1</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">resids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1000</span><span class="p">:]</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1000</span><span class="p">:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1000</span><span class="p">:]</span>
+<span class="n">y</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">x1</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-the-data">
+<h2>Plotting the data<a class="headerlink" href="#plotting-the-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;ARX&quot;</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/4fc0e7ae068fb9dc3cf1fbcc4d80361a5d31c81fbf5ebb11fb3da81d0dc03943.png" src="../../../_images/4fc0e7ae068fb9dc3cf1fbcc4d80361a5d31c81fbf5ebb11fb3da81d0dc03943.png" />
+</div>
+</div>
+</section>
+<section id="forecasting-the-x-values">
+<h2>Forecasting the X values<a class="headerlink" href="#forecasting-the-x-values" title="Permalink to this heading">#</a></h2>
+<p>The forecasts of <span class="math notranslate nohighlight">\(Y\)</span> depend on forecasts of <span class="math notranslate nohighlight">\(X_0\)</span> and <span class="math notranslate nohighlight">\(X_1\)</span>.  Both of these follow simple AR(1), and so we can construct the forecasts for all time horizons.  Note that the value in position <code class="docutils literal notranslate"><span class="pre">[i,j]</span></code> is the time-<code class="docutils literal notranslate"><span class="pre">i</span></code> forecast for horizon <code class="docutils literal notranslate"><span class="pre">j+1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0_oos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">x1_oos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">x0_oos</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">x0_oos</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">last</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">x1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">x1_oos</span><span class="p">[:,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">x1_oos</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">last</span>
+
+<span class="n">x1_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6.40619399, 5.70309699, 5.3515485 , 5.17577425, 5.08788712,
+       5.04394356, 5.02197178, 5.01098589, 5.00549295, 5.00274647])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fitting-the-model">
+<h2>Fitting the model<a class="headerlink" href="#fitting-the-model" title="Permalink to this heading">#</a></h2>
+<p>Next, the most is fit. The parameters are accurately estimated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exog</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x0&quot;</span><span class="p">:</span> <span class="n">x0</span><span class="p">,</span> <span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="n">x1</span><span class="p">})</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="s2">&quot;ARX&quot;</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">disp</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          AR-X - GARCH Model Results                          
+==============================================================================
+Dep. Variable:                   data   R-squared:                       0.990
+Mean Model:                      AR-X   Adj. R-squared:                  0.990
+Vol Model:                      GARCH   Log-Likelihood:               -1410.59
+Distribution:                  Normal   AIC:                           2835.18
+Method:            Maximum Likelihood   BIC:                           2869.52
+                                        No. Observations:                  999
+Date:                Thu, Apr 13 2023   Df Residuals:                      995
+Time:                        19:15:54   Df Model:                            4
+                               Mean Model                               
+========================================================================
+                 coef    std err          t      P&gt;|t|  95.0% Conf. Int.
+------------------------------------------------------------------------
+Const          2.8028      0.173     16.168  8.524e-59 [  2.463,  3.143]
+data[1]        0.6949  4.070e-03    170.734      0.000 [  0.687,  0.703]
+x0             2.0433  2.276e-02     89.790      0.000 [  1.999,  2.088]
+x1            -1.9880  2.849e-02    -69.790      0.000 [ -2.044, -1.932]
+                              Volatility Model                             
+===========================================================================
+                 coef    std err          t      P&gt;|t|     95.0% Conf. Int.
+---------------------------------------------------------------------------
+omega          0.1932      0.124      1.558      0.119 [-4.978e-02,  0.436]
+alpha[1]       0.0823  3.260e-02      2.524  1.160e-02  [1.839e-02,  0.146]
+beta[1]        0.7251      0.146      4.972  6.626e-07    [  0.439,  1.011]
+===========================================================================
+
+Covariance estimator: robust
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-a-dict">
+<h2>Using a <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#using-a-dict" title="Permalink to this heading">#</a></h2>
+<p>The first approach uses a dict to pass the two variables. The key consideration here is the the keys of the dictionary must <strong>exactly</strong> match the variable names (<code class="docutils literal notranslate"><span class="pre">x0</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span></code> here).  The dictionary here contains only the final row of the forecast values since <code class="docutils literal notranslate"><span class="pre">forecast</span></code> will only make forecasts beginning from the final in-sample observation by default.</p>
+<section id="using-dataframe">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#using-dataframe" title="Permalink to this heading">#</a></h3>
+<p>While these examples make use of NumPy arrays, these can be <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>. This allows the index to be used to track the forecast origination point, which can be a helpful device.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exog_fcast</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x0&quot;</span><span class="p">:</span> <span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:],</span> <span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="n">x1_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]}</span>
+<span class="n">forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog_fcast</span><span class="p">)</span>
+<span class="n">forecasts</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/cbb111f1ab0327d1b86ae1ddd71eee39fd669eac83b2e1839b28dc01b94c4688.png" src="../../../_images/cbb111f1ab0327d1b86ae1ddd71eee39fd669eac83b2e1839b28dc01b94c4688.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="using-an-array">
+<h2>Using an <code class="docutils literal notranslate"><span class="pre">array</span></code><a class="headerlink" href="#using-an-array" title="Permalink to this heading">#</a></h2>
+<p>An array can alternatively be used.  This frees the restriction on matching the variable names although the order must match instead. The forecast values are 2 (variables) by 1 (forecast) by 10 (horizon).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exog_fcast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:],</span> <span class="n">x1_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The shape is </span><span class="si">{</span><span class="n">exog_fcast</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">array_forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog_fcast</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_forecasts</span><span class="o">.</span><span class="n">mean</span> <span class="o">-</span> <span class="n">forecasts</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The shape is (2, 1, 10)
+     h.01  h.02  h.03  h.04  h.05  h.06  h.07  h.08  h.09  h.10
+999   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="producing-multiple-forecasts">
+<h2>Producing multiple forecasts<a class="headerlink" href="#producing-multiple-forecasts" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">forecast</span></code> can produce multiple forecasts using the same fit model.  Here the model is fit to the first 500 observations and then forecasting for the remaining values are produced. It must be the case that the <code class="docutils literal notranslate"><span class="pre">x</span></code> values passed for <code class="docutils literal notranslate"><span class="pre">forecast</span></code> have the same number of rows as the table of forecasts produced.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">disp</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">,</span> <span class="n">last_obs</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">exog_fcast</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x0&quot;</span><span class="p">:</span> <span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">500</span><span class="p">:],</span> <span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="n">x1_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">500</span><span class="p">:]}</span>
+<span class="n">multi_forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog_fcast</span><span class="p">)</span>
+<span class="n">multi_forecasts</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>h.01</th>
+      <th>h.02</th>
+      <th>h.03</th>
+      <th>h.04</th>
+      <th>h.05</th>
+      <th>h.06</th>
+      <th>h.07</th>
+      <th>h.08</th>
+      <th>h.09</th>
+      <th>h.10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>990</th>
+      <td>17.768107</td>
+      <td>16.946922</td>
+      <td>16.197231</td>
+      <td>15.476191</td>
+      <td>14.786258</td>
+      <td>14.141028</td>
+      <td>13.552482</td>
+      <td>13.027454</td>
+      <td>12.567724</td>
+      <td>12.171257</td>
+    </tr>
+    <tr>
+      <th>991</th>
+      <td>24.040271</td>
+      <td>23.354845</td>
+      <td>22.082136</td>
+      <td>20.607842</td>
+      <td>19.134562</td>
+      <td>17.762954</td>
+      <td>16.536924</td>
+      <td>15.469142</td>
+      <td>14.555624</td>
+      <td>13.784089</td>
+    </tr>
+    <tr>
+      <th>992</th>
+      <td>27.091122</td>
+      <td>25.524781</td>
+      <td>23.561863</td>
+      <td>21.578892</td>
+      <td>19.745783</td>
+      <td>18.127631</td>
+      <td>16.737462</td>
+      <td>15.563627</td>
+      <td>14.583994</td>
+      <td>13.773202</td>
+    </tr>
+    <tr>
+      <th>993</th>
+      <td>23.812686</td>
+      <td>22.023400</td>
+      <td>20.423123</td>
+      <td>18.970281</td>
+      <td>17.659939</td>
+      <td>16.494389</td>
+      <td>15.473029</td>
+      <td>14.590278</td>
+      <td>13.836399</td>
+      <td>13.199061</td>
+    </tr>
+    <tr>
+      <th>994</th>
+      <td>24.567110</td>
+      <td>23.089120</td>
+      <td>21.581584</td>
+      <td>20.102366</td>
+      <td>18.704939</td>
+      <td>17.425734</td>
+      <td>16.283759</td>
+      <td>15.284280</td>
+      <td>14.423127</td>
+      <td>13.690379</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>23.899440</td>
+      <td>22.212396</td>
+      <td>20.395973</td>
+      <td>18.692633</td>
+      <td>17.193092</td>
+      <td>15.916784</td>
+      <td>14.851630</td>
+      <td>13.973412</td>
+      <td>13.254962</td>
+      <td>12.670283</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>22.349193</td>
+      <td>20.949971</td>
+      <td>19.570587</td>
+      <td>18.261614</td>
+      <td>17.058860</td>
+      <td>15.981870</td>
+      <td>15.036975</td>
+      <td>14.221265</td>
+      <td>13.526097</td>
+      <td>12.939768</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>17.151909</td>
+      <td>16.099119</td>
+      <td>15.262889</td>
+      <td>14.545576</td>
+      <td>13.911619</td>
+      <td>13.349231</td>
+      <td>12.854087</td>
+      <td>12.423015</td>
+      <td>12.052037</td>
+      <td>11.736145</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>12.999678</td>
+      <td>12.560137</td>
+      <td>12.349736</td>
+      <td>12.192718</td>
+      <td>12.031221</td>
+      <td>11.855002</td>
+      <td>11.670150</td>
+      <td>11.486071</td>
+      <td>11.310725</td>
+      <td>11.149415</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>5.183529</td>
+      <td>5.078544</td>
+      <td>5.745759</td>
+      <td>6.597128</td>
+      <td>7.396405</td>
+      <td>8.066477</td>
+      <td>8.597945</td>
+      <td>9.006879</td>
+      <td>9.316143</td>
+      <td>9.547774</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The plot of the final 5 forecast paths shows the the mean reversion of the process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">multi_forecasts</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/1624c4281c980cd452bdce328b33c9069c34ba49d0eae7677ce3e20c01bcb210.png" src="../../../_images/1624c4281c980cd452bdce328b33c9069c34ba49d0eae7677ce3e20c01bcb210.png" />
+</div>
+</div>
+<p>The previous example made use of dictionaries where each of the values was a 500 (number of forecasts) by 10 (horizon) array.  The alternative format can be used where <code class="docutils literal notranslate"><span class="pre">x</span></code> is a 3-d array with shape 2 (variables) by 500 (forecasts) by 10 (horizon).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exog_fcast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">500</span><span class="p">:],</span> <span class="n">x1_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">500</span><span class="p">:]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exog_fcast</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">array_multi_forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog_fcast</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">array_multi_forecasts</span><span class="o">.</span><span class="n">mean</span> <span class="o">-</span> <span class="n">multi_forecasts</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 500, 10)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ubuntu/Documents/Projects/STI_FX_Intervention/.venv/lib/python3.9/site-packages/numpy/core/fromnumeric.py:84: FutureWarning: In a future version, DataFrame.max(axis=None) will return a scalar max over the entire DataFrame. To retain the old behavior, use &#39;frame.max(axis=0)&#39; or just &#39;frame.max()&#39;
+  return reduction(axis=axis, out=out, **passkwargs)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h.01    0.0
+h.02    0.0
+h.03    0.0
+h.04    0.0
+h.05    0.0
+h.06    0.0
+h.07    0.0
+h.08    0.0
+h.09    0.0
+h.10    0.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="x-input-array-sizes">
+<h2><code class="docutils literal notranslate"><span class="pre">x</span></code> input array sizes<a class="headerlink" href="#x-input-array-sizes" title="Permalink to this heading">#</a></h2>
+<p>While the natural shape of the <code class="docutils literal notranslate"><span class="pre">x</span></code> data is the number of forecasts, it is also possible to pass an <code class="docutils literal notranslate"><span class="pre">x</span></code> that has the same shape as the <code class="docutils literal notranslate"><span class="pre">y</span></code> used to construct the model.  The may simplify tracking the origin points of the forecast.  Values are are not needed are ignored. In this example, the out-of-sample values are 2 by 1000 (original number of observations) by 10.  Only the final 500 are used.</p>
+<div class="alert alert-warning">
+    <h3><b>WARNING</b></h3>
+    Other sizes are <b>not</b> allowed. The size of the out-of-sample data must either match the original data size or the number of forecasts.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exog_fcast</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0_oos</span><span class="p">,</span> <span class="n">x1_oos</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exog_fcast</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">array_multi_forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog_fcast</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">array_multi_forecasts</span><span class="o">.</span><span class="n">mean</span> <span class="o">-</span> <span class="n">multi_forecasts</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 1000, 10)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ubuntu/Documents/Projects/STI_FX_Intervention/.venv/lib/python3.9/site-packages/numpy/core/fromnumeric.py:84: FutureWarning: In a future version, DataFrame.max(axis=None) will return a scalar max over the entire DataFrame. To retain the old behavior, use &#39;frame.max(axis=0)&#39; or just &#39;frame.max()&#39;
+  return reduction(axis=axis, out=out, **passkwargs)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h.01    0.0
+h.02    0.0
+h.03    0.0
+h.04    0.0
+h.05    0.0
+h.06    0.0
+h.07    0.0
+h.08    0.0
+h.09    0.0
+h.10    0.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="special-cases-with-a-single-x-variable">
+<h2>Special Cases with a single <code class="docutils literal notranslate"><span class="pre">x</span></code> variable<a class="headerlink" href="#special-cases-with-a-single-x-variable" title="Permalink to this heading">#</a></h2>
+<p>When a model consists of a single exogenous regressor, then <code class="docutils literal notranslate"><span class="pre">x</span></code> can be a 1-d or 2-d array (or <code class="docutils literal notranslate"><span class="pre">Series</span></code> or <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">mean</span><span class="o">=</span><span class="s2">&quot;ARX&quot;</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">disp</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          AR-X - GARCH Model Results                          
+==============================================================================
+Dep. Variable:                   data   R-squared:                       0.945
+Mean Model:                      AR-X   Adj. R-squared:                  0.945
+Vol Model:                      GARCH   Log-Likelihood:               -2264.62
+Distribution:                  Normal   AIC:                           4541.25
+Method:            Maximum Likelihood   BIC:                           4570.69
+                                        No. Observations:                  999
+Date:                Thu, Apr 13 2023   Df Residuals:                      996
+Time:                        19:15:54   Df Model:                            3
+                               Mean Model                               
+========================================================================
+                 coef    std err          t      P&gt;|t|  95.0% Conf. Int.
+------------------------------------------------------------------------
+Const         -6.6878      0.254    -26.295 2.171e-152 [ -7.186, -6.189]
+data[1]        0.7334  9.286e-03     78.983      0.000 [  0.715,  0.752]
+x0             1.8885  5.460e-02     34.588 3.871e-262 [  1.781,  1.996]
+                              Volatility Model                             
+===========================================================================
+                 coef    std err          t      P&gt;|t|     95.0% Conf. Int.
+---------------------------------------------------------------------------
+omega          3.8310      0.595      6.440  1.198e-10    [  2.665,  4.997]
+alpha[1]       0.1722  4.099e-02      4.200  2.664e-05  [9.183e-02,  0.252]
+beta[1]        0.1411      0.109      1.299      0.194 [-7.177e-02,  0.354]
+===========================================================================
+
+Covariance estimator: robust
+</pre></div>
+</div>
+</div>
+</div>
+<p>These two examples show that both formats can be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forecast_1d</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">forecast_2d</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">forecast_1d</span><span class="o">.</span><span class="n">mean</span> <span class="o">-</span> <span class="n">forecast_2d</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+
+<span class="c1">## Simulation-forecasting</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">exog</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="s2">&quot;ARX&quot;</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">disp</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     h.01  h.02  h.03  h.04  h.05  h.06  h.07  h.08  h.09  h.10
+999   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">forecast</span></code> supports simulating paths. When forecasting a model with exogenous variables, the same value is used to in all mean paths.  If you wish to also simulate the paths of the <code class="docutils literal notranslate"><span class="pre">x</span></code> variables, these need to generated and then passed inside a loop.</p>
+<section id="static-out-of-sample-x">
+<h3>Static out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code><a class="headerlink" href="#static-out-of-sample-x" title="Permalink to this heading">#</a></h3>
+<p>This first example shows that variance of the paths when the same <code class="docutils literal notranslate"><span class="pre">x</span></code> values are used in the forecast. There is a sense the out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code> are treated as deterministic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x0&quot;</span><span class="p">:</span> <span class="n">x0_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="n">x1_oos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span>
+<span class="n">sim_fixedx</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">,</span> <span class="n">simulations</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sim_fixedx</span><span class="o">.</span><span class="n">simulations</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.03285916, 1.24499696, 1.32965875, 1.32028509, 1.42550966,
+        1.41111563, 1.3797305 , 1.36759933, 1.46089913, 1.44387865]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simulating-the-out-of-sample-x">
+<h3>Simulating the out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code><a class="headerlink" href="#simulating-the-out-of-sample-x" title="Permalink to this heading">#</a></h3>
+<p>This example simulates distinct paths for the two exogenous variables and then simulates a single path.  This is then repeated 100 times.  We see that variance is much higher when we account for variation in the x data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">RandomState</span>
+
+
+<span class="k">def</span> <span class="nf">sim_ar1</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">initial</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">horizon</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">rng</span><span class="p">:</span> <span class="n">RandomState</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">horizon</span><span class="p">)</span>
+    <span class="n">shocks</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">horizon</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">initial</span> <span class="o">+</span> <span class="n">shocks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">horizon</span><span class="p">):</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">out</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">shocks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="n">simulations</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">RandomState</span><span class="p">(</span><span class="mi">20210301</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x0_sim</span> <span class="o">=</span> <span class="n">sim_ar1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]),</span> <span class="n">x0</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
+    <span class="n">x1_sim</span> <span class="o">=</span> <span class="n">sim_ar1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]),</span> <span class="n">x1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x0&quot;</span><span class="p">:</span> <span class="n">x0_sim</span><span class="p">,</span> <span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="n">x1_sim</span><span class="p">}</span>
+    <span class="n">fcast</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;simulation&quot;</span><span class="p">,</span> <span class="n">simulations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">simulations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fcast</span><span class="o">.</span><span class="n">simulations</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally the standard deviation is quite a bit larger. This is a most accurate value fo the long-run variance of the forecast residuals which should account for dynamics in the model and any exogenous regressors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joined</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">simulations</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">joined</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.08271317, 4.91814697, 6.58191987, 7.55695432, 8.42580117,
+        8.83401628, 8.88820311, 9.112039  , 9.10556593, 9.25142055]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sti"
+        },
+        kernelOptions: {
+            name: "sti",
+            path: "./docs/Volatility-Modelling/workshop"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sti'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Value%20At%20Risk.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="univariate_volatility_forecasting.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Volatility Forecasting</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-data">Simulating data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data">Plotting the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting-the-x-values">Forecasting the X values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-model">Fitting the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-dict">Using a <code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-dataframe">Using <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-array">Using an <code class="docutils literal notranslate"><span class="pre">array</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#producing-multiple-forecasts">Producing multiple forecasts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x-input-array-sizes"><code class="docutils literal notranslate"><span class="pre">x</span></code> input array sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-cases-with-a-single-x-variable">Special Cases with a single <code class="docutils literal notranslate"><span class="pre">x</span></code> variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-out-of-sample-x">Static out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-out-of-sample-x">Simulating the out-of-sample <code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Amine Raboun, Romain Lafarguette
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

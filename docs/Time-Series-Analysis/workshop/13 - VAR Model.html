@@ -1,0 +1,1735 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>13: VAR Model &#8212; IMF - STI Risk Based Framework</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Time-Series-Analysis/workshop/13 - VAR Model';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Advanced Volatilty Modelling with Python" href="../../Volatility-Modelling/Lecture-content.html" />
+    <link rel="prev" title="12: Granger Causality" href="12-%20Granger%20Causality.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Central Bank interventions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Central-Banking/theory.html">Central Bank Interventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Central-Banking/practice.html">Examples of Central Bank Interventions:</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Python-Introduction/Lecture-content.html">General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/02%20-%20Variables%20et%20Fonctions.html">2: Python Basics - Variables and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/03%20-%20Structures%20de%20Controles.html">3 : Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/04%20-%20Structures%20de%20donn%C3%A9es%20%28Listes%20et%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/05%20-%20Dictionnaires.html">5: Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/06%20-%20List%20Comprehension.html">6: List Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/07%20-%20Built-in%20Functions.html">7: Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/08%20-%20Modules%20de%20Bases.html">8: Basic Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/09%20-%20Programmation%20Orient%C3%A9e%20Objet.html">9: Object Oriented Programming with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/10%20-%20Numpy%20%28les%20Bases%29.html">10: Numpy Tableau ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">11: Numpy - Slicing and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/12%20-%20Numpy%20Maths%20et%20Statistiques.html">12: Numpy - Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/13%20-%20Numpy%20Broadcasting.html">13: Numpy and Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/14%20-%20Matplotlib%20%28les%20Bases%29.html">14: Matplotlib - Graphiques de Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/15%20-%20Matplotlib%20Top%20Graphiques.html">15: Matplotlib Top Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/16%20-%20Scipy.html">16: Machine Learning with Scipy</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/17%20-%20Pandas%20%28les%20Bases%29.html">17: Pandas (the Basics) and Titanic Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/18%20-%20Pandas%20et%20S%C3%A9ries%20Temporelles.html">18: Pandas and Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Time Series Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Time Series Econometrics With Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-%20ACF%20vs%20PACF.html">1: ACF vs PACF</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="02-%20Augmented%20Dickey-Fuller%20Test.html">2: Augmented Dickey-Fuller Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-%20STL%20Decomposition.html">3: Seasonal-Trend Decomposition using LOESS (STL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%20Time%20Series%20Data%20Preprocessing.html">4: Read the Data</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="05-%20MA%20Model.html">5: Generate Some Data</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="06-%20AR%20Model.html">6: AR Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="07-%20Model%20Selection.html">7: Model Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08-%20ARMA%20Model.html">8: ARMa Model</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="09-%20SARIMA%20Model.html">9: SARIMA Model</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="10-%20Undo%20Stationary%20Transformations.html">10: Undo Stationarity Transformation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="11-%20Anomaly%20Detection.html">11: Anomaly Detection</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="12-%20Granger%20Causality.html">12: Granger Causality</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13: VAR Model</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Volatility-Modelling/Lecture-content.html">Advanced Volatilty Modelling with Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/GARCH%20Model.html">GARCH(2,2) Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/GARCH%20Stock%20Modeling.html">GARCH Stock Forecasting</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/univariate_forecasting_with_exogenous_variables.html">Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/univariate_volatility_forecasting.html">Volatility Forecasting</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/univariate_volatility_modeling.html">ARCH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/univariate_volatility_scenarios.html">Volatility Scenarios</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Time-Series-Analysis/workshop/13 - VAR Model.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Time-Series-Analysis/workshop/13 - VAR Model.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Time-Series-Analysis/workshop/13 - VAR Model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>13: VAR Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13: VAR Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalize">Normalize</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#take-first-difference-to-remove-trend">Take First Difference to Remove Trend</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-increasing-volatility">Remove Increasing Volatility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-seasonality">Remove Seasonality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-heater">PACF - Heater</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-consider-an-ar-2">So consider an AR(2)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-between-heater-and-lagged-ice-cream">Correlation between “heater” and lagged “ice cream”</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-a-var-model">Fit a VAR Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#so-our-final-model-is">So our final model is:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.api</span> <span class="kn">import</span> <span class="n">VAR</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="var-model">
+<h1>13: VAR Model<a class="headerlink" href="#var-model" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parser</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;%Y-%m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/ice_cream_vs_heater.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parser</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3777724/10753663.py:1: FutureWarning: The squeeze argument has been deprecated and will be removed in a future version. Append .squeeze(&quot;columns&quot;) to the call to squeeze.
+
+
+  ice_cream_heater_df = pd.read_csv(&#39;../data/ice_cream_vs_heater.csv&#39;, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">asfreq</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">infer_freq</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">heater</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">,</span> <span class="s1">&#39;Heater&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f12641759d0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/91c318dd6c560f14298c5c19092613c04269de26decad3dc56153fe72dfe265a.png" src="../../../_images/91c318dd6c560f14298c5c19092613c04269de26decad3dc56153fe72dfe265a.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="normalize">
+<h1>Normalize<a class="headerlink" href="#normalize" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avgs</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">devs</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">avgs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">col</span><span class="p">])</span> <span class="o">/</span> <span class="n">devs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">heater</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">,</span> <span class="s1">&#39;Heater&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f12620bbbe0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/6b06b246c328bfbec2ae80f5417cfb92947b8c036efe8b549af4cb486eadb24a.png" src="../../../_images/6b06b246c328bfbec2ae80f5417cfb92947b8c036efe8b549af4cb486eadb24a.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="take-first-difference-to-remove-trend">
+<h1>Take First Difference to Remove Trend<a class="headerlink" href="#take-first-difference-to-remove-trend" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">heater</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Difference&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">,</span> <span class="s1">&#39;Heater&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1261fc3f10&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/2ee112141fbb1dd773d29cc02f520fa351dbbe54c5c2f4160682aaf9cf26cd4a.png" src="../../../_images/2ee112141fbb1dd773d29cc02f520fa351dbbe54c5c2f4160682aaf9cf26cd4a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Difference&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1261f15520&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/3b5777a2ba7c0e47eeb1ae4b7a224e8f036fa164cef6d4f1a40ea1ba443c7d82.png" src="../../../_images/3b5777a2ba7c0e47eeb1ae4b7a224e8f036fa164cef6d4f1a40ea1ba443c7d82.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="remove-increasing-volatility">
+<h1>Remove Increasing Volatility<a class="headerlink" href="#remove-increasing-volatility" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annual_volatility</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annual_volatility</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>heater</th>
+      <th>ice cream</th>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2004</th>
+      <td>0.415481</td>
+      <td>0.184201</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.474527</td>
+      <td>0.214837</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>0.400148</td>
+      <td>0.227698</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.359839</td>
+      <td>0.198947</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>0.396182</td>
+      <td>0.183239</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>0.499810</td>
+      <td>0.221038</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.459566</td>
+      <td>0.211668</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>0.443924</td>
+      <td>0.501018</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0.471104</td>
+      <td>0.389711</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>0.503587</td>
+      <td>0.335840</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0.855743</td>
+      <td>0.377482</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>0.569441</td>
+      <td>0.404340</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>0.719843</td>
+      <td>0.593347</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>0.830886</td>
+      <td>0.874263</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>0.987221</td>
+      <td>0.708785</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>0.892991</td>
+      <td>0.843598</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>0.426657</td>
+      <td>0.369810</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice_cream_annual_vol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">annual_volatility</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater_annual_vol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">annual_volatility</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="s1">&#39;heater&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>heater</th>
+      <th>ice cream</th>
+      <th>ice_cream_annual_vol</th>
+      <th>heater_annual_vol</th>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2004-02-01</th>
+      <td>-0.918789</td>
+      <td>0.117140</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+    </tr>
+    <tr>
+      <th>2004-03-01</th>
+      <td>-0.408351</td>
+      <td>0.058570</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+    </tr>
+    <tr>
+      <th>2004-04-01</th>
+      <td>-0.102088</td>
+      <td>0.175710</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+    </tr>
+    <tr>
+      <th>2004-05-01</th>
+      <td>0.000000</td>
+      <td>0.117140</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+    </tr>
+    <tr>
+      <th>2004-06-01</th>
+      <td>0.000000</td>
+      <td>0.175710</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-02-01</th>
+      <td>-0.714614</td>
+      <td>0.117140</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+    </tr>
+    <tr>
+      <th>2020-03-01</th>
+      <td>-0.918789</td>
+      <td>-0.058570</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+    </tr>
+    <tr>
+      <th>2020-04-01</th>
+      <td>0.000000</td>
+      <td>0.527129</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+    </tr>
+    <tr>
+      <th>2020-05-01</th>
+      <td>0.204175</td>
+      <td>0.995687</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+    </tr>
+    <tr>
+      <th>2020-06-01</th>
+      <td>-0.306263</td>
+      <td>0.234279</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+    </tr>
+  </tbody>
+</table>
+<p>197 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice_cream_annual_vol&#39;</span><span class="p">]</span>
+<span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater_annual_vol&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Difference&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1261bb7a00&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/94b036e3ffce3711506feeaa64b9ca042c594bad935afde0b8b15ac51534f684.png" src="../../../_images/94b036e3ffce3711506feeaa64b9ca042c594bad935afde0b8b15ac51534f684.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">heater</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Difference&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">,</span> <span class="s1">&#39;Heater&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1261af2af0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/fa95dcc1e21aaf93d914b910eea0ac2cde1a55b9d665b8bd4e2be028bf1fc575.png" src="../../../_images/fa95dcc1e21aaf93d914b910eea0ac2cde1a55b9d665b8bd4e2be028bf1fc575.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="remove-seasonality">
+<h1>Remove Seasonality<a class="headerlink" href="#remove-seasonality" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month_avgs</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">month_avgs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         heater  ice cream  ice_cream_annual_vol  heater_annual_vol
+Month                                                              
+1     -0.428360   0.130345              0.415976           0.580717
+2     -1.483129   0.250194              0.402342           0.570997
+3     -1.063595   0.433016              0.402342           0.570997
+4     -0.442926   0.838085              0.402342           0.570997
+5     -0.121663   0.967273              0.402342           0.570997
+6     -0.128425   0.987311              0.402342           0.570997
+7     -0.107093   0.735052              0.404376           0.580018
+8      0.075720  -1.821285              0.404376           0.580018
+9      0.544638  -1.307661              0.404376           0.580018
+10     1.613170  -0.830889              0.404376           0.580018
+11     1.183118  -0.088136              0.404376           0.580018
+12     0.491641   0.088998              0.404376           0.580018
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice_cream_month_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">month_avgs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater_month_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">month_avgs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="s1">&#39;heater&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>heater</th>
+      <th>ice cream</th>
+      <th>ice_cream_annual_vol</th>
+      <th>heater_annual_vol</th>
+      <th>ice_cream_month_avg</th>
+      <th>heater_month_avg</th>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2004-02-01</th>
+      <td>-2.211387</td>
+      <td>0.635934</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.250194</td>
+      <td>-1.483129</td>
+    </tr>
+    <tr>
+      <th>2004-03-01</th>
+      <td>-0.982838</td>
+      <td>0.317967</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.433016</td>
+      <td>-1.063595</td>
+    </tr>
+    <tr>
+      <th>2004-04-01</th>
+      <td>-0.245710</td>
+      <td>0.953901</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.838085</td>
+      <td>-0.442926</td>
+    </tr>
+    <tr>
+      <th>2004-05-01</th>
+      <td>0.000000</td>
+      <td>0.635934</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.967273</td>
+      <td>-0.121663</td>
+    </tr>
+    <tr>
+      <th>2004-06-01</th>
+      <td>0.000000</td>
+      <td>0.953901</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.987311</td>
+      <td>-0.128425</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-02-01</th>
+      <td>-1.674916</td>
+      <td>0.316756</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.250194</td>
+      <td>-1.483129</td>
+    </tr>
+    <tr>
+      <th>2020-03-01</th>
+      <td>-2.153463</td>
+      <td>-0.158378</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.433016</td>
+      <td>-1.063595</td>
+    </tr>
+    <tr>
+      <th>2020-04-01</th>
+      <td>0.000000</td>
+      <td>1.425403</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.838085</td>
+      <td>-0.442926</td>
+    </tr>
+    <tr>
+      <th>2020-05-01</th>
+      <td>0.478547</td>
+      <td>2.692427</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.967273</td>
+      <td>-0.121663</td>
+    </tr>
+    <tr>
+      <th>2020-06-01</th>
+      <td>-0.717821</td>
+      <td>0.633512</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.987311</td>
+      <td>-0.128425</td>
+    </tr>
+  </tbody>
+</table>
+<p>197 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice_cream_month_avg&#39;</span><span class="p">]</span>
+<span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater_month_avg&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>heater</th>
+      <th>ice cream</th>
+      <th>ice_cream_annual_vol</th>
+      <th>heater_annual_vol</th>
+      <th>ice_cream_month_avg</th>
+      <th>heater_month_avg</th>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2004-02-01</th>
+      <td>-0.728257</td>
+      <td>0.385740</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.250194</td>
+      <td>-1.483129</td>
+    </tr>
+    <tr>
+      <th>2004-03-01</th>
+      <td>0.080757</td>
+      <td>-0.115049</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.433016</td>
+      <td>-1.063595</td>
+    </tr>
+    <tr>
+      <th>2004-04-01</th>
+      <td>0.197217</td>
+      <td>0.115816</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.838085</td>
+      <td>-0.442926</td>
+    </tr>
+    <tr>
+      <th>2004-05-01</th>
+      <td>0.121663</td>
+      <td>-0.331339</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.967273</td>
+      <td>-0.121663</td>
+    </tr>
+    <tr>
+      <th>2004-06-01</th>
+      <td>0.128425</td>
+      <td>-0.033411</td>
+      <td>0.184201</td>
+      <td>0.415481</td>
+      <td>0.987311</td>
+      <td>-0.128425</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2020-02-01</th>
+      <td>-0.191787</td>
+      <td>0.066562</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.250194</td>
+      <td>-1.483129</td>
+    </tr>
+    <tr>
+      <th>2020-03-01</th>
+      <td>-1.089868</td>
+      <td>-0.591394</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.433016</td>
+      <td>-1.063595</td>
+    </tr>
+    <tr>
+      <th>2020-04-01</th>
+      <td>0.442926</td>
+      <td>0.587318</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.838085</td>
+      <td>-0.442926</td>
+    </tr>
+    <tr>
+      <th>2020-05-01</th>
+      <td>0.600210</td>
+      <td>1.725154</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.967273</td>
+      <td>-0.121663</td>
+    </tr>
+    <tr>
+      <th>2020-06-01</th>
+      <td>-0.589396</td>
+      <td>-0.353799</td>
+      <td>0.369810</td>
+      <td>0.426657</td>
+      <td>0.987311</td>
+      <td>-0.128425</td>
+    </tr>
+  </tbody>
+</table>
+<p>197 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Difference&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1260157fd0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/a637ee737845929c9c7f5edd205ab27755453a8525a55c9b5b228ef29832432c.png" src="../../../_images/a637ee737845929c9c7f5edd205ab27755453a8525a55c9b5b228ef29832432c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ice_cream</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">])</span>
+<span class="n">heater</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">2021</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Difference&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Ice Cream&#39;</span><span class="p">,</span> <span class="s1">&#39;Heater&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f126009e610&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/925e7a17a373c15983d11d269c1cdee0c8668262da435966f4ef9e655b68c7c6.png" src="../../../_images/925e7a17a373c15983d11d269c1cdee0c8668262da435966f4ef9e655b68c7c6.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pacf-heater">
+<h1>PACF - Heater<a class="headerlink" href="#pacf-heater" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_pacf</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ubuntu/Documents/Projects/STI_FX_Intervention/.venv/lib/python3.9/site-packages/statsmodels/graphics/tsaplots.py:348: FutureWarning: The default method &#39;yw&#39; can produce PACF values outside of the [-1,1] interval. After 0.13, the default will change tounadjusted Yule-Walker (&#39;ywm&#39;). You can use this method now by setting method=&#39;ywm&#39;.
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="../../../_images/d65d6bd49ec8e1789bfcffbe22ed065c78cecb82ec843167d3b7d4e587227120.png" src="../../../_images/d65d6bd49ec8e1789bfcffbe22ed065c78cecb82ec843167d3b7d4e587227120.png" />
+</div>
+</div>
+<section id="so-consider-an-ar-2">
+<h2>So consider an AR(2)<a class="headerlink" href="#so-consider-an-ar-2" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="correlation-between-heater-and-lagged-ice-cream">
+<h1>Correlation between “heater” and lagged “ice cream”<a class="headerlink" href="#correlation-between-heater-and-lagged-ice-cream" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+    <span class="n">heater_series</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;heater&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">lag</span><span class="p">:]</span>
+    <span class="n">lagged_ice_cream_series</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="n">lag</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lag: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">lag</span>)
+    <span class="nb">print</span><span class="p">(</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">heater_series</span><span class="p">,</span> <span class="n">lagged_ice_cream_series</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lag: 1
+PearsonRResult(statistic=-0.031544507425915636, pvalue=0.6607284991749385)
+------
+Lag: 2
+PearsonRResult(statistic=-0.09872703210944635, pvalue=0.16970841905089779)
+------
+Lag: 3
+PearsonRResult(statistic=-0.0017838553789235895, pvalue=0.9803056762960977)
+------
+Lag: 4
+PearsonRResult(statistic=0.060239718598255415, pvalue=0.40529798325286276)
+------
+Lag: 5
+PearsonRResult(statistic=-0.054034864480150276, pvalue=0.45664426275056963)
+------
+Lag: 6
+PearsonRResult(statistic=0.06461183026553836, pvalue=0.3745300043445426)
+------
+Lag: 7
+PearsonRResult(statistic=-0.04949334618415865, pvalue=0.49768766857620883)
+------
+Lag: 8
+PearsonRResult(statistic=0.07890837135977341, pvalue=0.28045489704330623)
+------
+Lag: 9
+PearsonRResult(statistic=-0.0532350169960043, pvalue=0.4681034202228026)
+------
+Lag: 10
+PearsonRResult(statistic=0.029536989060791177, pvalue=0.6882054906333271)
+------
+Lag: 11
+PearsonRResult(statistic=-0.059795363515225686, pvalue=0.41752174204856846)
+------
+Lag: 12
+PearsonRResult(statistic=-0.07513046035981792, pvalue=0.3094409252542678)
+------
+Lag: 13
+PearsonRResult(statistic=0.19808902198429754, pvalue=0.007029107082073456)
+------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fit-a-var-model">
+<h1>Fit a VAR Model<a class="headerlink" href="#fit-a-var-model" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ice_cream_heater_df</span> <span class="o">=</span> <span class="n">ice_cream_heater_df</span><span class="p">[[</span><span class="s1">&#39;ice cream&#39;</span><span class="p">,</span> <span class="s1">&#39;heater&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">VAR</span><span class="p">(</span><span class="n">ice_cream_heater_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_fit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">maxlags</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_fit</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Summary of Regression Results   
+==================================
+Model:                         VAR
+Method:                        OLS
+Date:           Wed, 22, Mar, 2023
+Time:                     13:23:17
+--------------------------------------------------------------------
+No. of Equations:         2.00000    BIC:                   -1.92349
+Nobs:                     184.000    HQIC:                  -2.48459
+Log likelihood:          -204.405    FPE:                  0.0571123
+AIC:                     -2.86700    Det(Omega_mle):       0.0434311
+--------------------------------------------------------------------
+Results for equation ice cream
+================================================================================
+                   coefficient       std. error           t-stat            prob
+--------------------------------------------------------------------------------
+const                -0.016054         0.034105           -0.471           0.638
+L1.ice cream         -0.287811         0.079633           -3.614           0.000
+L1.heater            -0.121251         0.073673           -1.646           0.100
+L2.ice cream         -0.217862         0.087025           -2.503           0.012
+L2.heater            -0.081992         0.079793           -1.028           0.304
+L3.ice cream         -0.122169         0.090772           -1.346           0.178
+L3.heater            -0.100743         0.080730           -1.248           0.212
+L4.ice cream         -0.167505         0.089113           -1.880           0.060
+L4.heater            -0.130541         0.082232           -1.587           0.112
+L5.ice cream         -0.206725         0.090337           -2.288           0.022
+L5.heater            -0.168606         0.084980           -1.984           0.047
+L6.ice cream         -0.138873         0.092630           -1.499           0.134
+L6.heater            -0.115771         0.089911           -1.288           0.198
+L7.ice cream         -0.180695         0.092245           -1.959           0.050
+L7.heater            -0.027255         0.094850           -0.287           0.774
+L8.ice cream         -0.111166         0.092679           -1.199           0.230
+L8.heater             0.041803         0.094740            0.441           0.659
+L9.ice cream         -0.043835         0.091389           -0.480           0.631
+L9.heater             0.012616         0.094705            0.133           0.894
+L10.ice cream        -0.153345         0.089841           -1.707           0.088
+L10.heater            0.059215         0.094546            0.626           0.531
+L11.ice cream        -0.004417         0.089771           -0.049           0.961
+L11.heater            0.042153         0.093799            0.449           0.653
+L12.ice cream        -0.126643         0.090094           -1.406           0.160
+L12.heater           -0.021794         0.090097           -0.242           0.809
+L13.ice cream        -0.081957         0.087069           -0.941           0.347
+L13.heater           -0.018799         0.079199           -0.237           0.812
+================================================================================
+
+Results for equation heater
+================================================================================
+                   coefficient       std. error           t-stat            prob
+--------------------------------------------------------------------------------
+const                 0.005855         0.036062            0.162           0.871
+L1.ice cream         -0.033113         0.084202           -0.393           0.694
+L1.heater            -0.405367         0.077900           -5.204           0.000
+L2.ice cream         -0.169804         0.092018           -1.845           0.065
+L2.heater            -0.193569         0.084371           -2.294           0.022
+L3.ice cream         -0.048999         0.095980           -0.511           0.610
+L3.heater            -0.016958         0.085362           -0.199           0.843
+L4.ice cream         -0.007633         0.094226           -0.081           0.935
+L4.heater             0.009474         0.086950            0.109           0.913
+L5.ice cream         -0.020253         0.095520           -0.212           0.832
+L5.heater            -0.050607         0.089856           -0.563           0.573
+L6.ice cream          0.040645         0.097944            0.415           0.678
+L6.heater            -0.006504         0.095070           -0.068           0.945
+L7.ice cream         -0.053440         0.097538           -0.548           0.584
+L7.heater            -0.053795         0.100292           -0.536           0.592
+L8.ice cream          0.074170         0.097997            0.757           0.449
+L8.heater            -0.059001         0.100176           -0.589           0.556
+L9.ice cream         -0.004720         0.096633           -0.049           0.961
+L9.heater            -0.000168         0.100139           -0.002           0.999
+L10.ice cream        -0.007920         0.094996           -0.083           0.934
+L10.heater            0.040322         0.099970            0.403           0.687
+L11.ice cream        -0.076564         0.094922           -0.807           0.420
+L11.heater            0.022568         0.099181            0.228           0.820
+L12.ice cream        -0.111959         0.095263           -1.175           0.240
+L12.heater            0.082608         0.095266            0.867           0.386
+L13.ice cream         0.203451         0.092065            2.210           0.027
+L13.heater           -0.155390         0.083744           -1.856           0.064
+================================================================================
+
+Correlation matrix of residuals
+             ice cream    heater
+ice cream     1.000000  0.064855
+heater        0.064855  1.000000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="so-our-final-model-is">
+<h1>So our final model is:<a class="headerlink" href="#so-our-final-model-is" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[
+\hat{h}_t = - 0.41h_{t-1} - 0.19h_{t-2} + 0.2i_{t-13}
+\]</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Time-Series-Analysis/workshop"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="12-%20Granger%20Causality.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">12: Granger Causality</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Volatility-Modelling/Lecture-content.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced Volatilty Modelling with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13: VAR Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalize">Normalize</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#take-first-difference-to-remove-trend">Take First Difference to Remove Trend</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-increasing-volatility">Remove Increasing Volatility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-seasonality">Remove Seasonality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-heater">PACF - Heater</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-consider-an-ar-2">So consider an AR(2)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-between-heater-and-lagged-ice-cream">Correlation between “heater” and lagged “ice cream”</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-a-var-model">Fit a VAR Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#so-our-final-model-is">So our final model is:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Amine Raboun, Romain Lafarguette
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
