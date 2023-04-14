@@ -37,14 +37,13 @@ jobs:
         
     - name: Install the kernel
       run: |
-        poetry run pip install jupyter-book
         poetry run pip install ipykernel
         poetry run python -m ipykernel install --user --name="sti"
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book clean book
-        jupyter-book build book
+        poetry run jupyter-book clean book
+        poetry run jupyter-book build book
         cp -r book/_build/html ./docs
     
     # Push the book's HTML to github-pages
