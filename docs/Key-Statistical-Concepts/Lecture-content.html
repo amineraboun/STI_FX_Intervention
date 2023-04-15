@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Key-Statistical-Concepts/Lecture-content';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="01- Ramdom Variables" href="workshop/01-random-variables.html" />
+    <link rel="next" title="Time Series Econometrics With Python" href="../Time-Series-Analysis/Lecture-content.html" />
     <link rel="prev" title="Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework" href="../IMF-MODEL/VaR-FX%20Interventions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,10 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Statistical Analysis with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="workshop/01-random-variables.html">01- Ramdom Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workshop/02-sampling.html">02-Statistical Link Between Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workshop/03-Advanced.html">03- Statistics Techniques</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Statistical Analysis with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -264,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Python-Introduction/Lecture-content.html">1 - General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Python-Introduction/Lecture-content.html">General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/02%20-%20Variables%20et%20Fonctions.html">2: Python Basics - Variables and Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/03%20-%20Structures%20de%20Controles.html">3 : Control Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/04%20-%20Structures%20de%20donn%C3%A9es%20%28Listes%20et%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
@@ -460,9 +457,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -478,15 +473,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-free-statistics-courses">Bonus: Free statistics courses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -498,38 +484,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statistical-analysis-with-python">
 <h1>Statistical Analysis with Python<a class="headerlink" href="#statistical-analysis-with-python" title="Permalink to this heading">#</a></h1>
-<p>In this section, we will provide examples of the implementation of some of the most commonly used and useful statistical tools in Python,
-such as probability distributions, moment computations, loss functions (such as RMSE and MAE), OLS regression, and hypothesis testing.</p>
-<p>We will delve deeper into each of these tools and provide detailed explanations and code examples to demonstrate their usage.</p>
-<section id="bonus-free-statistics-courses">
-<h2>Bonus: Free statistics courses<a class="headerlink" href="#bonus-free-statistics-courses" title="Permalink to this heading">#</a></h2>
-<p>There is a lot of free material online for people who want to dive deeper into statistics. Here is a selection from the Internet.</p>
-<ul class="simple">
-<li><p>Udacity’s <a class="reference external" href="https://eu.udacity.com/course/intro-to-statistics--st101">“Intro to Statistics”</a></p></li>
-<li><p>Udacity’s <a class="reference external" href="https://eu.udacity.com/course/intro-to-descriptive-statistics--ud827">“Intro to Descriptive Statistics”</a></p></li>
-<li><p>Udacity’s <a class="reference external" href="https://eu.udacity.com/course/intro-to-inferential-statistics--ud201">“Intro to Inferential Statistics”</a></p></li>
-<li><p>edX’s <a class="reference external" href="https://www.edx.org/course/introduction-probability-science-mitx-6-041x-2">“Introduction to Probability - The Science of Uncertainty”</a></p></li>
-<li><p>Khan Academy’s videos on <a class="reference external" href="https://www.khanacademy.org/math/statistics-probability">statistics and probability</a></p></li>
-<li><p>(Kaggle Kernel) <a class="reference external" href="https://www.kaggle.com/nathanlauga/mathematics-of-linear-regression">Mathematics of Linear Regression by Nathan Lauga</a></p></li>
-</ul>
-</section>
-<section id="sources">
-<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://dataconomy.com/2015/02/introduction-to-bayes-theorem-with-python">https://dataconomy.com/2015/02/introduction-to-bayes-theorem-with-python</a></p></li>
-<li><p><a class="reference external" href="https://www.statisticshowto.datasciencecentral.com/discrete-variable/">https://www.statisticshowto.datasciencecentral.com/discrete-variable/</a></p></li>
-<li><p><a class="reference external" href="https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/">https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/</a></p></li>
-<li><p><a class="reference external" href="https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/descriptive-statistics/sample-variance/">https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/descriptive-statistics/sample-variance/</a></p></li>
-<li><p><a class="reference external" href="https://machinelearningmastery.com/a-gentle-introduction-to-the-bootstrap-method">https://machinelearningmastery.com/a-gentle-introduction-to-the-bootstrap-method</a></p></li>
-<li><p><a class="reference external" href="https://machinelearningmastery.com/k-fold-cross-validation/">https://machinelearningmastery.com/k-fold-cross-validation/</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution">https://en.wikipedia.org/wiki/Poisson_distribution</a></p></li>
-<li><p><a class="reference external" href="https://www.tutorialspoint.com/python/python_p_value.htm">https://www.tutorialspoint.com/python/python_p_value.htm</a></p></li>
-<li><p><a class="reference external" href="https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f">https://towardsdatascience.com/inferential-statistics-series-t-test-using-numpy-2718f8f9bf2f</a></p></li>
-<li><p><a class="reference external" href="https://www.slideshare.net/dessybudiyanti/simple-linier-regression">https://www.slideshare.net/dessybudiyanti/simple-linier-regression</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/channel/UCgBncpylJ1kiVaPyP-PZauQ">https://www.youtube.com/channel/UCgBncpylJ1kiVaPyP-PZauQ</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">https://en.wikipedia.org/wiki/Bias–variance_tradeoff</a></p></li>
-</ul>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -575,11 +529,11 @@ such as probability distributions, moment computations, loss functions (such as 
       </div>
     </a>
     <a class="right-next"
-       href="workshop/01-random-variables.html"
+       href="../Time-Series-Analysis/Lecture-content.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">01- Ramdom Variables</p>
+        <p class="prev-next-title">Time Series Econometrics With Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -592,21 +546,6 @@ such as probability distributions, moment computations, loss functions (such as 
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-free-statistics-courses">Bonus: Free statistics courses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

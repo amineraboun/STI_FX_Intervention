@@ -1,6 +1,6 @@
 # Theory
 
-[Slides](./docs/Slides/fxi_theory_practice/fxi_theory_practice.pdf)
+[Slides](./docs/slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
 This course covers the fundamentals of foreign exchange interventions. It presents:
 
@@ -53,6 +53,12 @@ This course covers the fundamentals of foreign exchange interventions. It presen
 
 - Colombia
 
+- Peru
+
 - Thailand
+
+- Philippines
+
+
 
 
