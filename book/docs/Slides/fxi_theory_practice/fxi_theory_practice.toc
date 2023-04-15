@@ -15,5 +15,5 @@
 \beamer@subsectionintoc {3}{2}{Brazil}{75}{0}{3}
 \beamer@subsectionintoc {3}{3}{Colombia}{81}{0}{3}
 \beamer@subsectionintoc {3}{4}{Peru}{88}{0}{3}
-\beamer@subsectionintoc {3}{5}{Thailand}{101}{0}{3}
-\beamer@subsectionintoc {3}{6}{Philippines}{106}{0}{3}
+\beamer@subsectionintoc {3}{5}{Thailand}{102}{0}{3}
+\beamer@subsectionintoc {3}{6}{Philippines}{107}{0}{3}
