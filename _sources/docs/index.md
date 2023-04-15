@@ -7,11 +7,17 @@
 **Singapore, April 17 – 21, 2023**
 
 ## Description
-This is a five-day course that aims to train participants on the theoretical and practical aspects of central bank interventions in foreign exchange markets. The course is organized by the IMF-Singapore Regional Training Institute (STI) and taught by a team of IMF consultants.
+This is a five-day course that aims to train participants, mostly from central banks, on the theoretical and practical aspects of central bank interventions in foreign exchange markets. The course is organized by the IMF-Singapore Regional Training Institute (STI) and taught by a team of IMF consultants.
 
 The course includes a blend of lectures and workshops that will cover various topics. Participants will gain knowledge about statistical concepts and their applications in Python, as well as data manipulation and visualization, time-series econometrics, volatility and value-at-risk modeling, and techniques for evaluating, selecting, and interpreting models, which can be applied to triggers for central bank intervention in the foreign exchange market
 
 Overall, the course aims to provide participants with a solid understanding of the theoretical and practical aspects of central bank interventions in foreign exchange markets, along with hands-on experience in using Python and IMF software infrastructure for modeling conditional foreign exchange intervention triggers. The main takeaways for participants include a deeper understanding of FX interventions, statistical concepts, and Python programming. Participants can use this knowledge to improve their skills in their respective roles and advance their careers in the field of finance.
+
+## Team
+
+Romain Lafarguette: Quant at the Abu Dhabi Investment Authority, former IMF and IMF External Consultant
+
+
 
 ## PROGRAM
 
@@ -20,7 +26,7 @@ Overall, the course aims to provide participants with a solid understanding of t
 | Monday, April 17 |||
 |9:00 - 9:15 ||**Administrative Briefing**||
 |9:15 – 9:45||**Opening Session**  <br/> **Staff** of IMF – Singapore Regional Training Institute (STI)  <br/> **Teaching Team** of IMF||
-|10:00 – 11:30| L-1| **Central Bank Interventions: Theory (lecture)** <br/>  Mr. Romain Lafarguette  <br/> IMF consultant|[Slides]() |
+|10:00 – 11:30| L-1| **Central Bank Interventions: Theory (lecture)** <br/>  Mr. Romain Lafarguette  <br/> IMF consultant|[Slides](docs/slides/fxi_theory_practice/fxi_theory_practice.pdf) |
 |11:30 – 12:30| L-2| **Central Bank Interventions: International Practices (lecture)**  <br/> Mr. Romain Lafarguette  <br/> IMF consultant||
 |14:00 – 15:15|	L-3| **General Introduction to Python (lecture)**  <br/> Mr. Amine Raboun  <br/> IMF consultant|
 |15:30 – 17:30|	W-2| **Data Manipulation and Visualization with Python (workshop)**  <br/>Mr. Zhuohui Chen  <br/> IMF research analyst, Monetary and Capital Markets Dept.|
