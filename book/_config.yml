@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: IMF - STI Risk Based Framework 
-author: Amine Raboun, Romain Lafarguette
+author: Romain Lafarguette, Amine Raboun
 copyright: "2023"  # Copyright year to be placed in the footer
 logo: static/logo.png
 only_build_toc_files: true
