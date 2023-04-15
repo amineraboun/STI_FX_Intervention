@@ -1,0 +1,16 @@
+\beamer@sectionintoc {1}{Conceptual Framework}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Goals and Intermediate Objectives}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{Monetary Frameworks}{11}{0}{1}
+\beamer@subsectionintoc {1}{3}{Types of FX Interventions}{13}{0}{1}
+\beamer@subsectionintoc {1}{4}{Transmission Channels}{23}{0}{1}
+\beamer@sectionintoc {2}{Implementation}{28}{0}{2}
+\beamer@subsectionintoc {2}{1}{Instruments}{31}{0}{2}
+\beamer@subsectionintoc {2}{2}{Rule vs. Discretion}{42}{0}{2}
+\beamer@subsectionintoc {2}{3}{FXI Size}{46}{0}{2}
+\beamer@subsectionintoc {2}{4}{Communication}{50}{0}{2}
+\beamer@subsectionintoc {2}{5}{Intervention Effectiveness}{54}{0}{2}
+\beamer@subsectionintoc {2}{6}{FX Interventions and Exchange Rate Management}{59}{0}{2}
+\beamer@sectionintoc {3}{Practical Cases}{65}{0}{3}
+\beamer@subsectionintoc {3}{1}{Mexico}{66}{0}{3}
+\beamer@subsectionintoc {3}{2}{Brazil}{73}{0}{3}
+\beamer@subsectionintoc {3}{3}{Colombia}{79}{0}{3}
