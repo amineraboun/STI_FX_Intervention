@@ -15,8 +15,9 @@ Overall, the course aims to provide participants with a solid understanding of t
 
 ## Team
 
-Romain Lafarguette: Quant at the Abu Dhabi Investment Authority, former IMF and IMF External Consultant
-
+[Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Quant at the Abu Dhabi Investment Authority, former IMF and ECB and IMF External Consultant
+[Amine Raboun, Ph.D.](https://amineraboun.github.io/): Quant at the Abu Dhabi Investment Authority, IMF External Consultant
+[Zhuohui Chen](zchen4@imf.org): IMF Research Analyst
 
 
 ## PROGRAM
