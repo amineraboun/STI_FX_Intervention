@@ -14,3 +14,4 @@
 \beamer@subsectionintoc {3}{1}{Mexico}{66}{0}{3}
 \beamer@subsectionintoc {3}{2}{Brazil}{73}{0}{3}
 \beamer@subsectionintoc {3}{3}{Colombia}{79}{0}{3}
+\beamer@subsectionintoc {3}{4}{Thailand}{86}{0}{3}
