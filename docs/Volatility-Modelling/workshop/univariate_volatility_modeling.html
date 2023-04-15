@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -555,27 +555,32 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">arch</span> <span class="kn">import</span> <span class="n">arch_model</span>
+<span class="kn">from</span> <span class="nn">arch.data</span> <span class="kn">import</span> <span class="n">sp500</span><span class="p">,</span> <span class="n">vix</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <p>These examples will all make use of financial data from Yahoo! Finance.  This data set can be loaded from <code class="docutils literal notranslate"><span class="pre">arch.data.sp500</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-
-<span class="kn">import</span> <span class="nn">arch.data.sp500</span>
-
-<span class="n">st</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1988</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1988</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">en</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">arch</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sp500</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">sp500</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="n">market</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Adj Close&quot;</span><span class="p">]</span>
-<span class="n">returns</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">market</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">returns</span> <span class="o">=</span> <span class="n">market</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span><span class="s1">&#39;S&amp;P 500 returns&#39;</span><span class="p">)</span>
 <span class="n">xlim</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/13d548da9a43c187f35fa2aaa9ba1ba6352c03fb4ce6f2016bcaefdb2cf06574.png" src="../../../_images/13d548da9a43c187f35fa2aaa9ba1ba6352c03fb4ce6f2016bcaefdb2cf06574.png" />
+<img alt="../../../_images/ddd07251e09132437c8cfdbdf42192e6b7b0bb1d65a6140adb4eb7a68405637e.png" src="../../../_images/ddd07251e09132437c8cfdbdf42192e6b7b0bb1d65a6140adb4eb7a68405637e.png" />
 </div>
 </div>
 </section>
@@ -594,47 +599,49 @@ document.write(`
 <p>The default set of options produces a model with a constant mean, GARCH(1,1) conditional variance and normal errors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arch</span> <span class="kn">import</span> <span class="n">arch_model</span>
-
-<span class="n">am</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">update_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">am</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">update_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">disp</span><span class="o">=</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration:      5,   Func. Count:     35,   Neg. LLF: 6970.282172935112
-Iteration:     10,   Func. Count:     63,   Neg. LLF: 6936.718477483884
-Optimization terminated successfully    (Exit mode 0)
-            Current function value: 6936.718476988963
-            Iterations: 11
-            Function evaluations: 68
-            Gradient evaluations: 11
-                     Constant Mean - GARCH Model Results                      
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     Constant Mean - GARCH Model Results                      
 ==============================================================================
 Dep. Variable:              Adj Close   R-squared:                       0.000
 Mean Model:             Constant Mean   Adj. R-squared:                  0.000
-Vol Model:                      GARCH   Log-Likelihood:               -6936.72
-Distribution:                  Normal   AIC:                           13881.4
-Method:            Maximum Likelihood   BIC:                           13907.5
+Vol Model:                      GARCH   Log-Likelihood:                8161.22
+Distribution:                  Normal   AIC:                          -16314.4
+Method:            Maximum Likelihood   BIC:                          -16288.3
                                         No. Observations:                 5030
-Date:                Mon, May 17 2021   Df Residuals:                     5029
-Time:                        16:06:13   Df Model:                            1
-                                 Mean Model                                 
-============================================================================
-                 coef    std err          t      P&gt;|t|      95.0% Conf. Int.
-----------------------------------------------------------------------------
-mu             0.0564  1.149e-02      4.906  9.302e-07 [3.384e-02,7.887e-02]
-                              Volatility Model                              
-============================================================================
-                 coef    std err          t      P&gt;|t|      95.0% Conf. Int.
-----------------------------------------------------------------------------
-omega          0.0175  4.683e-03      3.738  1.854e-04 [8.328e-03,2.669e-02]
-alpha[1]       0.1022  1.301e-02      7.852  4.105e-15   [7.665e-02,  0.128]
-beta[1]        0.8852  1.380e-02     64.125      0.000     [  0.858,  0.912]
-============================================================================
+Date:                Fri, Apr 14 2023   Df Residuals:                     5029
+Time:                        11:18:49   Df Model:                            1
+                                  Mean Model                                  
+==============================================================================
+                 coef    std err          t      P&gt;|t|        95.0% Conf. Int.
+------------------------------------------------------------------------------
+mu            -0.0452  3.981e-04   -113.580      0.000 [-4.600e-02,-4.444e-02]
+                               Volatility Model                              
+=============================================================================
+                 coef    std err          t      P&gt;|t|       95.0% Conf. Int.
+-----------------------------------------------------------------------------
+omega      2.9011e-06  9.551e-06      0.304      0.761 [-1.582e-05,2.162e-05]
+alpha[1]       0.1000  1.260e-02      7.934  2.125e-15    [7.528e-02,  0.125]
+beta[1]        0.8798  2.158e-02     40.764      0.000      [  0.837,  0.922]
+=============================================================================
 
 Covariance estimator: robust
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ubuntu/Documents/Projects/STI_FX_Intervention/.venv/lib/python3.9/site-packages/arch/univariate/base.py:309: DataScaleWarning: y is poorly scaled, which may affect convergence of the optimizer when
+estimating the model parameters. The scale of y is 0.0001447. Parameter
+estimation work better when this value is between 1 and 1000. The recommended
+rescaling is 100 * y.
+
+This warning can be disabled by either rescaling y before initializing the
+model or by setting rescale=False.
+
+  warnings.warn(
 </pre></div>
 </div>
 </div>
@@ -642,12 +649,12 @@ Covariance estimator: robust
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code> can be used to quickly visualize the standardized residuals and conditional volatility.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">annualize</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scla</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d85696ba525c00726b81574ad80fb9abe508decae275e280779ce7dba6e3fd61.png" src="../../../_images/d85696ba525c00726b81574ad80fb9abe508decae275e280779ce7dba6e3fd61.png" />
+<img alt="../../../_images/7fb184a0164af849e738281b19ca58d4ba7eaae1dcaa2d773cae4b86421c8fd7.png" src="../../../_images/7fb184a0164af849e738281b19ca58d4ba7eaae1dcaa2d773cae4b86421c8fd7.png" />
 </div>
 </div>
 </section>
@@ -1534,16 +1541,16 @@ same objects.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "sti"
         },
         kernelOptions: {
-            name: "python3",
+            name: "sti",
             path: "./docs/Volatility-Modelling/workshop"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'sti'</script>
 
                 </article>
               
@@ -1551,7 +1558,10 @@ same objects.</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="univariate_volatility_forecasting.html"
@@ -1571,7 +1581,10 @@ same objects.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1611,7 +1624,7 @@ same objects.</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1641,7 +1654,7 @@ By Romain Lafarguette, Amine Raboun
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1650,8 +1663,8 @@ By Romain Lafarguette, Amine Raboun
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
