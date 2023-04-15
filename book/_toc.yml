@@ -1,16 +1,15 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-# Time-stamp: "2023-04-15 13:34:41 A13258Q"
+# Time-stamp: "2023-04-15 14:05:31 A13258Q"
 format: jb-book
 
 # index page
 root: docs/index
 
 parts:
- - caption: Central Bank interventions
+ - caption: Foreign Exchange Interventions
    chapters:
-   - file: docs/Central-Banking/theory.md
-   - file: docs/Central-Banking/practice.md
+   - file: docs/fxi/theory.md
    
  - caption: Introduction to Python
    chapters:
