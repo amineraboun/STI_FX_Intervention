@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>General Introduction to Python &#8212; IMF - STI Risk Based Framework</title>
+    <title>1 - General Introduction to Python &#8212; IMF - STI Risk Based Framework</title>
   
   
   
@@ -167,7 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/01-random-variables.html">01- Ramdom Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/02-sampling.html">02-Statistical Link Between Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/03-Advanced.html">03- Statistics Techniques</a></li>
 </ul>
 </li>
 </ul>
@@ -261,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">General Introduction to Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1 - General Introduction to Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="workshop/02%20-%20Variables%20et%20Fonctions.html">2: Python Basics - Variables and Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workshop/03%20-%20Structures%20de%20Controles.html">3 : Control Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workshop/04%20-%20Structures%20de%20donn%C3%A9es%20%28Listes%20et%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
@@ -457,7 +460,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -468,11 +473,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>General Introduction to Python</h1>
+    <h1>1 - General Introduction to Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pythons-top-applications">Python’s top applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-python-is-different-from-other-programing-languages">How Python is different from other programing languages</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -483,7 +497,31 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="general-introduction-to-python">
-<h1>General Introduction to Python<a class="headerlink" href="#general-introduction-to-python" title="Permalink to this heading">#</a></h1>
+<h1>1 - General Introduction to Python<a class="headerlink" href="#general-introduction-to-python" title="Permalink to this heading">#</a></h1>
+<p>Python is a high-level, interpreted programming language that is used in a wide variety of applications, from web development to scientific computing. It was first released in 1991 by <strong>Guido van Rossum</strong> and has since become one of the most popular programming languages in the world.</p>
+<p>Python was designed to be simple and easy to read, with a syntax that emphasizes readability and reduces the cost of program maintenance. It is also a very powerful language, capable of handling complex tasks and data structures.</p>
+<p>Python’s popularity has been steadily growing over the years, with <strong>an estimated 40 million users worldwide</strong>. This growth has been fueled by a thriving developer community that has contributed to the development of thousands of libraries and frameworks, making Python one of the most versatile languages available.</p>
+<section id="pythons-top-applications">
+<h2>Python’s top applications<a class="headerlink" href="#pythons-top-applications" title="Permalink to this heading">#</a></h2>
+<p>Python is used in a wide variety of applications, from web development to data analysis and scientific computing. Some of the most popular uses for Python include:</p>
+<ul class="simple">
+<li><p>Web development: Python is used to develop web applications and frameworks, such as Django and Flask.</p></li>
+<li><p>Data analysis and scientific computing: Python is widely used in data analysis and scientific computing, with libraries such as NumPy and SciPy providing powerful tools for scientific computing and data analysis.</p></li>
+<li><p>Artificial intelligence and machine learning: Python is one of the most popular languages for artificial intelligence and machine learning, with libraries such as TensorFlow and Keras providing powerful tools for machine learning.</p></li>
+<li><p>Automation and scripting: Python is commonly used for automation and scripting tasks, with libraries such as Fabric and Ansible providing tools for automation and deployment.</p></li>
+</ul>
+</section>
+<section id="how-python-is-different-from-other-programing-languages">
+<h2>How Python is different from other programing languages<a class="headerlink" href="#how-python-is-different-from-other-programing-languages" title="Permalink to this heading">#</a></h2>
+<p>Compared to other popular programming languages like Java and C, Python has some key advantages:</p>
+<ul class="simple">
+<li><p>Simplicity: Python is often easier to learn and read than other languages, with a syntax that emphasizes readability and simplicity.</p></li>
+<li><p>Flexibility: Python is a very versatile language that can be used for a wide variety of applications, from web development to scientific computing.</p></li>
+<li><p>Rapid development: Python’s simple syntax and large number of libraries make it well-suited for rapid prototyping and development.</p></li>
+<li><p>Community: Python has a large and active developer community that has contributed to the development of thousands of libraries and frameworks, making it easy to find solutions to common problems.</p></li>
+</ul>
+<p>While Java and C have their own strengths, Python’s ease of use, flexibility, and community support make it a popular choice for many developers.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -546,6 +584,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pythons-top-applications">Python’s top applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-python-is-different-from-other-programing-languages">How Python is different from other programing languages</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
