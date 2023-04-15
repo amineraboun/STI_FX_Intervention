@@ -1,30 +1,27 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-# Time-stamp: "Friday 17 February 2023, Amine Raboun"
+# Time-stamp: "2023-04-15 15:31:35 A13258Q"
 format: jb-book
 
 # index page
 root: docs/index
 
 parts:
- - caption: Central Bank interventions
+ - caption: Foreign Exchange Interventions
    chapters:
-   - file: docs/Central-Banking/theory.md
-   - file: docs/Central-Banking/practice.md
-   
- - caption: Introduction to Python
+   - file: docs/fxi/theory.md
+
+ - caption: VaR FXI Python Package
    chapters:
-   - file: docs/Python-Introduction/Lecture-content.md
-     sections:
-     - glob: docs/Python-Introduction/workshop/*
- 
+   - file: docs/IMF-MODEL/VaR-FX Interventions.ipynb
+
  - caption: Key Statistical Concepts
    chapters:
    - file: docs/Key-Statistical-Concepts/Lecture-content.md
      sections:
      - glob: docs/Key-Statistical-Concepts/workshop/*
-     
- - caption: Time Series Analysis
+
+ - caption: Time Series Econometrics
    chapters:
    - file: docs/Time-Series-Analysis/Lecture-content.md
      sections:
@@ -35,3 +32,10 @@ parts:
    - file: docs/Volatility-Modelling/Lecture-content.md
      sections:
      - glob: docs/Volatility-Modelling/workshop/*
+
+ - caption: Introduction to Python
+   chapters:
+   - file: docs/Python-Introduction/Lecture-content.md
+     sections:
+     - glob: docs/Python-Introduction/workshop/*
+
