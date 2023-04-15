@@ -53,6 +53,6 @@ This course covers the fundamentals of foreign exchange interventions. It presen
 
 - Colombia
 
-
+- Thailand
 
 
