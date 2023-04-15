@@ -1,8 +1,10 @@
+# Conceptual Background
+
 [Slides](./docs/slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
 This course covers the fundamentals of foreign exchange interventions. It presents:
 
-## Resources
+# Resources
 
   - A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): [link](https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850)
         
