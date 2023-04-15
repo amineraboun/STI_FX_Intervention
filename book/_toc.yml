@@ -1,6 +1,6 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-# Time-stamp: "2023-04-15 14:05:31 A13258Q"
+# Time-stamp: "2023-04-15 15:31:35 A13258Q"
 format: jb-book
 
 # index page
@@ -10,20 +10,18 @@ parts:
  - caption: Foreign Exchange Interventions
    chapters:
    - file: docs/fxi/theory.md
-   
- - caption: Introduction to Python
+
+ - caption: VaR FXI Python Package
    chapters:
-   - file: docs/Python-Introduction/Lecture-content.md
-     sections:
-     - glob: docs/Python-Introduction/workshop/*
- 
+   - file: docs/IMF-MODEL/VaR-FX Interventions.ipynb
+
  - caption: Key Statistical Concepts
    chapters:
    - file: docs/Key-Statistical-Concepts/Lecture-content.md
      sections:
      - glob: docs/Key-Statistical-Concepts/workshop/*
-     
- - caption: Time Series Analysis
+
+ - caption: Time Series Econometrics
    chapters:
    - file: docs/Time-Series-Analysis/Lecture-content.md
      sections:
@@ -34,3 +32,10 @@ parts:
    - file: docs/Volatility-Modelling/Lecture-content.md
      sections:
      - glob: docs/Volatility-Modelling/workshop/*
+
+ - caption: Introduction to Python
+   chapters:
+   - file: docs/Python-Introduction/Lecture-content.md
+     sections:
+     - glob: docs/Python-Introduction/workshop/*
+

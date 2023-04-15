@@ -17,10 +17,16 @@ Overall, the course aims to provide participants with a solid understanding of t
 
 ## Team
 
-[Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Quant at the Abu Dhabi Investment Authority, former IMF and ECB and IMF External Consultant
-[Amine Raboun, Ph.D.](https://amineraboun.github.io/): Quant at the Abu Dhabi Investment Authority, IMF External Consultant
-[Zhuohui Chen](zchen4@imf.org): IMF Research Analyst
 
+- [Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Quant at the Abu Dhabi Investment Authority, former IMF and ECB and IMF External Consultant
+
+
+- [Amine Raboun, Ph.D.](https://amineraboun.github.io/): Quant at the Abu Dhabi Investment Authority, IMF External Consultant
+
+
+- [Zhuohui Chen](zchen4@imf.org): IMF Research Analyst
+
+## Website
 The material of the course is available on the [course website](https://amineraboun.github.io/STI_FX_Intervention/docs/index.html)
 
 
