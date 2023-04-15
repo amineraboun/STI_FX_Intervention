@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Central Bank Interventions &#8212; IMF - STI Risk Based Framework</title>
+    <title>Foreign Exchange Intervention &#8212; IMF - STI Risk Based Framework</title>
   
   
   
@@ -62,10 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Central-Banking/theory';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/fxi/theory';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Examples of Central Bank Interventions:" href="practice.html" />
+    <link rel="next" title="General Introduction to Python" href="../Python-Introduction/Lecture-content.html" />
     <link rel="prev" title="IMF - STI: Risk-Based Framework for FX Intervention" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,10 +157,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Central Bank interventions</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foreign Exchange Interventions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Central Bank Interventions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice.html">Examples of Central Bank Interventions:</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Foreign Exchange Intervention</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
@@ -355,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Central-Banking/theory.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/fxi/theory.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/Central-Banking/theory.md" target="_blank"
+      <li><a href="../../_sources/docs/fxi/theory.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -467,7 +466,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Central Bank Interventions</h1>
+    <h1>Foreign Exchange Intervention</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -477,13 +476,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-central-bank-interventions">Basics of Central bank interventions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-fx-intervention">Types of FX intervention:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effectiveness-of-fx-interventions">Effectiveness of FX Interventions:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-framework">Conceptual Framework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-cases">Practical Cases</a></li>
 </ul>
             </nav>
         </div>
@@ -495,31 +490,37 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="central-bank-interventions">
-<h1>Central Bank Interventions<a class="headerlink" href="#central-bank-interventions" title="Permalink to this heading">#</a></h1>
-<p>Central bank foreign exchange (FX) intervention is a monetary policy tool used by central banks to influence the exchange rate of their domestic currency in the foreign exchange market.</p>
-<section id="basics-of-central-bank-interventions">
-<h2>Basics of Central bank interventions<a class="headerlink" href="#basics-of-central-bank-interventions" title="Permalink to this heading">#</a></h2>
-<section id="objective">
-<h3>Objective:<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h3>
-<p>The theory behind FX intervention is that a central bank can use its reserves to buy or sell its domestic currency in the foreign exchange market, which can affect the supply and demand of the currency and its exchange rate.</p>
-</section>
-<section id="types-of-fx-intervention">
-<h3>Types of FX intervention:<a class="headerlink" href="#types-of-fx-intervention" title="Permalink to this heading">#</a></h3>
-<p>There are two main types of FX intervention:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="foreign-exchange-intervention">
+<h1>Foreign Exchange Intervention<a class="headerlink" href="#foreign-exchange-intervention" title="Permalink to this heading">#</a></h1>
+<p><span class="xref myst">Slides</span></p>
+<p>This course covers the fundamentals of foreign exchange interventions. It presents:</p>
+<section id="conceptual-framework">
+<h2>Conceptual Framework<a class="headerlink" href="#conceptual-framework" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Sterilized intervention involves the central bank buying or selling its domestic currency in the foreign exchange market while simultaneously conducting offsetting transactions in the domestic money market to neutralize the impact on the money supply.</p></li>
-<li><p>Unsterilized intervention involves the central bank buying or selling its domestic currency in the foreign exchange market without conducting offsetting transactions in the domestic money market, which can affect the money supply and potentially have broader implications for the domestic economy.</p></li>
+<li><p>Goals and Intermediate Objectives</p></li>
+<li><p>Monetary Frameworks</p></li>
+<li><p>Type of FX Interventions</p></li>
+<li><p>Transmission Channels</p></li>
 </ul>
 </section>
-<section id="effectiveness-of-fx-interventions">
-<h3>Effectiveness of FX Interventions:<a class="headerlink" href="#effectiveness-of-fx-interventions" title="Permalink to this heading">#</a></h3>
-<p>The effectiveness of FX intervention in achieving its goals, such as stabilizing the exchange rate or boosting exports, is a subject of ongoing debate among economists. Some argue that FX intervention can be effective in the short term, especially in cases where the exchange rate is misaligned or subject to speculative pressures. Others argue that the impact of FX intervention is limited, as market forces ultimately drive exchange rates over the long term and that FX intervention can be costly and potentially generate unintended consequences.</p>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Instruments</p></li>
+<li><p>Rule vs. Discretion</p></li>
+<li><p>FXI Size</p></li>
+<li><p>Communication</p></li>
+<li><p>Intervention Effectiveness</p></li>
+<li><p>FX Interventions and Exchange Rate Management</p></li>
+</ul>
 </section>
-<section id="conclusion">
-<h3>Conclusion:<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
-<p>Overall, the use of FX intervention by central banks is a complex and nuanced tool that involves weighing a range of economic factors, including the strength of the domestic economy, the behavior of market participants, and the potential impact on the global economy.</p>
-</section>
+<section id="practical-cases">
+<h2>Practical Cases<a class="headerlink" href="#practical-cases" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Mexico</p></li>
+<li><p>Brazil</p></li>
+<li><p>Colombia</p></li>
+</ul>
 </section>
 </section>
 
@@ -536,7 +537,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs/Central-Banking"
+            path: "./docs/fxi"
         },
         predefinedOutput: true
     }
@@ -561,11 +562,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="practice.html"
+       href="../Python-Introduction/Lecture-content.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Examples of Central Bank Interventions:</p>
+        <p class="prev-next-title">General Introduction to Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -584,13 +585,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-central-bank-interventions">Basics of Central bank interventions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-fx-intervention">Types of FX intervention:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effectiveness-of-fx-interventions">Effectiveness of FX Interventions:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-framework">Conceptual Framework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-cases">Practical Cases</a></li>
 </ul>
   </nav></div>
 
