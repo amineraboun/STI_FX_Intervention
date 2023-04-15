@@ -1,11 +1,8 @@
-# Foreign Exchange Intervention
-
 [Slides](./docs/slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
 This course covers the fundamentals of foreign exchange interventions. It presents:
 
-
-## Conceptual Framework
+# Conceptual Framework
 
 - Goals and Intermediate Objectives
 
@@ -16,7 +13,7 @@ This course covers the fundamentals of foreign exchange interventions. It presen
 - Transmission Channels
 
 
-## Implementation
+# Implementation
 
 - Instruments
 
@@ -31,7 +28,7 @@ This course covers the fundamentals of foreign exchange interventions. It presen
 - FX Interventions and Exchange Rate Management
 
 
-## Practical Cases
+# International Examples
 
 - Mexico
 
