@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>GARCH(2,2) Model &#8212; IMF - STI Risk Based Framework</title>
+    <title>01 - Volatility prediction: Simulated Data &#8212; IMF - STI Risk Based Framework</title>
   
   
   
@@ -64,10 +64,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/GARCH Model';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/01-GARCH Model';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="GARCH Stock Forecasting" href="GARCH%20Stock%20Modeling.html" />
+    <link rel="next" title="02- Volatility Modleing S&amp;P 500 Index" href="02-GARCH%20Stock%20Modeling.html" />
     <link rel="prev" title="Advanced Volatilty Modelling with Python" href="../Lecture-content.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -251,16 +251,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">GARCH(2,2) Model</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">01 - Volatility prediction: Simulated Data</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="GARCH%20Stock%20Modeling.html">GARCH Stock Forecasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-GARCH%20Stock%20Modeling.html">02- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Conditional%20Value%20at%20Risk.html">03- Conditional Value at Risk</a></li>
 
-
-<li class="toctree-l2"><a class="reference internal" href="univariate_forecasting_with_exogenous_variables.html">Forecasting with Exogenous Regressors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_forecasting.html">Volatility Forecasting</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_modeling.html">ARCH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_scenarios.html">Volatility Scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-univariate_forecasting_with_exogenous_variables.html">04- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
 </ul>
 </li>
 </ul>
@@ -346,7 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/GARCH Model.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/01-GARCH Model.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/GARCH Model.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/01-GARCH Model.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/GARCH Model.ipynb" target="_blank"
+      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/01-GARCH Model.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -506,7 +503,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>GARCH(2,2) Model</h1>
+    <h1>01 - Volatility prediction: Simulated Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -516,7 +513,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GARCH(2,2) Model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">01 - Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-the-time-series">Simulate the time series</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-plot">PACF Plot</a></li>
 </ul>
@@ -554,8 +551,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="garch-2-2-model">
-<h1>GARCH(2,2) Model<a class="headerlink" href="#garch-2-2-model" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="volatility-prediction-simulated-data">
+<h1>01 - Volatility prediction: Simulated Data<a class="headerlink" href="#volatility-prediction-simulated-data" title="Permalink to this heading">#</a></h1>
 <div class="math notranslate nohighlight">
 \[a_t = \varepsilon_t \sigma_t \]</div>
 <div class="math notranslate nohighlight">
@@ -861,11 +858,11 @@ Covariance estimator: robust
       </div>
     </a>
     <a class="right-next"
-       href="GARCH%20Stock%20Modeling.html"
+       href="02-GARCH%20Stock%20Modeling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GARCH Stock Forecasting</p>
+        <p class="prev-next-title">02- Volatility Modleing S&amp;P 500 Index</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -887,7 +884,7 @@ Covariance estimator: robust
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GARCH(2,2) Model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">01 - Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-the-time-series">Simulate the time series</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-plot">PACF Plot</a></li>
 </ul>
