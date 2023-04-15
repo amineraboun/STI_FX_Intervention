@@ -36,7 +36,7 @@ Overall, the course aims to provide participants with a solid understanding of t
 |Tuesday, April 18||
 |9:00 – 10:30| L–4|	**Introduction to Key Statistical Concepts (lecture)**  <br/> Mr. Romain Lafarguette, Ph.D.  <br/> IMF consultant| [Slides](./Slides/statistical_concepts/introduction_statistical_concepts.pdf) |
 |10:45 – 12:30|	W-3|**Statistical Analysis with Python (workshop)**  <br/>Mr. Zhuohui Chen <br/>IMF research analyst, Monetary and Capital Markets Dept.|
-|14:00 – 15:15|	L–5|**Time Series Econometrics (lecture)** <br/>Mr. Amine Raboun, Ph.D. <br/>IMF consultant| [Slides](./Slides/final/L5_Time Series Econometrics.pdf) |
+|14:00 – 15:15|	L–5|**Time Series Econometrics (lecture)** <br/>Mr. Amine Raboun, Ph.D. <br/>IMF consultant| [Slides](./Slides/final/l5_time_series_econometrics.pdf) |
 |15:30 – 17:30|	W-4|**Time Series Econometrics with Python (workshop)** <br/>Mr Zhuohui Chen <br/> IMF research analyst, Monetary and Capital Markets Dept. <br/>Amine Raboun <br/>IMF consultant|
 |Wednesday, April 19||
 |9:00 – 10:30| 	L–6|**Forecast Volatility and Value at Risk Modeling (lecture)** <br/>Mr. Amine Raboun, Ph.D. <br/>IMF consultant|[Slides](./Slides/final/L6_Volatility_modeling.pdf)|
