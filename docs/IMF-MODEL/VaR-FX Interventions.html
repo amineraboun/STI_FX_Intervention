@@ -1,0 +1,2212 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework &#8212; IMF - STI Risk Based Framework</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/IMF-MODEL/VaR-FX Interventions';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Statistical Analysis with Python" href="../Key-Statistical-Concepts/Lecture-content.html" />
+    <link rel="prev" title="Theory" href="../fxi/theory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foreign Exchange Interventions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fxi/theory.html">Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VaR FXI Python Package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Time Series Econometrics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Time-Series-Analysis/Lecture-content.html">Time Series Econometrics With Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/01-%20ACF%20vs%20PACF.html">1: ACF vs PACF</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/02-%20Augmented%20Dickey-Fuller%20Test.html">2: Augmented Dickey-Fuller Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/03-%20STL%20Decomposition.html">3: Seasonal-Trend Decomposition using LOESS (STL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/04-%20Time%20Series%20Data%20Preprocessing.html">4: Read the Data</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/05-%20MA%20Model.html">5: Generate Some Data</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/06-%20AR%20Model.html">6: AR Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/07-%20Model%20Selection.html">7: Model Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/08-%20ARMA%20Model.html">8: ARMa Model</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/09-%20SARIMA%20Model.html">9: SARIMA Model</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/10-%20Undo%20Stationary%20Transformations.html">10: Undo Stationarity Transformation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/11-%20Anomaly%20Detection.html">11: Anomaly Detection</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/12-%20Granger%20Causality.html">12: Granger Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html">13: VAR Model</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Volatility-Modelling/Lecture-content.html">Advanced Volatilty Modelling with Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/GARCH%20Model.html">GARCH(2,2) Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/GARCH%20Stock%20Modeling.html">GARCH Stock Forecasting</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/univariate_forecasting_with_exogenous_variables.html">Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/univariate_volatility_forecasting.html">Volatility Forecasting</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/univariate_volatility_modeling.html">ARCH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/univariate_volatility_scenarios.html">Volatility Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Python-Introduction/Lecture-content.html">General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/02%20-%20Variables%20et%20Fonctions.html">2: Python Basics - Variables and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/03%20-%20Structures%20de%20Controles.html">3 : Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/04%20-%20Structures%20de%20donn%C3%A9es%20%28Listes%20et%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/05%20-%20Dictionnaires.html">5: Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/06%20-%20List%20Comprehension.html">6: List Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/07%20-%20Built-in%20Functions.html">7: Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/08%20-%20Modules%20de%20Bases.html">8: Basic Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/09%20-%20Programmation%20Orient%C3%A9e%20Objet.html">9: Object Oriented Programming with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/10%20-%20Numpy%20%28les%20Bases%29.html">10: Numpy Tableau ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">11: Numpy - Slicing and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/12%20-%20Numpy%20Maths%20et%20Statistiques.html">12: Numpy - Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/13%20-%20Numpy%20Broadcasting.html">13: Numpy and Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/14%20-%20Matplotlib%20%28les%20Bases%29.html">14: Matplotlib - Graphiques de Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/15%20-%20Matplotlib%20Top%20Graphiques.html">15: Matplotlib Top Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/16%20-%20Scipy.html">16: Machine Learning with Scipy</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/17%20-%20Pandas%20%28les%20Bases%29.html">17: Pandas (the Basics) and Titanic Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/18%20-%20Pandas%20et%20S%C3%A9ries%20Temporelles.html">18: Pandas and Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/IMF-MODEL/VaR-FX Interventions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/IMF-MODEL/VaR-FX Interventions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/IMF-MODEL/VaR-FX Interventions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preamble">Preamble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-1-conditional-var-and-density-diagram">Figure 1: Conditional VaR and density (diagram)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-garch-model-for-different-specifications">Fit the GARCH model for different specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-garch-model-fit-and-forecast">Baseline GARCH Model: Fit and Forecast</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-model">Specify the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-mexican-peso-against-us-dollar">Figure 2. Mexican Peso Against US Dollar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-model">Fit the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-3-conditional-fx-volatility-over-time">Figure 3. Conditional FX Volatility Over Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forecast-the-model">Forecast the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-4-out-of-sample-conditional-density-joyplot">Figure 4. Out-of-sample Conditional Density (Joyplot)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-5-out-of-sample-fan-chart">Figure 5. Out-of-Sample Fan Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-6-probability-integral-transform-test">Figure 6. Probability Integral Transform Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-7-var-fx-interventions-rule-based-on-a-given-information-set">Figure 7. VaR FX Interventions Rule Based on a Given Information Set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-8-conditional-cdf-out-of-sample">Figure 8. Conditional CDF, Out-of-sample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-9-conditional-var-exceedance-out-of-sample">Figure 9. Conditional VaR Exceedance, Out-of-Sample</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-exercise">Benchmarking exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-10-rule-based-fx-interventions-on-the-mexican-peso-usd">Figure 10. Rule-based FX Interventions on the Mexican Peso/USD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-11-conditional-cdf-and-rule-based-fx-interventions">Figure 11. Conditional CDF and Rule-based FX Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-12-discretionary-fx-interventions-on-the-mexican-peso-usd">Figure 12. Discretionary FX Interventions on the Mexican Peso/USD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-13-conditional-cdf-and-discretionary-fx-interventions">Figure 13. Conditional CDF and Discretionary FX Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-model">Optimize Model</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="foreign-exchange-intervention-rules-for-central-banks-a-risk-based-framework">
+<h1>Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework<a class="headerlink" href="#foreign-exchange-intervention-rules-for-central-banks-a-risk-based-framework" title="Permalink to this heading">#</a></h1>
+<p>This notebook replicates the tables and the charts of the IMF WP on Foreign Exchange Intervention Rules for Central Banks: A Ris-Based Framework</p>
+<p>It uses a Python package that I have written, DistGARCH, also available in this Github folder, with the public FX intervention data from the Banco Mexico. DistGARCH is based on the ARCH package of Kevin Sheppard.</p>
+<p>You can use the code for non-commercial applications, providing that you cite the  IMF Working Paper<br />
+Lafarguette, R. and Veyrune, R. (2021) <em>Foreign Exchange Intervention Rules for Central Banks: A Ris-Based Framework</em>,
+IMF Working Paper no 2021032 <a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081">https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081</a></p>
+<p>Author: Romain Lafarguette, June 2021
+If you have any question, please contact me via Github or rlafarguette “at” imf “dot” org</p>
+<section id="preamble">
+<h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># System paths</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="c1"># Global modules</span>
+<span class="kn">import</span> <span class="nn">importlib</span>                                        <span class="c1"># Operating system</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>                                     <span class="c1"># Dataframes</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                                      <span class="c1"># Numeric Python</span>
+<span class="kn">import</span> <span class="nn">datetime</span>                                         <span class="c1"># Dates</span>
+<span class="kn">import</span> <span class="nn">arch</span>                                             <span class="c1"># ARCH/GARCH models</span>
+
+<span class="c1"># Functional imports</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">date</span>                   <span class="c1"># Short date function</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>        <span class="c1"># Dates manipulation </span>
+
+<span class="c1"># ARCH package functional imports</span>
+<span class="kn">from</span> <span class="nn">arch.univariate</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ARCH</span><span class="p">,</span> <span class="n">GARCH</span><span class="p">,</span> <span class="n">EGARCH</span><span class="p">,</span> <span class="n">EWMAVariance</span><span class="p">,</span> <span class="c1"># Vol process</span>
+                             <span class="n">FixedVariance</span><span class="p">,</span> <span class="n">RiskMetrics2006</span><span class="p">)</span> 
+<span class="kn">from</span> <span class="nn">arch.univariate</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Normal</span><span class="p">,</span> <span class="n">StudentsT</span><span class="p">,</span> <span class="c1"># Distribution of residuals</span>
+                             <span class="n">SkewStudent</span><span class="p">,</span> <span class="n">GeneralizedError</span><span class="p">)</span>
+
+<span class="c1"># Local modules</span>
+<span class="kn">from</span> <span class="nn">varfxi.quantileproj</span> <span class="kn">import</span> <span class="n">QuantileProj</span>
+<span class="kn">from</span> <span class="nn">varfxi.distGARCH</span> <span class="kn">import</span> <span class="n">DistGARCH</span>
+
+<span class="c1"># Graphics</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>                         <span class="c1"># Graphical package  </span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>                                   <span class="c1"># Graphical tools</span>
+
+<span class="c1"># Graphics options</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span><span class="mi">15</span>
+<span class="c1">#plt.rcParams[&quot;figure.dpi&quot;] = 600</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;serif&#39;</span><span class="p">)</span> 
+
+<span class="c1"># Pandas options</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Warnings management</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s2">&quot;./data/&quot;</span>
+<span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;./output/&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">logret</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">series</span><span class="o">/</span><span class="n">series</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="figure-1-conditional-var-and-density-diagram">
+<h3>Figure 1: Conditional VaR and density (diagram)<a class="headerlink" href="#figure-1-conditional-var-and-density-diagram" title="Permalink to this heading">#</a></h3>
+<div>
+<img src="../researchpaper/img/VaR_concept.PNG" width="800"/>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the data for Mexico</span>
+<span class="n">macro_p</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_folder</span><span class="p">,</span> <span class="s1">&#39;macro_data.csv&#39;</span><span class="p">)</span>
+<span class="n">dm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">macro_p</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inter_p</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_folder</span><span class="p">,</span> <span class="s1">&#39;intervention_data.csv&#39;</span><span class="p">)</span>
+<span class="n">di</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inter_p</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">di</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Merge</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Duplicated index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mxn_usd_spot</th>
+      <th>mxn_fwd_1m</th>
+      <th>min_max_spread</th>
+      <th>bid_ask_spread</th>
+      <th>mxn_interbank_1m</th>
+      <th>...</th>
+      <th>eur_usd_spot</th>
+      <th>amount</th>
+      <th>direction</th>
+      <th>type</th>
+      <th>sell_amount</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1990-01-01</th>
+      <td>2.6835</td>
+      <td>NaN</td>
+      <td>0.000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-02</th>
+      <td>2.6770</td>
+      <td>NaN</td>
+      <td>0.007</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-03</th>
+      <td>2.6770</td>
+      <td>NaN</td>
+      <td>0.000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-04</th>
+      <td>2.6770</td>
+      <td>NaN</td>
+      <td>0.000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1990-01-05</th>
+      <td>2.6770</td>
+      <td>NaN</td>
+      <td>0.000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># New macro variables</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mxn_usd_spot&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX log returns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e4</span><span class="o">*</span><span class="n">logret</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mxn_usd_spot&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Bid ask abs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bid_ask_spread&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Min max abs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;min_max_spread&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Forward points first difference&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mxn_fwd_1m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">1e2</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Interbank rate vs Libor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mxn_interbank_1m&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;usa_libor_1m&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;VIX first diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;vix&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;EURUSD log returns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e4</span><span class="o">*</span><span class="n">logret</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;eur_usd_spot&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Oil prices log returns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e4</span><span class="o">*</span><span class="n">logret</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;oil_prices&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FX intervention variables</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX intervention in USD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sell_amount&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;fx_intervention_minprice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;min price&#39;</span><span class="p">,</span>
+                                        <span class="s1">&#39;sell_amount&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;fx_intervention_nominprice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;no min price&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;sell_amount&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX intervention dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX intervention in USD&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;FX intervention dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX intervention dummy lag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX intervention dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Intercept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX log returns_fwd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX log returns&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">clean_p</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_folder</span><span class="p">,</span> <span class="s1">&#39;clean_data.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">clean_p</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="fit-the-garch-model-for-different-specifications">
+<h2>Fit the GARCH model for different specifications<a class="headerlink" href="#fit-the-garch-model-for-different-specifications" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare the list of variables</span>
+<span class="n">microstructure</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bid ask abs&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;Min max abs&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;Forward points first difference&#39;</span><span class="p">]</span>
+
+<span class="n">cip</span> <span class="o">=</span> <span class="n">microstructure</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Interbank rate vs Libor&#39;</span><span class="p">]</span>
+
+<span class="n">eurusd</span> <span class="o">=</span> <span class="n">cip</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;EURUSD log returns&#39;</span><span class="p">]</span>
+
+<span class="n">vix</span> <span class="o">=</span> <span class="n">eurusd</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;VIX first diff&#39;</span><span class="p">]</span>
+
+<span class="n">baseline</span> <span class="o">=</span> <span class="n">vix</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Oil prices log returns&#39;</span><span class="p">,</span> <span class="s1">&#39;FX intervention dummy lag&#39;</span><span class="p">]</span>
+
+<span class="c1"># List of models</span>
+<span class="n">models_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">microstructure</span><span class="p">,</span> <span class="n">cip</span><span class="p">,</span> <span class="n">eurusd</span><span class="p">,</span> <span class="n">vix</span><span class="p">,</span> <span class="n">baseline</span><span class="p">]</span>
+<span class="n">labels_l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Microstructure&#39;</span><span class="p">,</span> <span class="s1">&#39;CIP&#39;</span><span class="p">,</span> <span class="s1">&#39;Dollar move&#39;</span><span class="p">,</span> <span class="s1">&#39;Risk Appetite&#39;</span><span class="p">,</span><span class="s1">&#39;Baseline&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="baseline-garch-model-fit-and-forecast">
+<h2>Baseline GARCH Model: Fit and Forecast<a class="headerlink" href="#baseline-garch-model-fit-and-forecast" title="Permalink to this heading">#</a></h2>
+<section id="specify-the-model">
+<h3>Specify the model<a class="headerlink" href="#specify-the-model" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dg</span> <span class="o">=</span> <span class="n">DistGARCH</span><span class="p">(</span><span class="n">depvar_str</span><span class="o">=</span><span class="s1">&#39;FX log returns&#39;</span><span class="p">,</span>
+               <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+               <span class="n">level_str</span><span class="o">=</span><span class="s1">&#39;FX level&#39;</span><span class="p">,</span> 
+               <span class="n">exog_l</span><span class="o">=</span><span class="n">baseline</span><span class="p">,</span> <span class="c1"># Defined above </span>
+               <span class="n">lags_l</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+               <span class="n">vol_model</span><span class="o">=</span><span class="n">GARCH</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+               <span class="c1"># ARCH(1,1), EGARCH(1,1,1), GARCH(1,1),</span>
+               <span class="c1"># EWMAVariance(None), RiskMetrics2006(),</span>
+               <span class="n">dist_family</span><span class="o">=</span><span class="n">Normal</span><span class="p">(),</span>
+               <span class="c1"># Normal(), StudentsT(), SkewStudent(), GeneralizedError()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-2-mexican-peso-against-us-dollar">
+<h3>Figure 2. Mexican Peso Against US Dollar<a class="headerlink" href="#figure-2-mexican-peso-against-us-dollar" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dg</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_description</span><span class="p">(</span><span class="n">title_level</span><span class="o">=</span><span class="s1">&#39;Historical FX level&#39;</span><span class="p">,</span>
+                    <span class="n">title_returns</span><span class="o">=</span><span class="s1">&#39;Historical FX returns&#39;</span><span class="p">,</span>
+                    <span class="n">title_density</span><span class="o">=</span><span class="s1">&#39;Historical FX returns distribution&#39;</span><span class="p">,</span>
+                    <span class="n">y_label_returns</span><span class="o">=</span><span class="s1">&#39;Bps&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">desc_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;descriptive_plot.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">desc_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bb509e7f87a735263c22f69b38f9d19f9f0faf6a13cbbb6bca27075136472144.png" src="../../_images/bb509e7f87a735263c22f69b38f9d19f9f0faf6a13cbbb6bca27075136472144.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="fit-the-model">
+<h2>Fit the Model<a class="headerlink" href="#fit-the-model" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the model</span>
+<span class="n">dgf</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        AR-X - GJR-GARCH Model Results                        
+==============================================================================
+Dep. Variable:         FX log returns   R-squared:                       0.279
+Mean Model:                      AR-X   Adj. R-squared:                  0.277
+Vol Model:                  GJR-GARCH   Log-Likelihood:               -30558.5
+Distribution:                  Normal   AIC:                           61145.0
+Method:            Maximum Likelihood   BIC:                           61238.0
+                                        No. Observations:                 5680
+Date:                Sat, Apr 15 2023   Df Residuals:                     5670
+Time:                        10:13:36   Df Model:                           10
+                                             Mean Model                                            
+===================================================================================================
+                                      coef    std err          t      P&gt;|t|        95.0% Conf. Int.
+---------------------------------------------------------------------------------------------------
+Const                              -5.1248      1.580     -3.243  1.184e-03       [ -8.222, -2.027]
+FX l...rns[1]                      -0.0839  1.493e-02     -5.624  1.869e-08    [ -0.113,-5.469e-02]
+Bid ask abs                       -53.8687     49.136     -1.096      0.273    [-1.502e+02, 42.437]
+Min max abs                        68.0834     18.264      3.728  1.932e-04     [ 32.287,1.039e+02]
+Forward points first difference    20.7775      2.411      8.618  6.785e-18       [ 16.052, 25.503]
+Interbank rate vs Libor            38.7427      6.567      5.900  3.645e-09       [ 25.871, 51.614]
+EURUSD log returns                 -0.1527  1.417e-02    -10.779  4.318e-27       [ -0.180, -0.125]
+VIX first diff                     15.0417      0.669     22.485 5.814e-112       [ 13.731, 16.353]
+Oil prices log returns             -0.0193  3.425e-03     -5.648  1.626e-08 [-2.605e-02,-1.263e-02]
+FX intervention dummy lag          -0.9542      4.814     -0.198      0.843       [-10.389,  8.481]
+                               Volatility Model                               
+==============================================================================
+                 coef    std err          t      P&gt;|t|        95.0% Conf. Int.
+------------------------------------------------------------------------------
+omega         30.7491     10.696      2.875  4.042e-03       [  9.786, 51.713]
+alpha[1]       0.1129  1.927e-02      5.860  4.630e-09     [7.513e-02,  0.151]
+gamma[1]      -0.0645  1.451e-02     -4.447  8.689e-06 [-9.295e-02,-3.608e-02]
+beta[1]        0.9147  1.562e-02     58.563      0.000       [  0.884,  0.945]
+==============================================================================
+
+Covariance estimator: robust
+</pre></div>
+</div>
+</div>
+</div>
+<section id="figure-3-conditional-fx-volatility-over-time">
+<h3>Figure 3. Conditional FX Volatility Over Time<a class="headerlink" href="#figure-3-conditional-fx-volatility-over-time" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_in_cond_vol</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1"># Save the figure</span>
+<span class="n">cv_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;conditional_vol_plot.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">cv_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5869abbd7adfccc3f7e13607bff16ec2aad3774acc470a2ec57b48626d2e0003.png" src="../../_images/5869abbd7adfccc3f7e13607bff16ec2aad3774acc470a2ec57b48626d2e0003.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_shocks_vol</span><span class="p">()</span>
+<span class="c1"># Save the figure</span>
+<span class="n">sv_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;shock_vol.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">sv_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4b8026824fc18f1efc983039b0990349ab47809c5ae3cb1d68c40bd6d82a995f.png" src="../../_images/4b8026824fc18f1efc983039b0990349ab47809c5ae3cb1d68c40bd6d82a995f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2500x1500 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="forecast-the-model">
+<h3>Forecast the model<a class="headerlink" href="#forecast-the-model" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forecast 2020</span>
+<span class="n">dgfor</span> <span class="o">=</span> <span class="n">dgf</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-4-out-of-sample-conditional-density-joyplot">
+<h3>Figure 4. Out-of-sample Conditional Density (Joyplot)<a class="headerlink" href="#figure-4-out-of-sample-conditional-density-joyplot" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_joyplot_out</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">label_drop</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="n">xlimits_t</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">joyplot_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;joyplot.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">joyplot_f</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6bd7bb868e0581a65a429ba556f6e3ba5a164c4e16593abe18c4d03eb998d52f.png" src="../../_images/6bd7bb868e0581a65a429ba556f6e3ba5a164c4e16593abe18c4d03eb998d52f.png" />
+</div>
+</div>
+</section>
+<section id="figure-5-out-of-sample-fan-chart">
+<h3>Figure 5. Out-of-Sample Fan Chart<a class="headerlink" href="#figure-5-out-of-sample-fan-chart" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_fan_chart</span><span class="p">(</span><span class="n">xticks_freq</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Fan chart of predictive FX log returns </span><span class="se">\n</span><span class="s1">&#39;</span>
+                     <span class="s1">&#39;(1, 5, 10, 25, 75, 90, 95th conditional quantiles)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pips&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">fanchart_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;fanchart.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fanchart_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4d7444816ce9bcea9a50aa5447fb333368db99742f0c77f9889b7f611493824d.png" src="../../_images/4d7444816ce9bcea9a50aa5447fb333368db99742f0c77f9889b7f611493824d.png" />
+</div>
+</div>
+</section>
+<section id="figure-6-probability-integral-transform-test">
+<h3>Figure 6. Probability Integral Transform Test<a class="headerlink" href="#figure-6-probability-integral-transform-test" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_pit</span><span class="p">()</span>
+<span class="c1"># Save the figure</span>
+<span class="n">pitchart_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;pitchart.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pitchart_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_qqplot_normalized_innovations</span><span class="p">()</span>
+<span class="c1"># Save the figure</span>
+<span class="n">qqchart_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;qqplot.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pitchart_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1cd5a2e6ea65b6fe1bcf2ce21f30acce0940ba1f7fcf75d3f42d6c2f971fbbaf.png" src="../../_images/1cd5a2e6ea65b6fe1bcf2ce21f30acce0940ba1f7fcf75d3f42d6c2f971fbbaf.png" />
+</div>
+</div>
+</section>
+<section id="figure-7-var-fx-interventions-rule-based-on-a-given-information-set">
+<h3>Figure 7. VaR FX Interventions Rule Based on a Given Information Set<a class="headerlink" href="#figure-7-var-fx-interventions-rule-based-on-a-given-information-set" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_pdf_rule</span><span class="p">(</span><span class="n">fdate</span><span class="o">=</span><span class="s1">&#39;2020-05-01&#39;</span><span class="p">,</span> <span class="n">q_low</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">q_high</span><span class="o">=</span><span class="mf">0.975</span><span class="p">,</span> 
+                    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Conditional Density and Intervention Rule Based on 2020-05-01 Information&#39;</span><span class="p">,</span> 
+                    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Density&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Bps&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">var_rule_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;var_rule.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">var_rule_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bcd6fc1783f71b4cb0a1c12fd04f396ebc2c1e9a8c6414e356c51a2389ac149b.png" src="../../_images/bcd6fc1783f71b4cb0a1c12fd04f396ebc2c1e9a8c6414e356c51a2389ac149b.png" />
+</div>
+</div>
+</section>
+<section id="figure-8-conditional-cdf-out-of-sample">
+<h3>Figure 8. Conditional CDF, Out-of-sample<a class="headerlink" href="#figure-8-conditional-cdf-out-of-sample" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_conditional_cdf</span><span class="p">(</span><span class="n">q_low</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">q_high</span><span class="o">=</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Quantiles&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">cond_cdf_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;conditional_cdf.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">cond_cdf_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e477614c165daca3ffa46dc7b3919f8e6cfe777f3d6a6878fbab90a16d41ce12.png" src="../../_images/e477614c165daca3ffa46dc7b3919f8e6cfe777f3d6a6878fbab90a16d41ce12.png" />
+</div>
+</div>
+</section>
+<section id="figure-9-conditional-var-exceedance-out-of-sample">
+<h3>Figure 9. Conditional VaR Exceedance, Out-of-Sample<a class="headerlink" href="#figure-9-conditional-var-exceedance-out-of-sample" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">dgfor</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_var_exceedance</span><span class="p">(</span><span class="n">qv_l</span><span class="o">=</span><span class="p">[</span><span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.975</span><span class="p">],</span> 
+                          <span class="n">title_1</span><span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Log Returns and Conditional VaR Exceedance at 5 Percent&#39;</span>
+                        <span class="s1">&#39; </span><span class="se">\n</span><span class="s1"> (green square: below VaR 2.5 percent, red dot: above VaR 97.5 percent)&#39;</span><span class="p">),</span>
+                          <span class="n">title_2</span><span class="o">=</span><span class="s1">&#39;Corresponding FX level&#39;</span><span class="p">,</span>
+                          <span class="n">swap_color</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">cond_exc_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;conditional_exceedance.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">cond_exc_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/87b2c69273a70c20fae10b4bd03ff01d4a73a17ffa40c6877a0146b401a880ec.png" src="../../_images/87b2c69273a70c20fae10b4bd03ff01d4a73a17ffa40c6877a0146b401a880ec.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="benchmarking-exercise">
+<h2>Benchmarking exercise<a class="headerlink" href="#benchmarking-exercise" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forecast over the Banco Mexico intervention period for benchmarking</span>
+<span class="n">intervention_dates_l</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;FX intervention dummy&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">index</span>
+<span class="n">dgmfor</span> <span class="o">=</span> <span class="n">dgf</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">intervention_dates_l</span><span class="p">)</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dgmfor</span><span class="o">.</span><span class="n">compute_pit</span><span class="p">()</span>
+
+<span class="c1"># Include the forecasted results within the original dataframe</span>
+<span class="n">dfxi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dgmfor</span><span class="o">.</span><span class="n">dfor</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+<span class="c1"># New variables</span>
+<span class="n">dfxi</span><span class="p">[</span><span class="s1">&#39;FXI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfxi</span><span class="p">[</span><span class="s1">&#39;sell_amount&#39;</span><span class="p">]</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cond_fxi</span> <span class="o">=</span> <span class="p">(</span><span class="n">dfxi</span><span class="p">[</span><span class="s1">&#39;FXI&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">dfxi</span><span class="p">[</span><span class="s1">&#39;FXI current rate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond_fxi</span><span class="p">,</span> <span class="s1">&#39;FXI current rate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond_fxi</span><span class="p">,</span> <span class="s1">&#39;FX level&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">dfxi</span><span class="p">[</span><span class="s1">&#39;FXI current logret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond_fxi</span><span class="p">,</span><span class="s1">&#39;FXI current logret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond_fxi</span><span class="p">,</span> <span class="s1">&#39;FX log returns&#39;</span><span class="p">]</span>
+
+<span class="n">dfxi</span><span class="p">[</span><span class="s1">&#39;FXI cdf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond_fxi</span><span class="p">,</span> <span class="s1">&#39;FXI cdf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond_fxi</span><span class="p">,</span> <span class="s1">&#39;pit&#39;</span><span class="p">]</span>
+
+<span class="c1"># Differentiate between intervention types</span>
+<span class="n">dmfxi</span> <span class="o">=</span> <span class="n">dfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">intervention_dates_l</span><span class="p">):</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">intervention_dates_l</span><span class="p">),</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">dfr</span> <span class="o">=</span> <span class="n">dmfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dmfxi</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;min price&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Rule</span>
+<span class="n">dfd</span> <span class="o">=</span> <span class="n">dmfxi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dmfxi</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;no min price&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Discretion</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="figure-10-rule-based-fx-interventions-on-the-mexican-peso-usd">
+<h3>Figure 10. Rule-based FX Interventions on the Mexican Peso/USD<a class="headerlink" href="#figure-10-rule-based-fx-interventions-on-the-mexican-peso-usd" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># With minimum price (== rule based)</span>
+<span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Log returns</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dmfxi</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dmfxi</span><span class="p">[</span><span class="s1">&#39;FX log returns&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#004C97&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dfr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dfr</span><span class="p">[</span><span class="s1">&#39;FXI current logret&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Log returns&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Level</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dmfxi</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dmfxi</span><span class="p">[</span><span class="s1">&#39;FX level&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#004C97&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dfr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dfr</span><span class="p">[</span><span class="s1">&#39;FXI current rate&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FX interventions and FX level (sell USD)&#39;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;FX level&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">bench_minprice_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;benchmark_minprice.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">bench_minprice_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5cbf01f4d94b4337b53f02d487d9efef03252d928e8a0f4669b97bf0aa190933.png" src="../../_images/5cbf01f4d94b4337b53f02d487d9efef03252d928e8a0f4669b97bf0aa190933.png" />
+</div>
+</div>
+</section>
+<section id="figure-11-conditional-cdf-and-rule-based-fx-interventions">
+<h3>Figure 11. Conditional CDF and Rule-based FX Interventions<a class="headerlink" href="#figure-11-conditional-cdf-and-rule-based-fx-interventions" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PLot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Local merge to have the same axis</span>
+<span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dmfxi</span><span class="p">[</span><span class="s1">&#39;pit&#39;</span><span class="p">],</span> <span class="n">dfr</span><span class="p">[</span><span class="s1">&#39;FXI cdf&#39;</span><span class="p">],</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Level plot</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">dr</span><span class="p">[</span><span class="s1">&#39;pit&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">dr</span><span class="p">[</span><span class="s1">&#39;FXI cdf&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Percentiles&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add the ticks, if needed</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span> <span class="c1"># Remove the standard y ticks</span>
+<span class="n">new_t_l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">new_ticks_l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ax1</span><span class="o">.</span><span class="n">get_yticks</span><span class="p">())</span> <span class="o">+</span> <span class="n">new_t_l</span><span class="p">)</span>
+<span class="n">extra_idx_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_ticks_l</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">new_t_l</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">new_ticks_l</span><span class="p">)</span> <span class="c1"># Add new ticks</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">bench_minprice_cdf_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;benchmark_minprice_cdf.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">bench_minprice_cdf_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/635f7d4a9675c6472586c788b59f14703a50fd6ba5a05e1f7fbc01f427faef05.png" src="../../_images/635f7d4a9675c6472586c788b59f14703a50fd6ba5a05e1f7fbc01f427faef05.png" />
+</div>
+</div>
+</section>
+<section id="figure-12-discretionary-fx-interventions-on-the-mexican-peso-usd">
+<h3>Figure 12. Discretionary FX Interventions on the Mexican Peso/USD<a class="headerlink" href="#figure-12-discretionary-fx-interventions-on-the-mexican-peso-usd" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Log returns</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dmfxi</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dmfxi</span><span class="p">[</span><span class="s1">&#39;FX log returns&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#004C97&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dfd</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dfd</span><span class="p">[</span><span class="s1">&#39;FXI current logret&#39;</span><span class="p">],</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Log returns&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Level</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dmfxi</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dmfxi</span><span class="p">[</span><span class="s1">&#39;FX level&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#004C97&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dfd</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dfd</span><span class="p">[</span><span class="s1">&#39;FXI current rate&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FX interventions and FX level (sell USD)&#39;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;FX level&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">bench_nominprice_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;benchmark_no_minprice.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">bench_nominprice_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/22b52b7e8a239d6590d164d400ed1c49d914c57f03eeced1c3dc820364fb600c.png" src="../../_images/22b52b7e8a239d6590d164d400ed1c49d914c57f03eeced1c3dc820364fb600c.png" />
+</div>
+</div>
+</section>
+<section id="figure-13-conditional-cdf-and-discretionary-fx-interventions">
+<h3>Figure 13. Conditional CDF and Discretionary FX Interventions<a class="headerlink" href="#figure-13-conditional-cdf-and-discretionary-fx-interventions" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local merge to have the same axis</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dmfxi</span><span class="p">[</span><span class="s1">&#39;pit&#39;</span><span class="p">],</span> <span class="n">dfd</span><span class="p">[</span><span class="s1">&#39;FXI cdf&#39;</span><span class="p">],</span>
+              <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Level plot</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dd</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">dd</span><span class="p">[</span><span class="s1">&#39;pit&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dd</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">dd</span><span class="p">[</span><span class="s1">&#39;FXI cdf&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Percentiles&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Add the ticks, if needed</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span> <span class="c1"># Remove the standard y ticks</span>
+<span class="n">new_t_l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">new_ticks_l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ax1</span><span class="o">.</span><span class="n">get_yticks</span><span class="p">())</span> <span class="o">+</span> <span class="n">new_t_l</span><span class="p">)</span>
+<span class="n">extra_idx_l</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_ticks_l</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">new_t_l</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">new_ticks_l</span><span class="p">)</span> <span class="c1"># Add new ticks</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">105</span><span class="p">)</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">bench_no_minprice_cdf_f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;benchmark_no_minprice_cdf.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">bench_no_minprice_cdf_f</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1b14701548adbcee50369ad0cbf84305c96d43a64023ac97ba80c8486fde70c9.png" src="../../_images/1b14701548adbcee50369ad0cbf84305c96d43a64023ac97ba80c8486fde70c9.png" />
+</div>
+</div>
+</section>
+<section id="optimize-model">
+<h3>Optimize Model<a class="headerlink" href="#optimize-model" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dgo</span>  <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_optim</span> <span class="o">=</span> <span class="n">dgo</span><span class="o">.</span><span class="n">optimize_mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizing the Mean model. step 1: exog_l
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 255/255 [00:21&lt;00:00, 11.97it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best Out-Of-Sample combination of exogenous variables: 
+Bid ask abs,Forward points first difference,EURUSD log returns,VIX first diff,Oil prices log returns,FX intervention dummy lag
+Optimizing the Mean model. step 2: number of lags
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 10/10 [00:00&lt;00:00, 11.14it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best Out-Of-Sample number of lags: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vol_dist_optimization</span> <span class="o">=</span> <span class="n">dgo</span><span class="o">.</span><span class="n">optimize_vol_distrib</span><span class="p">()</span>
+<span class="n">vol_dist_optimization</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 28/28 [03:17&lt;00:00,  7.04s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best Out-Of-Sample Volatility Model: RiskMetric
+Best Out-Of-Sample Distribution Family: SkewStudent
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>KS_normalized_innovations</th>
+      <th>KS_normalized_innovations_pvalues</th>
+      <th>KS_PIT_test</th>
+      <th>KS_PIT_test_pvalues</th>
+      <th>Rossi_Shekopysan_PIT_test_tails</th>
+      <th>...</th>
+      <th>Rossi_Shekopysan_PIT_test_right_tail</th>
+      <th>log_score</th>
+      <th>tails_log_score</th>
+      <th>left_tail_log_score</th>
+      <th>right_tail_log_score</th>
+    </tr>
+    <tr>
+      <th>volatility_model</th>
+      <th>distribution</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Constant</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-5.04257</td>
+      <td>-1.566547</td>
+      <td>-1.08566</td>
+      <td>-1.086617</td>
+    </tr>
+    <tr>
+      <th>ARCH</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-5.009953</td>
+      <td>-1.459077</td>
+      <td>-1.099263</td>
+      <td>-1.035228</td>
+    </tr>
+    <tr>
+      <th>RiskMetric</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.000547</td>
+      <td>False</td>
+      <td>0.000547</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.986837</td>
+      <td>-1.467944</td>
+      <td>-1.080434</td>
+      <td>-1.054001</td>
+    </tr>
+    <tr>
+      <th>GARCH</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.000742</td>
+      <td>False</td>
+      <td>0.000742</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.980809</td>
+      <td>-1.470709</td>
+      <td>-1.090697</td>
+      <td>-1.048915</td>
+    </tr>
+    <tr>
+      <th>GJR-GARCH</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.005783</td>
+      <td>False</td>
+      <td>0.005783</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.974227</td>
+      <td>-1.4876</td>
+      <td>-1.120022</td>
+      <td>-1.045556</td>
+    </tr>
+    <tr>
+      <th>EGARCH</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.000092</td>
+      <td>False</td>
+      <td>0.000092</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.97205</td>
+      <td>-1.485041</td>
+      <td>-1.122117</td>
+      <td>-1.034156</td>
+    </tr>
+    <tr>
+      <th>EWMA</th>
+      <th>Normal</th>
+      <td>False</td>
+      <td>0.024125</td>
+      <td>False</td>
+      <td>0.024125</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.95291</td>
+      <td>-1.506733</td>
+      <td>-1.110205</td>
+      <td>-1.078375</td>
+    </tr>
+    <tr>
+      <th>RiskMetric</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.010851</td>
+      <td>False</td>
+      <td>0.010851</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.879082</td>
+      <td>-1.604971</td>
+      <td>-1.190337</td>
+      <td>-1.133393</td>
+    </tr>
+    <tr>
+      <th>GJR-GARCH</th>
+      <th>SkewStudent</th>
+      <td>False</td>
+      <td>0.039789</td>
+      <td>False</td>
+      <td>0.039789</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.875905</td>
+      <td>-1.62644</td>
+      <td>-1.191692</td>
+      <td>-1.161776</td>
+    </tr>
+    <tr>
+      <th>EGARCH</th>
+      <th>SkewStudent</th>
+      <td>False</td>
+      <td>0.026603</td>
+      <td>False</td>
+      <td>0.026603</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.873035</td>
+      <td>-1.629643</td>
+      <td>-1.199987</td>
+      <td>-1.155391</td>
+    </tr>
+    <tr>
+      <th>GARCH</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.012535</td>
+      <td>False</td>
+      <td>0.012535</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.867998</td>
+      <td>-1.621192</td>
+      <td>-1.208556</td>
+      <td>-1.137135</td>
+    </tr>
+    <tr>
+      <th>GJR-GARCH</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.011123</td>
+      <td>False</td>
+      <td>0.011123</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.863588</td>
+      <td>-1.63355</td>
+      <td>-1.229413</td>
+      <td>-1.135201</td>
+    </tr>
+    <tr>
+      <th>EGARCH</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.008192</td>
+      <td>False</td>
+      <td>0.008192</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.861173</td>
+      <td>-1.631491</td>
+      <td>-1.229093</td>
+      <td>-1.128699</td>
+    </tr>
+    <tr>
+      <th>EWMA</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.004003</td>
+      <td>False</td>
+      <td>0.004003</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.856825</td>
+      <td>-1.639105</td>
+      <td>-1.215933</td>
+      <td>-1.155787</td>
+    </tr>
+    <tr>
+      <th>RiskMetric</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.000802</td>
+      <td>False</td>
+      <td>0.000802</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.804087</td>
+      <td>-1.632333</td>
+      <td>-1.214081</td>
+      <td>-1.14706</td>
+    </tr>
+    <tr>
+      <th>ARCH</th>
+      <th>SkewStudent</th>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.801348</td>
+      <td>-1.741063</td>
+      <td>-1.264074</td>
+      <td>-1.26724</td>
+    </tr>
+    <tr>
+      <th>GARCH</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.002497</td>
+      <td>False</td>
+      <td>0.002497</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.796392</td>
+      <td>-1.640416</td>
+      <td>-1.22777</td>
+      <td>-1.145731</td>
+    </tr>
+    <tr>
+      <th>ARCH</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.793713</td>
+      <td>-1.743412</td>
+      <td>-1.307338</td>
+      <td>-1.226357</td>
+    </tr>
+    <tr>
+      <th>GJR-GARCH</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.002383</td>
+      <td>False</td>
+      <td>0.002383</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.793194</td>
+      <td>-1.652802</td>
+      <td>-1.245893</td>
+      <td>-1.146811</td>
+    </tr>
+    <tr>
+      <th>EGARCH</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.000739</td>
+      <td>False</td>
+      <td>0.000739</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.791681</td>
+      <td>-1.649599</td>
+      <td>-1.24606</td>
+      <td>-1.138265</td>
+    </tr>
+    <tr>
+      <th>EWMA</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.000058</td>
+      <td>False</td>
+      <td>0.000058</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.773021</td>
+      <td>-1.670509</td>
+      <td>-1.243921</td>
+      <td>-1.172531</td>
+    </tr>
+    <tr>
+      <th>Constant</th>
+      <th>StudentT</th>
+      <td>False</td>
+      <td>0.02714</td>
+      <td>False</td>
+      <td>0.02714</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.76081</td>
+      <td>-1.840813</td>
+      <td>-1.32814</td>
+      <td>-1.263373</td>
+    </tr>
+    <tr>
+      <th>ARCH</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.651161</td>
+      <td>-1.798946</td>
+      <td>-1.345029</td>
+      <td>-1.263181</td>
+    </tr>
+    <tr>
+      <th>Constant</th>
+      <th>GeneralizedError</th>
+      <td>False</td>
+      <td>0.00069</td>
+      <td>False</td>
+      <td>0.00069</td>
+      <td>False</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.58129</td>
+      <td>-1.877664</td>
+      <td>-1.350475</td>
+      <td>-1.290213</td>
+    </tr>
+    <tr>
+      <th>RiskMetric</th>
+      <th>SkewStudent</th>
+      <td>True</td>
+      <td>0.175627</td>
+      <td>True</td>
+      <td>0.175627</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.891099</td>
+      <td>-1.596891</td>
+      <td>-1.15392</td>
+      <td>-1.15908</td>
+    </tr>
+    <tr>
+      <th>GARCH</th>
+      <th>SkewStudent</th>
+      <td>True</td>
+      <td>0.207382</td>
+      <td>True</td>
+      <td>0.207382</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.880204</td>
+      <td>-1.611642</td>
+      <td>-1.170178</td>
+      <td>-1.162337</td>
+    </tr>
+    <tr>
+      <th>EWMA</th>
+      <th>SkewStudent</th>
+      <td>True</td>
+      <td>0.154791</td>
+      <td>True</td>
+      <td>0.154791</td>
+      <td>True</td>
+      <td>...</td>
+      <td>False</td>
+      <td>-4.867917</td>
+      <td>-1.629429</td>
+      <td>-1.177134</td>
+      <td>-1.180854</td>
+    </tr>
+    <tr>
+      <th>Constant</th>
+      <th>SkewStudent</th>
+      <td>True</td>
+      <td>0.954117</td>
+      <td>True</td>
+      <td>0.954117</td>
+      <td>True</td>
+      <td>...</td>
+      <td>True</td>
+      <td>-4.764402</td>
+      <td>-1.837485</td>
+      <td>-1.306421</td>
+      <td>-1.27976</td>
+    </tr>
+  </tbody>
+</table>
+<p>28 rows × 11 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params_finetuning</span> <span class="o">=</span> <span class="n">dgo</span><span class="o">.</span><span class="n">fine_tune_model</span><span class="p">()</span>
+<span class="n">params_finetuning</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fine Tune the best model
+exog_l = [&#39;Bid ask abs&#39;, &#39;Forward points first difference&#39;, &#39;EURUSD log returns&#39;, &#39;VIX first diff&#39;, &#39;Oil prices log returns&#39;, &#39;FX intervention dummy lag&#39;]
+lags = 0
+volatility model = RiskMetric
+distribution family = SkewStudent
+Stabilize Parameters with ZigZag method ...
+Converged !
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">iteration_0</th>
+      <th colspan="2" halign="left">iteration_1</th>
+      <th colspan="2" halign="left">iteration_2</th>
+      <th colspan="2" halign="left">iteration_3</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>params</th>
+      <th>pvalues</th>
+      <th>params</th>
+      <th>pvalues</th>
+      <th>params</th>
+      <th>pvalues</th>
+      <th>params</th>
+      <th>pvalues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Const</th>
+      <td>-1.216365</td>
+      <td>2.309328e-01</td>
+      <td>-0.607584</td>
+      <td>4.481975e-01</td>
+      <td>-0.608573</td>
+      <td>4.475783e-01</td>
+      <td>-0.607069</td>
+      <td>4.486395e-01</td>
+    </tr>
+    <tr>
+      <th>Bid ask abs</th>
+      <td>179.577584</td>
+      <td>1.419435e-03</td>
+      <td>130.946085</td>
+      <td>2.341489e-03</td>
+      <td>133.040555</td>
+      <td>2.061630e-03</td>
+      <td>133.283738</td>
+      <td>2.026134e-03</td>
+    </tr>
+    <tr>
+      <th>Forward points first difference</th>
+      <td>29.503987</td>
+      <td>4.509421e-11</td>
+      <td>25.199999</td>
+      <td>2.574928e-24</td>
+      <td>24.954502</td>
+      <td>1.246611e-23</td>
+      <td>24.939480</td>
+      <td>1.451601e-23</td>
+    </tr>
+    <tr>
+      <th>EURUSD log returns</th>
+      <td>-0.216986</td>
+      <td>6.049060e-35</td>
+      <td>-0.160931</td>
+      <td>1.556255e-30</td>
+      <td>-0.152832</td>
+      <td>6.030364e-28</td>
+      <td>-0.151594</td>
+      <td>1.419340e-27</td>
+    </tr>
+    <tr>
+      <th>VIX first diff</th>
+      <td>16.435769</td>
+      <td>2.246135e-62</td>
+      <td>16.174239</td>
+      <td>2.540096e-133</td>
+      <td>16.057678</td>
+      <td>1.592706e-135</td>
+      <td>16.032580</td>
+      <td>5.843260e-136</td>
+    </tr>
+    <tr>
+      <th>Oil prices log returns</th>
+      <td>-0.021753</td>
+      <td>9.899393e-06</td>
+      <td>-0.022793</td>
+      <td>2.262161e-11</td>
+      <td>-0.022642</td>
+      <td>2.016052e-11</td>
+      <td>-0.022590</td>
+      <td>2.084256e-11</td>
+    </tr>
+    <tr>
+      <th>FX intervention dummy lag</th>
+      <td>-7.435743</td>
+      <td>1.756491e-01</td>
+      <td>2.039140</td>
+      <td>6.738948e-01</td>
+      <td>1.754372</td>
+      <td>7.209052e-01</td>
+      <td>1.741334</td>
+      <td>7.228677e-01</td>
+    </tr>
+    <tr>
+      <th>eta</th>
+      <td>8.396661</td>
+      <td>8.149240e-27</td>
+      <td>8.324480</td>
+      <td>2.356683e-27</td>
+      <td>8.332597</td>
+      <td>2.653405e-27</td>
+      <td>8.334466</td>
+      <td>2.729595e-27</td>
+    </tr>
+    <tr>
+      <th>lambda</th>
+      <td>0.097658</td>
+      <td>1.369063e-07</td>
+      <td>0.101543</td>
+      <td>7.398261e-08</td>
+      <td>0.102415</td>
+      <td>5.931720e-08</td>
+      <td>0.102566</td>
+      <td>5.474931e-08</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_forecaster</span> <span class="o">=</span> <span class="n">dgo</span><span class="o">.</span><span class="n">final_model</span><span class="o">.</span><span class="n">forecast</span><span class="p">()</span>
+<span class="n">final_forecaster</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot_pdf_rule</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model is fixed and won&#39;t be fitted again. The parameter provided will be used
+                           AR-X - RiskMetrics2006 Model Results                          
+=========================================================================================
+Dep. Variable:                    FX log returns   R-squared:                          --
+Mean Model:                                 AR-X   Adj. R-squared:                     --
+Vol Model:                       RiskMetrics2006   Log-Likelihood:               -30537.2
+Distribution:      Standardized Skew Student&#39;s t   AIC:                           61092.4
+Method:                User-specified Parameters   BIC:                           61152.2
+                                                   No. Observations:                 5681
+Date:                           Sat, Apr 15 2023                                         
+Time:                                   10:18:55                                         
+                Mean Model                
+==========================================
+                                      coef
+------------------------------------------
+Const                              -0.6071
+Bid ask abs                       133.2837
+Forward points first difference    24.9395
+EURUSD log returns                 -0.1516
+VIX first diff                     16.0326
+Oil prices log returns             -0.0226
+FX intervention dummy lag           1.7413
+     Distribution    
+=====================
+                 coef
+---------------------
+eta            8.3345
+lambda         0.1026
+=====================
+
+Results generated with user-specified parameters.
+Std. errors not available when the model is not estimated, 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Conditional density and intervention rule based on 2020-10-14 information&#39;}, xlabel=&#39;bps&#39;, ylabel=&#39;density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5ba5cba177900762d7807f12500fe3fe70d3d08cfad44c8eb7f4a9b4c7188e5b.png" src="../../_images/5ba5cba177900762d7807f12500fe3fe70d3d08cfad44c8eb7f4a9b4c7188e5b.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sti"
+        },
+        kernelOptions: {
+            name: "sti",
+            path: "./docs/IMF-MODEL"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sti'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../fxi/theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Key-Statistical-Concepts/Lecture-content.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Statistical Analysis with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preamble">Preamble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-1-conditional-var-and-density-diagram">Figure 1: Conditional VaR and density (diagram)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-garch-model-for-different-specifications">Fit the GARCH model for different specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-garch-model-fit-and-forecast">Baseline GARCH Model: Fit and Forecast</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-model">Specify the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-mexican-peso-against-us-dollar">Figure 2. Mexican Peso Against US Dollar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-model">Fit the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-3-conditional-fx-volatility-over-time">Figure 3. Conditional FX Volatility Over Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forecast-the-model">Forecast the model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-4-out-of-sample-conditional-density-joyplot">Figure 4. Out-of-sample Conditional Density (Joyplot)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-5-out-of-sample-fan-chart">Figure 5. Out-of-Sample Fan Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-6-probability-integral-transform-test">Figure 6. Probability Integral Transform Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-7-var-fx-interventions-rule-based-on-a-given-information-set">Figure 7. VaR FX Interventions Rule Based on a Given Information Set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-8-conditional-cdf-out-of-sample">Figure 8. Conditional CDF, Out-of-sample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-9-conditional-var-exceedance-out-of-sample">Figure 9. Conditional VaR Exceedance, Out-of-Sample</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-exercise">Benchmarking exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-10-rule-based-fx-interventions-on-the-mexican-peso-usd">Figure 10. Rule-based FX Interventions on the Mexican Peso/USD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-11-conditional-cdf-and-rule-based-fx-interventions">Figure 11. Conditional CDF and Rule-based FX Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-12-discretionary-fx-interventions-on-the-mexican-peso-usd">Figure 12. Discretionary FX Interventions on the Mexican Peso/USD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-13-conditional-cdf-and-discretionary-fx-interventions">Figure 13. Conditional CDF and Discretionary FX Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-model">Optimize Model</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Romain Lafarguette and Amine Raboun
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
