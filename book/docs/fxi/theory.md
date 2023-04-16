@@ -21,6 +21,8 @@ This course covers the fundamentals of foreign exchange interventions. It presen
 
 ## Conceptual Framework
 
+- Monetary Frameworks and the Importance of FX policies
+
 - Goals and Intermediate Objectives
 
 - Monetary Frameworks
@@ -45,19 +47,6 @@ This course covers the fundamentals of foreign exchange interventions. It presen
 - FX Interventions and Exchange Rate Management
 
 
-## International Examples
-
-- Mexico
-
-- Brazil
-
-- Colombia
-
-- Peru
-
-- Thailand
-
-- Philippines
 
 
 

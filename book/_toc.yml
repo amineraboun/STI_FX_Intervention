@@ -1,6 +1,6 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-# Time-stamp: "2023-04-15 15:31:35 A13258Q"
+# Time-stamp: "Sunday 16 April 2023, Romain Lafarguette"
 format: jb-book
 
 # index page
@@ -10,6 +10,7 @@ parts:
  - caption: Foreign Exchange Interventions
    chapters:
    - file: docs/fxi/theory.md
+   - file: docs/fxi/practice.md
 
  - caption: VaR FXI Python Package
    chapters:
