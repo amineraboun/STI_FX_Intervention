@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.2)  16 APR 2023 21:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.2)  16 APR 2023 22:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1321,12 +1321,23 @@ Package pdftex.def Info: img/imf_logo.pdf  used on input line 106.
  [1
 
 {C:/Users/A13258/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/imf_l
-ogo.pdf>] [2
+ogo.pdf>]
+<img/website.PNG, id=32, 937.5025pt x 639.89063pt>
+File: img/website.PNG Graphic file (type png)
+<use img/website.PNG>
+Package pdftex.def Info: img/website.PNG  used on input line 119.
+(pdftex.def)             Requested size: 300.13567pt x 204.85995pt.
+ [2
 
-] [3
+ <./img/website.PNG>] [3
 
-]
-[4
+] [4
+
+] [5
+
+] [6
+
+] [7
 
 ]
 \tf@nav=\write6
@@ -1344,22 +1355,23 @@ Package rerunfilecheck Info: File `introduction_sti_course.out' has not changed
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24964 strings out of 476334
- 481225 string characters out of 5798287
- 1861382 words of memory out of 5000000
- 44820 multiletter control sequences out of 15000+600000
- 565037 words of font info for 77 fonts, out of 8000000 for 9000
+ 24996 strings out of 476334
+ 481737 string characters out of 5798287
+ 1863382 words of memory out of 5000000
+ 44843 multiletter control sequences out of 15000+600000
+ 571027 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,400b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\A13258\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\
-mathb6.pk>{C:/Users/A13258/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/A13258
-/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/A13258/MiKTeX/fonts/type1/pub
-lic/lm/lmr12.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Use
-rs/A13258/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/A13258/MiKTeX/fonts/t
-ype1/public/lm/lmri8.pfb>
-Output written on introduction_sti_course.pdf (4 pages, 168371 bytes).
+{C:/Users/A13258/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <C:\Users\A13258\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb6.pk><C:/Users/A13258
+/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/A13258/MiKTeX/fonts/type1/pu
+blic/lm/lmr10.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/U
+sers/A13258/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/A13258/MiKTeX/fonts
+/type1/public/lm/lmr9.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmri8.p
+fb>
+Output written on introduction_sti_course.pdf (7 pages, 569569 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 54 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 59 words of extra memory for PDF output out of 10000 (max. 10000000)
 
