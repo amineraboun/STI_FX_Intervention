@@ -1,4 +1,4 @@
-# 1 - General Introduction to Python
+# General Introduction to Python
 
 Python is a high-level, interpreted programming language that is used in a wide variety of applications, from web development to scientific computing. It was first released in 1991 by **Guido van Rossum** and has since become one of the most popular programming languages in the world.
 

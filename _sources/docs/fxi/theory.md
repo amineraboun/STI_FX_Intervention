@@ -1,6 +1,6 @@
 # Theory
 
-[Slides](./docs/Slides/fxi_theory_practice/fxi_theory_practice.pdf)
+[More details in the slides](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
 This course covers the fundamentals of foreign exchange interventions. It presents:
 
