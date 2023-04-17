@@ -1,0 +1,12 @@
+- improve the CB balance sheet diagram
+	- add central bank securities (sterilization bills)
+	- add RRR and Excess reserves
+        - Add repo
+
+-  Play a few cases on the impact of FXI on liquidity management and the different forms of sterilization with the balance sheet diagrams
+
+- Remove some of Dominguez slides on AEs FXI and (old) theoretical considerations
+
+- Introduce better the studies on effectiveness
+
+- Insist more on "a lot of FX reserves is not necessarily good"

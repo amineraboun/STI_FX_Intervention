@@ -1,4 +1,4 @@
-% Time-stamp: <2023-04-13 20:51:58 A13258Q>
+% Time-stamp: <Monday 17 April 2023, Romain Lafarguette>
 % Amine Raboun 2023, https://amineraboun.github.io/
 % Romain Lafarguette 2023, https://romainlafarguette.github.io/
 
@@ -120,11 +120,9 @@
   \frametitle{Resources}
   This course is based on several free and open-source references available on line
   \begin{wideitemize}
-    \item Rob Hyndman handbook: \href{https://otexts.com/fpp3/}{\beamergotobutton{https://otexts.com/fpp3/}} 
-    \item Christophe Hurlin's slides: \href{https://sites.google.com/view/christophe-hurlin/teaching-resources}{\beamergotobutton{https://sites.google.com/view/christophe-hurlin/teaching-resources}}
-    \item At the introductory level: \emph{Basic Econometrics} (2008) by Damodar Gujarati and Dawn Porter's. They have 5 chapters on time series       
-    \item A good book on time series analysis for finance: \emph{The Econometric Modelling of Financial Time Series} (2008), by Terence C. Mills and Raphael N. Markellos
-    \item The main reference is Hamilton, but is difficult to read...: \emph{Time Series Analysis} (1994), by James Hamilton 
+  \item Mostly Harmless Econometrics: \href{https://www.mostlyharmlesseconometrics.com/}{\beamergotobutton{Link}}
+    \item Wasserman All of Statistics \href{https://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/1441923225}{\beamergotobutton{Link}}
+    \item Greene Econometrics \href{https://www.amazon.com/Econometric-Analysis-8th-William-Greene/dp/0134461363/ref=dp_ob_title_bk}{\beamergotobutton{Link}}
   \end{wideitemize}
 \end{frame}
 
@@ -385,6 +383,11 @@ F_X(x0) \equiv \mathbb{P}[X \leq x0] = \int_{-infty}^{x0} f_X(h) dh
     \makebox[\linewidth]{\includegraphics[width=0.85\paperwidth]{img/pdf and cdf.png}}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Quantiles}
+  \makebox[\linewidth]{\includegraphics[width=0.85\paperwidth]{img/quantiles.PNG}}
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Moments: Overview}
@@ -438,6 +441,65 @@ F_X(x0) \equiv \mathbb{P}[X \leq x0] = \int_{-infty}^{x0} f_X(h) dh
 \end{frame}
 
 \section{Statistical Inference}
+
+\begin{frame}
+  \frametitle{Statistical Inference from a Frequentist Point of View}
+  \begin{wideitemize}
+    \item Postulate a certain simplified representation of the world
+    \item Postulate that the data that we observe follows a certain data generating process and an error term between the model and the reality: $Y = f(X) + \epsilon$
+    \item Statistical inference is about estimating the relationship $\hat{f}$ such that it minimizes the error term
+      \begin{itemize}
+      \item For instance, in the linear model $Y = \alpha + \beta X + \epsilon$
+      \item Estimate the coefficients $\hat{\alpha}, \hat{\beta}$
+      \end{itemize}
+
+      
+  \end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Correlation is not Causation !}
+  \makebox[\linewidth]{\includegraphics[height=0.7\paperheight]{img/correlation_causation.PNG}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Spurious Relationship}
+  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/spurious_regression.PNG}}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Causality}
+
+  \begin{wideitemize}
+  \item To identify causality, more advanced approaches than standard regressions are needed
+  \item Need to be able to isolate the effect and build a "counterfactual": what would have happened if everything else would have been the same EXCEPT the variable I am interested in?
+  \item Need different set-up, from the "cleanest" to the more endogenous one:
+    \begin{enumerate}
+    \item Randomized control experiment (in a lab/on the field)
+    \item Natural experiment (e.g. Cuba and Mariel)
+    \item High frequency identification (FXI on Russian data)
+    \item Regression discontinuity (law of one price at the Canada/US border)
+    \item Instrumental variables (storms and fish price)
+    \item Synthetic matching
+    \end{enumerate}
+    
+  \end{wideitemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Counterfactual Analysis}
+  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/counterfactual_analysis.PNG}}
+\end{frame}
+
+
+
+
 \begin{frame}
   \frametitle{Estimator}
 
@@ -483,6 +545,7 @@ F_X(x0) \equiv \mathbb{P}[X \leq x0] = \int_{-infty}^{x0} f_X(h) dh
   \end{frame}
 
 
+  
   \begin{frame}
     \frametitle{Point Estimate}
     \begin{block}{Definition: Estimate}
@@ -499,6 +562,102 @@ F_X(x0) \equiv \mathbb{P}[X \leq x0] = \int_{-infty}^{x0} f_X(h) dh
       \end{itemize}
     \end{exampleblock}    
   \end{frame}
+
+
+\begin{frame}
+  \frametitle{Simpson Paradox}
+  \makebox[\linewidth]{\includegraphics[height=0.7\paperheight]{img/simpson_paradox.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{Lafarguette et al. (2019)}}}
+\end{frame}
+
+  
+
+  \begin{frame}
+    \frametitle{Density Estimate}
+    \begin{wideitemize}
+    \item Don't model only a point (the mean often), but the entire conditional distribution
+    \item Interested in the \textbf{conditional future distribution} $P[Y_{t+h} | X_t]$
+    \item Critical to estimate risks, incorporate variance, etc.
+    \item Assume to use specialized models, that are going to forecast different points of the distribution
+    \end{wideitemize}
+  \end{frame}
+
+
+\begin{frame}
+  \frametitle{Density Modeling}
+  \makebox[\linewidth]{\includegraphics[width=0.8\paperwidth]{img/gar_density.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{Lafarguette et al. (2019)}}}
+\end{frame}
+
+  
+
+\begin{frame}
+  \frametitle{One-Quarter Ahead Conditional Distribution of GDP}
+  \makebox[\linewidth]{\includegraphics[width=0.8\paperwidth]{img/density_forecast.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{Lafarguette et al. (2019)}}}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Linear Model and Non-Linear Models}
+
+  \begin{itemize}
+  \item A linear model represents the dependent variable as a linear combination (a sum) of independent variables: $Y = \alpha + \beta_1 \times X_1 + \beta_2 \times X_2 + \dots \beta_3 X_3 + epsilon$
+    \begin{itemize}
+    \item Importantly, in such models, the \textbf{marginal effect} of $X_i$ on $Y$ is a constant: $\frac{\partial Y}{\partial X_i} = \beta_i$
+    \item The representation of the model in a 2D is a straight, hence the name
+    \end{itemize}
+  \item To rephrase Tolstoy, \emph{"All linear models are alike, each non-linear model is different in its own way"}
+  \item That being said, there are three main forms of non-linearities common in econometrics:
+    \begin{enumerate}
+    \item In the relationship between $X$ and $Y$: $Y = f(X)$ where $f$ is non-linear, therefore the marginal effect is non constant. For instance, $Y = \alpha + \beta X^2 + \epsilon \ \leftrightarrow \ \frac{\partial Y}{\partial X} = 2 \beta \times X$ (depends on $X$)
+    \item On the distribution of $Y$, typically, on the quantiles: $Q(Y, q) = \alpha^q + \beta^q X$
+    \item Over the horizon, where the marginal effect varies according to a term structure: $Y_{t+h} = \alpha_h + \beta_h X_t + \epsilon_{t+h}$ (works also for time-varying coefficients)
+    \end{enumerate}
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Linearities and Non-Linearities}
+  \makebox[\linewidth]{\includegraphics[width=0.8\paperwidth]{img/non_linearities_statistics.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{https://bradleyboehmke.github.io/HOML/mars.html}}}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Non-Linearities in the Distribution of Y}
+  \makebox[\linewidth]{\includegraphics[height=0.8\paperheight]{img/qreg.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{SAS}}}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Differentiated Impact}
+  \makebox[\linewidth]{\includegraphics[width=0.8\paperwidth]{img/gar_comparative_static.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{Lafarguette et al. (2019)}}}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Term Structure}
+  \makebox[\linewidth]{\includegraphics[width=0.7\paperwidth]{img/gar_term_structure.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize \emph{Lafarguette et al. (2019)}}}
+\end{frame}
+
+
+
+
+
+
+
+% GaR chart on density correspondence
+% Counterfactual
+% Variance
+
 
 \end{document}
 
