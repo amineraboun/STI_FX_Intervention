@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/Lecture-content';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="01 - Volatility prediction: Simulated Data" href="workshop/01-GARCH%20Model.html" />
+    <link rel="next" title="01- Usage of the ARCH package" href="workshop/01-Introduction%20to%20arch%20package.html" />
     <link rel="prev" title="13: VAR Model" href="../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -250,12 +250,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="workshop/01-GARCH%20Model.html">01 - Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="workshop/02-GARCH%20Stock%20Modeling.html">02- Volatility Modleing S&amp;P 500 Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="workshop/03-Conditional%20Value%20at%20Risk.html">03- Conditional Value at Risk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/02-Volatility%20Modeling%20synthetic%20data.html">02- Volatility prediction: Simulated Data</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="workshop/04-univariate_forecasting_with_exogenous_variables.html">04- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/05-univariate_forecasting_with_exogenous_variables.html">05- Forecasting with Exogenous Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workshop/univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
 </ul>
 </li>
@@ -489,7 +494,10 @@ document.write(`
 <p>GARCH (Generalized Autoregressive Conditional Heteroskedasticity) models are a class of time series models that are widely used in finance for modeling volatility. These models are able to capture the volatility clustering and asymmetry that is commonly observed in financial time series data. By modeling the conditional variance of a financial time series, GARCH models can be used to estimate the risk associated with different financial instruments.</p>
 <p>During the course, we will delve into the specifics of GARCH models, including the different types of models that are commonly used, such as GARCH(1,1) and GARCH-M models. We will also explore the process of estimating the parameters of these models using maximum likelihood estimation (MLE).</p>
 <p>We will use Python to implement GARCH models and estimate the volatility of financial time series. We will also use various statistical measures to evaluate the performance of these models, such as AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion).</p>
-<p>By the end of this course, you will have a strong understanding of how GARCH models work, how to implement them in Python, and how to evaluate their performance for modeling financial time series data.</p>
+<p>By the end of this course, you will have a strong understanding of how GARCH models work, how to implement them in Python, and how to evaluate their performance for modeling financial time series data.
+<a>
+https://github.com/amineraboun/STI_FX_Intervention/raw/main/book/docs/Slides/final/L6_Volatility_modeling.pdf
+</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -535,11 +543,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="workshop/01-GARCH%20Model.html"
+       href="workshop/01-Introduction%20to%20arch%20package.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">01 - Volatility prediction: Simulated Data</p>
+        <p class="prev-next-title">01- Usage of the ARCH package</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

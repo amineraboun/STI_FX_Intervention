@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>01 - Volatility prediction: Simulated Data &#8212; IMF - STI Risk Based Framework</title>
+    <title>02- Volatility prediction: Simulated Data &#8212; IMF - STI Risk Based Framework</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/01-GARCH Model';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/02-Volatility Modeling synthetic data';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="02- Volatility Modleing S&amp;P 500 Index" href="02-GARCH%20Stock%20Modeling.html" />
-    <link rel="prev" title="Advanced Volatilty Modelling with Python" href="../Lecture-content.html" />
+    <link rel="next" title="03- Volatility Modleing S&amp;P 500 Index" href="03-GARCH%20Stock%20Modeling.html" />
+    <link rel="prev" title="01- Usage of the ARCH package" href="01-Introduction%20to%20arch%20package.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -252,12 +252,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">01 - Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="02-GARCH%20Stock%20Modeling.html">02- Volatility Modleing S&amp;P 500 Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03-Conditional%20Value%20at%20Risk.html">03- Conditional Value at Risk</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">02- Volatility prediction: Simulated Data</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="04-univariate_forecasting_with_exogenous_variables.html">04- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="05-univariate_forecasting_with_exogenous_variables.html">05- Forecasting with Exogenous Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
 </ul>
 </li>
@@ -344,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/01-GARCH Model.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/02-Volatility Modeling synthetic data.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +397,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/01-GARCH Model.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/02-Volatility Modeling synthetic data.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/01-GARCH Model.ipynb" target="_blank"
+      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/02-Volatility Modeling synthetic data.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -504,7 +509,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>01 - Volatility prediction: Simulated Data</h1>
+    <h1>02- Volatility prediction: Simulated Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -514,15 +519,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">01 - Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">02- Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-the-time-series">Simulate the time series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-plot">PACF Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-and-acf-plots">PACF and ACF Plots</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-garch-model">Fit the GARCH Model</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-test-models">Fit and Test models</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-the-training-set-from-the-testing-set">Separate the training set from the testing set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-best-garch-model-garch-2-2">Fit the best GARCH Model= GARCH (2,2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-mean">Predict the mean ?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-forecast-origin">Rolling Forecast Origin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-1">Exercises 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises 1:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -539,13 +553,15 @@ document.write(`
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">gauss</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">arch.univariate</span> <span class="kn">import</span> <span class="n">arch_model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arch.univariate</span> <span class="kn">import</span> <span class="n">arch_model</span>
 <span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">gauss</span><span class="p">,</span> <span class="n">seed</span>
+<span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
@@ -553,7 +569,7 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="volatility-prediction-simulated-data">
-<h1>01 - Volatility prediction: Simulated Data<a class="headerlink" href="#volatility-prediction-simulated-data" title="Permalink to this heading">#</a></h1>
+<h1>02- Volatility prediction: Simulated Data<a class="headerlink" href="#volatility-prediction-simulated-data" title="Permalink to this heading">#</a></h1>
 <div class="math notranslate nohighlight">
 \[a_t = \varepsilon_t \sigma_t \]</div>
 <div class="math notranslate nohighlight">
@@ -612,47 +628,28 @@ a_0, a_1 \sim \mathcal{N}(0,1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8ed51e07c8b94e638ae0b5a1217be56d20f9f271b83b99400170ef9dbb841bcc.png" src="../../../_images/8ed51e07c8b94e638ae0b5a1217be56d20f9f271b83b99400170ef9dbb841bcc.png" />
+<img alt="../../../_images/af4eac3366adfc4e813e34f2f8db7f44fc782d7c34533810bf42152ed83942d1.png" src="../../../_images/af4eac3366adfc4e813e34f2f8db7f44fc782d7c34533810bf42152ed83942d1.png" />
 </div>
 </div>
 </section>
-<section id="pacf-plot">
-<h2>PACF Plot<a class="headerlink" href="#pacf-plot" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plot_pacf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">series</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">plot_pacf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">series</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/1e892a66600ffd3c26049025fc516e192f6b021b59fcc62376bdeb7b7dafdbc1.png" src="../../../_images/1e892a66600ffd3c26049025fc516e192f6b021b59fcc62376bdeb7b7dafdbc1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plot_acf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">series</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">plot_acf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">series</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/75488ebfa3573e3a2e694d4cc6b84d5f70edb88205d683afde0d389de70d65cd.png" src="../../../_images/75488ebfa3573e3a2e694d4cc6b84d5f70edb88205d683afde0d389de70d65cd.png" />
-</div>
-</div>
-<p>ARCH effect:</p>
+<section id="pacf-and-acf-plots">
+<h2>PACF and ACF Plots<a class="headerlink" href="#pacf-and-acf-plots" title="Permalink to this heading">#</a></h2>
+<p>Exercise 1:</p>
 <ul class="simple">
-<li><p>No autocorrelation between <span class="math notranslate nohighlight">\(a_t\)</span> and <span class="math notranslate nohighlight">\(a_{t-k}\)</span> <span class="math notranslate nohighlight">\(\forall k&gt;0\)</span></p></li>
-<li><p>Auto-correlation of squared returns</p></li>
+<li><p>Plot the PACF of the innovation</p></li>
+<li><p>Plot the PACF of squared innovation</p></li>
+<li><p>What are the two properties you are seeing in the graphs</p></li>
+</ul>
+<p>Exercise 2:</p>
+<ul class="simple">
+<li><p>Do the same for the ACF</p></li>
 </ul>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="fit-the-garch-model">
-<h1>Fit the GARCH Model<a class="headerlink" href="#fit-the-garch-model" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="fit-and-test-models">
+<h1>Fit and Test models<a class="headerlink" href="#fit-and-test-models" title="Permalink to this heading">#</a></h1>
+<section id="separate-the-training-set-from-the-testing-set">
+<h2>Separate the training set from the testing set<a class="headerlink" href="#separate-the-training-set-from-the-testing-set" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">series</span><span class="p">[:</span><span class="o">-</span><span class="n">test_size</span><span class="p">],</span> <span class="n">series</span><span class="p">[</span><span class="o">-</span><span class="n">test_size</span><span class="p">:]</span>
@@ -660,6 +657,9 @@ a_0, a_1 \sim \mathcal{N}(0,1)
 </div>
 </div>
 </div>
+</section>
+<section id="fit-the-best-garch-model-garch-2-2">
+<h2>Fit the best GARCH Model= GARCH (2,2)<a class="headerlink" href="#fit-the-best-garch-model-garch-2-2" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="s1">&#39;Zero&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -680,30 +680,48 @@ a_0, a_1 \sim \mathcal{N}(0,1)
 ==============================================================================
 Dep. Variable:                      y   R-squared:                       0.000
 Mean Model:                 Zero Mean   Adj. R-squared:                  0.001
-Vol Model:                      GARCH   Log-Likelihood:               -2263.22
-Distribution:                  Normal   AIC:                           4536.43
-Method:            Maximum Likelihood   BIC:                           4560.46
+Vol Model:                      GARCH   Log-Likelihood:               -2833.59
+Distribution:                  Normal   AIC:                           5677.18
+Method:            Maximum Likelihood   BIC:                           5701.21
                                         No. Observations:                  902
-Date:                Fri, Apr 14 2023   Df Residuals:                      902
-Time:                        08:17:45   Df Model:                            0
-                              Volatility Model                             
-===========================================================================
-                 coef    std err          t      P&gt;|t|     95.0% Conf. Int.
----------------------------------------------------------------------------
-omega          0.6886      0.280      2.455  1.408e-02    [  0.139,  1.238]
-alpha[1]       0.0971  3.982e-02      2.440  1.470e-02  [1.910e-02,  0.175]
-alpha[2]       0.1383  9.392e-02      1.472      0.141 [-4.580e-02,  0.322]
-beta[1]        0.6447      0.484      1.333      0.182    [ -0.303,  1.592]
-beta[2]        0.0605      0.389      0.156      0.876    [ -0.701,  0.822]
-===========================================================================
+Date:                Tue, Apr 18 2023   Df Residuals:                      902
+Time:                        14:12:41   Df Model:                            0
+                             Volatility Model                             
+==========================================================================
+                 coef    std err          t      P&gt;|t|    95.0% Conf. Int.
+--------------------------------------------------------------------------
+omega          0.5187      0.216      2.396  1.658e-02 [9.437e-02,  0.943]
+alpha[1]       0.1373  4.413e-02      3.111  1.863e-03 [5.081e-02,  0.224]
+alpha[2]       0.1961  3.813e-02      5.142  2.713e-07   [  0.121,  0.271]
+beta[1]    2.7887e-14      0.171  1.635e-13      1.000   [ -0.334,  0.334]
+beta[2]        0.6666      0.134      4.981  6.335e-07   [  0.404,  0.929]
+==========================================================================
 
 Covariance estimator: robust
 </pre></div>
 </div>
 </div>
 </div>
+<p>fitted_paramters = constant_params.rename(‘Fitted Parameters’).to_frame()
+fitted_paramters[‘true_params’] = [0.5,  0.1, 0.2,  0.3, 0.4]
+fitted_paramters</p>
+<p>Even when we know the data generating process it is difficult to get back the exact parameters of ARCH
+ARCH estimation is based on maximum likelihood. The more there are parameters to estimate, the more difficult it becomes</p>
+</section>
 <section id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model_fit</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="n">test_size</span><span class="p">)</span>
@@ -711,10 +729,28 @@ Covariance estimator: robust
 </div>
 </div>
 </div>
+<section id="predict-the-mean">
+<h3>Predict the mean ?<a class="headerlink" href="#predict-the-mean" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="c1">#true, = plt.plot(series[-test_size:], label=&#39;True Series&#39;)</span>
+<span class="n">true</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="p">[</span><span class="o">-</span><span class="n">test_size</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True Series&#39;</span><span class="p">)</span>
+<span class="n">preds</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">predictions</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediction&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Series Prediction&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/61742112d9404d939497287a69867861f0be9f7eaf8b0fcb8ce4d227c7741024.png" src="../../../_images/61742112d9404d939497287a69867861f0be9f7eaf8b0fcb8ce4d227c7741024.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">true</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vols</span><span class="p">[</span><span class="o">-</span><span class="n">test_size</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True Volatility&#39;</span><span class="p">)</span>
 <span class="n">preds</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">predictions</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]))</span>
 
@@ -725,7 +761,7 @@ Covariance estimator: robust
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2b717e21c0fb2ae1b13cd803da0d1e0d7db80542839fab2760024df2e0199dfa.png" src="../../../_images/2b717e21c0fb2ae1b13cd803da0d1e0d7db80542839fab2760024df2e0199dfa.png" />
+<img alt="../../../_images/30712a9f42ea28dbcecb894696204fc03b5361f305c0ced6e49a1b334aa157da.png" src="../../../_images/30712a9f42ea28dbcecb894696204fc03b5361f305c0ced6e49a1b334aa157da.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -741,9 +777,10 @@ Covariance estimator: robust
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/14ff74f097495e92122a2accc5ba97b243f923d01450aadceaba3298c9626d91.png" src="../../../_images/14ff74f097495e92122a2accc5ba97b243f923d01450aadceaba3298c9626d91.png" />
+<img alt="../../../_images/a1ccda2db74bac9a87f3e8fad0e48610d099ae1068e242827f82b99031c3d296.png" src="../../../_images/a1ccda2db74bac9a87f3e8fad0e48610d099ae1068e242827f82b99031c3d296.png" />
 </div>
 </div>
+</section>
 </section>
 <section id="rolling-forecast-origin">
 <h2>Rolling Forecast Origin<a class="headerlink" href="#rolling-forecast-origin" title="Permalink to this heading">#</a></h2>
@@ -751,7 +788,7 @@ Covariance estimator: robust
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rolling_predictions</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">test_size</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">test_size</span><span class="p">)):</span>
     <span class="n">train</span> <span class="o">=</span> <span class="n">series</span><span class="p">[:</span><span class="o">-</span><span class="p">(</span><span class="n">test_size</span><span class="o">-</span><span class="n">i</span><span class="p">)]</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="s1">&#39;Zero&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">model_fit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">disp</span><span class="o">=</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
@@ -759,6 +796,11 @@ Covariance estimator: robust
     <span class="n">pred</span> <span class="o">=</span> <span class="n">model_fit</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">rolling_predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:][</span><span class="mi">0</span><span class="p">]))</span>
 <span class="n">params</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">keys</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 100/100 [00:03&lt;00:00, 26.55it/s]
 </pre></div>
 </div>
 </div>
@@ -775,7 +817,7 @@ Covariance estimator: robust
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ed72184ec3a183bfc00ac42bffcb5c0285aaa2ca21db9d7cedc4e37c89d28217.png" src="../../../_images/ed72184ec3a183bfc00ac42bffcb5c0285aaa2ca21db9d7cedc4e37c89d28217.png" />
+<img alt="../../../_images/a39454e9879f2740cc5e72a9b516487c353ab4fbe8c31681829bdca8803b6c69.png" src="../../../_images/a39454e9879f2740cc5e72a9b516487c353ab4fbe8c31681829bdca8803b6c69.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -804,7 +846,7 @@ Covariance estimator: robust
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/07ebb2ef0251c2aa2ec73ad828164cbf0837a2cdb8e18411c43f7ed157540dec.png" src="../../../_images/07ebb2ef0251c2aa2ec73ad828164cbf0837a2cdb8e18411c43f7ed157540dec.png" />
+<img alt="../../../_images/41cdcc57a9c5f75169f2cc034a8b5a0f80ae6722c254f2fb0d9f4eb72737fe64.png" src="../../../_images/41cdcc57a9c5f75169f2cc034a8b5a0f80ae6722c254f2fb0d9f4eb72737fe64.png" />
 </div>
 </div>
 </section>
@@ -815,6 +857,85 @@ Covariance estimator: robust
 <li><p>The best usage of the Garch model prediction, as any time-series model is to re-estimate the parameters every day and predict <strong>1 step ahead</strong></p></li>
 <li><p>Parameters update take the recent sudden changes in volatility</p></li>
 </ul>
+<section id="exercises-1">
+<h3>Exercises 1:<a class="headerlink" href="#exercises-1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Now Fit an ARCH (3) model on the above timeseries</p></li>
+<li><p>Interprete the results</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3>Exercises 1:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Now Fit an GARCH (3,3) model on the above timeseries</p></li>
+<li><p>Interprete the results</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_process</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">betas</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Generate the process following GARCH (p,q)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">sample_size</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alphas</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span>
+    <span class="c1"># Initionalizing the process </span>
+    <span class="n">series</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">series</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+        
+    <span class="n">vols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+
+    <span class="c1"># Replicate the GARCH dynamic</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">new_var</span> <span class="o">=</span> <span class="n">omega</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+            <span class="n">new_var</span> <span class="o">=</span> <span class="n">new_var</span> <span class="o">+</span> <span class="n">alphas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">series</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+            <span class="n">new_var</span> <span class="o">=</span> <span class="n">new_var</span> <span class="o">+</span> <span class="n">betas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">vols</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">new_vol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">new_var</span><span class="p">)</span>
+        <span class="n">new_val</span> <span class="o">=</span> <span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">new_vol</span>
+
+        <span class="n">vols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_vol</span><span class="p">)</span>
+        <span class="n">series</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_val</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">vols</span><span class="p">,</span> <span class="n">series</span>
+
+<span class="k">def</span> <span class="nf">plot_process</span><span class="p">(</span><span class="n">vols</span><span class="p">,</span> <span class="n">series</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Simulated Data&#39;</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Series&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vols</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Volatility&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vols</span><span class="p">,</span> <span class="n">series</span> <span class="o">=</span> <span class="n">generate_process</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">])</span> 
+<span class="n">plot_process</span><span class="p">(</span><span class="n">vols</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/ebb22219b35965d43b1cc355d0803e92d25cf35046fbc87f412827dcddeaa003.png" src="../../../_images/ebb22219b35965d43b1cc355d0803e92d25cf35046fbc87f412827dcddeaa003.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vols</span><span class="p">,</span> <span class="n">series</span> <span class="o">=</span> <span class="n">generate_process</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">])</span> 
+<span class="n">plot_process</span><span class="p">(</span><span class="n">vols</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/e49b18568021c989e33090b1e636d675c83f0caf787bb7ed7c9a100c446aaa87.png" src="../../../_images/e49b18568021c989e33090b1e636d675c83f0caf787bb7ed7c9a100c446aaa87.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -850,20 +971,20 @@ Covariance estimator: robust
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Lecture-content.html"
+       href="01-Introduction%20to%20arch%20package.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Advanced Volatilty Modelling with Python</p>
+        <p class="prev-next-title">01- Usage of the ARCH package</p>
       </div>
     </a>
     <a class="right-next"
-       href="02-GARCH%20Stock%20Modeling.html"
+       href="03-GARCH%20Stock%20Modeling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">02- Volatility Modleing S&amp;P 500 Index</p>
+        <p class="prev-next-title">03- Volatility Modleing S&amp;P 500 Index</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -885,15 +1006,24 @@ Covariance estimator: robust
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">01 - Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">02- Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-the-time-series">Simulate the time series</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-plot">PACF Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-and-acf-plots">PACF and ACF Plots</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-garch-model">Fit the GARCH Model</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-test-models">Fit and Test models</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-the-training-set-from-the-testing-set">Separate the training set from the testing set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-best-garch-model-garch-2-2">Fit the best GARCH Model= GARCH (2,2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-mean">Predict the mean ?</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-forecast-origin">Rolling Forecast Origin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-1">Exercises 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises 1:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>04- Forecasting with Exogenous Regressors &#8212; IMF - STI Risk Based Framework</title>
+    <title>05- Forecasting with Exogenous Regressors &#8212; IMF - STI Risk Based Framework</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/04-univariate_forecasting_with_exogenous_variables';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/05-univariate_forecasting_with_exogenous_variables';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="05-Volatility Modeling (cont.)" href="univariate_volatility_modeling.html" />
-    <link rel="prev" title="03- Conditional Value at Risk" href="03-Conditional%20Value%20at%20Risk.html" />
+    <link rel="prev" title="04- Conditional Value at Risk" href="04-Conditional%20Value%20at%20Risk.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -252,12 +252,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="01-GARCH%20Model.html">01 - Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="02-GARCH%20Stock%20Modeling.html">02- Volatility Modleing S&amp;P 500 Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03-Conditional%20Value%20at%20Risk.html">03- Conditional Value at Risk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Volatility%20Modeling%20synthetic%20data.html">02- Volatility prediction: Simulated Data</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">04- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">05- Forecasting with Exogenous Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
 </ul>
 </li>
@@ -344,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/04-univariate_forecasting_with_exogenous_variables.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/05-univariate_forecasting_with_exogenous_variables.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +397,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/04-univariate_forecasting_with_exogenous_variables.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/05-univariate_forecasting_with_exogenous_variables.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/04-univariate_forecasting_with_exogenous_variables.ipynb" target="_blank"
+      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/05-univariate_forecasting_with_exogenous_variables.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -504,7 +509,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>04- Forecasting with Exogenous Regressors</h1>
+    <h1>05- Forecasting with Exogenous Regressors</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -543,7 +548,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="forecasting-with-exogenous-regressors">
-<h1>04- Forecasting with Exogenous Regressors<a class="headerlink" href="#forecasting-with-exogenous-regressors" title="Permalink to this heading">#</a></h1>
+<h1>05- Forecasting with Exogenous Regressors<a class="headerlink" href="#forecasting-with-exogenous-regressors" title="Permalink to this heading">#</a></h1>
 <p>This notebook provides examples of the accepted data structures for passing the expected value of exogenous variables when these are included in the mean.  For example, consider an AR(1) with 2 exogenous variables. The mean dynamics are</p>
 <div class="math notranslate nohighlight">
 \[ Y_t = \phi_0 + \phi_1 Y_{t-1} + \beta_0 X_{0,t} + \beta_1 X_{1,t} + \epsilon_t. \]</div>
@@ -1175,12 +1180,12 @@ Covariance estimator: robust
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="03-Conditional%20Value%20at%20Risk.html"
+       href="04-Conditional%20Value%20at%20Risk.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">03- Conditional Value at Risk</p>
+        <p class="prev-next-title">04- Conditional Value at Risk</p>
       </div>
     </a>
     <a class="right-next"

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>03- Conditional Value at Risk &#8212; IMF - STI Risk Based Framework</title>
+    <title>04- Conditional Value at Risk &#8212; IMF - STI Risk Based Framework</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/03-Conditional Value at Risk';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/workshop/04-Conditional Value at Risk';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="04- Forecasting with Exogenous Regressors" href="04-univariate_forecasting_with_exogenous_variables.html" />
-    <link rel="prev" title="02- Volatility Modleing S&amp;P 500 Index" href="02-GARCH%20Stock%20Modeling.html" />
+    <link rel="next" title="05- Forecasting with Exogenous Regressors" href="05-univariate_forecasting_with_exogenous_variables.html" />
+    <link rel="prev" title="03- Volatility Modleing S&amp;P 500 Index" href="03-GARCH%20Stock%20Modeling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -252,12 +252,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="01-GARCH%20Model.html">01 - Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="02-GARCH%20Stock%20Modeling.html">02- Volatility Modleing S&amp;P 500 Index</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">03- Conditional Value at Risk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Volatility%20Modeling%20synthetic%20data.html">02- Volatility prediction: Simulated Data</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="04-univariate_forecasting_with_exogenous_variables.html">04- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="05-univariate_forecasting_with_exogenous_variables.html">05- Forecasting with Exogenous Regressors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
 </ul>
 </li>
@@ -344,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/03-Conditional Value at Risk.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Volatility-Modelling/workshop/04-Conditional Value at Risk.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +397,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/03-Conditional Value at Risk.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/workshop/04-Conditional Value at Risk.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/03-Conditional Value at Risk.ipynb" target="_blank"
+      <li><a href="../../../_sources/docs/Volatility-Modelling/workshop/04-Conditional Value at Risk.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -504,7 +509,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>03- Conditional Value at Risk</h1>
+    <h1>04- Conditional Value at Risk</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -514,19 +519,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">03- Conditional Value at Risk</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">04- Conditional Value at Risk</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-forecasting">Basic Forecasting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-forecast-generation-schemes">Alternative Forecast Generation Schemes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-window-forecasting">Fixed Window Forecasting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-window-forecasting">Rolling Window Forecasting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-forecast-generation">Recursive Forecast Generation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarch">TARCH</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-forecasts">Analytical Forecasts</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#value-at-risk-forecasting">Value-at-Risk Forecasting</a><ul class="visible nav section-nav flex-column">
@@ -534,6 +528,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtered-historical-simulation">Filtered Historical Simulation</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set-random-seed-for-reproducibility">Set random seed for reproducibility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-from-different-distributions">Generate data from different distributions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-distributions">Plot the distributions</a></li>
 </ul>
 
             </nav>
@@ -547,7 +544,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conditional-value-at-risk">
-<h1>03- Conditional Value at Risk<a class="headerlink" href="#conditional-value-at-risk" title="Permalink to this heading">#</a></h1>
+<h1>04- Conditional Value at Risk<a class="headerlink" href="#conditional-value-at-risk" title="Permalink to this heading">#</a></h1>
 <p><em>This setup code is required to run in an IPython notebook</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,317 +582,22 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="basic-forecasting">
-<h2>Basic Forecasting<a class="headerlink" href="#basic-forecasting" title="Permalink to this heading">#</a></h2>
-<p>Forecasts can be generated for standard GARCH(p,q) processes using any of the three forecast generation methods:</p>
-<ul class="simple">
-<li><p>Analytical</p></li>
-<li><p>Simulation-based</p></li>
-<li><p>Bootstrap-based</p></li>
-</ul>
-<p>Be default forecasts will only be produced for the final observation in the sample so that they are out-of-sample.</p>
-<p>Forecasts start with specifying the model and estimating parameters.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">am</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="n">vol</span><span class="o">=</span><span class="s2">&quot;Garch&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&quot;Normal&quot;</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">update_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration:      5,   Func. Count:     35,   Neg. LLF: 6970.277818445006
-Iteration:     10,   Func. Count:     63,   Neg. LLF: 6936.718477482898
-Optimization terminated successfully    (Exit mode 0)
-            Current function value: 6936.718476989025
-            Iterations: 11
-            Function evaluations: 68
-            Gradient evaluations: 11
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">reindex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Forecasts are contained in an <code class="docutils literal notranslate"><span class="pre">ARCHModelForecast</span></code> object which has 4 attributes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mean</span></code> - The forecast means</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">residual_variance</span></code> - The forecast residual variances, that is <span class="math notranslate nohighlight">\(E_t[\epsilon_{t+h}^2]\)</span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">variance</span></code> - The forecast variance of the process, <span class="math notranslate nohighlight">\(E_t[r_{t+h}^2]\)</span>.  The variance will differ from the residual variance whenever the model has mean dynamics, e.g., in an AR process.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">simulations</span></code> - An object that contains detailed information about the simulations used to generate forecasts.  Only used if the forecast <code class="docutils literal notranslate"><span class="pre">method</span></code> is set to <code class="docutils literal notranslate"><span class="pre">'simulation'</span></code> or <code class="docutils literal notranslate"><span class="pre">'bootstrap'</span></code>.  If using <code class="docutils literal notranslate"><span class="pre">'analytical'</span></code> (the default), this is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-</ul>
-<p>The three main outputs are all returned in <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s with columns of the form <code class="docutils literal notranslate"><span class="pre">h.#</span></code> where <code class="docutils literal notranslate"><span class="pre">#</span></code> is the number of steps ahead.  That is, <code class="docutils literal notranslate"><span class="pre">h.1</span></code> corresponds to one-step ahead forecasts while <code class="docutils literal notranslate"><span class="pre">h.10</span></code> corresponds to 10-steps ahead.</p>
-<p>The default forecast only produces 1-step ahead forecasts.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">mean</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">residual_variance</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 h.1
-Date                
-2018-12-31  0.056353
-                h.1
-Date               
-2018-12-31  3.59647
-                h.1
-Date               
-2018-12-31  3.59647
-</pre></div>
-</div>
-</div>
-</div>
-<p>Longer horizon forecasts can be computed by passing the parameter <code class="docutils literal notranslate"><span class="pre">horizon</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">reindex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">residual_variance</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                h.1       h.2       h.3       h.4     h.5
-Date                                                     
-2018-12-31  3.59647  3.568502  3.540887  3.513621  3.4867
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you fail to set <code class="docutils literal notranslate"><span class="pre">reindex</span></code> you will see a warning.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/ubuntu/Documents/Projects/STI_FX_Intervention/.venv/lib/python3.9/site-packages/arch/__future__/_utility.py:11: FutureWarning: 
-The default for reindex is True. After September 2021 this will change to
-False. Set reindex to True or False to silence this message. Alternatively,
-you can use the import comment
-
-from arch.__future__ import reindexing
-
-to globally set reindex to True and silence this warning.
-
-  warnings.warn(
-</pre></div>
-</div>
-</div>
-</div>
-<p>When not specified, or if <code class="docutils literal notranslate"><span class="pre">reindex</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then values that are not computed are <code class="docutils literal notranslate"><span class="pre">nan</span></code>-filled.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">residual_variance</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                h.1       h.2       h.3       h.4     h.5
-Date                                                     
-2018-12-27      NaN       NaN       NaN       NaN     NaN
-2018-12-28      NaN       NaN       NaN       NaN     NaN
-2018-12-31  3.59647  3.568502  3.540887  3.513621  3.4867
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="alternative-forecast-generation-schemes">
-<h2>Alternative Forecast Generation Schemes<a class="headerlink" href="#alternative-forecast-generation-schemes" title="Permalink to this heading">#</a></h2>
-<section id="fixed-window-forecasting">
-<h3>Fixed Window Forecasting<a class="headerlink" href="#fixed-window-forecasting" title="Permalink to this heading">#</a></h3>
-<p>Fixed-windows forecasting uses data up to a specified date to generate all forecasts after that date. This can be implemented by passing the entire data in when initializing the model and then using <code class="docutils literal notranslate"><span class="pre">last_obs</span></code> when calling <code class="docutils literal notranslate"><span class="pre">fit</span></code>.  <code class="docutils literal notranslate"><span class="pre">forecast()</span></code> will, by default, produce forecasts after this final date.</p>
-<p><strong>Note</strong> <code class="docutils literal notranslate"><span class="pre">last_obs</span></code> follow Python sequence rules so that the actual date in <code class="docutils literal notranslate"><span class="pre">last_obs</span></code> is not in the sample.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">last_obs</span><span class="o">=</span><span class="s2">&quot;2011-1-1&quot;</span><span class="p">,</span> <span class="n">update_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">reindex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration:      5,   Func. Count:     34,   Neg. LLF: 4578.713304790317
-Iteration:     10,   Func. Count:     63,   Neg. LLF: 4555.338449449297
-Optimization terminated successfully    (Exit mode 0)
-            Current function value: 4555.285110045399
-            Iterations: 14
-            Function evaluations: 83
-            Gradient evaluations: 14
-                 h.1       h.2       h.3       h.4       h.5
-Date                                                        
-2010-12-31  0.381757  0.390905  0.399988  0.409008  0.417964
-2011-01-03  0.451724  0.460381  0.468976  0.477512  0.485987
-2011-01-04  0.428416  0.437236  0.445994  0.454691  0.463326
-2011-01-05  0.420554  0.429429  0.438242  0.446993  0.455683
-2011-01-06  0.402483  0.411486  0.420425  0.429301  0.438115
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="rolling-window-forecasting">
-<h3>Rolling Window Forecasting<a class="headerlink" href="#rolling-window-forecasting" title="Permalink to this heading">#</a></h3>
-<p>Rolling window forecasts use a fixed sample length and then produce one-step from the final observation.  These can be implemented using <code class="docutils literal notranslate"><span class="pre">first_obs</span></code> and <code class="docutils literal notranslate"><span class="pre">last_obs</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">index</span>
-<span class="n">start_loc</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">end_loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="s2">&quot;2010-1-1&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">forecasts</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">first_obs</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">last_obs</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="n">end_loc</span><span class="p">,</span> <span class="n">disp</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">reindex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">variance</span>
-    <span class="n">fcast</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">forecasts</span><span class="p">[</span><span class="n">fcast</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">fcast</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">forecasts</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>....................
-                 h.1       h.2       h.3
-2009-12-31  0.615314  0.621743  0.628133
-2010-01-04  0.751747  0.757343  0.762905
-2010-01-05  0.710453  0.716315  0.722142
-2010-01-06  0.666244  0.672346  0.678411
-2010-01-07  0.634424  0.640706  0.646949
-2010-01-08  0.600109  0.606595  0.613040
-2010-01-11  0.565514  0.572212  0.578869
-2010-01-12  0.599560  0.606051  0.612501
-2010-01-13  0.608309  0.614748  0.621148
-2010-01-14  0.575065  0.581756  0.588406
-2010-01-15  0.629890  0.636245  0.642561
-2010-01-19  0.695074  0.701042  0.706974
-2010-01-20  0.737154  0.742908  0.748627
-2010-01-21  0.954167  0.958725  0.963255
-2010-01-22  1.253453  1.256401  1.259332
-2010-01-25  1.178691  1.182043  1.185374
-2010-01-26  1.112205  1.115886  1.119545
-2010-01-27  1.051295  1.055327  1.059335
-2010-01-28  1.085678  1.089512  1.093324
-2010-01-29  1.085786  1.089593  1.093378
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="recursive-forecast-generation">
-<h3>Recursive Forecast Generation<a class="headerlink" href="#recursive-forecast-generation" title="Permalink to this heading">#</a></h3>
-<p>Recursive is similar to rolling except that the initial observation does not change.  This can be easily implemented by dropping the <code class="docutils literal notranslate"><span class="pre">first_obs</span></code> input.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">index</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">index</span>
-<span class="n">start_loc</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">end_loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="s2">&quot;2010-1-1&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">forecasts</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">last_obs</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="n">end_loc</span><span class="p">,</span> <span class="n">disp</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">horizon</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">reindex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">variance</span>
-    <span class="n">fcast</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">forecasts</span><span class="p">[</span><span class="n">fcast</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">fcast</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">forecasts</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>....................
-                 h.1       h.2       h.3
-2009-12-31  0.615314  0.621743  0.628133
-2010-01-04  0.751723  0.757321  0.762885
-2010-01-05  0.709956  0.715791  0.721591
-2010-01-06  0.666057  0.672146  0.678197
-2010-01-07  0.634503  0.640776  0.647011
-2010-01-08  0.600417  0.606893  0.613329
-2010-01-11  0.565684  0.572369  0.579014
-2010-01-12  0.599963  0.606438  0.612874
-2010-01-13  0.608558  0.614982  0.621366
-2010-01-14  0.575020  0.581639  0.588217
-2010-01-15  0.629696  0.635989  0.642244
-2010-01-19  0.694735  0.700656  0.706541
-2010-01-20  0.736509  0.742193  0.747842
-2010-01-21  0.952751  0.957245  0.961713
-2010-01-22  1.251145  1.254049  1.256936
-2010-01-25  1.176864  1.180162  1.183441
-2010-01-26  1.110848  1.114497  1.118124
-2010-01-27  1.050102  1.054077  1.058028
-2010-01-28  1.084669  1.088454  1.092216
-2010-01-29  1.085003  1.088783  1.092541
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="tarch">
-<h2>TARCH<a class="headerlink" href="#tarch" title="Permalink to this heading">#</a></h2>
-<section id="analytical-forecasts">
-<h3>Analytical Forecasts<a class="headerlink" href="#analytical-forecasts" title="Permalink to this heading">#</a></h3>
-<p>All ARCH-type models have one-step analytical forecasts.  Longer horizons only have closed forms for specific models.  TARCH models do not have closed-form (analytical) forecasts for horizons larger than 1, and so simulation or bootstrapping is required.  Attempting to produce forecasts for horizons larger than 1 using <code class="docutils literal notranslate"><span class="pre">method='analytical'</span></code> results in a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TARCH specification</span>
-<span class="n">am</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="n">vol</span><span class="o">=</span><span class="s2">&quot;GARCH&quot;</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">update_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">forecasts</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">reindex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">forecasts</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration:      5,   Func. Count:     40,   Neg. LLF: 6846.496361432324
-Iteration:     10,   Func. Count:     75,   Neg. LLF: 6822.883179469913
-Optimization terminated successfully    (Exit mode 0)
-            Current function value: 6822.8828234217335
-            Iterations: 13
-            Function evaluations: 93
-            Gradient evaluations: 13
-h.1    3.010188
-Name: 2018-12-31 00:00:00, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="value-at-risk-forecasting">
 <h1>Value-at-Risk Forecasting<a class="headerlink" href="#value-at-risk-forecasting" title="Permalink to this heading">#</a></h1>
-<p>Value-at-Risk (VaR) forecasts from GARCH models depend on the conditional mean, the conditional volatility and the quantile of the standardized residuals,</p>
-<div class="math notranslate nohighlight">
-\[VaR_{t+1|t} = -\mu_{t+1|t} - \sigma_{t+1|t} q_{\alpha}\]</div>
-<p>where <span class="math notranslate nohighlight">\(q_{\alpha}\)</span> is the <span class="math notranslate nohighlight">\(\alpha\)</span> quantile of the standardized residuals, e.g., 5%.</p>
-<p>The quantile can be either computed from the estimated model density or computed using the empirical distribution of the standardized residuals.  The example below shows both methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the mean and standard deviation of the normal distribution</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.01</span>
 
 <span class="c1"># Generate 1000 random values from the normal distribution</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.999</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="c1"># Calculate the 5% value at risk (VaR)</span>
 <span class="n">VaR</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
 <span class="c1"># Value-at Risk</span>
-<span class="n">ES</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">/</span><span class="mf">0.05</span>
+<span class="n">ES</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">/</span><span class="n">alpha</span>
 
 <span class="c1"># Plot the normal distribution</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normal Distribution&#39;</span><span class="p">)</span>
@@ -905,13 +607,13 @@ Name: 2018-12-31 00:00:00, dtype: float64
 <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_fill</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_fill</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 
 <span class="c1"># Add a vertical line and annotation for the VaR value</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">VaR</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;5% VaR&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VaR(5%) = </span><span class="si">{</span><span class="n">VaR</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">$Pr(~R_t&gt;-VaR) = </span><span class="si">{</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">VaR</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">VaR</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">VaR</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">% VaR&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VaR(</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">%) = </span><span class="si">{</span><span class="n">VaR</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s1">$Pr(~R_t&gt;-VaR) = </span><span class="si">{</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">VaR</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">VaR</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
              <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
 
 <span class="c1"># Add a vertical line and annotation for the ES value</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="n">ES</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Expected Shortfall&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ES(</span><span class="si">{</span><span class="n">alpha</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s1">%) = </span><span class="si">{</span><span class="o">-</span><span class="n">ES</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ES</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ES</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ES(</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">%) = </span><span class="si">{</span><span class="o">-</span><span class="n">ES</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ES</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ES</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">),</span>
              <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
@@ -923,9 +625,16 @@ Name: 2018-12-31 00:00:00, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8cf0224ef1524aefbb46d55685104c0502c9382b9e134419d8c56350d908298e.png" src="../../../_images/8cf0224ef1524aefbb46d55685104c0502c9382b9e134419d8c56350d908298e.png" />
+<img alt="../../../_images/2332bbb6da7ae59e167174aa9029a3067fb028716f5aa062e14bb51134e1f655.png" src="../../../_images/2332bbb6da7ae59e167174aa9029a3067fb028716f5aa062e14bb51134e1f655.png" />
 </div>
 </div>
+<p>Exercise 1:</p>
+<p>Computer the 5% Value at Risk</p>
+<p>Value-at-Risk (VaR) forecasts from GARCH models depend on the conditional mean, the conditional volatility and the quantile of the standardized residuals,</p>
+<div class="math notranslate nohighlight">
+\[VaR_{t+1|t} = -\mu_{t+1|t} - \sigma_{t+1|t} q_{\alpha}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q_{\alpha}\)</span> is the <span class="math notranslate nohighlight">\(\alpha\)</span> quantile of the standardized residuals, e.g., 5%.</p>
+<p>The quantile can be either computed from the estimated model density or computed using the empirical distribution of the standardized residuals.  The example below shows both methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">am</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="n">vol</span><span class="o">=</span><span class="s2">&quot;Garch&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&quot;skewt&quot;</span><span class="p">)</span>
@@ -1051,7 +760,39 @@ dtype: float64
 <img alt="../../../_images/3e68e508a34e858f2ee8227de3d6c7723b761e5b775b17c8f5b4393761556df4.png" src="../../../_images/3e68e508a34e858f2ee8227de3d6c7723b761e5b775b17c8f5b4393761556df4.png" />
 </div>
 </div>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm, t, skewnorm, gennorm</p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="set-random-seed-for-reproducibility">
+<h1>Set random seed for reproducibility<a class="headerlink" href="#set-random-seed-for-reproducibility" title="Permalink to this heading">#</a></h1>
+<p>np.random.seed(1234)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generate-data-from-different-distributions">
+<h1>Generate data from different distributions<a class="headerlink" href="#generate-data-from-different-distributions" title="Permalink to this heading">#</a></h1>
+<p>x_norm = np.linspace(norm.ppf(0.001), norm.ppf(0.999), 100)
+y_norm = norm.pdf(x_norm, loc=0, scale=1)</p>
+<p>x_t = np.linspace(t.ppf(0.01, df=3), t.ppf(0.99, df=3), 100)
+y_t = t.pdf(x_t, df=3, loc=0, scale=1)</p>
+<p>x_skewt = np.linspace(skewnorm.ppf(0.001, a=4), skewnorm.ppf(0.999, a=4), 100)
+y_skewt = skewnorm.pdf(x_skewt, a=4, loc=0, scale=1)</p>
+<p>x_ged = np.linspace(gennorm.ppf(0.001, beta=2, loc=0, scale=1),
+gennorm.ppf(0.999, beta=2, loc=0, scale=1), 100)
+y_ged = gennorm.pdf(x_ged, beta=2, loc=0, scale=1)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-the-distributions">
+<h1>Plot the distributions<a class="headerlink" href="#plot-the-distributions" title="Permalink to this heading">#</a></h1>
+<p>fig, ax = plt.subplots(figsize=(8, 5))</p>
+<p>ax.plot(x_norm, y_norm, ‘b-’, lw=2, label=‘Normal’)
+ax.plot(x_t, y_t, ‘g-’, lw=2, label=‘Student t’)
+ax.plot(x_skewt, y_skewt, ‘r-’, lw=2, label=‘Skewed Student t’)
+ax.plot(x_ged, y_ged, ‘m-’, lw=2, label=‘GED’)</p>
+<p>ax.legend(loc=‘best’)
+ax.set_xlabel(‘X’)
+ax.set_ylabel(‘Density’)
+ax.set_title(‘Most used Distributions’)
+plt.show()</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1086,20 +827,20 @@ dtype: float64
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02-GARCH%20Stock%20Modeling.html"
+       href="03-GARCH%20Stock%20Modeling.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">02- Volatility Modleing S&amp;P 500 Index</p>
+        <p class="prev-next-title">03- Volatility Modleing S&amp;P 500 Index</p>
       </div>
     </a>
     <a class="right-next"
-       href="04-univariate_forecasting_with_exogenous_variables.html"
+       href="05-univariate_forecasting_with_exogenous_variables.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">04- Forecasting with Exogenous Regressors</p>
+        <p class="prev-next-title">05- Forecasting with Exogenous Regressors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1121,19 +862,8 @@ dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">03- Conditional Value at Risk</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">04- Conditional Value at Risk</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-forecasting">Basic Forecasting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-forecast-generation-schemes">Alternative Forecast Generation Schemes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-window-forecasting">Fixed Window Forecasting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-window-forecasting">Rolling Window Forecasting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-forecast-generation">Recursive Forecast Generation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tarch">TARCH</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-forecasts">Analytical Forecasts</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#value-at-risk-forecasting">Value-at-Risk Forecasting</a><ul class="visible nav section-nav flex-column">
@@ -1141,6 +871,9 @@ dtype: float64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtered-historical-simulation">Filtered Historical Simulation</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set-random-seed-for-reproducibility">Set random seed for reproducibility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-from-different-distributions">Generate data from different distributions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-distributions">Plot the distributions</a></li>
 </ul>
 
   </nav></div>
