@@ -10,3 +10,5 @@
 - Introduce better the studies on effectiveness
 
 - Insist more on "a lot of FX reserves is not necessarily good"
+
+- Slide on pros and cons of having FX reserves

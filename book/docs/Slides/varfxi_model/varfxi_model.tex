@@ -213,7 +213,7 @@ We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}
     volatility) and parametric \textbf{density forecasting}    
   \item We created a Python package, \textbf{free and open-source}  (available on Github): estimation, forecasting,
     out-of-sample evaluation, optimization, benchmarking, etc. Results are \textbf{fully replicable}
-  \item Can be readily used by central banks and deployed during Technical Assistance (TA) missions
+  \item Can be used alongside other types of interventions: put auctions, NDF, etc.
   \end{wideitemize}
 \end{frame}
 
@@ -230,7 +230,7 @@ We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}
       \item Some policymakers might \textbf{prefer to keep discretion} over FXI
         \begin{wideitemize}
     \item Trade-off: a transparent rule anchors better market expectations,
-      maximize efficiency and strengthen central bank's independence              
+      \textbf{under certain conditions }maximize efficiency  and strengthen central bank's independence
         \end{wideitemize}        
   \end{wideitemize}
 \end{frame}
@@ -239,8 +239,8 @@ We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}
   \frametitle{The Framework Extends Beyond FXI triggers}    
   \begin{wideenumerate}
     \item Determine FX Intervention triggers
-    \item Conduct market monitoring and provide policy guidance
-    \item Benchmark FX interventions, including discretionary interventions
+    \item Conduct \textbf{market monitoring} and provide policy guidance
+    \item Ex-post benchmark FX interventions, including discretionary interventions
     \end{wideenumerate}
     
     \bigskip
@@ -406,22 +406,6 @@ g(r_t)$ where $g(r_t) = \alpha_v r_t + \gamma(|r_t|-\mathbb{E}|r_t|)$
     \makebox[\linewidth]{\includegraphics[width=\paperwidth]{img/conditional_exceedance.pdf}}
 \end{frame}
 
-
-\begin{frame}
-  \frametitle{Optimization via Cross-Validation using the Zig-Zag Algorithm}
-  \begin{wideitemize}
-    \item There are many possible choices for the models on the mean/drift, the conditional variance or the distribution of the perturbations
-    \item We would like to choose the most appropriate ones, using performance metrics
-    \item Problem: the GARCH estimates separately the drift and the volatility (where it imposes assumptions on the distribution)
-    \item Idea: use the zig-zag algorithm to optimize the entire model
-      \begin{enumerate}
-      \item Optimize the choice of the drift model with RMSE out-of-sample validation 
-      \item Optimize the choice of the distribution
-      \item Estimate the parameters based on the optimal functional forms of the models (the hyperparameters) via a recursive approach
-      \end{enumerate}      
-  \end{wideitemize}  
-\end{frame}
-
      
 \begin{frame}
   \frametitle{Density Evaluation}
@@ -432,7 +416,7 @@ g(r_t)$ where $g(r_t) = \alpha_v r_t + \gamma(|r_t|-\mathbb{E}|r_t|)$
 \begin{frame}
   \frametitle{In Practice}
   \begin{wideitemize}
-    \item The package we design handles the optimization seamlessly
+    \item The package we design handles the optimization seamlessly (see the Zigzag discussed previously)
     \item It outputs the optimal functional forms and parameters
     \item However, it might be time consuming, given that it involves optimizing over a large number of functional forms
     \item Hence, users might want to re-run the optimization from time to time, but not everytime

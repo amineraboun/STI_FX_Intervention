@@ -1,4 +1,4 @@
-% Time-stamp: <2023-04-14 20:11:12 A13258Q>
+% Time-stamp: <Tuesday 18 April 2023, Romain Lafarguette>
 % Amine Raboun 2023, https://amineraboun.github.io/
 % Romain Lafarguette 2023, https://romainlafarguette.github.io/
 
@@ -116,6 +116,42 @@
 
 \section{Conceptual Framework}
 
+\subsection{Model Parameters and Hyper-Parameters}
+\begin{frame}
+  \frametitle{Model Parameters and Hyper-Parameters}
+  \begin{exampleblock}{OLS Example}
+    \begin{equation*}
+      y_{t+?} = \alpha + \beta_1 X_{1,t} + \dots + \beta_K X_{k, t} + \epsilon_t
+  \end{equation*}
+  \end{exampleblock}
+  \begin{wideitemize}
+  \item $\alpha$ and $\beta_1, \dots \beta_k$ are the parameters of the models. Once we have decided the specification (the DGP) then we can estimate the parameters
+  \item However, there are many other choices:
+    \begin{itemize}
+    \item Which variables $X_1 \dots X_k$ to include? Do we need all of them? Tradeoff between exhaustive model and parsimonious model. Do we want to add-non linear effects like $X_1^2$ Do we want to add lags?
+    \item Do we want to control for some time periods, structural breaks, etc.? Forecast horizon?
+    \item Etc.
+    \end{itemize}
+  \item These are called the \textbf{hyper-parameters}: they determine the DGP we want to estimate
+  \end{wideitemize}  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Estimating Parameters and Optimizing Hyper-Parameters}
+  \begin{wideitemize}
+  \item Parameters are linked to a specific data generating process (DGP): they can be estimated directly in the data, using standard approaches (regressions, maximum likelihood, methods of moments, etc.)
+  \item Hyper-parameters represent different data generating process, we can not estimate them directly
+  \item But we can try to fit different models with different hyper-parameters and \textbf{compare these models}
+  \item How to compare models?
+    \begin{itemize}
+    \item Intuitively, one might think that in-sample performance (such as R2, loglikelihood, AIC, BIC) would work the best
+    \item But...
+    \end{itemize}
+  \end{wideitemize}
+\end{frame}
+
 \subsection{Underfitting and Overfitting}
 
 \begin{frame}{Fitting and Forecasting}
@@ -134,12 +170,19 @@
   \end{wideitemize}  
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Out of Sample Concept}
+  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/out_of_sample_concept.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape Author}}
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Underfit, Optimal, Overfit: Intuition}
   \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/overfit_underfit.PNG}}
   \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape towardsdatascience}}
 \end{frame}
-
 
 \begin{frame}
   \frametitle{Underfit, Optimal, Overfit and Model Complexity}
@@ -147,15 +190,6 @@
   \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape Scott Fortmann-Roe}}
 \end{frame}
 
-
-
-\subsection{Out of Sample Concept}
-
-\begin{frame}
-  \frametitle{Out of Sample Concept}
-  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/out_of_sample_concept.PNG}}
-  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape Author}}
-\end{frame}
 
 \begin{frame}
   \frametitle{Out of Sample Example: Overfit}
@@ -169,9 +203,21 @@
   \makebox[\linewidth]{\includegraphics[width=0.85\paperwidth]{img/fit_poly_2.png}}
   \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape towardsdatascience.com/an-example-of-overfitting-and-how-to-avoid-it}}
 \end{frame}
-  
+
 
 \subsection{Cross-Validation}
+
+
+\begin{frame}
+  \frametitle{Choosing Hyper-Parameters}
+  \begin{wideitemize}
+    \item The key aspect is to \textbf{optimize the hyper-parameters out-of-sample} 
+    \item How well does the model performs \textbf{"in real conditions"} if we would have estimated it in the past?
+    \item Avoid overfitting the model, else we would end-up with models only good at explaning the past
+    \item However, because we are working with time series, we need to follow a certain process
+  \end{wideitemize}
+\end{frame}
+
 \begin{frame}
   \frametitle{Time Series Cross-Validation}
      \makebox[\linewidth]{\includegraphics[width=0.95\paperwidth]{img/time_series_cv_1.PNG}}  
@@ -198,6 +244,22 @@
   \end{frame}
 
 
+\begin{frame}
+  \frametitle{K-Fold Cross-Validation}
+     \makebox[\linewidth]{\includegraphics[width=0.85\paperwidth]{img/k_fold_cv.PNG}}  
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Parameters and Hyper-Parameters Process}
+  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/parameters_hyperparameters.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape Author}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Time Series Validation is Different from the Forecasting Horizon}
+     \makebox[\linewidth]{\includegraphics[width=0.85\paperwidth]{img/multiple_steps_ahead.PNG}}  
+  \end{frame}
+  
 \section{Point-Forecasting Evaluation}
 
 
@@ -229,6 +291,13 @@
     
   \end{itemize}
 
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Updating Model}
+  \makebox[\linewidth]{\includegraphics[height=0.75\paperheight]{img/multithreaded_update_model.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape www.multithreaded.stitchfix.com}}
 \end{frame}
 
 
@@ -303,8 +372,46 @@
 
     
 
-\section{Density Forecast Evaluation}
+
     
+\section{Density Forecast Evaluation}
+
+
+\begin{frame}
+  \frametitle{Aleatoric vs. Epistemic Uncertainty}
+  \begin{wideitemize}
+    \item Fundamentally, there are two sources of uncertainty we want to quantify
+      \begin{enumerate}
+      \item \textbf{Aleatoric Uncertainty}: Uncertainty because the model can not represent fully the reality
+      \item \textbf{Epistemic Uncertainty}: Uncertainty because future reality is random, uncertain
+      \end{enumerate}
+  \item Point forecasts evaluation measure the aleatoric uncertainty
+  \item Yet they don't inform on the uncertainty of the future realizations.
+    \begin{itemize}
+    \item Point forecasts evaluation only inform about the uncertainty of the point estimate (e.g. the uncertainty about the future values of the mean)
+    \end{itemize}
+  \item If we want to "quantify" epistemic uncertainty, we need to use a density forecast
+  \end{wideitemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Aleatoric vs Epistemic Uncertainty}
+  \makebox[\linewidth]{\includegraphics[height=0.75\paperheight]{img/aleatoric_epistemic_uncertainty.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape www.researchgate.net}}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Bank of England Fanchart}
+  \makebox[\linewidth]{\includegraphics[height=0.75\paperheight]{img/boe_fanchart.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape Bank of England Fan Chart}}
+\end{frame}
+
+
+
+
+
 
 \begin{frame}
   \frametitle{Challenges}
@@ -343,6 +450,13 @@
     \end{wideitemize}
     
 \end{frame}
+
+\begin{frame}
+  \frametitle{Probability Integral Transform}
+  \makebox[\linewidth]{\includegraphics[width=0.7\paperwidth]{img/probability_integral_transform.PNG}}
+  \hspace*{15pt}\hbox{\scriptsize Source:\thinspace{\scriptsize\itshape Entropy}}        
+\end{frame}
+
 
 
 \begin{frame}
@@ -436,6 +550,59 @@
 
   
 \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Application : Optimizing a GARCH model}
+
+  \begin{block}{Reminder: GARCH specification}
+    \begin{equation*}
+      \begin{split}
+        r_{t+1} & = f(X_t) + \epsilon_t \qquad (\text{drift})\\
+        \epsilon_t & = \sigma_t e_t \\
+        \sigma_t & = \omega + \alpha \epsilon^2_{t-1} + \beta \sigma^2_{t-1} \qquad (\text{volatility})\\
+      \end{split}
+    \end{equation*}    
+  \end{block}
+
+  \begin{wideitemize}
+    \item There are many possible choices for the models on the mean/drift, the conditional variance or the distribution of the perturbations
+    \item We would like to choose the most appropriate ones, using performance metrics via cross-validation
+    \item Problem: the drift estimation depends on the volatility and the volatility estimation depends on the drift. How to optimize jointly?
+  \end{wideitemize}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hyper Parameters Optimization via Cross Validation}
+  \begin{alertblock}{Hyper-Parameters to Validate}
+    \begin{itemize}
+    \item $r_{t+1}  = f(X_t) + \epsilon_t$ the best combination of $f(X_t)$ to estimate the drift
+    \item $\epsilon_t  = \underbrace{\sigma_t}_{\text{Dynamic model}} \quad \underbrace{e_t}_{\text{Distribution}}$
+    \end{itemize}
+  \end{alertblock}
+  \begin{wideitemize}
+    \item We optimize the $r_{t+1}  = f(X_t) + \epsilon_t$ using an RMSE/MAE/MAPE type of metric. We obtain the optimal out-of-sample error term $\epsilon^{*}_t$
+    \item Then we optimize both the dynamic model and the distribution $\epsilon^{*}_t = \underbrace{\sigma_t}_{\text{Dynamic model}} \underbrace{e_t}_{\text{Distribution}}$ using the PIT, logscore, and tail logscore
+   \item Problem: we have a "Frankenstein model" where the hyperparameters  - distribution of the error term and the specification of the drift - are optimized separately. How do we estimate the parameters associated?
+  \end{wideitemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Estimate the Parameters via The Zig-Zag Algorithm}
+  \begin{wideitemize}
+  \item Idea: break down the estimation of the mean and the variance separately
+    \begin{enumerate}
+    \item \textbf{First estimate of the mean} by assuming a constant variance model ($\sigma^2$ fixed) and estimate the mean of the drift equation $\hat{mu}$. This allows to obtain the estimated residuals $\hat{\epsilon_t} = r_t - \hat{\mu}$
+    \item \textbf{Initial Volatility Model Estimation using the cross-validated density model} use a zero-mean GARCH model on the first-step residuals $\mathcal{E}[\hat{\epsilon_t}] = 0$ and obtain the dynamic of $\hat{\sigma^2_t}$. For instance, a standard GARCH, EGARCH, TGARCH, etc.
+\item \textbf{Re-estimate the drift using the cross-validated specification} and by plugging the volatility process estimated in the previous step. Because the new errors terms $\hat{\epsilon_t} = \hat{\sigma_t}e_t$ with  $\hat{\sigma_t}$ estimated from the previous trend are derived from an estimation apply a GLS correction on the errors terms 
+    \end{enumerate}
+\item The Zigzag algorithm repeats steps 2 and 3 up to the point they converge
+  \end{wideitemize}
+\end{frame}
+
 
 
 

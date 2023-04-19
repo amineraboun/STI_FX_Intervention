@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Conceptual Framework}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Underfitting and Overfitting}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Out of Sample Concept}{6}{0}{1}
-\beamer@subsectionintoc {1}{3}{Cross-Validation}{9}{0}{1}
-\beamer@sectionintoc {2}{Point-Forecasting Evaluation}{14}{0}{2}
-\beamer@sectionintoc {3}{Density Forecast Evaluation}{22}{0}{3}
+\beamer@subsectionintoc {1}{1}{Model Parameters and Hyper-Parameters}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Underfitting and Overfitting}{5}{0}{1}
+\beamer@subsectionintoc {1}{3}{Cross-Validation}{11}{0}{1}
+\beamer@sectionintoc {2}{Point-Forecasting Evaluation}{20}{0}{2}
+\beamer@sectionintoc {3}{Density Forecast Evaluation}{29}{0}{3}
