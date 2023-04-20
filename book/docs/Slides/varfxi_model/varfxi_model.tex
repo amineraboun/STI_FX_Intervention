@@ -80,7 +80,7 @@
 %% ---------------------------------------------------------------------------
 \title[Risk-Based FXI]{FX Interventions Rules for Central Banks\\ A Risk-Based Framework}
 
-\author[Lafarguette \& Raboun]{Romain Lafarguette, Ph.D. \and Amine Raboun, Ph.D.}
+\author[Lafarguette]{Romain Lafarguette, Ph.D. \and Amine Raboun, Ph.D.}
 \institute[IMF STX]{Quants \& IMF External Experts\blfootnote{\scriptsize{\emph{This training material is the property of the IMF, any reuse requires IMF permission}}} \\
 \begin{center}{\href{https://romainlafarguette.github.io/}{\textcolor{imfblue}{romainlafarguette.github.io/}} \hspace{0.3cm} \href{https://amineraboun.github.io/}{\textcolor{imfblue}{amineraboun.github.io/}}} \end{center} \vspace{-0.5cm}} 
 
@@ -116,6 +116,21 @@
 \section{Conceptual Framework}
 
 \begin{frame}
+  \frametitle{Quant Methods for Rule-Based and Discretionary FXI}
+  \begin{wideitemize}
+    \item Fundamentally, for floating regimes, \textbf{FX interventions are about mitigating risk} (volatility risk, funding risk, risk of pass-through to inflation, etc.)
+    \item Hence, \textbf{measuring and anticipating risk is critical}... and relevant both for discretionary and rule-based interventions
+    \item While there is no consensus about rule vs discretion, rule-based interventions are better suited to offer a \textbf{consistent macro-risk management}
+      \begin{itemize}
+      \item Macro risk derives from risk-taking behavior from market participants and international factors
+      \item Rules are among the best tools to effectively build a strategy geared towards tilting agents' behavior
+        \item Via \textbf{signalling} and \textbf{moral-hazard mitigation}
+      \end{itemize}      
+  \end{wideitemize}  
+\end{frame}
+
+
+\begin{frame}
   \frametitle{Contributions}
   \begin{wideitemize}
     \item Design a  rule to \textbf{address tail-risks} related  to direct and indirect
@@ -134,7 +149,7 @@ FX exposures in the economy
   Foreign Exchange intervention rules should be:\\
   \medskip  
   \begin{wideitemize}
-  \item \textbf{Adaptative}, depend on market conditions
+  \item \textbf{Adaptative}, depending on market conditions
   \item \textbf{Objective}, anchored to a risk tolerance level
     rather than an aribtrary FX level threshold
   \item Capture FX \textbf{non-linearities and asymmetries} between appreciation and
@@ -144,6 +159,7 @@ FX exposures in the economy
 \medskip  
 We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}  
 \end{frame}
+
 
 \begin{frame}
   \frametitle{Concept: Value-at-Risk FXI Rule}
@@ -179,6 +195,8 @@ We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}
     \item Risk tolerance should depend on the \textbf{macrofinancial risk} 
     \item The financial stability mandate of the central bank is properly
       formalized and quantified via VaR metric
+    \item Especially efficient to support market development, especially on derivatives (typically FX forwards)
+    
   \end{wideitemize}  
 \end{frame}
 
@@ -211,7 +229,7 @@ We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}
   \item Parsimonious GARCH model featuring \textbf{embedded heteroskedasticity},  \textbf{asymmetries}
     (appreciation/depreciation), \textbf{non-linearities} (exponential
     volatility) and parametric \textbf{density forecasting}    
-  \item We created a Python package, \textbf{free and open-source}  (available on Github): estimation, forecasting,
+  \item We created a Python package, \textbf{free and open-source}  (available on pypi and Github): estimation, forecasting,
     out-of-sample evaluation, optimization, benchmarking, etc. Results are \textbf{fully replicable}
   \item Can be used alongside other types of interventions: put auctions, NDF, etc.
   \end{wideitemize}
@@ -235,24 +253,44 @@ We propose an FX intervention rule based on \textbf{Conditional Value-at-Risk}
   \end{wideitemize}
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{A Complementary Rule}
+  \begin{wideitemize}
+    \item The VaR FXI rule is fundamentally a rule to intervene on the spot market to directly take risk out of the market
+    \item Can easily be associated with other types of interventions, such as auctions of forwards or non-deliverables forwards (NDF). 
+    \item Auctions of NDF provides an insurance to the market without endangering the FX reserves of the central bank.
+      \begin{itemize}
+      \item \textbf{But} require a relatively developped forward market and sophisticated market participants to operate
+      \item Supposes a relatively good arbitraging between the forward and spot market to impact the volatility on the spot
+      \item Doesn't help on funding issues (can be alleviated with spot interventions or swaps)
+      \end{itemize}
+    \item VaR FXI interventions are done on the spot market. They have a direct impact on the market, provides funding in hard currency
+      \begin{itemize}
+      \item  \textbf{But} will impact the level of FX reserves of the central bank (at least, over the short-term)
+      \end{itemize}
+  \end{wideitemize}
+\end{frame}
+
+
 \begin{frame}
   \frametitle{The Framework Extends Beyond FXI triggers}    
   \begin{wideenumerate}
-    \item Determine FX Intervention triggers
-    \item Conduct \textbf{market monitoring} and provide policy guidance
-    \item Ex-post benchmark FX interventions, including discretionary interventions
+    \item Can be used for \textbf{market monitoring} by measuring conditional volatility on the market (especially when implied volatility is not available)
+    \item Provide policy guidance for \textbf{discretionary interventions}
+    \item Can be used for structural analysis on the FX markets, for instance to study the dynamic of capital flows as a function of conditional volatility
+    \item Benchmark ex-post FX discretionary interventions (what was the risk level when the central bank intervened ?)
     \end{wideenumerate}
     
     \bigskip
     
   \begin{wideitemize}
-    \item We present below an application of the toolkit to the Mexican Peso, based on publicly
-      available data
-    \item More than 4500 daily observations, from 2009 to 2018, with Bank of
-      Mexico (public) FX interventions, mostly concentrated in 2009 and 2016
+    \item \emph{We present below an application of the toolkit to the Mexican Peso to benchmark their interventions ex-post}
     \end{wideitemize}
     
 \end{frame}
+
+
 
 
 %% ---------------------------------------------------------------------------
@@ -416,15 +454,44 @@ g(r_t)$ where $g(r_t) = \alpha_v r_t + \gamma(|r_t|-\mathbb{E}|r_t|)$
 \begin{frame}
   \frametitle{In Practice}
   \begin{wideitemize}
-    \item The package we design handles the optimization seamlessly (see the Zigzag discussed previously)
+    \item In practice, optimizing \textbf{out-of-sample} a density model is complex
+    \item The package we designed handles the optimization seamlessly (see the Zigzag discussed previously)
     \item It outputs the optimal functional forms and parameters
-    \item However, it might be time consuming, given that it involves optimizing over a large number of functional forms
-    \item Hence, users might want to re-run the optimization from time to time, but not everytime
+    \item Offers the possibility to optimize based on the performance \textbf{on the tails}
       \begin{itemize}
-      \item For instance, every month
-      \item Or after a structural break, a crisis, etc.
+      \item Since FX Interventions will occur in the tails, it matters that the model performs well on the tails
       \end{itemize}
   \end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Zig-Zag Output}
+\makebox[\linewidth]{\includegraphics[width=0.85\paperwidth]{img/zigzag_table.PNG}}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How to Select a Model from our Package?}
+  \begin{wideenumerate}
+  \item \textbf{Look for well-specified density models}: distributions that can NOT reject the PIT hypothesis (can not reject the hypothesis that the PIT is uniformly distributed). Want \textbf{high} p-values
+    \item Ideally, should be well-specified in the tails (PIT tails) as well as in the bell part
+    \item Then among the well-specified density models, choose the \textbf{best performing model: the one with the best logscore}
+    \item What if all models fail the PIT test? If they are all mis-specified?
+      \begin{itemize}
+      \item Directly go for the best performing one
+      \end{itemize}
+    \item Deep question: why focusing on well-specified models? Why not only focusing on the best performing ones?
+      \begin{itemize}
+      \item Mis-specified models indicate a consistent bias
+      \item They can perform well over short-periods but it is likely that they might strongly underperform in the future
+      \end{itemize}
+  \end{wideenumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Best Out-of-Sample Model from the Package}
+  \makebox[\linewidth]{\includegraphics[height=0.85\paperheight]{img/zigzag_optimization_output.PNG}}
 \end{frame}
 
 

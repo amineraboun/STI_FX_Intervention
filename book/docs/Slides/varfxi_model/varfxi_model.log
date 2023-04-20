@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.2)  18 APR 2023 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.2)  19 APR 2023 20:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1324,17 +1324,17 @@ ogo.pdf>]
 
 ] [5
 
+] [6
+
 ]
-<img/var_rule.pdf, id=92, 1580.38747pt x 985.64139pt>
+<img/var_rule.pdf, id=99, 1580.38747pt x 985.64139pt>
 File: img/var_rule.pdf Graphic file (type pdf)
 <use img/var_rule.pdf>
-Package pdftex.def Info: img/var_rule.pdf  used on input line 168.
+Package pdftex.def Info: img/var_rule.pdf  used on input line 184.
 (pdftex.def)             Requested size: 364.19536pt x 227.12889pt.
- [6
+ [7
 
- <./img/var_rule.pdf>] [7
-
-] [8
+ <./img/var_rule.pdf>] [8
 
 ] [9
 
@@ -1343,152 +1343,175 @@ Package pdftex.def Info: img/var_rule.pdf  used on input line 168.
 
 ] [11
 
-] (varfxi_model.toc) [12
+] [12
+
+] [13
+
+] (varfxi_model.toc) [14
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 284.
+(Font)              <10.95> on input line 322.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 284.
- [13
+(Font)              <8> on input line 322.
+ [15
 
-] [14
+] [16
 
-] [15
-
-]
-(img//regressions_table_short.tex) [16
+] [17
 
 ]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 349
+(img//regressions_table_short.tex) [18
+
+]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 387
 .
 
 (C:\Users\A13258\MiKTeX\tex/latex/bbm\ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [17
+) [19
 
 ]
-<img/descriptive_plot.pdf, id=201, 1581.7256pt x 971.16042pt>
+<img/descriptive_plot.pdf, id=215, 1581.7256pt x 971.16042pt>
 File: img/descriptive_plot.pdf Graphic file (type pdf)
 <use img/descriptive_plot.pdf>
-Package pdftex.def Info: img/descriptive_plot.pdf  used on input line 354.
+Package pdftex.def Info: img/descriptive_plot.pdf  used on input line 392.
 (pdftex.def)             Requested size: 364.19536pt x 223.59929pt.
- [18
+ [20
 
  <./img/descriptive_plot.pdf>]
-<img/conditional_vol_plot.pdf, id=219, 1547.50327pt x 927.1805pt>
+<img/conditional_vol_plot.pdf, id=233, 1547.50327pt x 927.1805pt>
 File: img/conditional_vol_plot.pdf Graphic file (type pdf)
 <use img/conditional_vol_plot.pdf>
-Package pdftex.def Info: img/conditional_vol_plot.pdf  used on input line 359.
+Package pdftex.def Info: img/conditional_vol_plot.pdf  used on input line 397.
 (pdftex.def)             Requested size: 364.19536pt x 218.19868pt.
- [19
+ [21
 
- <./img/conditional_vol_plot.pdf>] (varfxi_model.toc) [20
+ <./img/conditional_vol_plot.pdf>] (varfxi_model.toc) [22
 
-] [21
+] [23
 
 ]
-<img/joyplot.pdf, id=248, 867.24pt x 722.7pt>
+<img/joyplot.pdf, id=261, 867.24pt x 722.7pt>
 File: img/joyplot.pdf Graphic file (type pdf)
 <use img/joyplot.pdf>
-Package pdftex.def Info: img/joyplot.pdf  used on input line 387.
+Package pdftex.def Info: img/joyplot.pdf  used on input line 425.
 (pdftex.def)             Requested size: 364.19862pt x 273.14014pt.
 
-Overfull \vbox (13.38928pt too high) detected at line 387
+Overfull \vbox (13.38928pt too high) detected at line 425
  []
 
-[22
+[24
 
  <./img/joyplot.pdf>]
-<img/fanchart.pdf, id=263, 1662.02242pt x 1111.2505pt>
+<img/fanchart.pdf, id=276, 1662.02242pt x 1111.2505pt>
 File: img/fanchart.pdf Graphic file (type pdf)
 <use img/fanchart.pdf>
-Package pdftex.def Info: img/fanchart.pdf  used on input line 392.
+Package pdftex.def Info: img/fanchart.pdf  used on input line 430.
 (pdftex.def)             Requested size: 345.98447pt x 231.31778pt.
- [23
+ [25
 
  <./img/fanchart.pdf>]
 File: img/var_rule.pdf Graphic file (type pdf)
 <use img/var_rule.pdf>
-Package pdftex.def Info: img/var_rule.pdf  used on input line 397.
+Package pdftex.def Info: img/var_rule.pdf  used on input line 435.
 (pdftex.def)             Requested size: 364.19536pt x 227.12889pt.
- [24
-
-]
-<img/conditional_cdf.pdf, id=284, 1559.4707pt x 981.67259pt>
-File: img/conditional_cdf.pdf Graphic file (type pdf)
-<use img/conditional_cdf.pdf>
-Package pdftex.def Info: img/conditional_cdf.pdf  used on input line 402.
-(pdftex.def)             Requested size: 364.19536pt x 229.2551pt.
- [25
-
- <./img/conditional_cdf.pdf>]
-<img/conditional_exceedance.pdf, id=302, 1533.40787pt x 987.26758pt>
-File: img/conditional_exceedance.pdf Graphic file (type pdf)
-<use img/conditional_exceedance.pdf>
-Package pdftex.def Info: img/conditional_exceedance.pdf  used on input line 407
-.
-(pdftex.def)             Requested size: 364.19536pt x 234.47849pt.
  [26
 
- <./img/conditional_exceedance.pdf>]
-<img/pitchart.pdf, id=324, 1539.29155pt x 944.30606pt>
-File: img/pitchart.pdf Graphic file (type pdf)
-<use img/pitchart.pdf>
-Package pdftex.def Info: img/pitchart.pdf  used on input line 413.
-(pdftex.def)             Requested size: 364.19536pt x 223.41048pt.
+]
+<img/conditional_cdf.pdf, id=298, 1559.4707pt x 981.67259pt>
+File: img/conditional_cdf.pdf Graphic file (type pdf)
+<use img/conditional_cdf.pdf>
+Package pdftex.def Info: img/conditional_cdf.pdf  used on input line 440.
+(pdftex.def)             Requested size: 364.19536pt x 229.2551pt.
  [27
 
+ <./img/conditional_cdf.pdf>]
+<img/conditional_exceedance.pdf, id=315, 1533.40787pt x 987.26758pt>
+File: img/conditional_exceedance.pdf Graphic file (type pdf)
+<use img/conditional_exceedance.pdf>
+Package pdftex.def Info: img/conditional_exceedance.pdf  used on input line 445
+.
+(pdftex.def)             Requested size: 364.19536pt x 234.47849pt.
+ [28
+
+ <./img/conditional_exceedance.pdf>]
+<img/pitchart.pdf, id=337, 1539.29155pt x 944.30606pt>
+File: img/pitchart.pdf Graphic file (type pdf)
+<use img/pitchart.pdf>
+Package pdftex.def Info: img/pitchart.pdf  used on input line 451.
+(pdftex.def)             Requested size: 364.19536pt x 223.41048pt.
+ [29
+
  <./img/pitchart.pdf>]
-[28
-
-] (varfxi_model.toc) [29
-
-] [30
+[30
 
 ]
-<img/benchmark_minprice.pdf, id=361, 1571.6881pt x 881.56133pt>
-File: img/benchmark_minprice.pdf Graphic file (type pdf)
-<use img/benchmark_minprice.pdf>
-Package pdftex.def Info: img/benchmark_minprice.pdf  used on input line 459.
-(pdftex.def)             Requested size: 364.19536pt x 204.27486pt.
+<img/zigzag_table.PNG, id=358, 730.22812pt x 458.21187pt>
+File: img/zigzag_table.PNG Graphic file (type png)
+<use img/zigzag_table.PNG>
+Package pdftex.def Info: img/zigzag_table.PNG  used on input line 471.
+(pdftex.def)             Requested size: 309.56827pt x 194.25154pt.
  [31
 
- <./img/benchmark_minprice.pdf>]
-<img/benchmark_minprice_cdf.pdf, id=382, 1517.28648pt x 881.56133pt>
-File: img/benchmark_minprice_cdf.pdf Graphic file (type pdf)
-<use img/benchmark_minprice_cdf.pdf>
-Package pdftex.def Info: img/benchmark_minprice_cdf.pdf  used on input line 465
-.
-(pdftex.def)             Requested size: 364.19536pt x 211.59248pt.
- [32
+ <./img/zigzag_table.PNG>] [32
 
- <./img/benchmark_minprice_cdf.pdf>]
-<img/benchmark_no_minprice.pdf, id=395, 1571.6881pt x 881.56133pt>
-File: img/benchmark_no_minprice.pdf Graphic file (type pdf)
-<use img/benchmark_no_minprice.pdf>
-Package pdftex.def Info: img/benchmark_no_minprice.pdf  used on input line 471.
-
-(pdftex.def)             Requested size: 364.19536pt x 204.27486pt.
+]
+<img/zigzag_optimization_output.PNG, id=374, 605.76312pt x 528.97626pt>
+File: img/zigzag_optimization_output.PNG Graphic file (type png)
+<use img/zigzag_optimization_output.PNG>
+Package pdftex.def Info: img/zigzag_optimization_output.PNG  used on input line
+ 495.
+(pdftex.def)             Requested size: 265.88033pt x 232.17628pt.
  [33
 
+ <./img/zigzag_optimization_output.PNG>] (varfxi_model.toc) [34
+
+] [35
+
+]
+<img/benchmark_minprice.pdf, id=398, 1571.6881pt x 881.56133pt>
+File: img/benchmark_minprice.pdf Graphic file (type pdf)
+<use img/benchmark_minprice.pdf>
+Package pdftex.def Info: img/benchmark_minprice.pdf  used on input line 526.
+(pdftex.def)             Requested size: 364.19536pt x 204.27486pt.
+ [36
+
+ <./img/benchmark_minprice.pdf>]
+<img/benchmark_minprice_cdf.pdf, id=418, 1517.28648pt x 881.56133pt>
+File: img/benchmark_minprice_cdf.pdf Graphic file (type pdf)
+<use img/benchmark_minprice_cdf.pdf>
+Package pdftex.def Info: img/benchmark_minprice_cdf.pdf  used on input line 532
+.
+(pdftex.def)             Requested size: 364.19536pt x 211.59248pt.
+ [37
+
+ <./img/benchmark_minprice_cdf.pdf>]
+<img/benchmark_no_minprice.pdf, id=432, 1571.6881pt x 881.56133pt>
+File: img/benchmark_no_minprice.pdf Graphic file (type pdf)
+<use img/benchmark_no_minprice.pdf>
+Package pdftex.def Info: img/benchmark_no_minprice.pdf  used on input line 538.
+
+(pdftex.def)             Requested size: 364.19536pt x 204.27486pt.
+ [38
+
  <./img/benchmark_no_minprice.pdf>]
-<img/benchmark_no_minprice_cdf.pdf, id=415, 1517.28648pt x 881.56133pt>
+<img/benchmark_no_minprice_cdf.pdf, id=452, 1517.28648pt x 881.56133pt>
 File: img/benchmark_no_minprice_cdf.pdf Graphic file (type pdf)
 <use img/benchmark_no_minprice_cdf.pdf>
 Package pdftex.def Info: img/benchmark_no_minprice_cdf.pdf  used on input line 
-477.
+544.
 (pdftex.def)             Requested size: 364.19536pt x 211.59248pt.
- [34
+ [39
 
- <./img/benchmark_no_minprice_cdf.pdf>] [35
+ <./img/benchmark_no_minprice_cdf.pdf>] [40
 
-] (varfxi_model.toc) [36
+] (varfxi_model.toc) [41
 
-] [37
+] [42
 
 ]
-(img/benchmark_table.tex) [38
+(img/benchmark_table.tex) [43
 
 ]
 \tf@nav=\write6
@@ -1505,11 +1528,11 @@ Package rerunfilecheck Info: File `varfxi_model.out' has not changed.
 (rerunfilecheck)             Checksum: 46236346A4E4810379612F5DEF457A25;516.
  ) 
 Here is how much of TeX's memory you used:
- 25338 strings out of 476334
- 488799 string characters out of 5798287
+ 25375 strings out of 476334
+ 489443 string characters out of 5798287
  1870382 words of memory out of 5000000
- 45071 multiletter control sequences out of 15000+600000
- 588875 words of font info for 105 fonts, out of 8000000 for 9000
+ 45094 multiletter control sequences out of 15000+600000
+ 593138 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,389b,675s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\A13258\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi657\bbm1
@@ -1518,9 +1541,9 @@ Here is how much of TeX's memory you used:
 13258\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:
 \Users\A13258\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6
 .pk>{C:/Users/A13258/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc} <C:\Users\A13258\
-AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi657\matha10.pk> <C:\User
-s\A13258\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb6.pk>{
-C:/Users/A13258/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/A13258/MiKTeX/fon
+AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi657\matha10.pk>{C:/Users
+/A13258/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <C:\Users\A13258\AppData\Local\MiK
+TeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb6.pk><C:/Users/A13258/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/A13258/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr17.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/
@@ -1530,11 +1553,11 @@ pe1/public/lm/lmmi6.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
 X/fonts/type1/public/lm/lmr12.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm
 /lmr6.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/A132
 58/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/A13258/MiKTeX/fonts/type1/pu
-blic/lm/lmri8.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb>
-Output written on varfxi_model.pdf (38 pages, 3652685 bytes).
+blic/lm/lmri10.pfb><C:/Users/A13258/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/
+Users/A13258/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on varfxi_model.pdf (43 pages, 3783096 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

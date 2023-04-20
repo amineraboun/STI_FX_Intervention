@@ -1,0 +1,163 @@
+%% ---------------------------------------------------------------------------
+%% Preamble: Packages and Setup
+%% ---------------------------------------------------------------------------
+% Class 
+\documentclass{beamer}
+
+% Theme
+\usetheme{Boadilla}
+\usecolortheme{dolphin}
+%\setbeamertemplate{headline}{} % Remove the top navigation bar
+
+% Font and encoding
+\usepackage[utf8]{inputenc} % Input font
+\usepackage[T1]{fontenc} % Output font
+\usepackage{lmodern} % Standard LateX font
+\usefonttheme{serif} % Standard LateX font
+
+% Maths 
+\usepackage{amsfonts, amsmath, mathabx, bm, bbm} % Maths Fonts
+
+% Graphics
+\usepackage{graphicx} % Insert graphics
+\usepackage{subfig} % Multiple figures in one graphic
+\graphicspath{{/img}}
+
+% Layout
+\usepackage{changepage}
+
+% Colors
+\usepackage{xcolor}
+\definecolor{imfblue}{RGB}{0,76,151} % Official IMF color
+\setbeamercolor{title}{fg=imfblue}
+\setbeamercolor{frametitle}{fg=imfblue}
+\setbeamercolor{structure}{fg=imfblue}
+
+% Tables
+\usepackage{booktabs,rotating,multirow} % Tabular rules and other macros
+%\usepackage{pdflscape,afterpage} % Landscape mode and afterpage
+%\usepackage{threeparttable} % Split long tables
+\usepackage[font=scriptsize,labelfont=scriptsize,labelfont={color=imfblue}]{caption}
+
+% Import files
+\usepackage{import}
+
+% Appendix slides
+\usepackage{appendixnumberbeamer} % Manage page numbers for appendix slides
+
+% References
+\usepackage{hyperref}
+
+% A few macros: environments
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+
+\newenvironment{extrawideitemize}{\itemize\addtolength{\itemsep}{30pt}}{\enditemize}
+\newenvironment{extrawideenumerate}{\enumerate\addtolength{\itemsep}{30pt}}{\endenumerate}
+
+% Remove navigation symbols and other superfluous elements
+\setbeamertemplate{navigation symbols}{}
+\beamertemplatenavigationsymbolsempty
+
+%\setbeamertemplate{note page}[plain]
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+\setbeameroption{hide notes}
+
+% Institute font
+\setbeamerfont{institute}{size=\footnotesize}
+\DeclareMathSizes{10}{9}{7}{5}
+
+% Footnote without marker
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+%% ---------------------------------------------------------------------------
+%% Title info
+%% ---------------------------------------------------------------------------
+\title[Key Points]{Key Points to Remember}
+
+\author[Lafarguette]{Romain Lafarguette, Ph.D. \and Amine Raboun, Ph.D.}
+\institute[IMF STX]{Quants \& IMF External Experts\blfootnote{\scriptsize{\emph{This training material is the property of the IMF, any reuse requires IMF permission}}} \\
+\begin{center}{\href{https://romainlafarguette.github.io/}{\textcolor{imfblue}{romainlafarguette.github.io/}} \hspace{0.3cm} \href{https://amineraboun.github.io/}{\textcolor{imfblue}{amineraboun.github.io/}}} \end{center} \vspace{-0.5cm}} 
+
+\date[STI, 20 April 2023]{\footnotesize Singapore Training Institute, 20 April 2023}
+
+\titlegraphic{\vspace{-0.6cm}
+    \begin{figure}
+    \centering
+    \subfloat{{\includegraphics[width=2cm]{img/imf_logo}}}%
+    \end{figure}}
+
+% Slide between sections
+\AtBeginSection[]
+{
+    \begin{frame}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+%% ---------------------------------------------------------------------------
+%% Title slide
+%% ---------------------------------------------------------------------------
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+%% ---------------------------------------------------------------------------
+%% Remember
+%% ---------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Central Banking} 
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Statistics}
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Volatility Modeling}
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Programming}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Programming}
+
+
+\end{frame}
+
+
+
+
+
+%% ---------------------------------------------------------------------------
+%% End document
+%% ---------------------------------------------------------------------------
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
