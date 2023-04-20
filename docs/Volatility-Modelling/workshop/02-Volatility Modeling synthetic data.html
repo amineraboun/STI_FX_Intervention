@@ -253,9 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">Advanced Volatilty Modelling with Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
-
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">02- Volatility prediction: Simulated Data</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
 
@@ -295,6 +293,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Python-Introduction/workshop/19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">utils</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">Miscelaneous tools</a></li>
 </ul>
 
     </div>
@@ -519,28 +521,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">02- Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-the-time-series">Simulate the time series</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-and-acf-plots">PACF and ACF Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-test-models">Fit and Test models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-the-training-set-from-the-testing-set">Separate the training set from the testing set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-best-garch-model-garch-2-2">Fit the best GARCH Model= GARCH (2,2)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-test-models">Fit and Test models</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-the-training-set-from-the-testing-set">Separate the training set from the testing set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-best-garch-model-garch-2-2">Fit the best GARCH Model= GARCH (2,2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-mean">Predict the mean ?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-forecast-origin">Rolling Forecast Origin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-forecast-origin">Rolling Forecast Origin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-1">Exercises 1:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises 1:</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -645,11 +641,10 @@ a_0, a_1 \sim \mathcal{N}(0,1)
 <li><p>Do the same for the ACF</p></li>
 </ul>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="fit-and-test-models">
-<h1>Fit and Test models<a class="headerlink" href="#fit-and-test-models" title="Permalink to this heading">#</a></h1>
+<section id="fit-and-test-models">
+<h2>Fit and Test models<a class="headerlink" href="#fit-and-test-models" title="Permalink to this heading">#</a></h2>
 <section id="separate-the-training-set-from-the-testing-set">
-<h2>Separate the training set from the testing set<a class="headerlink" href="#separate-the-training-set-from-the-testing-set" title="Permalink to this heading">#</a></h2>
+<h3>Separate the training set from the testing set<a class="headerlink" href="#separate-the-training-set-from-the-testing-set" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">series</span><span class="p">[:</span><span class="o">-</span><span class="n">test_size</span><span class="p">],</span> <span class="n">series</span><span class="p">[</span><span class="o">-</span><span class="n">test_size</span><span class="p">:]</span>
@@ -659,7 +654,7 @@ a_0, a_1 \sim \mathcal{N}(0,1)
 </div>
 </section>
 <section id="fit-the-best-garch-model-garch-2-2">
-<h2>Fit the best GARCH Model= GARCH (2,2)<a class="headerlink" href="#fit-the-best-garch-model-garch-2-2" title="Permalink to this heading">#</a></h2>
+<h3>Fit the best GARCH Model= GARCH (2,2)<a class="headerlink" href="#fit-the-best-garch-model-garch-2-2" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="s1">&#39;Zero&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">o</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -707,6 +702,7 @@ fitted_paramters[‘true_params’] = [0.5,  0.1, 0.2,  0.3, 0.4]
 fitted_paramters</p>
 <p>Even when we know the data generating process it is difficult to get back the exact parameters of ARCH
 ARCH estimation is based on maximum likelihood. The more there are parameters to estimate, the more difficult it becomes</p>
+</section>
 </section>
 <section id="predict">
 <h2>Predict<a class="headerlink" href="#predict" title="Permalink to this heading">#</a></h2>
@@ -781,9 +777,8 @@ ARCH estimation is based on maximum likelihood. The more there are parameters to
 </div>
 </div>
 </section>
-</section>
 <section id="rolling-forecast-origin">
-<h2>Rolling Forecast Origin<a class="headerlink" href="#rolling-forecast-origin" title="Permalink to this heading">#</a></h2>
+<h3>Rolling Forecast Origin<a class="headerlink" href="#rolling-forecast-origin" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rolling_predictions</span> <span class="o">=</span> <span class="p">[]</span>
@@ -851,12 +846,13 @@ ARCH estimation is based on maximum likelihood. The more there are parameters to
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Note that the GARCH  have no effect on the <strong>conditional mean</strong>, but only on the <strong>conditional volatility</strong></p></li>
 <li><p>The best usage of the Garch model prediction, as any time-series model is to re-estimate the parameters every day and predict <strong>1 step ahead</strong></p></li>
 <li><p>Parameters update take the recent sudden changes in volatility</p></li>
 </ul>
+</section>
 <section id="exercises-1">
 <h3>Exercises 1:<a class="headerlink" href="#exercises-1" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
@@ -1006,28 +1002,22 @@ ARCH estimation is based on maximum likelihood. The more there are parameters to
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">02- Volatility prediction: Simulated Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-the-time-series">Simulate the time series</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pacf-and-acf-plots">PACF and ACF Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-test-models">Fit and Test models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-the-training-set-from-the-testing-set">Separate the training set from the testing set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-best-garch-model-garch-2-2">Fit the best GARCH Model= GARCH (2,2)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-test-models">Fit and Test models</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-the-training-set-from-the-testing-set">Separate the training set from the testing set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-best-garch-model-garch-2-2">Fit the best GARCH Model= GARCH (2,2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-mean">Predict the mean ?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-forecast-origin">Rolling Forecast Origin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-forecast-origin">Rolling Forecast Origin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-1">Exercises 1:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises 1:</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
