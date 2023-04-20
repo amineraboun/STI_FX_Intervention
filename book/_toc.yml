@@ -40,3 +40,6 @@ parts:
      sections:
      - glob: docs/Python-Introduction/workshop/*
 
+ - caption: utils
+   chapters:
+   - file: docs/utils.md
