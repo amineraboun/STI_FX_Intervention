@@ -1,0 +1,13 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Statistical Features and Properties of Financial Time series}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Stationarity}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Absence of autocorrelations}{19}{0}{2}
+\beamer@subsectionintoc {2}{3}{Heavy Tails}{25}{0}{2}
+\beamer@subsectionintoc {2}{4}{Asymmetry}{28}{0}{2}
+\beamer@subsectionintoc {2}{5}{Volatility Clustering}{31}{0}{2}
+\beamer@subsectionintoc {2}{6}{Long Range Dependence}{34}{0}{2}
+\beamer@subsectionintoc {2}{7}{Leverage Effect}{37}{0}{2}
+\beamer@subsectionintoc {2}{8}{Aggregational Gaussianity}{39}{0}{2}
+\beamer@sectionintoc {3}{Useful Techniques: Differencing}{41}{0}{3}
+\beamer@sectionintoc {4}{AR, MA, ARMA, ARIMA, SARIMA models}{47}{0}{4}
+\beamer@sectionintoc {5}{Empirical Strategy}{65}{0}{5}

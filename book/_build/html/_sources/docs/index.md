@@ -15,11 +15,11 @@ Overall, the course aims to provide participants with a solid understanding of t
 
 ## Team
 
-- [Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Quant at the Abu Dhabi Investment Authority, former IMF and ECB, IMF External Consultant
+- [Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Buy-side quant at the Abu Dhabi Investment Authority, former IMF and ECB, IMF External Consultant
 
-- [Amine Raboun, Ph.D.](https://amineraboun.github.io/): Quant at the Abu Dhabi Investment Authority, IMF External Consultant
+- [Amine Raboun, Ph.D.](https://amineraboun.github.io/): Buy-side quant at the Abu Dhabi Investment Authority, IMF External Consultant
 
-- [Zhuohui Chen](https://www.linkedin.com/in/zhuohui-chen-7a7424181): IMF Research Analyst
+- [Zhuohui Chen](https://www.linkedin.com/in/zhuohui-chen-7a7424181): IMF Research Analyst, Monetary and Capital Markets Department
 
 
 ## Program
@@ -28,7 +28,7 @@ Overall, the course aims to provide participants with a solid understanding of t
 |---|:---:|:---|:---|
 | Monday, April 17 |||
 |9:00 - 9:15 ||**Administrative Briefing**||
-|9:15 – 9:45||**Opening Session**  <br/> **Staff** of IMF – Singapore Regional Training Institute (STI)  <br/> **Teaching Team** of IMF||
+|9:15 – 9:45||**Opening Session**  <br/> **Staff** of IMF – Singapore Regional Training Institute (STI)  <br/> **Teaching Team** of IMF| [Slides](./Slides/intro/introduction_sti_course.pdf)|
 |10:00 – 11:30| L-1| **Central Bank Interventions: Theory (lecture)** <br/>  Mr. Romain Lafarguette, Ph.D.  <br/> IMF consultant|[Slides](./Slides/fxi_theory_practice/fxi_theory_practice.pdf) |
 |11:30 – 12:30| L-2| **Central Bank Interventions: International Practices (lecture)**  <br/> Mr. Romain Lafarguette, Ph.D.  <br/> IMF consultant | [Slides](./Slides/fxi_theory_practice/fxi_theory_practice.pdf) |
 |14:00 – 15:15|	L-3| **General Introduction to Python (lecture)**  <br/> Mr. Zhuohui Chen  <br/> IMF research analyst|

@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{ARCH Models}{8}{0}{2}
+\beamer@sectionintoc {3}{GARCH Models}{30}{0}{3}
+\beamer@sectionintoc {4}{GARCH Extensions}{41}{0}{4}
+\beamer@sectionintoc {5}{Value At Risk}{53}{0}{5}
