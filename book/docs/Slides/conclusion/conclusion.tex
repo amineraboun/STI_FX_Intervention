@@ -78,13 +78,14 @@
 %% ---------------------------------------------------------------------------
 %% Title info
 %% ---------------------------------------------------------------------------
-\title[Key Points]{Key Points to Remember}
+\title[Key Points]{Key Points to Remember \\ STI Course on FX Interventions}
 
-\author[Lafarguette]{Romain Lafarguette, Ph.D. \and Amine Raboun, Ph.D.}
-\institute[IMF STX]{Quants \& IMF External Experts\blfootnote{\scriptsize{\emph{This training material is the property of the IMF, any reuse requires IMF permission}}} \\
-\begin{center}{\href{https://romainlafarguette.github.io/}{\textcolor{imfblue}{romainlafarguette.github.io/}} \hspace{0.3cm} \href{https://amineraboun.github.io/}{\textcolor{imfblue}{amineraboun.github.io/}}} \end{center} \vspace{-0.5cm}} 
+\author[Lafarguette]{Romain Lafarguette \and Zhuohui Chen  \and Amine Raboun}
+\institute[IMF STX]{Quants \& IMF MCM \& IMF External Experts\blfootnote{\scriptsize{\emph{This training material is the property of the IMF, any reuse requires IMF permission}}} \\
+  % \begin{center}{\href{https://romainlafarguette.github.io/}{\textcolor{imfblue}{romainlafarguette.github.io/}} \hspace{0.3cm} \href{https://amineraboun.github.io/}{\textcolor{imfblue}{amineraboun.github.io/}}} \end{center} \vspace{-0.5cm}
+} 
 
-\date[STI, 20 April 2023]{\footnotesize Singapore Training Institute, 20 April 2023}
+\date[STI, 21 April 2023]{\footnotesize Singapore Training Institute, 21 April 2023}
 
 \titlegraphic{\vspace{-0.6cm}
     \begin{figure}
@@ -115,39 +116,139 @@
 %% Remember
 %% ---------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Central Banking} 
+  \frametitle{FX Interventions}
+  \begin{wideitemize}
+  \item FX reserves come \textbf{with benefits and costs}
+    \begin{itemize}
+    \item Buffer for intervention, building credibility, reducing risk premia, countercyclical policy
+    \item Cost of sterilization (liquidity management), valuation/duration risk on the balance sheet
+    \end{itemize}
+  \item Choose the \textbf{right instrument} depending on the issue to address:
+    \begin{itemize}
+    \item Excessive volatility: FX spot or forward
+    \item FX speculation witout endangering FX reserves: \textbf{non-deliverable forward}
+    \item Funding issue without risk transfer: \textbf{FX swaps}
+    \end{itemize}
+  \item \textbf{Implementation}: pre-announced auctions \textbf{maximize signalling}, \textbf{reduce market distortions}
+  \item Can operate rule-based interventions and discretionary interventions if necessary
+  \end{wideitemize}
+
+  
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Risk-Based FX Interventions}
+  \begin{wideitemize}
+   \item For floating currencies, FX Interventions are about \textbf{managing risk at the macro level}
+   \item \textbf{Central banks should model and anticipate risk}, both for discretionary and rules-based interventions
+    \item Intervening through risk-based rules preserves exchange rate as \textbf{shock absorber} while strengthening financial stability
+    \item The risk model can be used to benchmark FX interventions, even discretionary ones
+    \item The VaR FXI spot rule can be \textbf{combined with other types of interventions}, for instance auctions on forward and NDF
+    \item The risk tolerance can be dynamically ajusted as the hedging instruments are becoming more available  
+  \end{wideitemize}
+\end{frame}
 
 
 \begin{frame}
   \frametitle{Statistics}
+  \begin{wideitemize}
+    \item The mean, mode and median inform about the \textbf{central tendency}
+    \item The variance informs about the \textbf{volatility/risk}, and the skewness about the \textsc{balance of risks} (asymmetry)
+    \item \textbf{Density forecasts} are important for policymakers: think about risks and balance of risks, not just the central tendency
+    \item Density forecasts: \textbf{uncertainty about the world}
+    \item Confidence interval of the point forecasts: \textbf{uncertainty about the model}
+  \end{wideitemize}
+
+\end{frame}
 
 
+\begin{frame}
+  \frametitle{Time Series Models}
+  \begin{wideitemize}
+  \item Always check for \textbf{stationarity} before estimating models (ADF, KPSS): \textbf{differentiate} the data as necessary
+  \item \textbf{Seasonality} and \textbf{trend} are generating non-stationarity
+    \begin{itemize}
+    \item Seasonality can be dealt with Fourier terms (if regular), dummies (if irregular)
+    \item Trend can be addressed with detrending methods
+    \end{itemize}
+  \item Partial autocorrelation purges out the effect of terms at shorter lags
+  \item PACF: help selecting lag from AR, ACF helps on MA models
+  \item Check that the residuals look like a white noise, for well-specified model
+  \end{wideitemize}
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Volatility Modeling}
-
-
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Programming}
-
-
+  \begin{wideitemize}
+    \item There is a difference between \textbf{realized volatility} (of realizations over time) and \textbf{conditional volatility} (probability of a future realization)
+    \item GARCH models address most of the features of financial time series, yet are relatively simple too
+    \item Very few models are able to outperform GARCH(1, 1). \textbf{GARCH(1,1) should be the benchmark model}
+    \item GARCH embedds symmetric volatility shock. If you want \textbf{asymmetric shocks}: use \textbf{GJR-GARCH or EGARCH} instead.
+    \item If you need more skewness and kurtosis to fit the data, change the distribution of the normalized residuals: SkewStudent, GED, etc.
+  \end{wideitemize}
 \end{frame}
 
 
 
 \begin{frame}
-  \frametitle{Programming}
+  \frametitle{Model Validation}
+ \begin{wideitemize}
+    \item A model that performs well in-sample (R2, significant coefficients, etc.) does NOT necessarily forecast well: \textbf{risk of overfit}
+  \item Crucial to measure the \textbf{out-of-sample performance}: backtest in \textbf{"real-conditions"}
+  \item Use the right metric depending on the problem at hand:
+    \begin{itemize}
+    \item For point forecast: RMSE, MSE, MAE (without outliers), MAPE. RMSE and MSE are sensitive to outliers
+    \item For density forecasts:
+      \begin{itemize}
+      \item Specification test: \textbf{Probability integral transform} (not too optimistic/pessimistic)
+      \item Performance test: \textbf{logscore} (on average) or asymmetric logscore (for the tails)
+      \end{itemize}
+    \end{itemize}
+   \item Hypothesis testing: "\emph{Can not reject H0 doesn't mean we can accept HA}"
+\end{wideitemize}
+\end{frame}
 
+
+\begin{frame}
+  \frametitle{Python Programming}
+  \begin{wideitemize}
+  \item Python is free and open-source and \textbf{can help the central bank for many tasks}, with thousands of packages:
+    \begin{itemize}
+    \item Modeling and forecasting
+    \item Data management and data vizualization
+    \item Tasks automation
+    \end{itemize}
+    \item You can use \textbf{Jupyter Notebooks} for coding, simple and efficient. Else Spyder for more advanced tools
+    \item Create a new environment for each new project via Anaconda
+    \item Import packages before using them, and set the working directory before running script
+    \item \textbf{Lot of free online resources to learn Python}: encourage colleagues to use Python!
+  \end{wideitemize}
 
 \end{frame}
 
+
+
+
+\begin{frame}
+  \frametitle{Thank You}
+  \begin{wideitemize}
+  \item \textbf{Thank you very much for your enthusiasm and participation!}
+  \item Thanks to STI and Alina for the spotless organization!
+  \item We hope that this course will be helpful to you
+    \begin{itemize}
+    \item Not only for FX interventions
+    \item Also for monitoring, research, forecasting, etc.
+    \end{itemize}
+  \item Quantitative methods are more and more important, important for your central bank and your career !
+  \item Interested in quantitative methods on other topics?
+    \begin{itemize}
+    \item We are teaching \textbf{Forecasting Framework for Central Bank Systemic Liquidity in STI in 27 November - 01 December 2023 !}
+    \item Don't hesitate to register! FFCBSL: \href{https://www-ins.imf.org/TAS/signon.aspx?pkey=ST23.30E}{https://www-ins.imf.org/TAS/signon.aspx?pkey=ST23.30E}
+    \end{itemize}
+  \end{wideitemize}
+\end{frame}
 
 
 
