@@ -1,10 +1,29 @@
-# Theory
+[Full slides of the course](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
-[More details in the slides](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
+# Conceptual Framework
 
-This course covers the fundamentals of foreign exchange interventions. It presents:
+## Monetary Frameworks
 
-## Resources
+The choice of the monetary framework and the goals of the central bank is constrained by the Mundell Trilemma, that states that countries can only achieve two out of the three objectives:
+ - Independent monetary policy: for instance, determining the interest rate to achieve domestic objectives, such as controlling inflation
+ - Open capital account: capital flows can freely move in and out the country
+ - Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the 
+
+Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.
+
+![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.png)
+*Source: author*
+
+Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously are 
+
+
+
+
+
+
+
+
+# Resources
 
   - A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): [link](https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850)
         
