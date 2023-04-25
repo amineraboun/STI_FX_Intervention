@@ -24,12 +24,14 @@ parts:
 
  - caption: Time Series Econometrics
    chapters:
+   - file: docs/Time-Series-Analysis/theory.md
    - file: docs/Time-Series-Analysis/Lecture-content.md
      sections:
      - glob: docs/Time-Series-Analysis/workshop/*
      
  - caption: Volatility Modelling
    chapters:
+   - file: docs/Volatility-Modelling/volatility_theory.md
    - file: docs/Volatility-Modelling/Lecture-content.md
      sections:
      - glob: docs/Volatility-Modelling/workshop/*

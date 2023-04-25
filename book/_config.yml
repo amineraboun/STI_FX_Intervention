@@ -21,16 +21,16 @@ sphinx:
 
 parse:
   myst_enable_extensions:
+    - substitution
+    - linkify
+    - dollarmath
     - amsmath
     - colon_fence
     - deflist
-    - dollarmath
     - html_admonition
     - html_image
-    - linkify
     - replacements
     - smartquotes
-    - substitution
     - tasklist
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context

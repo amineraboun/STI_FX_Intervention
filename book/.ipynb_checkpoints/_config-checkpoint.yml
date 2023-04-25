@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: IMF - STI Risk Based Framework 
-author: Amine Raboun, Romain Lafarguette
+author: Romain Lafarguette and Amine Raboun
 copyright: "2023"  # Copyright year to be placed in the footer
 logo: static/logo.png
 only_build_toc_files: true
@@ -21,16 +21,16 @@ sphinx:
 
 parse:
   myst_enable_extensions:
+    - substitution
+    - linkify
+    - dollarmath
     - amsmath
     - colon_fence
     - deflist
-    - dollarmath
     - html_admonition
     - html_image
-    - linkify
     - replacements
     - smartquotes
-    - substitution
     - tasklist
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
