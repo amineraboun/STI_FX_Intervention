@@ -1,32 +1,3 @@
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [Advanced Volatility Modeling (Lecture Notes)](#advanced-volatility-modeling-lecture-notes)
-    - [Introduction](#introduction)
-    - [ARCH Models](#arch-models)
-        - [Key properties of ARCH models](#key-properties-of-arch-models)
-            - [Build an ARCH model for non-zero mean series:](#build-an-arch-model-for-non-zero-mean-series)
-            - [Model Checking](#model-checking)
-            - [Weaknesses of ARCH Models](#weaknesses-of-arch-models)
-    - [GARCH Models](#garch-models)
-        - [Conditional Variance Persistences](#conditional-variance-persistences)
-        - [GARCH Properties](#garch-properties)
-            - [The most often used distributions for $Z_t$ are:](#the-most-often-used-distributions-for-z_t-are)
-        - [GARCH Extensions](#garch-extensions)
-            - [GJR-GARCH](#gjr-garch)
-            - [TGARCH model](#tgarch-model)
-            - [EGARCH model](#egarch-model)
-    - [Value At Risk](#value-at-risk)
-        - [Conditional Value-at-Risk](#conditional-value-at-risk)
-        - [Estimation methods](#estimation-methods)
-            - [Non-Parametric Estimation:](#non-parametric-estimation)
-            - [Semi-Parametric Estimation](#semi-parametric-estimation)
-            - [Parametric Estimation](#parametric-estimation)
-        - [Limites of the Value-at-Risk](#limites-of-the-value-at-risk)
-
-<!-- markdown-toc end -->
-
-
 # Advanced Volatility Modeling (Lecture Notes)
 
 ## Introduction
