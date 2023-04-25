@@ -14,13 +14,9 @@ Most advanced economies have abandonned the fixed exchange rate objective after 
 ![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.png)
 *Source: author*
 
-Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously are 
+Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the objectives are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg. 
 
-
-
-
-
-
+This situation occurred in South-East Asia at the end of the 1990s (the 1997 Asian Financial Crisis).
 
 
 # Resources
@@ -37,7 +33,6 @@ Typically, countries trying to "round the corners of the trilemma", i.e. trying 
 
 - Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
 
-
 ## Conceptual Framework
 
 - Monetary Frameworks and the Importance of FX policies
@@ -49,6 +44,7 @@ Typically, countries trying to "round the corners of the trilemma", i.e. trying 
 - Type of FX Interventions
 
 - Transmission Channels
+
 
 
 ## Implementation
