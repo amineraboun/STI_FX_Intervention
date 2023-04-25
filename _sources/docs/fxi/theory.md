@@ -1,16 +1,6 @@
 [Full slides of the course](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
 <!-- https://cheatography.com/xaon/cheat-sheets/emacs-markdown-mode/  -->
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [Conceptual Framework](#conceptual-framework)
-    - [Monetary Frameworks](#monetary-frameworks)
-    - [Goals and Intermediate Objectives](#goals-and-intermediate-objectives)
-- [Implementation](#implementation)
-- [Resources](#resources)
-
-<!-- markdown-toc end -->
 # Conceptual Framework
 
 ## Monetary Frameworks
