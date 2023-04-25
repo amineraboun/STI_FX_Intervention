@@ -1,3 +1,48 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Time series Econometrics (Lecture Notes)](#time-series-econometrics-lecture-notes)
+    - [Introduction](#introduction)
+        - [Why Time series Modeling is different from other statistical models?](#why-time-series-modeling-is-different-from-other-statistical-models)
+        - [Interpolation](#interpolation)
+        - [Extrapolation](#extrapolation)
+    - [Statistical Features and Properties of Financial Time series](#statistical-features-and-properties-of-financial-time-series)
+        - [Stationarity](#stationarity)
+            - [How do you identify non- stationary series?](#how-do-you-identify-non--stationary-series)
+        - [Absence of autocorrelations](#absence-of-autocorrelations)
+            - [Examples:](#examples)
+        - [Heavy Tails](#heavy-tails)
+        - [Asymmetry](#asymmetry)
+        - [Volatility Clustering](#volatility-clustering)
+        - [Long Range Dependence](#long-range-dependence)
+        - [Leverage Effect](#leverage-effect)
+        - [Aggregational Gaussianity](#aggregational-gaussianity)
+    - [Useful Techniques: Differencing](#useful-techniques-differencing)
+        - [Differencing](#differencing)
+        - [Second- Order Differencing:](#second--order-differencing)
+        - [Seasonal Differencing](#seasonal-differencing)
+        - [Backshift Notation](#backshift-notation)
+    - [ARMA type models](#arma-type-models)
+        - [Autoregressive (AR) Models](#autoregressive-ar-models)
+            - [Stationarity Conditions](#stationarity-conditions)
+            - [Statistical Test: Dickey- Fuller Test](#statistical-test-dickey--fuller-test)
+            - [How to identify the order of an AR process](#how-to-identify-the-order-of-an-ar-process)
+        - [MA: Moving Average Model](#ma-moving-average-model)
+            - [How to identify the order of an MA process](#how-to-identify-the-order-of-an-ma-process)
+            - [Invertibility: From MA(q) to AR($\infty$) and From $AR(p)$ to MA($\infty$) Model](#invertibility-from-maq-to-arinfty-and-from-arp-to-mainfty-model)
+        - [ARMA(p, q) Model](#armap-q-model)
+        - [Autoregressive Integrated Moving Average (ARIMA)](#autoregressive-integrated-moving-average-arima)
+        - [Seasonal ARIMA (SARIMA)](#seasonal-arima-sarima)
+            - [Treatment of Seasonality](#treatment-of-seasonality)
+    - [Empirical Strategy](#empirical-strategy)
+        - [What is a White noise ?](#what-is-a-white-noise-)
+        - [Empirical Strategy](#empirical-strategy-1)
+            - [Model Comparison and parameters Selection](#model-comparison-and-parameters-selection)
+            - [General Apporach](#general-apporach)
+
+<!-- markdown-toc end -->
+
+
 # Time series Econometrics (Lecture Notes)
 
 ## Introduction
