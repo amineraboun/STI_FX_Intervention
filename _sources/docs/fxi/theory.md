@@ -6,9 +6,9 @@
 
 - [Conceptual Framework](#conceptual-framework)
     - [Monetary Frameworks](#monetary-frameworks)
+    - [Goals and Intermediate Objectives](#goals-and-intermediate-objectives)
+- [Implementation](#implementation)
 - [Resources](#resources)
-    - [Conceptual Framework](#conceptual-framework-1)
-    - [Implementation](#implementation)
 
 <!-- markdown-toc end -->
 # Conceptual Framework
@@ -22,7 +22,7 @@ The choice of the monetary framework and the goals of the central bank is constr
 
 Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.
 
-![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.pdf)
+![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.PNG)
 *Source: author*
 
 Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the fundamentals are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg. 
@@ -46,13 +46,20 @@ Hence, when the bubble bursted (first in Thailand), investors ran, triggering ca
 *Source: Nikkei Asia and Refinitiv*
 
 
-![AFC GDP Crash](../Slides/fxi_theory_practice/img/afc_gdp_crash.PNG)
+![AFC GDP Crash](../Slides/fxi_theory_practice/img/afc_gdp_crash.png)
 *Source: Mark Roser, Our World in Data*
 
 
 ## Goals and Intermediate Objectives
 
-Definition of FX interventions: 
+`````{admonition} Definition: FX Interventions
+:class: definition
+Any official sale or purchase of foreign assets against domestic assets **in the foreign exchange market** (onshore or offshore)
+`````
+* FX Interventions are usually carried-out by the central bank, but can sometimes be under the responsibility of the Ministry of Finances, such as in Japan ([link](https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html))
+
+
+
 
 
 
@@ -77,15 +84,16 @@ Definition of FX interventions:
 
   - A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): [link](https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850)
         
- - The BIS publishes interesting papers reflecting BIS surveys conducted with central banks. For instance (2019): [link] (https://www.bis.org/publ/bppdf/bispap104b-rh.pdf)
+ - The BIS publishes interesting papers reflecting BIS surveys conducted with central banks. For instance (2019): [link](https://www.bis.org/publ/bppdf/bispap104b-rh.pdf)
     
- - A recent and quite comprehensive database on FX Interventions (2021), compiled by IMF colleagues: [link] (https://www.imf.org/en/Publications/WP/Issues/2021/02/19/Foreign-Exchange-Intervention-A-Dataset)
+ - A recent and quite comprehensive database on FX Interventions (2021), compiled by IMF colleagues: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/19/Foreign-Exchange-Intervention-A-Dataset)
 
  - Kathryn Dominguez, professor at U-Michigan, specialized on FX interventions: [link](http://www-personal.umich.edu/~kathrynd/index.html)
 
  - Popper (2022) provides a very complete literature review on FX Interventions: [link](https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf)
 
 - Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
+
 
 
 
