@@ -1,22 +1,76 @@
 [Full slides of the course](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
+<!-- https://cheatography.com/xaon/cheat-sheets/emacs-markdown-mode/  -->
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Conceptual Framework](#conceptual-framework)
+    - [Monetary Frameworks](#monetary-frameworks)
+- [Resources](#resources)
+    - [Conceptual Framework](#conceptual-framework-1)
+    - [Implementation](#implementation)
+
+<!-- markdown-toc end -->
 # Conceptual Framework
 
 ## Monetary Frameworks
 
 The choice of the monetary framework and the goals of the central bank is constrained by the Mundell Trilemma, that states that countries can only achieve two out of the three objectives:
- - Independent monetary policy: for instance, determining the interest rate to achieve domestic objectives, such as controlling inflation
- - Open capital account: capital flows can freely move in and out the country
- - Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the 
+  * Independent monetary policy: for instance, determining the interest rate to achieve domestic objectives, such as controlling inflation 
+  * Open capital account: capital flows can freely move in and out the country 
+  * Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the 
 
 Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.
 
-![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.png)
+![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.pdf)
 *Source: author*
 
-Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the objectives are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg. 
+Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the fundamentals are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg. 
 
-This situation occurred in South-East Asia at the end of the 1990s (the 1997 Asian Financial Crisis).
+This situation occurred in South-East Asia at the end of the 1990s (the 1997 Asian Financial Crisis). At the time:
+  * Most East-Asia countries in the 90s were *de facto* pegged to the USD 
+  * Free mobility of capital (except in China)
+  * Independent monetary policy with a high domestic interest rate to attract foreign investors
+    * Countries were growing fast, foreign capital supplemented the lack of domestic savings
+    * FX peg + high interest rate were generating a positive carry without FX risk for investors. Consequently, it fueled **hot money**
+    * Huge credit boom: at the time, South-East Asia was receiving **half** of the world total capital flows to EM by the time 
+
+These factors generated a **credit bubble** on over-leveraged economies, fueled by hot money
+
+Hence, when the bubble bursted (first in Thailand), investors ran, triggering capital outflows and weakening currencies
+  * Due to insufficient foreign reserves, countries were forced to devaluate, as FX interventions were not possible
+  * The huge FX mismatch on banks and corporates balance sheets started a crisis, which was amplified by the interest rate hikes motivated to fight depreciation...
+
+  
+![AFC FX Crash](../Slides/fxi_theory_practice/img/afc_fx_crash.PNG)
+*Source: Nikkei Asia and Refinitiv*
+
+
+![AFC GDP Crash](../Slides/fxi_theory_practice/img/afc_gdp_crash.PNG)
+*Source: Mark Roser, Our World in Data*
+
+
+## Goals and Intermediate Objectives
+
+Definition of FX interventions: 
+
+
+
+# Implementation
+
+- Instruments
+
+- Rule vs. Discretion
+
+- FXI Size
+
+- Communication
+
+- Intervention Effectiveness
+
+- FX Interventions and Exchange Rate Management
+
+
 
 
 # Resources
@@ -33,33 +87,6 @@ This situation occurred in South-East Asia at the end of the 1990s (the 1997 Asi
 
 - Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
 
-## Conceptual Framework
-
-- Monetary Frameworks and the Importance of FX policies
-
-- Goals and Intermediate Objectives
-
-- Monetary Frameworks
-
-- Type of FX Interventions
-
-- Transmission Channels
-
-
-
-## Implementation
-
-- Instruments
-
-- Rule vs. Discretion
-
-- FXI Size
-
-- Communication
-
-- Intervention Effectiveness
-
-- FX Interventions and Exchange Rate Management
 
 
 

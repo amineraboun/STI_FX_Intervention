@@ -161,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Conceptual Framework</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="practice.html">Examples of Countries Policy and Operational FX Interventions Frameworks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">VaR FXI Python Package</span></p>
@@ -480,13 +481,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conceptual Framework</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-frameworks">Monetary Frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-intermediate-objectives">Goals and Intermediate Objectives</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conceptual Framework</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 
             </nav>
@@ -500,6 +499,23 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a class="reference download internal" download="" href="../../_downloads/b6396ae00dac43594a3694a85a36d6ea/fxi_theory_practice.pdf"><span class="xref download myst">Full slides of the course</span></a></p>
+<!-- https://cheatography.com/xaon/cheat-sheets/emacs-markdown-mode/  -->
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+<p><strong>Table of Contents</strong></p>
+<ul class="simple">
+<li><p><span class="xref myst">Conceptual Framework</span></p>
+<ul>
+<li><p><span class="xref myst">Monetary Frameworks</span></p></li>
+</ul>
+</li>
+<li><p><span class="xref myst">Resources</span></p>
+<ul>
+<li><p><span class="xref myst">Conceptual Framework</span></p></li>
+<li><p><span class="xref myst">Implementation</span></p></li>
+</ul>
+</li>
+</ul>
+<!-- markdown-toc end -->
 <section class="tex2jax_ignore mathjax_ignore" id="conceptual-framework">
 <h1>Conceptual Framework<a class="headerlink" href="#conceptual-framework" title="Permalink to this heading">#</a></h1>
 <section id="monetary-frameworks">
@@ -511,11 +527,47 @@ document.write(`
 <li><p>Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the</p></li>
 </ul>
 <p>Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.</p>
-<p><img alt="Trilemma" src="docs/Slides/fxi_theory_practice/img/Trilemma.png" />
+<p><img alt="Trilemma" src="../../_images/Trilemma.pdf" />
 <em>Source: author</em></p>
-<p>Typically, countries trying to “round the corners of the trilemma”, i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the objectives are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg.</p>
-<p>This situation occurred in South-East Asia at the end of the 1990s (the 1997 Asian Financial Crisis).</p>
+<p>Typically, countries trying to “round the corners of the trilemma”, i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the fundamentals are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg.</p>
+<p>This situation occurred in South-East Asia at the end of the 1990s (the 1997 Asian Financial Crisis). At the time:</p>
+<ul class="simple">
+<li><p>Most East-Asia countries in the 90s were <em>de facto</em> pegged to the USD</p></li>
+<li><p>Free mobility of capital (except in China)</p></li>
+<li><p>Independent monetary policy with a high domestic interest rate to attract foreign investors</p>
+<ul>
+<li><p>Countries were growing fast, foreign capital supplemented the lack of domestic savings</p></li>
+<li><p>FX peg + high interest rate were generating a positive carry without FX risk for investors. Consequently, it fueled <strong>hot money</strong></p></li>
+<li><p>Huge credit boom: at the time, South-East Asia was receiving <strong>half</strong> of the world total capital flows to EM by the time</p></li>
+</ul>
+</li>
+</ul>
+<p>These factors generated a <strong>credit bubble</strong> on over-leveraged economies, fueled by hot money</p>
+<p>Hence, when the bubble bursted (first in Thailand), investors ran, triggering capital outflows and weakening currencies</p>
+<ul class="simple">
+<li><p>Due to insufficient foreign reserves, countries were forced to devaluate, as FX interventions were not possible</p></li>
+<li><p>The huge FX mismatch on banks and corporates balance sheets started a crisis, which was amplified by the interest rate hikes motivated to fight depreciation…</p></li>
+</ul>
+<p><img alt="AFC FX Crash" src="../../_images/afc_fx_crash.PNG" />
+<em>Source: Nikkei Asia and Refinitiv</em></p>
+<p><img alt="AFC GDP Crash" src="docs/Slides/fxi_theory_practice/img/afc_gdp_crash.PNG" />
+<em>Source: Mark Roser, Our World in Data</em></p>
 </section>
+<section id="goals-and-intermediate-objectives">
+<h2>Goals and Intermediate Objectives<a class="headerlink" href="#goals-and-intermediate-objectives" title="Permalink to this heading">#</a></h2>
+<p>Definition of FX interventions:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="implementation">
+<h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Instruments</p></li>
+<li><p>Rule vs. Discretion</p></li>
+<li><p>FXI Size</p></li>
+<li><p>Communication</p></li>
+<li><p>Intervention Effectiveness</p></li>
+<li><p>FX Interventions and Exchange Rate Management</p></li>
+</ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="resources">
 <h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
@@ -527,27 +579,6 @@ document.write(`
 <li><p>Popper (2022) provides a very complete literature review on FX Interventions: <a class="reference external" href="https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf">link</a></p></li>
 <li><p>Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: <a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081">link</a></p></li>
 </ul>
-<section id="id1">
-<h2>Conceptual Framework<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Monetary Frameworks and the Importance of FX policies</p></li>
-<li><p>Goals and Intermediate Objectives</p></li>
-<li><p>Monetary Frameworks</p></li>
-<li><p>Type of FX Interventions</p></li>
-<li><p>Transmission Channels</p></li>
-</ul>
-</section>
-<section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Instruments</p></li>
-<li><p>Rule vs. Discretion</p></li>
-<li><p>FXI Size</p></li>
-<li><p>Communication</p></li>
-<li><p>Intervention Effectiveness</p></li>
-<li><p>FX Interventions and Exchange Rate Management</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -619,13 +650,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conceptual Framework</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-frameworks">Monetary Frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-intermediate-objectives">Goals and Intermediate Objectives</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conceptual Framework</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 
   </nav></div>
