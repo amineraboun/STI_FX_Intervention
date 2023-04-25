@@ -515,7 +515,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-and-solutions">Exercises and Solutions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">SOLUTION</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -723,6 +726,8 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="solution">
+<h4>SOLUTION<a class="headerlink" href="#solution" title="Permalink to this heading">#</a></h4>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -730,8 +735,7 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SOLUTION</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">zoom_face</span> <span class="o">=</span> <span class="n">face</span><span class="p">[</span><span class="n">x</span><span class="o">//</span><span class="mi">4</span> <span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span> <span class="o">//</span><span class="mi">4</span><span class="p">:</span> <span class="o">-</span><span class="n">y</span><span class="o">//</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># resize by dividing each dimension by 4 (integer division)</span>
 <span class="n">zoom_face</span><span class="p">[</span><span class="n">zoom_face</span><span class="o">&gt;</span><span class="mi">150</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span> <span class="c1"># boolean indexing</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">zoom_face</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
@@ -744,6 +748,7 @@ document.write(`
 </div>
 </details>
 </div>
+</section>
 </section>
 </section>
 </section>
@@ -820,7 +825,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-and-solutions">Exercises and Solutions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">SOLUTION</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
