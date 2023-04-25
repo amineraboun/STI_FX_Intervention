@@ -1,0 +1,1197 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>17: Pandas (the Basics) and Titanic Analysis &#8212; IMF - STI Risk Based Framework</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Python-Introduction/workshop/17 - Pandas (Intro)';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="18: Pandas and Timeseries" href="18%20-%20Pandas%20and%20Time%20series.html" />
+    <link rel="prev" title="16: Machine Learning with Scipy" href="16%20-%20Scipy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foreign Exchange Interventions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../fxi/theory.html">Conceptual Framework</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../fxi/practice.html">Examples of Countries Policy and Operational FX Interventions Frameworks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VaR FXI Python Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../IMF-MODEL/VaR-FX%20Interventions.html">Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Key-Statistical-Concepts/workshop/01-random-variables.html">01- Ramdom Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Key-Statistical-Concepts/workshop/02-sampling.html">02-Statistical Link Between Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Key-Statistical-Concepts/workshop/03-Advanced.html">03- Statistics Techniques</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Time Series Econometrics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Time-Series-Analysis/theory.html">Time series Econometrics (Lecture Notes)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Time-Series-Analysis/Lecture-content.html">Time Series Econometrics With Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/01-%20ACF%20vs%20PACF.html">1: ACF vs PACF</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/02-%20Augmented%20Dickey-Fuller%20Test.html">2: Augmented Dickey-Fuller Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/03-%20STL%20Decomposition.html">3: Seasonal-Trend Decomposition using LOESS (STL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/04-%20Time%20Series%20Data%20Preprocessing.html">4: Read the Data</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/05-%20MA%20Model.html">5: Generate Some Data</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/06-%20AR%20Model.html">6: AR Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/07-%20Model%20Selection.html">7: Model Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/08-%20ARMA%20Model.html">8: ARMa Model</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/09-%20SARIMA%20Model.html">9: SARIMA Model</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/10-%20Undo%20Stationary%20Transformations.html">10: Undo Stationarity Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/11-%20Anomaly%20Detection.html">11: Anomaly Detection</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/12-%20Granger%20Causality.html">12: Granger Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html">13: VAR Model</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Volatility-Modelling/volatility_theory.html">Advanced Volatility Modeling (Lecture Notes)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Volatility-Modelling/Lecture-content.html">Advanced Volatilty Modelling with Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/02-Volatility%20Modeling%20synthetic%20data.html">02- Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/05-univariate_forecasting_with_exogenous_variables.html">05- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Volatility-Modelling/workshop/univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Lecture-content.html">General Introduction to Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="02%20-%20Variables_and_Functions.html">2: Python Basics - Variables and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03%20-%20Control%20Structures.html">3 : Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04%20-%20Data%20Structure%20%28Lists%20and%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05%20-%20Dictionaries.html">5: Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06%20-%20List%20Comprehension.html">6: List Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07%20-%20Built-in%20Functions.html">7: Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08%20-%20Basic%20Python%20Modules.html">8: Basic Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09%20-%20Object%20Oriented%20Programming.html">9: Object Oriented Programming with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10%20-%20Numpy%20%28Intro%29.html">10: Numpy Tableau ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">11: Numpy - Slicing and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12%20-%20Numpy%20Maths%20and%20Statists.html">12: Numpy - Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13%20-%20Numpy%20Broadcasting.html">13: Numpy and Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14%20-%20Matplotlib%20%28Intro%29.html">14: Matplotlib - Graphiques de Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15%20-%20Matplotlib%20Top%20Graphiques.html">15: Matplotlib Top Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16%20-%20Scipy.html">16: Machine Learning with Scipy</a></li>
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">17: Pandas (the Basics) and Titanic Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18%20-%20Pandas%20and%20Time%20series.html">18: Pandas and Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">utils</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">Miscelaneous tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/raboam/STI_FX_Intervention/main?urlpath=tree/book/docs/Python-Introduction/workshop/17 - Pandas (Intro).ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Python-Introduction/workshop/17 - Pandas (Intro).html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Python-Introduction/workshop/17 - Pandas (Intro).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>17: Pandas (the Basics) and Titanic Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-your-data-into-a-pandas-dataframe">1. Load your data into a Pandas DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up-your-dataset-with-drop-dropna-and-fillna">2. Clean up your dataset with drop(), dropna() and fillna()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-value-counts">3. Groupby() and value_counts()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">4. Exercice</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/MachineLearnia/Python-Machine-Learning/blob/master/17%20-%20Pandas%20(les%20Bases).ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="pandas-the-basics-and-titanic-analysis">
+<h1>17: Pandas (the Basics) and Titanic Analysis<a class="headerlink" href="#pandas-the-basics-and-titanic-analysis" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="load-your-data-into-a-pandas-dataframe">
+<h2>1. Load your data into a Pandas DataFrame<a class="headerlink" href="#load-your-data-into-a-pandas-dataframe" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/redirect?q=http%3A%2F%2Fbiostat.mc.vanderbilt.edu%2Fwiki%2Fpub%2FMain%2FDataSets%2Ftitanic3.xls&amp;amp;redir_token=IS7fnKxJQSAQBgyL_W_n-Yg2XZJ8MTU4NzkxOTk0MkAxNTg3ODMzNTQy&amp;amp;v=zZkNOdBWgFQ&amp;amp;event=video_description">https://www.youtube.com/redirect?q=http%3A%2F%2Fbiostat.mc.vanderbilt.edu%2Fwiki%2Fpub%2FMain%2FDataSets%2Ftitanic3.xls&amp;redir_token=IS7fnKxJQSAQBgyL_W_n-Yg2XZJ8MTU4NzkxOTk0MkAxNTg3ODMzNTQy&amp;v=zZkNOdBWgFQ&amp;event=video_description</a></p>
+<p>The most common options:</p>
+<ul class="simple">
+<li><p>read_csv</p></li>
+<li><p>read_excel</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data/titanic3 (3).xls&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pclass</th>
+      <th>survived</th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>ticket</th>
+      <th>fare</th>
+      <th>cabin</th>
+      <th>embarked</th>
+      <th>boat</th>
+      <th>body</th>
+      <th>home.dest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Allen, Miss. Elisabeth Walton</td>
+      <td>female</td>
+      <td>29.0000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>24160</td>
+      <td>211.3375</td>
+      <td>B5</td>
+      <td>S</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>St Louis, MO</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Allison, Master. Hudson Trevor</td>
+      <td>male</td>
+      <td>0.9167</td>
+      <td>1</td>
+      <td>2</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>0</td>
+      <td>Allison, Miss. Helen Loraine</td>
+      <td>female</td>
+      <td>2.0000</td>
+      <td>1</td>
+      <td>2</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>0</td>
+      <td>Allison, Mr. Hudson Joshua Creighton</td>
+      <td>male</td>
+      <td>30.0000</td>
+      <td>1</td>
+      <td>2</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>135.0</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>0</td>
+      <td>Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
+      <td>female</td>
+      <td>25.0000</td>
+      <td>1</td>
+      <td>2</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pclass</th>
+      <th>survived</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>fare</th>
+      <th>body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1309.000000</td>
+      <td>1309.000000</td>
+      <td>1046.000000</td>
+      <td>1309.000000</td>
+      <td>1309.000000</td>
+      <td>1308.000000</td>
+      <td>121.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.294882</td>
+      <td>0.381971</td>
+      <td>29.881135</td>
+      <td>0.498854</td>
+      <td>0.385027</td>
+      <td>33.295479</td>
+      <td>160.809917</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.837836</td>
+      <td>0.486055</td>
+      <td>14.413500</td>
+      <td>1.041658</td>
+      <td>0.865560</td>
+      <td>51.758668</td>
+      <td>97.696922</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.166700</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.000000</td>
+      <td>0.000000</td>
+      <td>21.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.895800</td>
+      <td>72.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>28.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.454200</td>
+      <td>155.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>39.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>31.275000</td>
+      <td>256.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>80.000000</td>
+      <td>8.000000</td>
+      <td>9.000000</td>
+      <td>512.329200</td>
+      <td>328.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="clean-up-your-dataset-with-drop-dropna-and-fillna">
+<h2>2. Clean up your dataset with drop(), dropna() and fillna()<a class="headerlink" href="#clean-up-your-dataset-with-drop-dropna-and-fillna" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;sibsp&#39;</span><span class="p">,</span> <span class="s1">&#39;parch&#39;</span><span class="p">,</span> <span class="s1">&#39;ticket&#39;</span><span class="p">,</span> <span class="s1">&#39;fare&#39;</span><span class="p">,</span> <span class="s1">&#39;cabin&#39;</span><span class="p">,</span> <span class="s1">&#39;embarked&#39;</span><span class="p">,</span> <span class="s1">&#39;boat&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;home.dest&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1046, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/356f2ddb8ce811a373c77466f039b1bf901ddb897f68d274ae16deeaba1c3ddb.png" src="../../../_images/356f2ddb8ce811a373c77466f039b1bf901ddb897f68d274ae16deeaba1c3ddb.png" />
+</div>
+</div>
+</section>
+<section id="groupby-and-value-counts">
+<h2>3. Groupby() and value_counts()<a class="headerlink" href="#groupby-and-value-counts" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sex&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pclass</th>
+      <th>survived</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>female</th>
+      <td>2.048969</td>
+      <td>0.752577</td>
+      <td>28.687071</td>
+    </tr>
+    <tr>
+      <th>male</th>
+      <td>2.300912</td>
+      <td>0.205167</td>
+      <td>30.585233</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;pclass&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>survived</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th>pclass</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">female</th>
+      <th>1</th>
+      <td>0.962406</td>
+      <td>37.037594</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.893204</td>
+      <td>27.499191</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.473684</td>
+      <td>22.185307</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">male</th>
+      <th>1</th>
+      <td>0.350993</td>
+      <td>41.029250</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.145570</td>
+      <td>30.815401</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.169054</td>
+      <td>25.962273</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    501
+1    284
+2    261
+Name: pclass, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">][</span><span class="s1">&#39;pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    106
+2     33
+1     15
+Name: pclass, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice">
+<h2>4. Exercice<a class="headerlink" href="#exercice" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Créer des catégories d’ages avec la fonction map() de pandas</p></li>
+<li><p>Créer des catégories de genres avec cat.codes</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">category_ages</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;20 ans&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;20-30 ans&#39;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;30-40 ans&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;+40 ans&#39;</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">category_ages</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       0
+1       1
+2       0
+3       1
+4       0
+       ..
+1301    1
+1304    0
+1306    1
+1307    1
+1308    1
+Length: 1046, dtype: int8
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sti"
+        },
+        kernelOptions: {
+            name: "sti",
+            path: "./docs/Python-Introduction/workshop"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sti'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="16%20-%20Scipy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">16: Machine Learning with Scipy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="18%20-%20Pandas%20and%20Time%20series.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">18: Pandas and Timeseries</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-your-data-into-a-pandas-dataframe">1. Load your data into a Pandas DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up-your-dataset-with-drop-dropna-and-fillna">2. Clean up your dataset with drop(), dropna() and fillna()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-value-counts">3. Groupby() and value_counts()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">4. Exercice</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Romain Lafarguette and Amine Raboun
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1584 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Advanced Volatility Modeling (Lecture Notes) &#8212; IMF - STI Risk Based Framework</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Volatility-Modelling/volatility_theory';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Advanced Volatilty Modelling with Python" href="Lecture-content.html" />
+    <link rel="prev" title="13: VAR Model" href="../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foreign Exchange Interventions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fxi/theory.html">Conceptual Framework</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../fxi/practice.html">Examples of Countries Policy and Operational FX Interventions Frameworks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VaR FXI Python Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../IMF-MODEL/VaR-FX%20Interventions.html">Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/01-random-variables.html">01- Ramdom Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/02-sampling.html">02-Statistical Link Between Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/03-Advanced.html">03- Statistics Techniques</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Time Series Econometrics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Time-Series-Analysis/theory.html">Time series Econometrics (Lecture Notes)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Time-Series-Analysis/Lecture-content.html">Time Series Econometrics With Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/01-%20ACF%20vs%20PACF.html">1: ACF vs PACF</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/02-%20Augmented%20Dickey-Fuller%20Test.html">2: Augmented Dickey-Fuller Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/03-%20STL%20Decomposition.html">3: Seasonal-Trend Decomposition using LOESS (STL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/04-%20Time%20Series%20Data%20Preprocessing.html">4: Read the Data</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/05-%20MA%20Model.html">5: Generate Some Data</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/06-%20AR%20Model.html">6: AR Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/07-%20Model%20Selection.html">7: Model Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/08-%20ARMA%20Model.html">8: ARMa Model</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/09-%20SARIMA%20Model.html">9: SARIMA Model</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/10-%20Undo%20Stationary%20Transformations.html">10: Undo Stationarity Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/11-%20Anomaly%20Detection.html">11: Anomaly Detection</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/12-%20Granger%20Causality.html">12: Granger Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html">13: VAR Model</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced Volatility Modeling (Lecture Notes)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture-content.html">Advanced Volatilty Modelling with Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workshop/01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/02-Volatility%20Modeling%20synthetic%20data.html">02- Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/05-univariate_forecasting_with_exogenous_variables.html">05- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Python-Introduction/Lecture-content.html">General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/02%20-%20Variables_and_Functions.html">2: Python Basics - Variables and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/03%20-%20Control%20Structures.html">3 : Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/04%20-%20Data%20Structure%20%28Lists%20and%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/05%20-%20Dictionaries.html">5: Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/06%20-%20List%20Comprehension.html">6: List Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/07%20-%20Built-in%20Functions.html">7: Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/08%20-%20Basic%20Python%20Modules.html">8: Basic Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/09%20-%20Object%20Oriented%20Programming.html">9: Object Oriented Programming with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/10%20-%20Numpy%20%28Intro%29.html">10: Numpy Tableau ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">11: Numpy - Slicing and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/12%20-%20Numpy%20Maths%20and%20Statists.html">12: Numpy - Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/13%20-%20Numpy%20Broadcasting.html">13: Numpy and Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/14%20-%20Matplotlib%20%28Intro%29.html">14: Matplotlib - Graphiques de Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/15%20-%20Matplotlib%20Top%20Graphiques.html">15: Matplotlib Top Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/16%20-%20Scipy.html">16: Machine Learning with Scipy</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/17%20-%20Pandas%20%28Intro%29.html">17: Pandas (the Basics) and Titanic Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/18%20-%20Pandas%20and%20Time%20series.html">18: Pandas and Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">utils</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Miscelaneous tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Volatility-Modelling/volatility_theory.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/Volatility-Modelling/volatility_theory.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced Volatility Modeling (Lecture Notes)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arch-models">ARCH Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-arch-models">Key properties of ARCH models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-arch-model-for-non-zero-mean-series">Build an ARCH model for non-zero mean series:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-checking">Model Checking</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#weaknesses-of-arch-models">Weaknesses of ARCH Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#garch-models">GARCH Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-variance-persistences">Conditional Variance Persistences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#garch-properties">GARCH Properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-often-used-distributions-for-z-t-are">The most often used distributions for <span class="math notranslate nohighlight">\(Z_t\)</span> are:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#garch-extensions">GARCH Extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gjr-garch">GJR-GARCH</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tgarch-model">TGARCH model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#egarch-model">EGARCH model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-at-risk">Value At Risk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-value-at-risk">Conditional Value-at-Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-methods">Estimation methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#non-parametric-estimation">Non-Parametric Estimation:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-parametric-estimation">Semi-Parametric Estimation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-estimation">Parametric Estimation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limites-of-the-value-at-risk">Limites of the Value-at-Risk</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-volatility-modeling-lecture-notes">
+<h1>Advanced Volatility Modeling (Lecture Notes)<a class="headerlink" href="#advanced-volatility-modeling-lecture-notes" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p><strong>Challenges in estimating volatility</strong></p>
+<ul class="simple">
+<li><p>Daily volatility is unobserved, and can not be derived from the
+daily returns <span class="math notranslate nohighlight">\(R_t\)</span> because there is only one observation in a
+trading day t</p></li>
+<li><p>Volatility of price returns is not static, It changes frequently for
+several reasons</p></li>
+</ul>
+<p><strong>Why does volatility change?</strong></p>
+<ul class="simple">
+<li><p><span style="color:rgb(0, 76, 151);"><strong>News Announcements</strong></span>: Macroeconomic and
+earnings announcement. As new information arrives, uncertainty rises
+regarding interpreting it and reshuffling portfolios.</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>State of Uncertainty</strong></span>: Brexit, Trump
+election, Covid-19, SVB</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Illiquidity</strong></span>: Price movement upon
+taking directional bets on illiquid assets is high</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Volatility Feedback:</strong></span>: Market-Makers
+behavior, fleeing the order book when volatility increase (when it
+matters the most)</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Leverage</strong></span>:An price declines, companies
+become more leveraged (debt-to-equity ratio up) and riskier</p></li>
+</ul>
+<p><strong>Volatility Estimates</strong></p>
+<ol class="arabic">
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Realized Volatility</strong></span>, but on what
+window ?</p>
+<div class="math notranslate nohighlight">
+\[\hat{\sigma} = \sqrt{ \frac{1}{T} \sum_{t=1}^T (r_t - \hat{\mu})}\]</div>
+</li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Implied volatility</strong></span> the volatility
+which when input in an option pricing model (such as Black-Scholes)
+will return the market price of the option. Example: the CBOE
+Volatility Index (ticker: VIX).</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>High Frequency Data Estimators</strong></span>. The
+realized volatility is computed as the sum of squared intraday
+returns (Andersen and Bollerslev, 1998).</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Conditional Volatility</strong></span> issued from
+dynamic models such as the <strong>ARCH</strong> and <strong>GARCH</strong> type models
+<span class="math notranslate nohighlight">\(\mathbb{E}_t[\sigma_{t+1}^2]\)</span></p></li>
+</ol>
+<p><strong>How ARCH/GARCH models cover the properties of financial time series?</strong>
+Stylized Facts of Financial Time series</p>
+<ol class="arabic simple">
+<li><p>The returns are stationary</p></li>
+<li><p>Absence of autocorrelations</p></li>
+<li><p>Heavy tails</p></li>
+<li><p>Asymmetry</p></li>
+<li><p>Volatility clustering</p></li>
+<li><p>Aggregational Gaussianity</p></li>
+<li><p>ARCH effect</p></li>
+<li><p>Leverage effect</p></li>
+</ol>
+</section>
+<section id="arch-models">
+<h2>ARCH Models<a class="headerlink" href="#arch-models" title="Permalink to this heading">#</a></h2>
+<p>ARCH Models The ARCH model has been introduced by <a class="reference external" href="https://www.jstor.org/stable/1912773">Engle (1982)</a></p>
+<p><strong>ARCH</strong> = <strong>A</strong>uto<strong>R</strong>egressive <strong>C</strong>onditional <strong>H</strong>eteroskedasticity
+Robert F. Engle Nobel Prize 2003</p>
+<ul class="simple">
+<li><p>The squared return follows an <span style="color:rgb(0, 76, 151);"><strong>autoregressive model</strong></span>.</p></li>
+<li><p>The term <span style="color:rgb(0, 76, 151);"><strong>heteroscedasticity</strong></span>. refers to a time-varying variance.</p></li>
+<li><p>In an ARCH model, it is the <span style="color:rgb(0, 76, 151);"><strong>conditional variance</strong></span> (and not the variance itself) that changes with time, in a specific way, depending on the available data.</p></li>
+</ul>
+<div class="definition admonition">
+<p class="admonition-title">Definition: ARCH Models</p>
+<p>ARCH(q) The process <span class="math notranslate nohighlight">\(X_t, t\in \mathbb{Z}\)</span> is said to be an ARCH(q) process, if</p>
+<div class="math notranslate nohighlight">
+\[X_t = Z_t\sigma_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_t\)</span> is a sequence of independent and identically distributed (i.i.d.) random variables with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t) = 1\)</span>, and <span class="math notranslate nohighlight">\(\sigma_t\)</span> is a
+non-negative process such that</p>
+<div class="math notranslate nohighlight">
+\[\sigma_t^2 = \alpha_0 + \sum_{i-1}^P {\alpha_{i}X_{t-i}^2}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\alpha_0&gt;0,~ \alpha_i \in \mathbb{R}, \quad \forall i&lt;P, \alpha_p\in \mathbb{R}^*\)</span> and <span class="math notranslate nohighlight">\(\sum_{i-1}^P {\alpha_{i}} &lt;1\)</span></p>
+</div>
+<p>Consider an ARCH(1) process</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+    X_t &amp; = Z_t\sigma_t\\
+    \sigma_t^2 &amp;= \alpha_0 +\alpha_1X_{t-1}^2
+\end{aligned}\)</span></p>
+<p>Then we have</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{V}(X_t|\underline{X}_{t-1}) = \mathbb{V}(Z_t\sigma_t|\underline{X}_{t-1}) = \sigma_t^2\mathbb{V}(Z_t|\underline{X}_{t-1}) =\sigma_t^2\mathbb{V}(Z_t) = \sigma_t^2\]</div>
+<ul class="simple">
+<li><p>Given the past information <span class="math notranslate nohighlight">\(\underline{X}_{t-1}\)</span>, the conditional
+variance <span class="math notranslate nohighlight">\(\sigma_t^2 = \alpha_0 +\alpha_1X_{t-1}^2\)</span> is<span style="color:rgb(0, 76, 151);"><strong>deterministic</strong></span>, since <span class="math notranslate nohighlight">\(x_{t-1}\)</span> is a
+constant</p></li>
+<li><p>The process <span class="math notranslate nohighlight">\(Z_t, t\in \mathbb{Z}\)</span> is an <a class="reference external" href="http://i.id">i.id</a> noise, so
+<span class="math notranslate nohighlight">\(\mathbb{V}(Z_t|\underline{X}_{t-1}) = \mathbb{V}(Z_t)\)</span> i.e. there
+is no memory in <span class="math notranslate nohighlight">\(Z_t\)</span></p></li>
+<li><p>The normalization <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t)=1\)</span> is not a restriction: the
+scaling implied by any other variance would be absorbed by the
+parameters <span class="math notranslate nohighlight">\(\alpha_0\)</span> and <span class="math notranslate nohighlight">\(\alpha_1\)</span></p></li>
+</ul>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Conditional Variance</p>
+<p>The process <span class="math notranslate nohighlight">\(\sigma_t^2\)</span> corresponds to the <strong>conditional variance</strong> of <span class="math notranslate nohighlight">\(X_t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbb{V}(X_t|\mathcal{F}_{t-1}) \equiv \mathbb{V}(X_t|\underline{X}_{t-1}) = \sigma_t^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{F}_{t-1} \equiv \underline{X}_{t-1} = \{X_{t-1}, X_{t-2}, ... \}\)</span> is the information set available at time <span class="math notranslate nohighlight">\(t-1\)</span></p>
+</div>
+<p>Some authors denote the conditional variance by <span class="math notranslate nohighlight">\(h_t\)</span>, with</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+X_t &amp;= Z_t\sqrt{h_t}\\
+h_t &amp; = \alpha_0 +\alpha_1X_{t-1}^2    
+\end{aligned}\)</span></p>
+<section id="key-properties-of-arch-models">
+<h3>Key properties of ARCH models<a class="headerlink" href="#key-properties-of-arch-models" title="Permalink to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(X_t,~t \in \mathbb{Z}\)</span> has an ARCH(1) representation with Gaussian innovations, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(X_t^2\)</span> has an AR(1) representation</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_t\)</span> is a martingale difference</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_t\)</span> is a stationary process under some conditions on the
+parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_t\)</span> is (unconditionally) Homoscedastic</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_t\)</span> is conditionally Heteroscedastic</p></li>
+<li><p>The (marginal) distribution of <span class="math notranslate nohighlight">\(X_t\)</span> is leptokurtic</p></li>
+<li><p>The conditional distribution of <span class="math notranslate nohighlight">\(X_t\)</span> is normal</p></li>
+</ol>
+<div class="important admonition">
+<p class="admonition-title">Property 1:</p>
+<p>If <span class="math notranslate nohighlight">\(\{ X_t, t\in\mathbb{Z}\}\)</span> has an ARCH(1) representation, with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+X_t &amp; = Z_t\sigma_t\\
+\sigma_t^2 &amp;= \alpha_0 +\alpha_1X_{t-1}^2
+\end{aligned}\end{split}\]</div>
+<p>then <span class="math notranslate nohighlight">\(\{ X_t^2, t\in\mathbb{Z}\}\)</span> has an AR(1) representation, with</p>
+<div class="math notranslate nohighlight">
+\[X_t^2 = \alpha_0 +\alpha_1X_{t-1}^2 + \nu_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu_t\)</span> is an innovation process <span class="math notranslate nohighlight">\(\mathbb{E}[\nu_t|\underline{X}_{t-1}] =0\)</span></p>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Consequences:</strong></span></p>
+<p><span class="math notranslate nohighlight">\(X_t^2\)</span> and <span class="math notranslate nohighlight">\(X_{t-k}^2\)</span> are correlated <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>ARCH effect</strong></p>
+<p><span class="math notranslate nohighlight">\(\rho_k = \mathbb{C}orr(X_t^2, X_{t-k}^2) \neq 0\)</span>, especially for small values of k</p>
+<div class="note admonition">
+<p class="admonition-title">Property 1: <em>Proof</em> </p>
+<p>Consider the following ARCH process</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+X_t &amp; = Z_t\sigma_t\\
+\sigma_t^2 &amp;= \alpha_0 +\alpha_1X_{t-1}^2    
+\end{aligned}\)</span></p>
+<p>Add <span class="math notranslate nohighlight">\(X_t^2\)</span> on both sides of the second equation and rearrange, we get</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+X_t^2 &amp;= \alpha_0 +\alpha_1X_{t-1}^2 + (X_t^2 - \sigma_t^2)\\
+      &amp;= \alpha_0 +\alpha_1X_{t-1}^2 + (Z_t^2\sigma_t^2 - \sigma_t^2)\\  
+      &amp; = \alpha_0 +\alpha_1X_{t-1}^2 + \sigma_t^2(Z_t^2 - 1)\\   
+\end{aligned}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nu_t= X_t^2 - \sigma_t^2 = \sigma_t^2(Z_t^2 - 1)\)</span> is an innovation, i.e <span class="math notranslate nohighlight">\(\mathbb{E}[\nu_t|\underline{X}_{t-1}]=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+\mathbb{E}[\nu_t|\underline{X}_{t-1}] &amp;= \mathbb{E}[\sigma_t^2(Z_t^2 - 1)|\underline{X}_{t-1}]\\
+                                &amp;= \sigma_t^2 \mathbb{E}[(Z_t^2 - 1)|\underline{X}_{t-1}]\\
+                                &amp;= \sigma_t^2 ( \mathbb{E}[Z_t^2|\underline{X}_{t-1}]-1)\\
+                                &amp;= \sigma_t^2 (\mathbb{V}(Z_t) - 1)  = 0
+\end{aligned}\)</span></p>
+</div>
+<p>The figure below, shows how significant is the autocorrelation of squared returns
+<img alt="image" src="../../_images/PACF_squared_ret.PNG" />{width=“.8\textwidth”}</p>
+<div class="important admonition">
+<p class="admonition-title">Property 2:</p>
+<p>If <span class="math notranslate nohighlight">\(\{ X_t, t\in \mathbb{Z}\}\)</span> is an ARCH(1) process, then it is a martingale difference</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[X_t|\mathcal{F}_{t-1}] \equiv \mathbb{E}[X_t|\underline{X}_{t-1}] =0\]</div>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Consequences:</strong></span></p>
+<ul class="simple">
+<li><p><strong>The very best</strong> (linear or nonlinear) <strong>predictor of <span class="math notranslate nohighlight">\(X_t\)</span></strong> based
+on the available information at time <span class="math notranslate nohighlight">\(t-1\)</span> <strong>is</strong> simply the trivial
+predictor, namely <strong>the series mean, 0.</strong></p></li>
+<li><p>This property implies that
+<span class="math notranslate nohighlight">\(\mathbb{C}ov(X_t,X_{t-k}) =0\quad \forall k \neq 0\)</span>, i.e that the
+process <span class="math notranslate nohighlight">\(X_t\)</span> has <strong>no memory</strong></p></li>
+<li><p>In terms of point forecasting of the series itself, then, the ARCH
+models offer no advantages over the linear ARMA models.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Property 2: <em>Proof</em> </p>
+<p>Consider the following ARCH process</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+X_t &amp; = Z_t\sigma_t\\
+\sigma_t^2 &amp;= \alpha_0 +\alpha_1X_{t-1}^2    
+\end{aligned}\)</span></p>
+<p><span class="math notranslate nohighlight">\(X_t\)</span> is a martingale difference, since</p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+\mathbb{E}[X_t|\underline{X}_{t-1}] &amp;= \mathbb{E}[Z_t\sigma_t|\underline{X}_{t-1}]\\
+                              &amp;= \sigma_t\mathbb{E}[Z_t|\underline{X}_{t-1}]\\
+                              &amp;= \sigma_t\mathbb{E}[Z_t]\\
+                              &amp;= 0\\
+\end{aligned}\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\(Z_t\)</span> is an i.i.d process of mean 0</p>
+</div>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Innovation</p></th>
+<th class="head"><p>ARCH model</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(Z_t\)</span> i.i.d noise</p></td>
+<td><p><span class="math notranslate nohighlight">\(X_t = Z_t\sigma_t\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(X_t\)</span> is martingale</p></td>
+</tr>
+<tr class="row-odd"><td><p>No correlation</p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_t^2 = \alpha_0 +\alpha_1X_{t-1}^2\)</span></p></td>
+<td><p>No correlation between <span class="math notranslate nohighlight">\(X_t\)</span> and <span class="math notranslate nohighlight">\(X_{t-k}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>between <span class="math notranslate nohighlight">\(Z_t\)</span> and <span class="math notranslate nohighlight">\(Z_{t-k}\)</span></p></td>
+<td><p></p></td>
+<td><p>but <span class="math notranslate nohighlight">\(\mathbb{C}ov(X_t^2,X_{t-k}^2) \neq 0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>ARCH effect The daily squared returns often exhibit significant correlations. These autocorrelations are often referred to as an ARCH effect.</p></li>
+<li><p>Absence of autocorrelation: The <strong>autocorrelation</strong> of asset returns <span class="math notranslate nohighlight">\(R_t\)</span> are often insignificant, except for very small intraday time scales (<span class="math notranslate nohighlight">\(\approx\)</span> 20 minutes) for which microstructure effects come into play.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Property 3:</p>
+<p>If <span class="math notranslate nohighlight">\(\{ X_t, t\in \mathbb{Z}\}\)</span> is an ARCH(1) process, then its two first unconditional moments are finite and constant
+$<span class="math notranslate nohighlight">\(\mathbb{E}[X_t] = 0,\quad\quad \mathbb{V}(X_t) =\frac{\alpha_0}{1-\alpha_1}, \quad\quad \mathbb{C}ov(X_t, X_{t-k}) =0~ \forall k \neq 0\)</span><span class="math notranslate nohighlight">\(
+with \)</span>\alpha_0&gt;0<span class="math notranslate nohighlight">\( and \)</span>0 \leq \alpha_1&lt;1$</p>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Consequences:</strong></span>
+<img alt="image" src="../../_images/homo_hsk.jpeg" /></p>
+<ul>
+<li><p>An ARCH(1) process is unconditionally <strong>homoscedastic</strong>. <strong>Unconditional Variance</strong></p>
+<div class="math notranslate nohighlight">
+\[\mathbb{V}(X_t) =\frac{\alpha_0}{1-\alpha_1}= cst \quad \forall t\]</div>
+</li>
+<li><p>An ARCH(1) process is conditionally <strong>heteroscedastic</strong>. <strong>Conditional Variance</strong></p>
+<div class="math notranslate nohighlight">
+\[\mathbb{V}(X_t|\mathcal{F}_{t-1}) =\sigma_t^2 = \alpha_0 + \alpha_1 X_{t-1}^2\]</div>
+<p>varies with <span class="math notranslate nohighlight">\(\mathcal{F}_{t-1}\)</span></p>
+</li>
+<li><p>An ARCH(1) process is (weakly) <strong>stationary</strong></p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Property 3: <em>Proof</em> </p>
+<p>Consider an ARCH(1) model <span class="math notranslate nohighlight">\(X_t\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+\mathbb{E}(X_t) &amp;= \mathbb{E}(Z_t\sigma_t)\\
+          &amp;= \mathbb{E}[\mathbb{E}(Z_t\sigma_t|\underline{X}_{t-1})]\\
+          &amp;= \mathbb{E}[\sigma_t\mathbb{E}(Z_t|\underline{X}_{t-1})]\\
+          &amp;= \mathbb{E}[\sigma_t\times 0]\\
+          &amp;=0\\   
+\end{aligned}\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\(\mathbb{E}[X_t]=0\)</span>, we have <span class="math notranslate nohighlight">\(\mathbb{V}(X_t)=\mathbb{E}[X_t^2]\)</span></p>
+<p>We know that <span class="math notranslate nohighlight">\(X_t^2\)</span> has an AR(1) representation with</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[X_t^2] = \mathbb{E}[\alpha_0 + \alpha_1 X_{t-1}^2 + \nu_t] = \alpha_0 + \alpha_1 \mathbb{E}[X_{t-1}^2]\]</div>
+<div class="math notranslate nohighlight">
+\[\Leftrightarrow \mathbb{E}[X_t^2] =\frac{\alpha_0}{1-\alpha_1}\]</div>
+</div>
+<p><img alt="image" src="../../_images/simulated_garch22.PNG" /></p>
+<div class="important admonition">
+<p class="admonition-title">Property 4:</p>
+<p>If <span class="math notranslate nohighlight">\(\{ X_t, t\in \mathbb{Z}\}\)</span> is an ARCH(1) process with Gaussian innovations <span class="math notranslate nohighlight">\(Z_t \overset{\mathrm{i.i.d}}{\sim} \mathcal{N}(0,1)\)</span>, then, its
+unconditional and conditional Kurtosis coefficients are equal to</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{K}(X_t|\underline{X}_{t-1}) = \frac{\mathbb{E}(X_t^4|\underline{X}_{t-1})}{{\mathbb{V}(X_t|\underline{X}_{t-1})}^2} =3\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbb{K}(X_t) = \frac{\mathbb{E}(X_t^4}{\mathbb{V}(X_t)^2} = 3 \left( \frac{1-\alpha_1^2}{1-3\alpha_1^2} \right) &gt; 3 \quad if ~\alpha_1&lt;\sqrt{\frac{1}{3}}\]</div>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Consequences</strong></span></p>
+<ul class="simple">
+<li><p>The return distribution often exhibits <strong>heavier tails</strong> than those
+of a normal distribution.</p></li>
+<li><p>Even if the innovation <span class="math notranslate nohighlight">\(Z_t\)</span> has a normal distribution, the
+<strong>marginal distribution</strong> of <span class="math notranslate nohighlight">\(X_t\)</span> is not Gaussian</p></li>
+<li><p>If the innovation <span class="math notranslate nohighlight">\(Z_t\)</span> has a normal distribution, the <strong>conditional
+distribution</strong> of <span class="math notranslate nohighlight">\(X_t\)</span> is Gaussian.
+<span class="math notranslate nohighlight">\(X_t|\underline{X}_{t-1} \sim \mathcal{N}(0, \sigma_t^2)\)</span></p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Property 4: <em>Proof</em> </p>
+<p>Consider an ARCH(1) model <span class="math notranslate nohighlight">\(X_t\)</span>, we have
+<span class="math notranslate nohighlight">\(\begin{aligned}
+\mathbb{E}(X_t^4|\underline{X}_{t-1}) &amp;= \mathbb{E}(Z_t^4 \sigma_t^4|\underline{X}_{t-1})\\
+                                &amp;= \mathbb{E}(Z_t^4|\underline{X}_{t-1}) \sigma_t^4\\
+                                &amp;= \mathbb{E}(Z_t^4) (\sigma_t^2)^2\\
+\end{aligned}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Z_t \overset{\mathrm{i.i.d}}{\sim} \mathcal{N}(0,1)\)</span>, so <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t^4) = 3\)</span>. We get</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{K}(X_t^4|\underline{X}_{t-1}) = \frac{\mathbb{E}(X_t^4|\underline{X}_{t-1})}{\mathbb{V}(X_t^4|\underline{X}_{t-1})^2} = \frac{3(\sigma_t^2)^2}{(\sigma_t^2)^2} =3\]</div>
+<p>The conditional distribution is <strong>mesokurtic</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{aligned}
+\mathbb{E}[X_t^4] &amp;= \mathbb{E}(\mathbb{E}(X_t^4|\underline{X}_{t-1}))\\ 
+           &amp;= 3\mathbb{E}( (\alpha_0 +\alpha_1X_{t-1}^2)^2 )\\  
+           &amp;= 3\left( \alpha_0^2 + 2\alpha_0\alpha_1\mathbb{E}(X_{t-1}^2) +\alpha_1^2\mathbb{E}(X_{t-1}^4) \right) \\
+           &amp;= 3\left( \alpha_0^2 + \frac{2\alpha_0^2\alpha_1}{1-\alpha_1} +\alpha_1^2\mathbb{E}(X_{t-1}^4) \right) \\
+           &amp;= 3\alpha_0^2 \left(\frac{1+\alpha_1}{1-\alpha_1} \right) + 3\alpha_1^2\mathbb{E}(X_{t-1}^4)
+\end{aligned}\)</span></p>
+<p><span class="math notranslate nohighlight">\(X_t\)</span> is stationary, then <span class="math notranslate nohighlight">\(\mathbb{E}[X_t^4] =\mathbb{E}[X_{t-1}^4]\)</span>, and we know <span class="math notranslate nohighlight">\(\mathbb{V}(X_t) = \frac{\alpha_0}{(1-\alpha_1)}\)</span>. Thus,</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[X_t^4] =\frac{3\alpha_0^2(1+\alpha_1)}{(1-3\alpha_1^2)(1-\alpha_1) )}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbb{K}(X_t) = \frac{\mathbb{E}(X_t^4}{\mathbb{V}(X_t)^2} = \frac{3\alpha_0^2(1+\alpha_1)}{(1-3\alpha_1^2)(1-\alpha_1) )} \frac{\alpha_0}{(1-\alpha_1)} = 3 \left( \frac{1-\alpha_1^2}{1-3\alpha_1^2} \right) &gt; 3\]</div>
+<p>The Kurtosis is finite and positive as soon as <span class="math notranslate nohighlight">\(\alpha_1^2&lt;1/3\)</span>.</p>
+<p>Moreover, the conditional distribution is <strong>leptokurtic</strong>.</p>
+</div>
+<p>ARCH models Properties Summary if <span class="math notranslate nohighlight">\(X_t, ~t\in \mathbb{Z}\)</span> is an <strong>ARCH(1)</strong> process with <strong>Gaussian innovation</strong>, then</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Consequences / Interpretation</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>P1</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(X_t^2\)</span> is an AR(1) process</p></td>
+<td><p>ARCH effect: <span class="math notranslate nohighlight">\(\mathbb{C}ov(X_t^2, X_{t-k}^2) \neq 0\)</span> for “small” k</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>P2</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(X_t\)</span> is a martingale difference</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbb{E}[X-t/X_{t-1}]=0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{C}ov(X_t, X_{t-k}) =0 \quad \forall k\neq 0\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>P3</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbb{E}[X_t] =0\)</span>,<br> <span class="math notranslate nohighlight">\(\mathbb{V}[X_t] =\frac{\alpha_0}{1-\alpha_1}\)</span>,<br> <span class="math notranslate nohighlight">\(\mathbb{V}[X_t/X_{t-1}] = \sigma_t^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{X_t\}\)</span> is stationary,<br> unconditionally homoscedastic,<br> and conditionally heteroscedastic</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>P4</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbb{K}[X_t]&gt;3\)</span>,<br> <span class="math notranslate nohighlight">\(\mathbb{K}[X_t/X_{t-1}]=3\)</span></p></td>
+<td><p>The ARCH model generates leptokurtosis,<br> The <strong>marginal distribution</strong> of <span class="math notranslate nohighlight">\(X_t\)</span> is not Gaussian,<br> The <strong>conditional distribution</strong> of <span class="math notranslate nohighlight">\(X_t\)</span> is Gaussian</p></td>
+</tr>
+</tbody>
+</table>
+<p>ARCH(1) models fits most of the stylized facts of financial series The properties of the ARCH(1) allow to capture most of the stylized facts of financial data</p>
+<ol class="arabic simple">
+<li><p><span style="color:rgb(0, 76, 151);"><strong>The returns are stationary</strong></span>
+<span class="math notranslate nohighlight">\(\Rightarrow {X_t}\)</span> is stationary</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Absence of autocorrelations</strong></span>
+<span class="math notranslate nohighlight">\(\Rightarrow {X_t}\)</span> is a martingale difference</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Heavy tails</strong></span>
+<span class="math notranslate nohighlight">\(\Rightarrow {\mathbb{K}(X_t)}\)</span> may be larger than 3 given the value
+of <span class="math notranslate nohighlight">\(\alpha_1\)</span></p></li>
+<li><p><strong>Asymmetry</strong></p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Volatility clustering</strong></span>
+<span class="math notranslate nohighlight">\(\Rightarrow {\mathbb{C}ov(X_t^2, X_{t-k}^2) \neq 0}\)</span></p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Aggregational Gaussianity</strong></span>
+<span class="math notranslate nohighlight">\(\Rightarrow\)</span> The marginal distribution of <span class="math notranslate nohighlight">\(X_t\)</span> is not normal</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>ARCH effect</strong></span> <span class="math notranslate nohighlight">\(\Rightarrow {X_t}^2\)</span> has
+an AR(1) representation and
+<span class="math notranslate nohighlight">\({\mathbb{C}ov(X_t^2, X_{t-k}^2) \neq 0}\)</span></p></li>
+<li><p><strong>Leverage effect</strong></p></li>
+</ol>
+<section id="build-an-arch-model-for-non-zero-mean-series">
+<h4>Build an ARCH model for non-zero mean series:<a class="headerlink" href="#build-an-arch-model-for-non-zero-mean-series" title="Permalink to this heading">#</a></h4>
+<p>Building an ARCH model Denote by <span class="math notranslate nohighlight">\(R_t\)</span> the <strong>daily return</strong> of an asset or a portfolio at time t.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_t = \underset{\substack{\mathrm{conditional} \\ \mathrm{mean~model}}} {\underbrace{\mu_t}} + \underset{\substack{\mathrm{innovation} \\ \mathrm{(martingale~diff)} }}{\underbrace{\epsilon_t}}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t\sigma_t\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sigma_t^2 = \underset{\substack{\mathrm{conditional} \\ \mathrm{variance~model}}} {\underbrace{\alpha_0 + \sum_{i-1}^P {\alpha_{i}X_{t-i}^2} }}\end{split}\]</div>
+<p>follows the structure of a <strong>(conditional) volatility model</strong></p>
+<div class="math notranslate nohighlight">
+\[\mu_t \equiv \mathbb{E}(R_t|\mathcal{F}_{t-1}) =  \mu_t(\underline{R}_{t-1};\theta)\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma_t^2 \equiv \mathbb{V}(R_t|\mathcal{F}_{t-1}) = \sigma_t^2(\underline{R}_{t-1};\theta)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> denotes the <strong>set of parameters</strong> for the conditional mean and variance and <span class="math notranslate nohighlight">\(\mu_t\)</span> is typically an <strong>ARMA</strong>-type model .</p>
+<div class="tip admonition">
+<p class="admonition-title">Example ARMA(1,1)-ARCH(1)</p>
+<p>The process <span class="math notranslate nohighlight">\(\{R_t, ~t\in\mathbb{Z}\}\)</span> has an <strong>ARMA(1,1)-ARCH(1)</strong> representation if</p>
+<div class="math notranslate nohighlight">
+\[R_t = \phi_0 + \phi_1 R_{t-1}+ \theta_1\epsilon_{t-1} + \epsilon_t\]</div>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t\sigma_t\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma_t^2 = \alpha_0 + \alpha_1\epsilon_{t-1}^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_t\)</span> is a sequence of i.i.d. variables with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t)=0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t)=1\)</span>.</p>
+<p>We have:</p>
+<div class="math notranslate nohighlight">
+\[\mu_t = \mathbb{E}(R_t|\mathcal{F}_{t-1}) =  \phi_0 + \phi_1 R_{t-1}\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma_t^2 =\mathbb{V}(R_t|\mathcal{F}_{t-1}) = \alpha_0 + \alpha_1\epsilon_{t-1}^2\]</div>
+<p>and <span class="math notranslate nohighlight">\(\theta = (\phi_0, \phi_1, \theta_1, \alpha_0, \alpha_1)'\)</span> is the vector of parameters to estimate</p>
+</div>
+</section>
+<section id="model-checking">
+<h4>Model Checking<a class="headerlink" href="#model-checking" title="Permalink to this heading">#</a></h4>
+<ul>
+<li><p>For an ARCH model, the <strong>standardized innovations</strong>
+<span class="math notranslate nohighlight">\(Z_t = \frac{\epsilon_t}{\sigma_t}\)</span> are i.i.d. random variates
+(following for example a standard normal or Student-t distribution).</p></li>
+<li><p>Therefore, one can check the adequacy of a fitted ARCH model by
+examining the series of <strong>standardized residuals</strong></p>
+<div class="math notranslate nohighlight">
+\[\hat{Z_t} = \frac{\hat{\epsilon_t}}{\hat{\sigma_t}}\]</div>
+<ol class="arabic simple">
+<li><p>The skewness, kurtosis, and QQ-plot of <span class="math notranslate nohighlight">\(\hat{z_t}\)</span> can be used to
+check the validity of the distribution assumption on <span class="math notranslate nohighlight">\(Z_t\)</span>.</p></li>
+<li><p>Kolmogorov-Smirnov test on <span class="math notranslate nohighlight">\(\hat{z}_t\)</span></p></li>
+</ol>
+</li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Caution</p>
+<p>We have to distinguish between:</p>
+<ul class="simple">
+<li><p>The forecasts on the series <span class="math notranslate nohighlight">\(R_t\)</span> itself (typically the returns).</p></li>
+<li><p>The forecasts on the volatility (or the variance) of <span class="math notranslate nohighlight">\(R_t\)</span>.</p></li>
+</ul>
+<p>Forecasting of the series <span class="math notranslate nohighlight">\(R_t\)</span> The best linear forecast of <span class="math notranslate nohighlight">\(R_t\)</span> given
+the information set <span class="math notranslate nohighlight">\(\mathcal{F}_{t-1}\)</span> will be no different <strong>with or
+without</strong> an ARCH error</p>
+</div>
+</section>
+<section id="weaknesses-of-arch-models">
+<h4>Weaknesses of ARCH Models<a class="headerlink" href="#weaknesses-of-arch-models" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>It requires a <strong>large order (q)</strong> to calibrate the model on
+financial data</p></li>
+<li><p>The model <strong>assumes positive and negative shocks have the same
+effects on volatility</strong> because it depends on the square of the
+previous shocks.</p></li>
+<li><p>The ARCH model provides <strong>no insight into understanding the source
+of volatility</strong>. It only provides a <em>mechanical way</em> to describe the
+behavior of the conditional variance.</p></li>
+<li><p>The ARCH model is rather restrictive. For instance, the fourth
+moment <span class="math notranslate nohighlight">\(\mathbb{E}(X_t^4)\)</span> exists only if <span class="math notranslate nohighlight">\(\alpha_1^2&lt; \frac{1}{3}\)</span></p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="garch-models">
+<h2>GARCH Models<a class="headerlink" href="#garch-models" title="Permalink to this heading">#</a></h2>
+<p>Due to the large persistence in volatility, ARCH models often require a large p to fit the data.
+A more parsimonious specification is provided by <span style="color:rgb(0, 76, 151);"><strong>GARCH</strong></span> models.</p>
+<p><strong>GARCH</strong> = <strong>G</strong>eneralized <strong>A</strong>uto<strong>R</strong>egressive <strong>C</strong>onditional <strong>H</strong>eteroskedasticity\
+Bollerslev, T. (1986)</p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: GARCH Model</p>
+<p>The stochastic process <span class="math notranslate nohighlight">\(\{ \epsilon_t, \ t \in \mathbb{Z} \}\)</span> is said to be a <strong>GARCH</strong>(p,q) process if:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t \sigma_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_t\)</span> is a sequence of i.i.d variables with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t) = 1\)</span>, and <span class="math notranslate nohighlight">\(\sigma_t\)</span> is a non-negative process such that:</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2_t = \omega + \sum^p_{i=1} \alpha_i \epsilon^2_{t-i} + \sum^p_{i=1} \beta_i \sigma^2_{t-i}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\omega &gt;0\)</span>, <span class="math notranslate nohighlight">\(\forall \ i, (\alpha_i, \beta_i) \ \in \ \mathbb{R}^{+,2}\)</span> and <span class="math notranslate nohighlight">\(\sum^p_{i=1} \alpha_i + \sum^p_{i=1} \beta_i &lt;1\)</span></p>
+</div>
+<p>The conditional variance of a GARCH(p, q) depends on:</p>
+<ul class="simple">
+<li><p>The first p lag of the <span class="math notranslate nohighlight">\(\epsilon_t^2\)</span> (e.g. the squared error terms)</p></li>
+<li><p>The first <span class="math notranslate nohighlight">\(q\)</span> lag of the conditional variance <span class="math notranslate nohighlight">\(\sigma^2\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sigma^2_t = \omega + \underbrace{\sum^p_{i=1} \alpha_i \epsilon^2_{t-i}}_{\text{ARCH Components}} + \underbrace{\sum^p_{i=1} \beta_i \sigma^2_{t-i}}_{\text{GARCH components}}\]</div>
+<p>The parameters <span class="math notranslate nohighlight">\(\alpha_i\)</span> are often called the <strong>ARCH parameters</strong></p>
+<p>The parameters <span class="math notranslate nohighlight">\(\beta_i\)</span> are often called the <strong>GARCH parameters</strong></p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>GARCH(1,1) specifications are generally sufficient to capture the dynamics of the conditional variance of financial time series</p>
+<p><strong>“A forecast comparison of volatility models: does anything beat a GARCH (1, 1)?.”</strong> Hansen, Peter R., and Asger Lunde. (2005)</p>
+</div>
+<p><strong>Special Case: GARCH(1, 1)</strong>
+The process <span class="math notranslate nohighlight">\(\{ \epsilon_t, \ t \in \mathbb{Z} \}\)</span> is said to be a <strong>GARCH</strong>(1,1) if:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t \sigma_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_t\)</span> is a sequence of i.i.d variables with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t) = 1\)</span>, and <span class="math notranslate nohighlight">\(\sigma_t\)</span> is a non-negative process such that:</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2_t = \omega + \alpha \epsilon^2_{t-1} + \beta \sigma^2_{t-1}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\omega &gt;0\)</span>, <span class="math notranslate nohighlight">\(\alpha \geq 0, \beta \geq 0\)</span> and <span class="math notranslate nohighlight">\(\alpha + \beta &lt;1\)</span></p>
+<section id="conditional-variance-persistences">
+<h3>Conditional Variance Persistences<a class="headerlink" href="#conditional-variance-persistences" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>The conditional variance
+<span class="math notranslate nohighlight">\(\sigma_t^2 = \omega + \alpha \epsilon^2_{t-1} + \beta \sigma^2_{t-1}\)</span>
+depends on two effects:</p>
+<ul class="simple">
+<li><p>An <strong>intrinsic persistence</strong> effect through the first lag of the
+conditional variance</p></li>
+<li><p>An <strong>extrinsic persistence</strong> effect</p></li>
+</ul>
+</li>
+<li><p>Following a positive (or negative) shock at time <em>t-1</em>, the
+conditional variance at time <em>t</em> increases (impact effect) and thus
+it has an impact on <span class="math notranslate nohighlight">\(\epsilon_t = Z_t \sigma_t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\text{shock} \ z_{t-1} \ &gt; \ 0 \Rightarrow \ \epsilon_{t-1} \ \uparrow \ \Rightarrow \ \sigma_t \ \uparrow \ \dots\]</div>
+</li>
+<li><p>Starting from the next period (at time <span class="math notranslate nohighlight">\(t\)</span>), the effect of the shock
+at <span class="math notranslate nohighlight">\(t-1\)</span> on the conditional variance at <span class="math notranslate nohighlight">\(t+1\)</span> passes through the
+conditional variance at time <span class="math notranslate nohighlight">\(t\)</span> (intrinsic persistence)</p>
+<div class="math notranslate nohighlight">
+\[... \ \Rightarrow \ \sigma_t \ \uparrow \ \Rightarrow \ \sigma^2_{t+1} \ \uparrow\]</div>
+</li>
+<li><p>The overall effect of a shock can be decomposed into a <strong>contemporaneous effect</strong>, which depends
+on <span class="math notranslate nohighlight">\(\alpha\)</span> and a <strong>persistence effect</strong> that depends on <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+</ul>
+<blockquote>
+<div><p>Remarks: It is often the case that:
+- The sum of the estimates of <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are generally close, but below, 1
+- The estimate of <span class="math notranslate nohighlight">\(\beta\)</span> is generally greater than the one of <span class="math notranslate nohighlight">\(\alpha\)</span>
+- The estimate of <span class="math notranslate nohighlight">\(\beta\)</span> is generally larger than 0.90 for daily returns and the estimate of <span class="math notranslate nohighlight">\(\alpha\)</span> is below 0.1
+- Be careful: it is not a general rule, just an observation.</p>
+</div></blockquote>
+</section>
+<section id="garch-properties">
+<h3>GARCH Properties<a class="headerlink" href="#garch-properties" title="Permalink to this heading">#</a></h3>
+<p>GARCH process properties are similar to those of an ARCH process.</p>
+<ol class="arabic simple">
+<li><p>ARCH properties</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon_t^2\)</span> has an ARMA representation</p></li>
+</ol>
+<div class="important admonition">
+<p class="admonition-title">ARMA representation </p>
+<p>If <span class="math notranslate nohighlight">\(\{ \epsilon_t, \ t \in \mathbb{Z} \}\)</span> has a <strong>GARCH</strong>(p,q) representation with:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t \sigma_t\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma^2_t = \omega + \sum^p_{i=1} \alpha_i \epsilon^2_{t-i} + \sum^p_{i=1} \beta_i \sigma^2_{t-i}\]</div>
+<p>the <span class="math notranslate nohighlight">\(\{ \epsilon_t^2, \ t \in \mathbb{Z} \}\)</span> has a <strong>ARMA</strong>(max(p,q), q) representation with:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon^2_t = \omega + \sum^p_{i=1} (\alpha_i + \beta_i) \epsilon^2_{t-i} + \nu_t - \sum^p_{i=1} \beta_i \nu_{t-i}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\nu = \epsilon^2_t - \sigma^2_t\)</span> is an innovation process, i.e <span class="math notranslate nohighlight">\(\mathbb{E}(\nu_t|\mathcal{F}_{t-1})\)</span></p>
+</div>
+<section id="the-most-often-used-distributions-for-z-t-are">
+<h4>The most often used distributions for <span class="math notranslate nohighlight">\(Z_t\)</span> are:<a class="headerlink" href="#the-most-often-used-distributions-for-z-t-are" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Normal distribution</strong></span>,
+<span class="math notranslate nohighlight">\(Z_t \overset{\mathrm{i.i.d}}{\sim} \mathcal{N}(0,1)\)</span>. IMPORTANT:
+the normality assumption on <span class="math notranslate nohighlight">\(Z_t\)</span> does not imply that the return
+<span class="math notranslate nohighlight">\(R_t\)</span> has a normal (marginal) distribution.</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Student t-distribution</strong></span>,
+<span class="math notranslate nohighlight">\(Z_t \overset{\mathrm{i.i.d}}{\sim} t(\nu)\)</span> , which is symmetric and
+leptokurtic (if <span class="math notranslate nohighlight">\(\nu\)</span> is “small”).</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Skewed Student t-distribution</strong></span>
+<span class="math notranslate nohighlight">\(Z_t \overset{\mathrm{i.i.d}}{\sim} Skewed~t(\delta,\nu)\)</span>, which is
+asymmetric (if <span class="math notranslate nohighlight">\(\delta \neq 1\)</span>) and leptokurtic (if <span class="math notranslate nohighlight">\(\nu\)</span> is
+“small”).</p></li>
+<li><p><span style="color:rgb(0, 76, 151);"><strong>Generalized Error Distribution (GED)</strong></span>
+<span class="math notranslate nohighlight">\(Z_t \overset{\mathrm{i.i.d}}{\sim} GED(\nu)\)</span>, which is symmetric and leptokurtic (if <span class="math notranslate nohighlight">\(\nu\)</span> &lt; 2).</p></li>
+</ol>
+<p><img alt="image" src="../../_images/common_distrib.PNG" />{width=“.9\textwidth”}</p>
+<p>Why consider non-Gaussian distributions for the innovation <span class="math notranslate nohighlight">\(Z_t\)</span> ?</p>
+<ol class="arabic">
+<li><p>The use of a <span style="color:rgb(0, 76, 151);"><strong>leptokurtic distribution</strong></span>
+for <span class="math notranslate nohighlight">\(Z_t\)</span> allows to increase the kurtosis of <span class="math notranslate nohighlight">\(R_t\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+              \text{Kurtosis of a GARCH process}  &amp;= \text{kurtosis generated by the model} \\
+                                                  &amp;+ \text{ kurtosis of the innovation } Z_t  
+            
+    \end{aligned}\end{split}\]</div>
+<p>The kurtosis generated by the model dynamic is generally not sufficient to reproduce the level of kurtosis observed
+in the financial returns.</p>
+</li>
+<li><p>The use of a <span style="color:rgb(0, 76, 151);"><strong>skewed distribution</strong></span> for
+<span class="math notranslate nohighlight">\(Z_t\)</span> allows to reproduce the skewness observed in the distribution  of the financial returns.</p>
+<div class="math notranslate nohighlight">
+\[\text{Skewed distribution for }Z_t \Rightarrow \text{Skewed distribution for }R_t\]</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="garch-extensions">
+<h3>GARCH Extensions<a class="headerlink" href="#garch-extensions" title="Permalink to this heading">#</a></h3>
+<p>Asymmetric GARCH models</p>
+<ul class="simple">
+<li><p>The GARCH model assumes that positive and negative shocks have the
+same effects on volatility because it depends on the square of the
+previous shocks.</p></li>
+<li><p>In practice, the return of a financial asset responds differently to
+positive and negative shocks.</p></li>
+<li><p>The GARCH model does not allow to capture the <strong>leverage effect</strong>.</p></li>
+<li><p>As asset prices decline, companies become more leveraged
+(debt-to-equity ratios increase) and riskier, and hence their stock
+prices become more volatile. When stock prices become more volatile, investors
+demand high returns, and hence stock prices go down.</p></li>
+<li><p>Many asymmetric GARCH models have been proposed: <strong>GJR-GARCH,
+TGARCH, EGARCH</strong>, APARCH, VSGARCH, QGARCH, LSTGARCH, ANSTGARCH, etc.</p></li>
+</ul>
+<section id="gjr-garch">
+<h4>GJR-GARCH<a class="headerlink" href="#gjr-garch" title="Permalink to this heading">#</a></h4>
+<p>One of the most often used asymmetric models is the <span style="color:rgb(0, 76, 151);"><strong>GJR-GARCH</strong></span> model, where “GJR” stands for Glosten, Jagannathan, and Runkle (1993).</p>
+<div class="defintion admonition">
+<p class="admonition-title">Definition</p>
+<p>The process <span class="math notranslate nohighlight">\(\{\epsilon_t, t \in \mathbb{Z}\}\)</span> is to be a <strong>GJR-GARCH(1,1)</strong> process, if</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t\sigma_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_t\)</span> is i.i.d with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t)=1\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[\sigma_t^2 = w+\alpha\epsilon_{t-1}^2 + \gamma \mathbb{I}_{(\epsilon_{t-1}&gt;0)}\epsilon_{t-1}^2 + \beta \sigma_{t-1}^2\]</div>
+<p>with <span class="math notranslate nohighlight">\(w&gt;0, \quad \alpha&gt;0, \quad \beta&gt;0, \quad \gamma \in \mathbb{R}\)</span> and where <span class="math notranslate nohighlight">\(\mathbb{I}_{(.)}\)</span> is the indicator function that takes a
+value 1 if the condition is true and 0 otherwise.</p>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Interpretation:</strong></span></p>
+<ul>
+<li><p>The term <span class="math notranslate nohighlight">\(\epsilon_t\)</span> can be interpreted as a shock (surprise) on
+the return, since</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = R_t - \mu_t = R_t - \mathbb{E}(R_t|\mathcal{F}_{t-1})\]</div>
+</li>
+<li><p>In a <strong>GJR-GARCH</strong> model, the influence of the past return shock  <span class="math notranslate nohighlight">\(\epsilon_t\)</span> on the current conditional variance <span class="math notranslate nohighlight">\(\sigma_t^2\)</span>
+depends on its sign</p>
+<div class="math notranslate nohighlight">
+\[\sigma_t^2 = w+\alpha\epsilon_{t-1}^2 + \gamma \mathbb{I}_{(\epsilon_{t-1}&gt;0)}\epsilon_{t-1}^2 + \beta \sigma_{t-1}^2\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial\sigma_t^2}{\partial\epsilon_{t-1}^2} = \left\{
+    \begin{matrix}
+                     \alpha + \gamma &amp; if \epsilon_{t-1} &lt;0\\ 
+                     \alpha &amp; otherwise
+    \end{matrix}
+    \right\}.\end{split}\]</div>
+</li>
+<li><p>A **leverage effect implies that  <span class="math notranslate nohighlight">\(\gamma &gt; 0\)</span>, i.e. the increase in volatility caused by a negative
+return is larger than the appreciation due a positive return of the
+same magnitude.</p></li>
+</ul>
+</section>
+<section id="tgarch-model">
+<h4>TGARCH model<a class="headerlink" href="#tgarch-model" title="Permalink to this heading">#</a></h4>
+<p>TGARCH, introduced by Zakoian (1994), where “T” stands for <span style="color:rgb(0, 76, 151);"><strong>Threshold</strong></span>, is an asymmetric GARCH model designed to capture the leverage effect.
+TGARCH is similar to the GJR model, different only because of the use of the <strong>conditional volatility</strong>, instead of the variance, in the specification.</p>
+<div class="defintion admonition">
+<p class="admonition-title">Definition</p>
+<p>The process <span class="math notranslate nohighlight">\(\{\epsilon_t, t \in \mathbb{Z}\}\)</span> is to be a <strong>TGARCH(1,1)</strong> process, if</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t\sigma_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_t\)</span> is i.i.d with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t)=1\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\sigma_t^2} = w+\alpha_{+}\epsilon_{t-1}\mathbb{I}_{(\epsilon_{t-1}&gt;0)}+\alpha_{-}\epsilon_{t-1}\mathbb{I}_{(\epsilon_{t-1}&lt;0)} + \beta\sqrt{\sigma_{t-1}^2}\]</div>
+<p>with <span class="math notranslate nohighlight">\((w,\alpha_{+},\alpha_{-}, \beta) \in \mathbb{R}^4\)</span> and <span class="math notranslate nohighlight">\(\mathbb{I}_{(.)}\)</span> is the indicator function</p>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Interpretation:</strong></span></p>
+<ul>
+<li><p>One advantage of the TGARCH is that it does not require any <strong>positivity constraints</strong> on the
+parameters, since we have  <span class="math notranslate nohighlight">\(\forall (w,\alpha_{+},\alpha_{-}, \beta) \in \mathbb{R}^4\)</span></p>
+<div class="math notranslate nohighlight">
+\[\sigma_t = \left( w+\alpha_{+}\epsilon_{t-1}\mathbb{I}_{(\epsilon_{t-1}&gt;0)}+\alpha_{-}\epsilon_{t-1}\mathbb{I}_{(\epsilon_{t-1}&lt;0)} + \beta\sqrt{\sigma_{t-1}^2} \right) \geq 0\]</div>
+</li>
+<li><p>The <strong>TGARCH</strong> allows to capture an <strong>asymmetry</strong> between positive and  negative shocks, as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial\sigma_t}{\partial\epsilon_{t-1}} = \left\{
+    \begin{matrix}
+                     \alpha_{-} &amp; if \epsilon_{t-1} &lt;0\\ 
+                     \alpha_{+} &amp; otherwise
+    \end{matrix}
+    \right\}.\end{split}\]</div>
+</li>
+<li><p>The <strong>leverage effect</strong> implies that  <span class="math notranslate nohighlight">\(|\alpha_{-} &gt; \alpha_{+}|\)</span>, i.e. the increase in volatility caused
+by a negative return is larger than the appreciation due to a
+positive return of the same magnitude</p></li>
+</ul>
+</section>
+<section id="egarch-model">
+<h4>EGARCH model<a class="headerlink" href="#egarch-model" title="Permalink to this heading">#</a></h4>
+<p>The EGARCH has been introduced by Nelson (1991). “E” stands for <span style="color:rgb(0, 76, 151);"><strong>Exponential</strong></span>.
+It was designed to capture both (1) the asymmetric effects and (2)    the effects of “big” shocks.</p>
+<div class="defintion admonition">
+<p class="admonition-title">Definition</p>
+<p>The process <span class="math notranslate nohighlight">\(\{\epsilon_t, t \in \mathbb{Z}\}\)</span> is to be a <strong>EGARCH(1,1)</strong> process, if
+$<span class="math notranslate nohighlight">\(\epsilon_t = Z_t\sigma_t\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ln(\sigma_t^2) =w + \alpha~ Z_{t-1} + \gamma\left(|Z_{t-1}| - \mathbb{E}(|Z_{t-1}|)\right) +\beta~ln(\sigma_{t-1}^2)\]</div>
+<p>with <span class="math notranslate nohighlight">\((w,\alpha,\beta, \gamma) \in \mathbb{R}^4\)</span> and where <span class="math notranslate nohighlight">\(Z_t\)</span> is i.i.d with <span class="math notranslate nohighlight">\(\mathbb{E}(Z_t) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{V}(Z_t)=1\)</span>,</p>
+</div>
+<p><span style="color:rgb(0, 76, 151);"><strong>Interpretation:</strong></span></p>
+<ul>
+<li><p>The term <span class="math notranslate nohighlight">\(\left(|Z_{t-1}| - \mathbb{E}(|Z_{t-1}|)\right)\)</span> measures
+the <strong>magnitude</strong> of the (positive or negative) shock</p></li>
+<li><p>If the parameter <span class="math notranslate nohighlight">\(\gamma\)</span> is positive, the  <strong>“big”</strong> (compared to their expected
+value) shocks have a stronger impact on the variance than the  <strong>“small”</strong> shocks</p></li>
+<li><p>The EGARCH model captures the asymmetric effects between positive
+and negative shocks on the returns, since</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial\sigma_t}{\partial\epsilon_{t-1}} = \left\{
+    \begin{matrix}
+                     \gamma - \alpha &amp; if z_{t-1} &lt;0\\ 
+                     \gamma + \alpha &amp; otherwise
+    \end{matrix}
+    \right\}.\end{split}\]</div>
+</li>
+<li><p>The <strong>leverage effect</strong>, i.e. the fact
+that negative shocks at time <span class="math notranslate nohighlight">\(t -1\)</span> have a stronger impact on the
+variance at time t than positive shocks, implies that <span class="math notranslate nohighlight">\(\alpha &lt;0\)</span></p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Daily returns with EGARCH model</p>
+<p>Consider <strong>AR</strong>(1)-<strong>EGARCH</strong>(1,1) with Gaussian innovation for the returns <span class="math notranslate nohighlight">\(\{\mathbb{R}_t, t\in\mathbb{Z}\}\)</span></p>
+<div class="math notranslate nohighlight">
+\[R_t = \phi_0 + \phi_1R_{t-1} + \epsilon_t\]</div>
+<div class="math notranslate nohighlight">
+\[\epsilon_t = Z_t\sigma_t\]</div>
+<div class="math notranslate nohighlight">
+\[ln(\sigma_t^2) =w + \alpha~ Z_{t-1} + \gamma\left(|Z_{t-1}| - \sqrt{\frac{2}{\pi}} \right) +\beta~ln(\sigma_{t-1}^2)\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[ln(\sigma_t^2) =w + \alpha~ \left(\frac{\epsilon_{t-1}}{\sigma{t-1}}\right) + \gamma\left(|\frac{\epsilon_{t-1}}{\sigma{t-1}}| - \sqrt{\frac{2}{\pi}} \right) +\beta~ln(\sigma_{t-1}^2)\]</div>
+<p>with <span class="math notranslate nohighlight">\(Z_t\)</span> i.i.d <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span>. The vector of parameters to be
+estimated is <span class="math notranslate nohighlight">\(\theta = (\phi_0, \phi_1, w, \alpha, \gamma, \beta)'\)</span></p>
+</div>
+</section>
+</section>
+</section>
+<section id="value-at-risk">
+<h2>Value At Risk<a class="headerlink" href="#value-at-risk" title="Permalink to this heading">#</a></h2>
+<div class="defintion admonition">
+<p class="admonition-title">VaR: Intuitive Definition</p>
+<p>The value at risk (VaR) defined for a hedge ratio <span class="math notranslate nohighlight">\(\alpha\)</span> %
+corresponds to the quantile of order <span class="math notranslate nohighlight">\(\alpha\)</span> of the distribution of
+profits and losses (P&amp;L) associated with the holding of an asset or a
+portfolio of assets over a given period.</p>
+</div>
+<blockquote>
+<div><p>Remark: VaR is generally negative (a loss) in a P&amp;L representation. For simplifying, we denote the VaR as a
+positive value by considering the opposite of the quantile</p>
+</div></blockquote>
+<p><img alt="image" src="../../_images/VAR_normal.PNG" />{width=“.5”, height=“0.5”}</p>
+<div class="defintion admonition">
+<p class="admonition-title">VaR: Formal Definition</p>
+<p>For a hedge rate of <span class="math notranslate nohighlight">\(\alpha\)</span>%, the Value-at-Risk, noted
+<span class="math notranslate nohighlight">\(VaR_t (\alpha)\)</span>, corresponds to the opposite of the fractile of order
+<span class="math notranslate nohighlight">\(\alpha\)</span> of the distribution of profits and losses (P&amp;L)</p>
+<div class="math notranslate nohighlight">
+\[VaR_t(\alpha) = -F^{-1}_{R_t}(\alpha)\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_{R_t}\)</span> denotes the cumulative distribution function associated with the density function
+<span class="math notranslate nohighlight">\(f_{R_t}(.)\)</span></p>
+</div>
+<ul class="simple">
+<li><p>Sometimes the Value-at-Risk is expressed as a function of confidence
+level. VaR at hedge rate 1% will be Var(99%)
+$<span class="math notranslate nohighlight">\(VaR(1-\alpha) = -F_{R_t}^{-1}(\alpha)\)</span>$</p></li>
+<li><p>the probability of observing a loss greater than the VaR over the
+holding period is equal by definition to the coverage rate:
+$<span class="math notranslate nohighlight">\(Pr[R_t&gt;-VaR_t(\alpha)] = \int_{-\infty}^{-VaR_t(\alpha)}{f_{R_t}(r) dr} = \alpha\)</span>$</p></li>
+</ul>
+<section id="conditional-value-at-risk">
+<h3>Conditional Value-at-Risk<a class="headerlink" href="#conditional-value-at-risk" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>We define the conditional distribution of P&amp;L, based on a <strong>set of
+information available at time t</strong>, denoted as <span class="math notranslate nohighlight">\(\Omega_t\)</span></p>
+<div class="math notranslate nohighlight">
+\[f_{R_t}(r|\Omega_t)\]</div>
+</li>
+<li><p>the conditional distribution may change through time, but we usually
+consider the case of invariant conditional density (given the
+explanatory variables)</p>
+<div class="math notranslate nohighlight">
+\[F_{R_t}(r|\Omega) = F_{R}(r|\Omega) \quad \forall t\]</div>
+</li>
+</ul>
+<div class="defintion admonition">
+<p class="admonition-title">Definition</p>
+<p>For a hedge rate of <span class="math notranslate nohighlight">\(\alpha\)</span>%, the conditional Value-at-Risk
+to a set of information <span class="math notranslate nohighlight">\(\Omega_t\)</span>, noted <span class="math notranslate nohighlight">\(VaR_t (\alpha|\Omega_t)\)</span>,
+equals to the opposite of the fractile of order <span class="math notranslate nohighlight">\(\alpha\)</span> of the P&amp;L
+conditional distribution</p>
+<div class="math notranslate nohighlight">
+\[VaR_t(\alpha|\Omega_t) = -F^{-1}_{R_t}(\alpha|\Omega_t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_{R_t}(r|\Omega_t)\)</span> is the cumulative distribution function associated
+with the conditional density function <span class="math notranslate nohighlight">\(f_{R_t}(r|\Omega_t))\)</span></p>
+</div>
+<p><span style="color: rgb(0, 76, 151);">VaR: Specification </span>
+The definition of Value-at-Risk is based on 3 elements:</p>
+<ol class="arabic simple">
+<li><p>The distribution of profit and loss (P&amp;L) of the portfolio or the
+asset</p></li>
+<li><p>Level of confidence (or equivalently the hedge rate <span class="math notranslate nohighlight">\(\alpha\)</span>)</p></li>
+<li><p>The holding period of the asset (or the risk horizon)</p></li>
+</ol>
+</section>
+<section id="estimation-methods">
+<h3>Estimation methods<a class="headerlink" href="#estimation-methods" title="Permalink to this heading">#</a></h3>
+<div class="caution admonition">
+<p class="admonition-title">Challenge</p>
+<p>Theoretically, at each date t, the return <span class="math notranslate nohighlight">\(R_t\)</span> is a random
+variable admitting a distribution <span class="math notranslate nohighlight">\(f_{R_t}(.)\)</span> and a fractile <span class="math notranslate nohighlight">\(\alpha\)</span>.
+However, we have only one observation <span class="math notranslate nohighlight">\(r_t\)</span> of this distribution. From
+this single realization, <strong>without any additional hypothesis</strong>, it is
+impossible to estimate the quantiles of the distribution <span class="math notranslate nohighlight">\(f_{R_t}(.)\)</span> at
+date t, i.e. the VaR</p>
+</div>
+<p>Several estimation methods have been proposed</p>
+<ul class="simple">
+<li><p><span style="color: rgb(0, 76, 151);">Non-parametric Estimation</span>: No
+parametric distribution of P&amp;L is imposed a priori. <strong>Historical Simulation</strong>(HS), <strong>Weighted HS</strong>, <strong>Filtered HS</strong></p></li>
+<li><p><span style="color: rgb(0, 76, 151);">Semi-parametric Estimation</span>: CAViaR
+method, Extreme Values Theory</p></li>
+<li><p><span style="color: rgb(0, 76, 151);">Parametric Estimation</span>: ARCH, GARCH, RiskMetrics</p></li>
+</ul>
+<section id="non-parametric-estimation">
+<h4>Non-Parametric Estimation:<a class="headerlink" href="#non-parametric-estimation" title="Permalink to this heading">#</a></h4>
+<p><strong>Historical Simulation</strong>: VaR is estimated as the empirical fractile of past returns.</p>
+<p>In the HS approach, we explicitly make 2 strong hypothesis</p>
+<ol class="arabic">
+<li><p>the non-conditional distribution of returns is the same <span class="math notranslate nohighlight">\(\forall~t\)</span></p>
+<div class="math notranslate nohighlight">
+\[f_{R_t}(w) = f_{R}(w)\]</div>
+<p>Consequently, the fractiles of this non-conditional distribution is also the same</p>
+<div class="math notranslate nohighlight">
+\[VaR_t(\alpha) = VaR(\alpha)\]</div>
+</li>
+<li><p>Returns <span class="math notranslate nohighlight">\(\{R_1, R_2, ..,R_T\}\)</span> are independent <span class="math notranslate nohighlight">\(\Rightarrow\)</span> VaR estimated by HS are unconditional, relatively invariant to changes in the economic environment</p></li>
+</ol>
+<p>To introduce a minimum conditioning, we can compute the Var on a <strong>rolling window</strong>, by deleting very ancient observations. However, the <strong>Window size</strong> becomes key: too small and the estimator is volatile, too large and the estimator is invariant</p>
+<p><strong>Bootstrapped Historical Simulation</strong>:
+The BHS estimator of the VaR corresponds to the empirical average of VaR computed by Historical Simulations, obtained from S samples of bootstrapped returns</p>
+<div class="math notranslate nohighlight">
+\[\hat{VaR}(\alpha) = \frac{1}{S}\sum_{s=1}^{S} \hat{VaR}_s(\alpha)\]</div>
+<p><strong>Non-parametric Kernel based estimate</strong> of the density function</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}_{R_t}(r_0) = \frac{1}{T\lambda} \sum_{t=1}^T{K\left(\frac{r_t-r_0}{\lambda} \right)}\]</div>
+<p>One major drawback of kernel estimators, is that they present edge effects. Their precision is low on the “edges” of the sample, precisely where we want to estimate the VaR</p>
+<p><strong>Weighted Historical Simulation</strong> or Hybrid Method: It consist on applying the historical simulation method while assigning different weights to the observations. The most common estimates are</p>
+<ul class="simple">
+<li><p>the <strong>Aged-weighted HS</strong>: it gives more weights to the recent observations</p></li>
+<li><p>the <strong>Volatility-weighted HS</strong>: it gives more weights to hight volatile periods, where the tails are atteined more often</p></li>
+</ul>
+</section>
+<section id="semi-parametric-estimation">
+<h4>Semi-Parametric Estimation<a class="headerlink" href="#semi-parametric-estimation" title="Permalink to this heading">#</a></h4>
+<p><span style="color: rgb(0, 76, 151);"><strong>Quantile Regression and CAViaR:</strong></span>
+Instead of modeling the distribution function of returns in the perspective of calculating its quantiles.
+Why not model the quantiles directly ?</p>
+<p>CAViaR for <strong>Conditional Autoregressive Value at Risk</strong>, by Engle  and Manganelli, implement exactly that, by specifying an autoregressive dynamic for conditional quantiles</p>
+<div class="definition admonition">
+<p class="admonition-title">CAViaR</p>
+<p>CAViaR is a model specifed on the fractile. The conditional VaR
+at hedge rate <span class="math notranslate nohighlight">\(\alpha\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+VaR_{t|t-1}(\alpha) = \beta_0 + \beta_1VaR_{t-1|t-2}(\alpha) +\\
+\beta_2 max(r_{t-1},0) - \beta_3 min(r_{t-1},0)           
+\end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta_i \in\mathbb{R}\)</span></p>
+</div>
+</section>
+<section id="parametric-estimation">
+<h4>Parametric Estimation<a class="headerlink" href="#parametric-estimation" title="Permalink to this heading">#</a></h4>
+<p>For any elliptical distribution, the VaR forecast is a linear transformation of
+the variance (volatility) forecast. Predicting the variance allows to
+predict the VaR</p>
+<p>GARCH Model Under the normal distribution hypothesis of conditional P&amp;L,
+the VaR forecast for hedge rate <span class="math notranslate nohighlight">\(\alpha\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[VaR_{t+1|t}(\alpha) = -\mu-\sqrt{h_{t+1}}\Phi^{-1}(\alpha)\]</div>
+<p>where <span class="math notranslate nohighlight">\(h_{t+1}\)</span> is the conditional variance of returns derived from the GARCH
+model</p>
+<div class="definition admonition">
+<p class="admonition-title">Special case: RiskMetrics</p>
+<p>RiskMetrics Developed by JP Morgan in the 90s.
+The forecasted conditional VaR for the hedge rate <span class="math notranslate nohighlight">\(\alpha\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[VaR_{t+1|t}(\alpha) = -\mu-h_{t}\Phi^{-1}(\alpha)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the expected return and <span class="math notranslate nohighlight">\(h_t\)</span> is the conditional variance</p>
+<div class="math notranslate nohighlight">
+\[h_t = \lambda h_{t-1}+(1-\lambda)r^2_{t-1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is a decay parameter (generally fixed to 0.97)</p>
+</div>
+<ul class="simple">
+<li><p>The conditional variance in RiskMetrics follows a <strong>EWMA
+(Exponential Weighted Moving Average)</strong> type process: The forecasted
+variance is a linear function of past innovations and past variance</p></li>
+<li><p>RiskMetricss is a special case of GARCH</p></li>
+</ul>
+</section>
+</section>
+<section id="limites-of-the-value-at-risk">
+<h3>Limites of the Value-at-Risk<a class="headerlink" href="#limites-of-the-value-at-risk" title="Permalink to this heading">#</a></h3>
+<p>The Value-at-Risk, as a risk metric, present several limitation</p>
+<ol class="arabic simple">
+<li><p>This risk measure does not give any information on losses beyond the
+VaR</p></li>
+<li><p>This measure can lead some agents to voluntarily take more risk in a
+decentralized risk management system</p></li>
+<li><p>It can lead to a decision maker to choose a project with
+exorbitantly large losses, as long as these losses do not affect the
+VaR (because they occur with low probability)</p></li>
+<li><p>the VaR is not a <span style="color: rgb(0, 76, 151);">coherent measure of risk</span> because the <span style="color: rgb(0, 76, 151);">sub-additivity</span>
+property is not respected $<span class="math notranslate nohighlight">\(\rho(X+Y) \leq \rho(X) + \rho(Y)\)</span>$</p></li>
+</ol>
+<p><img alt="image" src="../../_images/VAR_tail_risk.PNG" /></p>
+<p>An alternative coherent metric for risk is the Expected Shortfall (ES)</p>
+<div class="definition admonition">
+<p class="admonition-title">Expected Shortfall</p>
+<p>ES: Expected shortfall The Expected shortfall (ES) associated with a
+hedge rate <span class="math notranslate nohighlight">\(\alpha\)</span> is the average of the <span class="math notranslate nohighlight">\(\alpha\)</span>% worst expected
+losses</p>
+<div class="math notranslate nohighlight">
+\[ES_t(\alpha) = -\frac{1}{\alpha} \int_0^{\alpha}{F_{R_t}^{-1}(p)dp}\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_{R_t}\)</span> is the cumulative distribution of the density function
+<span class="math notranslate nohighlight">\(f_{R_t}(r)\)</span></p>
+</div>
+<p><span style="color: rgb(0, 76, 151);"><strong>Interpretation:</strong></span>
+The ES gives average loss in the worst case scenario. i.e in the  <span class="math notranslate nohighlight">\(\alpha\)</span>% situations where the losses exceed the Var</p>
+<blockquote>
+<div><p>Remark : The Expected Shortfall is sometimes denoted the <strong>Conditional Loss</strong> or <strong>Expected Tail Loss</strong></p>
+</div></blockquote>
+<p><img alt="image" src="../../_images/ES_normal.PNG" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Volatility-Modelling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Time-Series-Analysis/workshop/13%20-%20VAR%20Model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">13: VAR Model</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture-content.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced Volatilty Modelling with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arch-models">ARCH Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-arch-models">Key properties of ARCH models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-an-arch-model-for-non-zero-mean-series">Build an ARCH model for non-zero mean series:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-checking">Model Checking</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#weaknesses-of-arch-models">Weaknesses of ARCH Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#garch-models">GARCH Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-variance-persistences">Conditional Variance Persistences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#garch-properties">GARCH Properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-often-used-distributions-for-z-t-are">The most often used distributions for <span class="math notranslate nohighlight">\(Z_t\)</span> are:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#garch-extensions">GARCH Extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gjr-garch">GJR-GARCH</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tgarch-model">TGARCH model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#egarch-model">EGARCH model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-at-risk">Value At Risk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-value-at-risk">Conditional Value-at-Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-methods">Estimation methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#non-parametric-estimation">Non-Parametric Estimation:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-parametric-estimation">Semi-Parametric Estimation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-estimation">Parametric Estimation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limites-of-the-value-at-risk">Limites of the Value-at-Risk</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Romain Lafarguette and Amine Raboun
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

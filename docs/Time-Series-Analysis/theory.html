@@ -1,0 +1,1428 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Time series Econometrics (Lecture Notes) &#8212; IMF - STI Risk Based Framework</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Time-Series-Analysis/theory';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Time Series Econometrics With Python" href="Lecture-content.html" />
+    <link rel="prev" title="03- Statistics Techniques" href="../Key-Statistical-Concepts/workshop/03-Advanced.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    IMF - STI: Risk-Based Framework for FX Intervention
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foreign Exchange Interventions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fxi/theory.html">Conceptual Framework</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../fxi/practice.html">Examples of Countries Policy and Operational FX Interventions Frameworks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VaR FXI Python Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../IMF-MODEL/VaR-FX%20Interventions.html">Foreign Exchange Intervention Rules for Central Banks: A Risk-Based Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Key Statistical Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Key-Statistical-Concepts/Lecture-content.html">Statistical Analysis with Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/01-random-variables.html">01- Ramdom Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/02-sampling.html">02-Statistical Link Between Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Key-Statistical-Concepts/workshop/03-Advanced.html">03- Statistics Techniques</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Time Series Econometrics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time series Econometrics (Lecture Notes)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture-content.html">Time Series Econometrics With Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workshop/01-%20ACF%20vs%20PACF.html">1: ACF vs PACF</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/02-%20Augmented%20Dickey-Fuller%20Test.html">2: Augmented Dickey-Fuller Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/03-%20STL%20Decomposition.html">3: Seasonal-Trend Decomposition using LOESS (STL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/04-%20Time%20Series%20Data%20Preprocessing.html">4: Read the Data</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/05-%20MA%20Model.html">5: Generate Some Data</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/06-%20AR%20Model.html">6: AR Model</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/07-%20Model%20Selection.html">7: Model Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/08-%20ARMA%20Model.html">8: ARMa Model</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/09-%20SARIMA%20Model.html">9: SARIMA Model</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/10-%20Undo%20Stationary%20Transformations.html">10: Undo Stationarity Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/11-%20Anomaly%20Detection.html">11: Anomaly Detection</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="workshop/12-%20Granger%20Causality.html">12: Granger Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workshop/13%20-%20VAR%20Model.html">13: VAR Model</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Volatility Modelling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Volatility-Modelling/volatility_theory.html">Advanced Volatility Modeling (Lecture Notes)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Volatility-Modelling/Lecture-content.html">Advanced Volatilty Modelling with Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/01-Introduction%20to%20arch%20package.html">01- Usage of the ARCH package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/02-Volatility%20Modeling%20synthetic%20data.html">02- Volatility prediction: Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/03-GARCH%20Stock%20Modeling.html">03- Volatility Modleing S&amp;P 500 Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/04-Conditional%20Value%20at%20Risk.html">04- Conditional Value at Risk</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/05-univariate_forecasting_with_exogenous_variables.html">05- Forecasting with Exogenous Regressors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Volatility-Modelling/workshop/univariate_volatility_modeling.html">05-Volatility Modeling (cont.)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Python-Introduction/Lecture-content.html">General Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/02%20-%20Variables_and_Functions.html">2: Python Basics - Variables and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/03%20-%20Control%20Structures.html">3 : Control Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/04%20-%20Data%20Structure%20%28Lists%20and%20Tuples%29.html">4: Data structure (Lists and Tuples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/05%20-%20Dictionaries.html">5: Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/06%20-%20List%20Comprehension.html">6: List Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/07%20-%20Built-in%20Functions.html">7: Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/08%20-%20Basic%20Python%20Modules.html">8: Basic Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/09%20-%20Object%20Oriented%20Programming.html">9: Object Oriented Programming with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/10%20-%20Numpy%20%28Intro%29.html">10: Numpy Tableau ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/11%20-%20Numpy%20_%20Indexing%2C%20Slicing%2C%20Boolean%20Indexing.html">11: Numpy - Slicing and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/12%20-%20Numpy%20Maths%20and%20Statists.html">12: Numpy - Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/13%20-%20Numpy%20Broadcasting.html">13: Numpy and Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/14%20-%20Matplotlib%20%28Intro%29.html">14: Matplotlib - Graphiques de Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/15%20-%20Matplotlib%20Top%20Graphiques.html">15: Matplotlib Top Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/16%20-%20Scipy.html">16: Machine Learning with Scipy</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/17%20-%20Pandas%20%28Intro%29.html">17: Pandas (the Basics) and Titanic Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/18%20-%20Pandas%20and%20Time%20series.html">18: Pandas and Timeseries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python-Introduction/workshop/19%20-%20Seaborn.html">19: Data Visualisation with Seaborn</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">utils</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Miscelaneous tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/raboam/STI_FX_Intervention/issues/new?title=Issue%20on%20page%20%2Fdocs/Time-Series-Analysis/theory.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/Time-Series-Analysis/theory.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Time series Econometrics (Lecture Notes)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-time-series-modeling-is-different-from-other-statistical-models">Why Time series Modeling is different from other statistical models?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrapolation">Extrapolation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-features-and-properties-of-financial-time-series">Statistical Features and Properties of Financial Time series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stationarity">Stationarity</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-identify-non-stationary-series">How do you identify non- stationary series?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absence-of-autocorrelations">Absence of autocorrelations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heavy-tails">Heavy Tails</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetry">Asymmetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatility-clustering">Volatility Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-range-dependence">Long Range Dependence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leverage-effect">Leverage Effect</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregational-gaussianity">Aggregational Gaussianity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-techniques-differencing">Useful Techniques: Differencing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differencing">Differencing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-differencing">Second- Order Differencing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seasonal-differencing">Seasonal Differencing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backshift-notation">Backshift Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arma-type-models">ARMA type models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoregressive-ar-models">Autoregressive (AR) Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stationarity-conditions">Stationarity Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-test-dickey-fuller-test">Statistical Test: Dickey- Fuller Test</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-identify-the-order-of-an-ar-process">How to identify the order of an AR process</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-moving-average-model">MA: Moving Average Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-identify-the-order-of-an-ma-process">How to identify the order of an MA process</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invertibility-from-ma-q-to-ar-infty-and-from-ar-p-to-ma-infty-model">Invertibility: From MA(q) to AR(<span class="math notranslate nohighlight">\(\infty\)</span>) and From <span class="math notranslate nohighlight">\(AR(p)\)</span> to MA(<span class="math notranslate nohighlight">\(\infty\)</span>) Model</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arma-p-q-model">ARMA(p, q) Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoregressive-integrated-moving-average-arima">Autoregressive Integrated Moving Average (ARIMA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seasonal-arima-sarima">Seasonal ARIMA (SARIMA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment-of-seasonality">Treatment of Seasonality</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-strategy">Empirical Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-white-noise">What is a White noise ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Empirical Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-comparison-and-parameters-selection">Model Comparison and parameters Selection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-apporach">General Apporach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="time-series-econometrics-lecture-notes">
+<h1>Time series Econometrics (Lecture Notes)<a class="headerlink" href="#time-series-econometrics-lecture-notes" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<section id="why-time-series-modeling-is-different-from-other-statistical-models">
+<h3>Why Time series Modeling is different from other statistical models?<a class="headerlink" href="#why-time-series-modeling-is-different-from-other-statistical-models" title="Permalink to this heading">#</a></h3>
+<p>Before we dive into time series model, it is important to understand the difference
+between standard statistic models and time series. For example, what is the difference
+between AR model and an OLS ?</p>
+<p>Based on the model equation, AR is a special case of OLS where the explanatory
+variables are the lagged time series</p>
+<div class="math notranslate nohighlight">
+\[AR(1): \quad y_t =\alpha + \beta \times y_{t- 1} + \epsilon_t\]</div>
+<div class="math notranslate nohighlight">
+\[OLS: \quad y_t =\alpha + \beta \times X_t + \epsilon_t\]</div>
+<p>However, AR models are fundamentally different from OLS models. Indeed, the former is based on <strong>Extrapolation</strong>, while the latter is based on <strong>Interpolation</strong></p>
+</section>
+<section id="interpolation">
+<h3>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this heading">#</a></h3>
+<p>In the OLS models, both  X (the explanatory variables) and Y (the target variable) are observed at the same time. For any potential value of X, we can compute a predicted
+value <span class="math notranslate nohighlight">\(\hat{Y}\)</span> with a certain confidence</p>
+<a class="reference internal image-reference" href="../../_images/OLS_Interpolation.png"><img alt="../../_images/OLS_Interpolation.png" src="../../_images/OLS_Interpolation.png" style="width: 80%;" /></a>
+</section>
+<section id="extrapolation">
+<h3>Extrapolation<a class="headerlink" href="#extrapolation" title="Permalink to this heading">#</a></h3>
+<p>Structural time dependence, <span class="math notranslate nohighlight">\(\hat{Y}_{t+1}\)</span> depend on <span class="math notranslate nohighlight">\(Y_{t}\)</span>
+Predicting <span class="math notranslate nohighlight">\(\hat{Y}_{t+h}\)</span> requires predicting all <span class="math notranslate nohighlight">\(\hat{Y}_{t+i}\quad \forall i \in [1,h- 1]\)</span>
+Cumulative estimation error make the results unusable.</p>
+<p>Intuitively, the farther we move in the future, the higher the chance of exogenous
+external shock occurring (Risk of structured breaks, innovation, macroeconomic shocks,
+news…)  <span class="math notranslate nohighlight">\(\Rightarrow\)</span> The lower the accuracy of the model</p>
+<a class="reference internal image-reference" href="../../_images/AR_Extrapolation.png"><img alt="../../_images/AR_Extrapolation.png" src="../../_images/AR_Extrapolation.png" style="width: 80%;" /></a>
+</section>
+</section>
+<section id="statistical-features-and-properties-of-financial-time-series">
+<h2>Statistical Features and Properties of Financial Time series<a class="headerlink" href="#statistical-features-and-properties-of-financial-time-series" title="Permalink to this heading">#</a></h2>
+<p>Stylized Properties:   Fan and Yao (2015, the Elements of Financial Econometrics)
+identify 8 main “stylized facts”</p>
+<ul class="simple">
+<li><p>Stationarity</p></li>
+<li><p>Absence of autocorrelations</p></li>
+<li><p>Heavy tails</p></li>
+<li><p>Asymmetry</p></li>
+<li><p>Volatility clustering</p></li>
+<li><p>Aggregational Gaussianity</p></li>
+<li><p>Long- range dependence</p></li>
+<li><p>Leverage effect</p></li>
+</ul>
+<section id="stationarity">
+<h3>Stationarity<a class="headerlink" href="#stationarity" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Strong Stationarity</p>
+<p>If <span class="math notranslate nohighlight">\({y_t}\)</span> is a stationary time series, then for any period <span class="math notranslate nohighlight">\(s\)</span> in the future,
+the distribution <span class="math notranslate nohighlight">\(\{y_t, \dots, y_{t+s}\}\)</span> doesn’t depend on <span class="math notranslate nohighlight">\(t\)</span></p>
+</div>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Weak Stationarity (Second Order Stationarity)</p>
+<p>A stochastic process <span class="math notranslate nohighlight">\(X_{t} \in \mathbb{Z}\)</span> is weakly stationary if and only if:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{E}(X^2_t) &lt; \infty \quad \forall~ t \in \mathbb{Z}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{E}(X_t) = \mu \quad \forall~t \in \mathbb{Z}\)</span> doesn’t depend on <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{C}ov(x_t, x_{t+h}) = \mathbb{E}[(x_{t+h} -  m)(x_t -  m)]  = \gamma(h) \quad \forall~ (t, h)~ \in \mathbb{Z}^2\)</span> doesn’t depend on <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ul>
+</div>
+<p>Weak stationarity means that the stochastic process oscillates around a constant level, is not trending, and has the following properties:</p>
+<ul class="simple">
+<li><p>The mean and time-covariance are constant over time</p></li>
+<li><p>Because the time-covariance is constant over time, it implies that the variance is also constant over time
+$<span class="math notranslate nohighlight">\( \mathbb{V}(X_t) = \mathbb{C}ov(X_t, X_{t}) = \gamma(0) \qquad \forall t \in \mathbb{Z} \)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{C}ov(X_t, X_{t}) = \gamma(h) \qquad \forall~ h \in  \mathbb{Z}\)</span> can be interpreted as <em>covariance doesn’t change when shifted in time</em>
+$<span class="math notranslate nohighlight">\(\mathbb{C}ov(X_r, X_s) = \mathbb{C}ov(X_{r+t}, X_{s+t}) \qquad \forall ~(r, s, t) \in \mathbb{Z}^3  \)</span>$</p></li>
+</ul>
+<p>Therefore, a <strong>stationary series</strong> is:</p>
+<ul class="simple">
+<li><p>Roughly horizontal. The stochastic process oscillates around a constant level
+$<span class="math notranslate nohighlight">\(\mathbb{E}(X_t) = \mu \forall t\)</span>$</p></li>
+<li><p>Constant variance. <em>covariance doesn’t change when shifted in time</em>
+$<span class="math notranslate nohighlight">\(\mathbb{V}(X_t) = \mathbb{C}ov(X_t, X_t) = \gamma(0) \qquad \forall ~t~ \in~ \mathbb{Z}\)</span>$</p></li>
+<li><p>No predictable patterns in the long term</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact N1: Retrurns are  stationary</p>
+<p>In general, prices are non- stationary but returns are stationary</p>
+</div>
+<p><img alt="image" src="../../_images/SP500_level_ret.PNG" /></p>
+<section id="how-do-you-identify-non-stationary-series">
+<h4>How do you identify non- stationary series?<a class="headerlink" href="#how-do-you-identify-non-stationary-series" title="Permalink to this heading">#</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>It is easier to reject the stationarity of a time series rather than confirm it</p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Visually</strong>:</p></li>
+</ol>
+<p>The time plot gives information on the first moments throw time. For example, it is easy to see</p>
+<ul class="simple">
+<li><p>that <span class="math notranslate nohighlight">\(\mu\)</span> is not constant, and the timeseries have a drift</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/drift.PNG"><img alt="../../_images/drift.PNG" src="../../_images/drift.PNG" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> is not constant, and changing over time</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/increasing_vol.PNG"><img alt="../../_images/increasing_vol.PNG" src="../../_images/increasing_vol.PNG" style="width: 60%;" /></a>
+<ul class="simple">
+<li><p>Or the series presenting a seasonal pattern</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/seasonal.PNG"><img alt="../../_images/seasonal.PNG" src="../../_images/seasonal.PNG" style="width: 60%;" /></a>
+<ol class="arabic simple" start="2">
+<li><p><strong>Global vs Local</strong>:</p></li>
+</ol>
+<p>This technique consist in computing the first moments (mean, variance) locally and comparing them with the global moments computed on the entire time series.</p>
+<p>Typical <strong>structural breaks</strong> can easily be identified by this technique. The figure below show a double structural break, occuring at time t=250, where a change of the mean is followed by an increase in volatility.</p>
+<p><img alt="image" src="../../_images/structural_break.jpg" /></p>
+<ol class="arabic simple" start="3">
+<li><p><strong>ACF Analysis</strong></p>
+<ul class="simple">
+<li><p>The ACF of stationary data drops to zero relatively quickly</p></li>
+<li><p>The ACF of non- stationary data decreases slowly</p></li>
+<li><p>For non- stationary data, the value of the first coefficient is often large and positive</p></li>
+</ul>
+</li>
+</ol>
+<p>On the right panel, we see the ACF analysis of a stationary time series. The series is a white noise, given by <span class="math notranslate nohighlight">\(y_t = e_t\)</span> where <span class="math notranslate nohighlight">\(e_t\)</span> is a series of random variable that idependents and identically normally distributed <span class="math notranslate nohighlight">\(\forall ~ e_t \sim N(0,1)\)</span>.
+We note that the autocorrelation drops immediatedly to 0 at the first lag, and  it is insignificant for the rest of lags. Inversely, the left panel, shows a random walk, computed as the cumulative sum of white noise presented in the right panel.
+The timeseries is diffinately not stationary, and the ACF is decreasing slowly with the number of lags</p>
+<p><img alt="image" src="../../_images/acf_stationary_nonstationary.PNG" /></p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Unit Root Tests</strong>: Statistical tests for the presence of unit roots</p>
+<ul class="simple">
+<li><p><strong>Augmented Dickey- Fuller</strong> test: null hypothesis is that the data is **non- stationary and non- seasonal</p></li>
+<li><p><strong>KPSS</strong> (Kwiatkowski- Phillips- Schmidt Shin) test: the null hypothesis is that the data is **stationary and non- seasonal</p></li>
+<li><p>Other tests are available for seasonal data</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="absence-of-autocorrelations">
+<h3>Absence of autocorrelations<a class="headerlink" href="#absence-of-autocorrelations" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Autocorrelation</p>
+<p>The autocorrelation denoted <span class="math notranslate nohighlight">\(\rho(k)\)</span> is the correlation between the values of the process at different times:</p>
+<div class="math notranslate nohighlight">
+\[\rho_k =  \mathbb{C}orr(X_t, X_{t- k})  = \frac{\mathbb{E}\left[ (X_t -  \mu)(X_{t- k} -  \mu)\right]}{\mathbb{V}(X_t)} = \frac{\gamma_k}{\sigma^2}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mu = \mathbb{E}[X_t]\)</span>,  <span class="math notranslate nohighlight">\(\sigma^2 = \mathbb{V}(X_t), \forall ~t\)</span> and <span class="math notranslate nohighlight">\(\gamma_k\)</span> the autocovariance of order <span class="math notranslate nohighlight">\(k\)</span></p>
+</div>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Sample Autocorrelation</p>
+<div class="math notranslate nohighlight">
+\[\hat{\rho}_k = \mathbb{C}orr(X_t, X_{t- k}) = \frac{1}{(T- k)\hat{\sigma}^2} \sum_{t=k+1}^{R}(X_t -  \hat{\mu})(X_{t- k} -  \hat{\mu}) \]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span> and <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> are consistent estimators of the mean <span class="math notranslate nohighlight">\(\mu = \mathbb{E}(X_t)\)</span> and the variance <span class="math notranslate nohighlight">\(\sigma^2 = \mathbb{V}(X_t)~ \forall t\)</span></p>
+</div>
+<p><strong>Partial Autocorrelation:</strong></p>
+<p>Autocorrelation of the term at lag <span class="math notranslate nohighlight">\(k\)</span> with the current value of the time series, <span class="math notranslate nohighlight">\(\mathbb{C}orr(X_t, X_{t- k})\)</span>, can be a simple artifact of a compounding effect of the predominant correlation of the terms at shorter lags.
+Typically, for an AR(1) model, because <span class="math notranslate nohighlight">\(|\mathbb{C}orr(X_t, X_{t- k})| &gt;0 ~\forall t\)</span> so  <span class="math notranslate nohighlight">\(|\mathbb{C}orr(X_{t-1}, X_{t- 2})| &gt;0\)</span> so <span class="math notranslate nohighlight">\(X_{t-2}\)</span> impacts <span class="math notranslate nohighlight">\(X_t\)</span> through <span class="math notranslate nohighlight">\(X_{t-1}\)</span></p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Partial autocorrelation</p>
+<p>Partial autocorrelation at lag k is the correlation after removing the effect of the terms at shorter lags</p>
+</div>
+<p><img alt="image" src="../../_images/acf_pacf.PNG" /></p>
+<section id="examples">
+<h4>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h4>
+<p>Example 1: Autocorrelation of the US CPI
+<img alt="image" src="../../_images/cpi_autocorrelogram.PNG" /></p>
+<ul class="simple">
+<li><p>Highly significant autocorrelation in the first 20 lags</p></li>
+<li><p>However, PACF displays one single significant bar at the first lag</p></li>
+<li><p>Relation between t and t- s, s &gt;1 goes through t- 1</p></li>
+<li><p>AR(1) model is the best fit to the time series</p></li>
+</ul>
+<p>Example 2: Autocorrelation of the SP500
+<img alt="image" src="../../_images/SP500_ret.PNG" /></p>
+<ul class="simple">
+<li><p>The fact that returns hardly show any serial correlation does not mean that they are independent</p></li>
+<li><p>Financial time series are difficult to model. That’s why we need Quants!</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact N2: Absence of autocorrelation</p>
+<p>The autocorrelations of assets returns are often insignificant, except for intraday time scales (around 20 minutes) for which the microstructure effects come into play</p>
+</div>
+</section>
+</section>
+<section id="heavy-tails">
+<h3>Heavy Tails<a class="headerlink" href="#heavy-tails" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>“Heavier tails” are rigorously defined by the kurtosis, which is the fourth- order moment (see before)</p></li>
+<li><p>Mandelbrot (1963) recognized the heavy- tailed, highly peaked nature of certain financial time series</p></li>
+<li><p>These heavy tails can be explained by risk aversion, heard behavior, and market microstructure (illiquidity, asymmetric information, etc.)</p></li>
+</ul>
+<p>Forms of Kurtosis (Fat Tails): There are different shapes of kurtosis:
+<img alt="image" src="../../_images/forms_of_kurtosis.PNG" /></p>
+<div class="important admonition">
+<p class="admonition-title">Fact N3: Heavy Tails</p>
+<p>The probability distribution of many financial variables, including asset returns, often exhibit <strong>heavier tails</strong> than those of a normal distribution</p>
+</div>
+</section>
+<section id="asymmetry">
+<h3>Asymmetry<a class="headerlink" href="#asymmetry" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Asymmetry is defined by the skewness, which is the third- order moment</p></li>
+<li><p>This reflects the fact that the downturns of financial markets are often much steeper than the recoveries</p></li>
+<li><p>Investors tend to react more strongly to negative news than to positive news</p></li>
+<li><p>Rush toward the exit door/ flight to safety</p></li>
+</ul>
+<p><img alt="image" src="../../_images/skewness.png" /></p>
+<ul class="simple">
+<li><p>Skew <span class="math notranslate nohighlight">\(= 0 \Rightarrow\)</span>  Symmetric distribution <span class="math notranslate nohighlight">\(\Rightarrow\)</span> **Mean = **Median</p></li>
+<li><p>Skew <span class="math notranslate nohighlight">\(\geq 0 \Rightarrow\)</span> Positive skew implies that the **Mean is driven by a small number of high values</p></li>
+<li><p>Skew <span class="math notranslate nohighlight">\(\leq 0 \Rightarrow\)</span> Positive skew implies that the **Mean is driven by a small number of small values</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact N4: Asymmetry</p>
+<p>The distribution of many financial variables, including asset returns, are often **asymmetric and **negatively skewed</p>
+</div>
+</section>
+<section id="volatility-clustering">
+<h3>Volatility Clustering<a class="headerlink" href="#volatility-clustering" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact N5: Volatility Clustering</p>
+<p>Large price changes tend to be followed by large price changes (up and down). It means
+that returns with large absolute values or large squares occur in clusters</p>
+</div>
+<blockquote>
+<div><p><strong>Note</strong>: volatility clustering is the consequence of the autocorrelation of the squared returns</p>
+</div></blockquote>
+<p>Example: The VIX is the implied volatility of the US SP 500, displays volatility regimes:
+Periods of tranquility alternate with periods of high volatility (volatility regimes)</p>
+<p><img alt="image" src="../../_images/vix_volatility.PNG" /></p>
+</section>
+<section id="long-range-dependence">
+<h3>Long Range Dependence<a class="headerlink" href="#long-range-dependence" title="Permalink to this heading">#</a></h3>
+<p>The ARCH effect</p>
+<ul class="simple">
+<li><p>The autocorrelation of the squared returns is called the **ARCH effect (auto- regressive conditional heteroskedasticity)</p></li>
+<li><p>ARCH effect is important in finance, because it describes patterns in the dynamic of financial volatility</p></li>
+<li><p>Those autocorrelations become weaker and less persistent when the sampling interval is increased to a week or a month</p></li>
+</ul>
+<p>SP 500 Returns (left) and squared returns (right)
+<img alt="image" src="../../_images/long_range_dependence.PNG" /></p>
+<div class="important admonition">
+<p class="admonition-title">Fact N6: Long Memory</p>
+<p>At the difference of returns, squared returns and absolute returns exhibit significant autocorrelations (<strong>long- memory</strong>)</p>
+</div>
+</section>
+<section id="leverage-effect">
+<h3>Leverage Effect<a class="headerlink" href="#leverage-effect" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact N7: the Leverage Effect</p>
+<p>Assets returns are negatively correlated with the changes in their volatilities</p>
+</div>
+<p>Financial explanations
+As asset price declines, companies mechanically become more leveraged (debt- to- equity ratio increases) and riskier: therefore, their stock prices become more volatile. Subsequently,
+when stock prices become more volatile, investors demand high returns (risk premium), and hence stock prices go down</p>
+<p>Volatilities caused by price decline are typically larger than prices appreciation due to declined volatilities</p>
+</section>
+<section id="aggregational-gaussianity">
+<h3>Aggregational Gaussianity<a class="headerlink" href="#aggregational-gaussianity" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Asset returns over <span class="math notranslate nohighlight">\(k\)</span> days is simply the aggregation of <span class="math notranslate nohighlight">\(k\)</span> daily returns</p></li>
+<li><p>When the time horizon <span class="math notranslate nohighlight">\(k\)</span> increases, the central limit theory says that the distribution of returns over a long- time horizon (a few months) tends toward a <strong>normal distribution</strong></p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact N8: Aggregational Gaussianity</p>
+<p>Over long horizons, the peculiarities of financial time series over short- term horizons (skewness, kurtosis, ARCH effect etc.) tend to vanish</p>
+</div>
+<p>Dispite this nice feature, people are mostly interested in relatively short- term movements, suggesting that working under the Gaussianity assumption is often not appropriate</p>
+<p><img alt="image" src="../../_images/aggregational_gaussianity.PNG" /></p>
+</section>
+</section>
+<section id="useful-techniques-differencing">
+<h2>Useful Techniques: Differencing<a class="headerlink" href="#useful-techniques-differencing" title="Permalink to this heading">#</a></h2>
+<section id="differencing">
+<h3>Differencing<a class="headerlink" href="#differencing" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Differencing helps to <strong>stabilize the mean</strong></p></li>
+<li><p>The differenced series is the <em>change</em> (or first difference) between each observation in the original series: <span class="math notranslate nohighlight">\(y'_t = y_t -  y_{t- 1}\)</span></p></li>
+<li><p>The differenced series will have only <span class="math notranslate nohighlight">\(T- 1\)</span> values since it is not possible to calculate a difference <span class="math notranslate nohighlight">\(y'_1\)</span> for the first observation</p></li>
+</ul>
+<p><img alt="image" src="../../_images/differencing.PNG" /></p>
+<p>Suppose
+$<span class="math notranslate nohighlight">\(y_t = \beta_0 + \beta_1 \times t + \epsilon_t\)</span>$</p>
+<p>Let $<span class="math notranslate nohighlight">\( z_t = \Delta y_t = y_t -  y_{t- 1}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+z_t &amp;= (\beta_0 + \beta_1 \times t+ \epsilon_t) -  (\beta_0 + \beta_1 \times (t- 1) + \epsilon_{t- 1})\\
+    &amp;= \beta_1 + (\epsilon_t -  \epsilon_{t- 1})\\
+    &amp;= \beta_1 + \nu_t \sim  N(0, \sqrt{2\sigma^2}) \\
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="second-order-differencing">
+<h3>Second- Order Differencing:<a class="headerlink" href="#second-order-differencing" title="Permalink to this heading">#</a></h3>
+<p>Occasionally, the differenced data will not appear stationary and it may be necessary to differentiate the data a second time:</p>
+<div class="math notranslate nohighlight">
+\[y''_{t} = y'_t -  y'_{t- 1} = (y_t -  y_{t- 1}) -  (y_{t- 1} -  y_{t- 2}) \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y''_{t}\)</span> will have <span class="math notranslate nohighlight">\(T- 2\)</span> values</p></li>
+<li><p>In practice, it is almost never necessary to go beyond second- order differences</p></li>
+</ul>
+</section>
+<section id="seasonal-differencing">
+<h3>Seasonal Differencing<a class="headerlink" href="#seasonal-differencing" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Defintion: Seasonal Difference</p>
+<p>A seasonal difference is a difference between an observation and the corresponding observation from the previous “season”</p>
+<div class="math notranslate nohighlight">
+\[y'_t = y_t -  y_{t- m}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> is the number of observations in a “season”. For example, for monthly data, <span class="math notranslate nohighlight">\(m = 12\)</span>, for quarterly data, <span class="math notranslate nohighlight">\(m = 4\)</span></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">When both seasonal and first differences are needed</p>
+<ul class="simple">
+<li><p>It makes no difference which one is done first -  the result will be the same</p></li>
+<li><p>If seasonality is strong, we recommend that seasonal differencing be done first because sometimes the resulting series will be stationary and there will be no need for the further first difference</p></li>
+<li><p>It is important that, if differencing is used, the differences are **interpretable: for instance, taking lag 3 differences for yearly data is difficult to interpret</p></li>
+</ul>
+</div>
+</section>
+<section id="backshift-notation">
+<h3>Backshift Notation<a class="headerlink" href="#backshift-notation" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Notation</p>
+<p>The backshift notational device, <span class="math notranslate nohighlight">\(B\)</span> is used as follows:</p>
+<div class="math notranslate nohighlight">
+\[B y_t = y_{t-1}\]</div>
+<p><span class="math notranslate nohighlight">\(B\)</span> operating on <span class="math notranslate nohighlight">\(y_t\)</span> has the effect of <strong>shifting the data back one period</strong>.</p>
+</div>
+<p>Two applications of <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(y_t\)</span> shifts the data back <strong>two periods</strong></p>
+<p><span class="math notranslate nohighlight">\(B(B y_t) = B^2 y_t = y_{t-2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(B\)</span> depends on the period / frequency considered. Shifting monthly data by a year supposes using <span class="math notranslate nohighlight">\(B^{12}\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Backshift Operator and Differencing</p>
+<p>The backshift operator is convenient for describing differencing<br />
+<span class="math notranslate nohighlight">\(y'_t = y_t - y_{t-1} = y_t - By_t = (1-B)y_t\)</span></p>
+</div>
+<p>Likewise, second-order differences are obtained with <span class="math notranslate nohighlight">\(y''_t = (1-B)^2y_t\)</span></p>
+<p>Pay attention !!
+The second-order difference is not second difference</p>
+<ul class="simple">
+<li><p>Second order difference: <span class="math notranslate nohighlight">\((1-B)^2 y_t = y''_t = (y_t - y_{t-1}) - (y_{t-1} - y_{t-2})\)</span></p></li>
+<li><p>Second difference: <span class="math notranslate nohighlight">\(1-B^2 y_t = y_t - y_{t-2}\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="arma-type-models">
+<h2>ARMA type models<a class="headerlink" href="#arma-type-models" title="Permalink to this heading">#</a></h2>
+<section id="autoregressive-ar-models">
+<h3>Autoregressive (AR) Models<a class="headerlink" href="#autoregressive-ar-models" title="Permalink to this heading">#</a></h3>
+<div class="defintion admonition">
+<p class="admonition-title">Definition:</p>
+<p>AR model is a multiple regression with <strong>lagged variables</strong></p>
+<div class="math notranslate nohighlight">
+\[y_t = c + \phi_1 y_{t- 1} + \phi_2 y_{t- 2} + \dots + \phi_P y_{t- p} + \epsilon_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon_t\)</span> is a white noise</p>
+</div>
+<p><img alt="image" src="../../_images/ar1_ar2.PNG" /></p>
+<p>AR(1) Model
+<span class="math notranslate nohighlight">\( y_t = c + \phi_1 y_{t- 1} + \epsilon_t \)</span></p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\phi_1=0\)</span>, <span class="math notranslate nohighlight">\(y_t\)</span> is equivalent to a <strong>white noise</strong></p></li>
+<li><p>When <span class="math notranslate nohighlight">\(\phi_1=1\)</span> and <span class="math notranslate nohighlight">\(c=0\)</span>, <span class="math notranslate nohighlight">\(y_t\)</span> is equivalent to a <strong>random walk</strong></p></li>
+<li><p>When <span class="math notranslate nohighlight">\(\phi_1=1\)</span> and <span class="math notranslate nohighlight">\(c \neq 0\)</span>, <span class="math notranslate nohighlight">\(y_t\)</span> is equivalent to a <strong>random walk with drift</strong></p></li>
+<li><p>When <span class="math notranslate nohighlight">\(\phi_1&lt;0\)</span> and <span class="math notranslate nohighlight">\(c=0\)</span>, <span class="math notranslate nohighlight">\(y_t\)</span> is <strong>mean reverting</strong>. It tends to oscillate between positive and negative values</p></li>
+</ul>
+<section id="stationarity-conditions">
+<h4>Stationarity Conditions<a class="headerlink" href="#stationarity-conditions" title="Permalink to this heading">#</a></h4>
+<div class="caution admonition">
+<p class="admonition-title">General Condition for Stationarity</p>
+<p>To restrict AR models to stationary data, some constraints on the coefficients are needed
+Complex roots of the polynomial <span class="math notranslate nohighlight">\(\mathcal{P}(z) = 1 - \phi_1z - \phi_2 z^{2} - \dots \phi_p z^{p}\)</span> lie outside the unit circle of the complex plane</p>
+</div>
+<p>Intuitively, for an AR(1) model, the backshift polynomial is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*} 
+y_t = \phi_1 y_{t-1} + \epsilon_t &amp; \leftrightarrow \ y_t(1-\phi_1B) = \epsilon_t \\
+(1-\phi_1B) = 0 &amp; \leftrightarrow \ B= \underbrace{\frac{1}{\phi_1}}_{\text{Not explosive}}
+\end{align*}\]</div>
+<p>To get the AR expression not explosive, we need <span class="math notranslate nohighlight">\(|\frac{1}{\phi_1}| &lt; 1\)</span> and therefore <span class="math notranslate nohighlight">\(|\phi_1| &gt; 1\)</span></p>
+<p>For low lags orders, the stationarity conditions are simply:</p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(p=1\)</span>: <span class="math notranslate nohighlight">\(- 1 &lt; \phi_1 &lt; 1\)</span></p></li>
+<li><p>For <span class="math notranslate nohighlight">\(p=2\)</span>:  <span class="math notranslate nohighlight">\(- 1 &lt; \phi_2 &lt; 1\)</span>, <span class="math notranslate nohighlight">\( \phi_1 + \phi_2 &lt; 1\)</span> and <span class="math notranslate nohighlight">\( \phi_2 -  \phi_1 &lt; 1\)</span></p></li>
+<li><p>More complex conditions hold for <span class="math notranslate nohighlight">\(p \geq 3\)</span></p></li>
+<li><p>Estimation software (R, Python, Eviews, etc.) takes care of this</p></li>
+</ul>
+</section>
+<section id="statistical-test-dickey-fuller-test">
+<h4>Statistical Test: Dickey- Fuller Test<a class="headerlink" href="#statistical-test-dickey-fuller-test" title="Permalink to this heading">#</a></h4>
+<p>It sometimes easy to see if a timeseries is non-stationary, by sometimes the presence of a unit rood is difficult to identify. In such cases, we have to rely on formal statistical test</p>
+<p>In the following, we are going to explain how the Dickey-Fuller test can be used to test whether a time series following an AR(1) model is stationary</p>
+<div class="math notranslate nohighlight">
+\[AR(1): \quad y_t =\alpha + \phi_1 \times y_{t-1} + \epsilon_t\]</div>
+<p><strong>Hypothesis testing</strong></p>
+<p><span class="math notranslate nohighlight">\(\left\{\begin{matrix}
+H0: &amp; y_t~ \text{has a unit root}  &amp; \Rightarrow \phi_1 =1\\
+H1: &amp; y_t~ \text{has no unit roots} &amp; \Rightarrow \phi_1 &lt; 1\\ 
+\end{matrix}\right\}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\Delta y_t =\alpha + \delta \times y_{t-1} + \epsilon_t, \quad where \quad \delta = \phi_1 - 1\]</div>
+<p>With this change of variable the hypothesis testing become</p>
+<p><span class="math notranslate nohighlight">\(\left\{\begin{matrix}
+H0: &amp; y_t~ \text{has a unit root}  &amp; \Rightarrow \delta =0\\
+H1: &amp; y_t~ \text{has no unit roots} &amp; \Rightarrow \delta &lt; 0\\ 
+\end{matrix}\right\}\)</span></p>
+<p>If the null hypothesis <em>H0</em> is true, <span class="math notranslate nohighlight">\(\delta =0\)</span> and <span class="math notranslate nohighlight">\(\Delta y_t\)</span> is a  random walk
+As per any hypothesis testing for the significance of the parameters of a regression, we compute the t-statistic <span class="math notranslate nohighlight">\(w = t_{\hat{\delta}} = \frac{\hat{\delta}}{std(\hat{\delta})}\)</span>.
+However, since <span class="math notranslate nohighlight">\(y_t\)</span> is supposed not stationary under the null hypothesis, the distribution of the statistic is not compared with a t-distribution but with the Dickey-Fuller distribution</p>
+</section>
+<section id="how-to-identify-the-order-of-an-ar-process">
+<h4>How to identify the order of an AR process<a class="headerlink" href="#how-to-identify-the-order-of-an-ar-process" title="Permalink to this heading">#</a></h4>
+<p>By definition, PACF gives the direct effect of lag k on the current value of the time series. Therefore, the PACF allow us to easily identify the order of an AR generated process</p>
+<p>Let’s consider the following time series, obeying to an AR(2) model</p>
+<p><span class="math notranslate nohighlight">\(y_t =\alpha - 0.5 \times y_{t- 1} + 0.8 \times y_{t- 2} + 0.4 \times y_{t- 3} + \epsilon_t\)</span></p>
+<p>The PACF, plotted in the middle panel, shows significant autocorrelations exactely on the lags where the autocorrelation exist (as per the true data generating process). On the contrary, the ACF has multiple significant lags until lag 10</p>
+<p><img alt="image" src="../../_images/AR_PACF.PNG" /></p>
+</section>
+</section>
+<section id="ma-moving-average-model">
+<h3>MA: Moving Average Model<a class="headerlink" href="#ma-moving-average-model" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Moving Average Model</p>
+<p>MA model is a multiple regression with <strong>past errors</strong> as predictors</p>
+<div class="math notranslate nohighlight">
+\[ y_t = c + \epsilon_t + \theta_1 \epsilon_{t- 1} + \theta_2 \epsilon_{t- 2} + \dots + \theta_q \epsilon_{t- q}   \]</div>
+<p>where  <span class="math notranslate nohighlight">\(\epsilon_t\)</span> is a white noise</p>
+</div>
+<blockquote>
+<div><p>Caution: Do NOT confuse this with <em>moving average smoothing</em>!</p>
+</div></blockquote>
+<p><img alt="image" src="../../_images/ma1_ma2.PNG" /></p>
+<section id="how-to-identify-the-order-of-an-ma-process">
+<h4>How to identify the order of an MA process<a class="headerlink" href="#how-to-identify-the-order-of-an-ma-process" title="Permalink to this heading">#</a></h4>
+<p>Suppose the following MA(q) model</p>
+<p><span class="math notranslate nohighlight">\(MA(q):\quad X_t = \mu +\phi_1\epsilon_{t-1}+\phi_2\epsilon_{t-2}+...+\phi_q\epsilon_{t-q}+\epsilon_{t}\)</span></p>
+<p>The ACF computes the correlation between <span class="math notranslate nohighlight">\(X_t\)</span> and <span class="math notranslate nohighlight">\(X_{t-k}\)</span>
+<span class="math notranslate nohighlight">\(\mathbb{C}orr(X-t, X_{t-k}) = E[X_tX_{t-k}] - E[X_t]E[X_{t-k}]\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+X_t &amp;:[\epsilon_t, \epsilon_{t-1}, \epsilon_{t-2}, ..., \epsilon_{t-q}] \\
+X_{t-k}&amp;:[\epsilon_{t-k}, \epsilon_{t-k-1}, \epsilon_{t-k-2}, ..., \epsilon_{t-k-q}]
+\end{align*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbb{C}orr(X-t, X_{t-k}) &amp; \neq 0 \quad IF  \quad t-q \leq t-k \Rightarrow k \leq q \\
+                   &amp; = 0 \quad otherwise
+\end{align*}\]</div>
+<p>From an ACF we can deduce the order of the MA model as the lag on which the correlation turns to 0</p>
+<div class="tip admonition">
+<p class="admonition-title">Example MA(3)</p>
+<p><span class="math notranslate nohighlight">\(MA(3):\quad X_t = 50 +5\times\epsilon_{t-1}+3\times\epsilon_{t-2}+ 10\times\epsilon_{t-3}+\epsilon_{t}\)</span></p>
+<p><img alt="image" src="../../_images/MA_ACF.PNG" /></p>
+</div>
+</section>
+<section id="invertibility-from-ma-q-to-ar-infty-and-from-ar-p-to-ma-infty-model">
+<h4>Invertibility: From MA(q) to AR(<span class="math notranslate nohighlight">\(\infty\)</span>) and From <span class="math notranslate nohighlight">\(AR(p)\)</span> to MA(<span class="math notranslate nohighlight">\(\infty\)</span>) Model<a class="headerlink" href="#invertibility-from-ma-q-to-ar-infty-and-from-ar-p-to-ma-infty-model" title="Permalink to this heading">#</a></h4>
+<div class="definition admonition">
+<p class="admonition-title">Wold Decomposition</p>
+<p>It is possible to write any <strong>stationary</strong> <span class="math notranslate nohighlight">\(AR(p)\)</span> model as an MA(<span class="math notranslate nohighlight">\(\infty\)</span>)</p>
+</div>
+<p>Intuitive: just go backward!</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+y_t &amp;= \phi_1 \underbrace{y_{t-1}}_{} + \epsilon_t$\\
+    &amp;= \phi_1 (\phi_1 y_{t-1} + \epsilon_{t-1}) + \epsilon_t\\
+    &amp;= \phi_1^2 y_{t-2} + \phi_1\epsilon_{t-1} + \epsilon_t\\
+&amp; \dots\\
+   &amp;= \epsilon_t + \phi_1 \epsilon_{t-1} + \phi_1^2 \epsilon_{t-2} + \phi_1^3 \epsilon_{t-3} + \dots\\
+   &amp;= \epsilon_t + \sum_{i=1}^{\infty} { \phi_i \epsilon_{t-i}} 
+\end{align*}\]</div>
+<p>Providing that <span class="math notranslate nohighlight">\(1 &lt; \ \phi_1 \ &lt; 1\)</span>:</p>
+<div class="definition admonition">
+<p class="admonition-title">MA invertibility</p>
+<p>Under certain conditions, it is possible to write <span class="math notranslate nohighlight">\(MA(q)\)</span> model as AR(<span class="math notranslate nohighlight">\(\infty\)</span>) process. In this case, the MA model is said to be <strong>invertible</strong></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">General Condition for MA(q) Invertibility</p>
+<p>To insure MA models invertibility, some constraints on the coefficients are needed
+Complex roots of the polynomial <span class="math notranslate nohighlight">\(\mathcal{P}(z) = 1 + \theta_1z + \theta_2 z^2 + \dots + \theta_q z^q\)</span> lie outside the unit circle of the complex plane</p>
+</div>
+<ul class="simple">
+<li><p>For q =1: <span class="math notranslate nohighlight">\(- 1 \ &lt; \theta_1 \ &lt;1\)</span></p></li>
+<li><p>For q=2:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(- 1 \ &lt; \theta_2 \ &lt;1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_1 + \theta_2 &gt; - 1\)</span> and <span class="math notranslate nohighlight">\(\theta_1 -  \theta_2 \ &lt; 1\)</span></p></li>
+</ul>
+</li>
+<li><p>More complicated solutions hold for <span class="math notranslate nohighlight">\(q \geq 3\)</span> Estimation software takes care of this</p></li>
+<li><p>Invertible models have some mathematical properties that make them easier to use in practice</p></li>
+<li><p>This is intuitive: AR processes are embedding new information on the most recent lags</p></li>
+</ul>
+</section>
+</section>
+<section id="arma-p-q-model">
+<h3>ARMA(p, q) Model<a class="headerlink" href="#arma-p-q-model" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Defintion</p>
+<div class="math notranslate nohighlight">
+\[
+  y_t = c + \underbrace{\phi_1 y_{t-1} + \dots + \phi_p y_{t-p}}_{\text{AR}} + \underbrace{\theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q}}_{\text{MA}} + \epsilon_t
+\]</div>
+<p>The predictors include both <strong>lagged values</strong> of <span class="math notranslate nohighlight">\(y_t\)</span> and <strong>lagged errors</strong></p>
+</div>
+<ul class="simple">
+<li><p>Important specification: the future value of the series depends both on the past values it took (dynamic), as well as recent random noise/error term</p></li>
+<li><p>This simple model is “learning” both from the dynamic of the past values and from its inherent randomness</p></li>
+<li><p>Conditions on AR coefficients ensure <strong>stationarity</strong></p></li>
+<li><p>Conditions on MA coefficients ensure <strong>invertibility</strong></p></li>
+</ul>
+</section>
+<section id="autoregressive-integrated-moving-average-arima">
+<h3>Autoregressive Integrated Moving Average (ARIMA)<a class="headerlink" href="#autoregressive-integrated-moving-average-arima" title="Permalink to this heading">#</a></h3>
+<p>ARIMA: AR<strong>I</strong>MA stands for: Autoregressive <strong>Integrated</strong> Moving Average model</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Basically, it is a non- stationary model that can be made stationary by differencing <span class="math notranslate nohighlight">\(d\)</span> time</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((1- B)^d y_t\)</span> follows an ARMA model, where <span class="math notranslate nohighlight">\(d\)</span> is the degree of differencing until the series becomes stationary</p></li>
+<li><p>Once differenced <span class="math notranslate nohighlight">\(d\)</span> times, it is stationary and behaves as an ARMA model</p></li>
+</ul>
+</div>
+<p>Let’s consider the <span class="math notranslate nohighlight">\(ARIMA(p, d, q)\)</span> where <span class="math notranslate nohighlight">\(p\)</span> is the autoregressive order, <span class="math notranslate nohighlight">\(d\)</span> the degree of differencing and <span class="math notranslate nohighlight">\(q\)</span> the order of the moving average part. All linear models we discussed are special cases of the ARIMA model:</p>
+<ul class="simple">
+<li><p>White noise model: <span class="math notranslate nohighlight">\(ARIMA(0, 0, 0)\)</span></p></li>
+<li><p>Random walk: <span class="math notranslate nohighlight">\(ARIMA(0, 1, 0)\)</span> with no constant</p></li>
+<li><p>Random walk with drift: <span class="math notranslate nohighlight">\(ARIMA(0, 1, 0)\)</span> with constant</p></li>
+<li><p><span class="math notranslate nohighlight">\(AR(p) = ARIMA(p, 0, 0)\)</span> , <span class="math notranslate nohighlight">\(MA(q) = ARIMA(0, 0, q)\)</span></p></li>
+</ul>
+</section>
+<section id="seasonal-arima-sarima">
+<h3>Seasonal ARIMA (SARIMA)<a class="headerlink" href="#seasonal-arima-sarima" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Defintion</p>
+<p>ARIMA  <span class="math notranslate nohighlight">\( \underbrace{(p, d, q)}_{_{\text{Non-Seasonal part of the model}}} \qquad \qquad \underbrace{(P, D, Q)_m}_{\text{Seasonal part of the model}}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> is the number of observations in a cycle</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example: <span class="math notranslate nohighlight">\(ARIMA(1,1,1)(1,1,1)_4\)</span>, without constant</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{(1-\phi_1B)}_{\text{Non-Seas. AR1}} \underbrace{(1-\Phi_1B^4)}_{\text{Seas. AR1}}\underbrace{(1-B)}_{\text{Non-Seas. Diff.}} \quad = \quad \underbrace{(1+\theta_1 B)}_{\text{Non-seas. MA(1)}} \underbrace{(1+\Theta_1 B^4)}_{\text{Seasonal MA(1)}}\underbrace{(1-B^4)}_{\text{Seas. Diff.}}\epsilon_t \]</div>
+<p>All factors can be multiplied to obtain the model’s component form</p>
+</div>
+<p>The seasonal part of an AR or MA model will be seen in the seasonal lags of the PACF and ACF</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(ARIMA(0,0,0)(0,0,1)_{12}\)</span>  will show</p>
+<ul>
+<li><p>A spike at lag 12 in the ACF but no other significant spikes</p></li>
+<li><p>The PACF will show exponential decay in the seasonal lags; that is, at lags 12, 24, 36, etc.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(ARIMA(0,0,0)(1,0,0)_{12}\)</span>  will show</p>
+<ul>
+<li><p>Exponential lags in the seasonal lags of the ACF</p></li>
+<li><p>A single significant spike at lag 12 in the PACF</p></li>
+</ul>
+</li>
+</ul>
+<section id="treatment-of-seasonality">
+<h4>Treatment of Seasonality<a class="headerlink" href="#treatment-of-seasonality" title="Permalink to this heading">#</a></h4>
+<p>Daily data can exhibit multiple seasonal periodicities. This is a complication for all high- frequency forecasting problems. This comes with additional complexity. For instance,</p>
+<ul class="simple">
+<li><p>Months has different number of days</p></li>
+<li><p>Leap years with different number of days</p></li>
+<li><p>Weeks do not align with daily cycles (the year is not divisible in an exact number of weeks)</p></li>
+<li><p>Some major events are based on the week within the month regardless of the exact day. For example,</p>
+<ul>
+<li><p>Options and futures expires on the 3rd friday of March, June, September and December</p></li>
+<li><p>Options expiries induce large volumes and volatility in the market as market participant either roll their positions or shuffle their portfolios</p></li>
+</ul>
+</li>
+<li><p>Seasonality can be irregular:</p>
+<ul>
+<li><p>Ramadan is moving by 11 to 12 days backward from one year to another. Thus it can overlap between 2 months</p></li>
+<li><p>Chinese new year</p></li>
+<li><p>Some other religious festivities</p></li>
+</ul>
+</li>
+</ul>
+<p>To deal with such complex seasonality, one can rely on two approaches</p>
+<ul class="simple">
+<li><p>Simplification of seasonal terms</p></li>
+<li><p>Trigonometric representation of seasonality: Fourier transform</p></li>
+<li><p>Avoid including a large number of binary variables (“dummies”) to capture different seasonality patterns</p></li>
+</ul>
+<p><strong>Binary seasonality</strong>, the fact of introducing a bunch of binary variables (“dummies”) to capture the different seasonality patterns, should be discourage, because:</p>
+<ul class="simple">
+<li><p>Including a large number of variables imply to estimate many more parameters, hence <strong>adding parametric noise</strong> to the model</p></li>
+<li><p>Many parameters are not relevant/useful, <strong>increasing noise/signal ratio</strong></p></li>
+<li><p>Reducing the degrees of freedom spurs the <strong>risk of overfit</strong></p></li>
+</ul>
+<p>We tested a large number of models in different countries, confirming the relatively bad performance of ARIMA with binary seasonality</p>
+</section>
+</section>
+</section>
+<section id="empirical-strategy">
+<h2>Empirical Strategy<a class="headerlink" href="#empirical-strategy" title="Permalink to this heading">#</a></h2>
+<section id="what-is-a-white-noise">
+<h3>What is a White noise ?<a class="headerlink" href="#what-is-a-white-noise" title="Permalink to this heading">#</a></h3>
+<div class="definition admonition">
+<p class="admonition-title">Defintion</p>
+<p>A time series is a white noise if the variables are independent and identically distributed with a mean of zero.</p>
+<p><span class="math notranslate nohighlight">\(\left\{\begin{matrix}
+ \forall t, &amp; \mathbb{E}[\epsilon_t] = 0 \\
+ \forall t, &amp; \mathbb{V}ar[\epsilon_t] = \sigma^2 \\
+ \forall t,s &amp; (\epsilon_t, \epsilon_{s}) \quad independent \\    
+\end{matrix}\right.\}\)</span></p>
+</div>
+<p><strong>Why does it matter?</strong>
+$<span class="math notranslate nohighlight">\(y_t = Signal + Noise \)</span>$</p>
+<ul class="simple">
+<li><p>Noise is the unpredictable part of the time series that can not be modeled. Complete randomness</p></li>
+<li><p>As long as the residuals of the model have structure, the model is not capturing the whole signal but only part of it</p></li>
+<li><p>Stop modeling when the series of errors from a time series forecast model is behaving like a white noise</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Empirical Strategy<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>The general approach of (financial) econometrics is as follows:</p>
+<ul class="simple">
+<li><p>Specification of the model</p></li>
+<li><p>Estimation of the parameters</p></li>
+<li><p>Diagnostic tests</p>
+<ul>
+<li><p>Significance tests</p></li>
+<li><p>Specification tests</p></li>
+<li><p>Backtesting tests</p></li>
+<li><p>etc.</p></li>
+</ul>
+</li>
+<li><p>Interpretation and use of the model (forecasting, historical studies, etc.)</p></li>
+</ul>
+<p>To Specify an Appropriate Time Series Model</p>
+<ul class="simple">
+<li><p>Study some <strong>statistical properties</strong> of the observed data <span class="math notranslate nohighlight">\(\{x_t\}\)</span>, for instance, the <strong>stationarity</strong>, the patterns of the autocorrelation function <strong>ACF</strong>, or the partial autocorrelation function <strong>PACF</strong>, etc.</p></li>
+<li><p>Compare these properties to the theoretical properties of some <strong>typical time series models</strong>, such as AR, MA, ARIMA, SARIMA, etc.</p></li>
+<li><p>Choose the most appropriate model and <strong>estimate its parameters</strong></p></li>
+<li><p>Use this model for forecasting</p></li>
+</ul>
+<section id="model-comparison-and-parameters-selection">
+<h4>Model Comparison and parameters Selection<a class="headerlink" href="#model-comparison-and-parameters-selection" title="Permalink to this heading">#</a></h4>
+<p>To compare models in terms of performance and specification, we can rely on the AIC/BIC</p>
+<div class="definition admonition">
+<p class="admonition-title">Aikaike Information Criteria (AIC)</p>
+<div class="math notranslate nohighlight">
+\[ AIC = -2 \text{log}(L) + 2(p+q+k+1) \left[ 1 + \frac{(p+q+k+2)}{T-p-q-k-2} \right]    \]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the maximized likelihood fitted to the differenced data, and <span class="math notranslate nohighlight">\(k\)</span> denote the degrees of freedom: if the model embeds a constant <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(k=1\)</span>, else <span class="math notranslate nohighlight">\(k=0\)</span></p>
+</div>
+<p>The algorithm to select parameters</p>
+<div class="caution admonition">
+<p class="admonition-title">ARIMA Specification</p>
+<div class="math notranslate nohighlight">
+\[ \phi(B) (1- B)^d y_t = c + \theta(B) \epsilon_t \]</div>
+<p>Need to select the appropriate order for <span class="math notranslate nohighlight">\(p, q, d\)</span></p>
+</div>
+<p><strong>Hyndman and Khandasar (2008)</strong> selection algorithm:</p>
+<ul class="simple">
+<li><p>Select the differencing order (the required number of differences) <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(D\)</span> using KPSS test</p></li>
+<li><p>Select <span class="math notranslate nohighlight">\(p, q\)</span> by minimizing AICs</p></li>
+<li><p>Use stepwise search to traverse model space (test different combinations of <span class="math notranslate nohighlight">\(p, q\)</span> for robustness)</p>
+<ul>
+<li><p>Select the current model, with the smallest AIC from the most parsimonious</p>
+<ul>
+<li><p>ARIMA(0,d, 0), ARIMA(1, d, 0), ARIMA(0, d, 1), ARIMA(1, d, 1) and ARIMA(2, d, 2)</p></li>
+</ul>
+</li>
+<li><p>Consider <strong>variations</strong> of the current model:</p>
+<ul>
+<li><p>Vary one of <span class="math notranslate nohighlight">\(p, q\)</span> from current model by <span class="math notranslate nohighlight">\(\pm 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p, q\)</span> both vary from current model by <span class="math notranslate nohighlight">\(\pm 1\)</span></p></li>
+<li><p>Include/exclude the constant <span class="math notranslate nohighlight">\(c\)</span> from the current model</p></li>
+</ul>
+</li>
+<li><p>The model with the lowest <span class="math notranslate nohighlight">\(AIC\)</span> becomes the current model. Repeat step 2 until no lowest AIC can be found (traverse model space)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="general-apporach">
+<h4>General Apporach<a class="headerlink" href="#general-apporach" title="Permalink to this heading">#</a></h4>
+<p>The graph below details the procedure:</p>
+<ul class="simple">
+<li><p>Start with <strong>Plotting the data</strong> to identify any unusual observations</p></li>
+<li><p>If necessary, <strong>transform the data</strong> (using a Box-Cox transformation) to stabilize the variance</p></li>
+<li><p>If the data are non-stationary, <strong>first-difference</strong> it until it becomes stationarity</p></li>
+<li><p><strong>Examine the ACF/PACF</strong>: will allow you to answer the question: Is an <span class="math notranslate nohighlight">\(AR(p)\)</span> or <span class="math notranslate nohighlight">\(MA(q)\)</span> reasonable assumptions?</p></li>
+<li><p>Try your chosen models: use AIC/BIC to compare with other models</p></li>
+<li><p>Plot the residuals, look at the residuals ACF. Residuals should look like a <strong>white noise</strong>. As long as the residuals of the model have a time-varying structure, the model is not capturing the whole signal but only part of it</p></li>
+<li><p>Once the residuals look like a white noise, your modelization is complete, <strong>compute the forecasts</strong></p></li>
+</ul>
+<p><img alt="image" src="../../_images/model_process.PNG" /></p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Time-Series-Analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Key-Statistical-Concepts/workshop/03-Advanced.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">03- Statistics Techniques</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture-content.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Time Series Econometrics With Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-time-series-modeling-is-different-from-other-statistical-models">Why Time series Modeling is different from other statistical models?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrapolation">Extrapolation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-features-and-properties-of-financial-time-series">Statistical Features and Properties of Financial Time series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stationarity">Stationarity</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-identify-non-stationary-series">How do you identify non- stationary series?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absence-of-autocorrelations">Absence of autocorrelations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heavy-tails">Heavy Tails</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetry">Asymmetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatility-clustering">Volatility Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-range-dependence">Long Range Dependence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leverage-effect">Leverage Effect</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregational-gaussianity">Aggregational Gaussianity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-techniques-differencing">Useful Techniques: Differencing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differencing">Differencing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-differencing">Second- Order Differencing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seasonal-differencing">Seasonal Differencing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backshift-notation">Backshift Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arma-type-models">ARMA type models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoregressive-ar-models">Autoregressive (AR) Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stationarity-conditions">Stationarity Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-test-dickey-fuller-test">Statistical Test: Dickey- Fuller Test</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-identify-the-order-of-an-ar-process">How to identify the order of an AR process</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-moving-average-model">MA: Moving Average Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-identify-the-order-of-an-ma-process">How to identify the order of an MA process</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invertibility-from-ma-q-to-ar-infty-and-from-ar-p-to-ma-infty-model">Invertibility: From MA(q) to AR(<span class="math notranslate nohighlight">\(\infty\)</span>) and From <span class="math notranslate nohighlight">\(AR(p)\)</span> to MA(<span class="math notranslate nohighlight">\(\infty\)</span>) Model</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arma-p-q-model">ARMA(p, q) Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoregressive-integrated-moving-average-arima">Autoregressive Integrated Moving Average (ARIMA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seasonal-arima-sarima">Seasonal ARIMA (SARIMA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment-of-seasonality">Treatment of Seasonality</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-strategy">Empirical Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-white-noise">What is a White noise ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Empirical Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-comparison-and-parameters-selection">Model Comparison and parameters Selection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-apporach">General Apporach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Romain Lafarguette and Amine Raboun
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
