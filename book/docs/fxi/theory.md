@@ -208,6 +208,7 @@ One potential solution is to use **FX derivatives**
 **Sterilization is often costly** for the central bank, because:
   * **Fiscal costs**
     * Depends on the interest rate differential between domestic and foreign assets, in particular the returns of FX reserves
+    * Typically, the domestic interest rate is often higher than the foreign interest rate (US Treasuries for instance)
     * Cost of the conduct of monetary policy with the monetary policy mandate. Important to be consistent, even if it implies costs for the central bank
 
 
