@@ -99,7 +99,7 @@ Do not hesitate to contact us (email address available on our personal websites)
 
 - Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
 
-- General useful resources: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
+- General useful resource: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
 
 
 
