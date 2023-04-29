@@ -241,7 +241,7 @@ Franc Suisse against Euro (Down Means CHF Appreciation)
 ![SNB Losses](../Slides/fxi_theory_practice/img/snb_losses.png)
 *Source: Bloomberg*
 
-
+## Transmission Channels of FX Interventions
 
 # Implementation
 

@@ -6,6 +6,9 @@ Welcome to the website of the IMF course on FX Interventions Rules, delivered at
 
 **Singapore, April 17 – 21, 2023**
 
+![STI Photo](../static/sti_photo.jpg)
+*Many thanks to the Singapore Training Institute and in particular Alina Tan for the spotless organization!*
+
 ## Description
 This five-day course aims to train participants, mostly from central banks, on
 the theoretical and practical aspects of central bank interventions in foreign
@@ -101,11 +104,7 @@ Do not hesitate to contact us (email address available on our personal websites)
 
 - General useful resource: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
 
-
-![STI Photo](../static/sti_photo.jpg)
-*Many thanks to the Singapore Training Institute and in particular Alina Tan for the spotless organization!*
-
-
+## Misc
 We are grateful to **Thomas Schmelzer**, a colleague at ADIA Quant team, for his suggestion of using a Jupyter book for building our website. 
 
 
