@@ -1,6 +1,6 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-# Time-stamp: "Sunday 16 April 2023, Romain Lafarguette"
+# Time-stamp: "2023-04-29 19:24:16 A13258Q"
 format: jb-book
 
 # index page
@@ -42,6 +42,6 @@ parts:
      sections:
      - glob: docs/Python-Introduction/workshop/*
 
- - caption: utils
+ - caption: Utils
    chapters:
    - file: docs/utils.md
