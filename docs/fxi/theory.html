@@ -481,7 +481,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conceptual Framework</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-frameworks">Monetary Frameworks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-intermediate-objectives">Goals and Intermediate Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-intermediate-objectives">Goals and Intermediate Objectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-goals-motivating-interventions-on-the-fx-market">Main Goals Motivating Interventions on the FX market</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
@@ -504,12 +507,15 @@ document.write(`
 <h1>Conceptual Framework<a class="headerlink" href="#conceptual-framework" title="Permalink to this heading">#</a></h1>
 <section id="monetary-frameworks">
 <h2>Monetary Frameworks<a class="headerlink" href="#monetary-frameworks" title="Permalink to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">The Mundell Trilemma</p>
 <p>The choice of the monetary framework and the goals of the central bank is constrained by the Mundell Trilemma, that states that countries can only achieve two out of the three objectives:</p>
 <ul class="simple">
 <li><p>Independent monetary policy: for instance, determining the interest rate to achieve domestic objectives, such as controlling inflation</p></li>
 <li><p>Open capital account: capital flows can freely move in and out the country</p></li>
 <li><p>Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the</p></li>
 </ul>
+</div>
 <p>Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.</p>
 <p><img alt="Trilemma" src="../../_images/Trilemma.PNG" />
 <em>Source: author</em></p>
@@ -546,6 +552,47 @@ document.write(`
 <ul class="simple">
 <li><p>FX Interventions are usually carried-out by the central bank, but can sometimes be under the responsibility of the Ministry of Finances, such as in Japan (<a class="reference external" href="https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html">link</a>)</p></li>
 </ul>
+<p>Typically, the central banking literature distinguishes between goals and objectives:</p>
+<div class="important admonition">
+<p class="admonition-title">Central Bank Goal</p>
+<p>Ultimate purpose of the FX intervention. Should be consistent with the monetary framework of the central bank</p>
+</div>
+<p><em>For instance, a FX intervention goal for the central bank could be about preserving financial stability</em></p>
+<div class="important admonition">
+<p class="admonition-title">Intermediate Objectives</p>
+<p>How to reach the goals via the central bank’s operational framework</p>
+</div>
+<p><em>For instance, mitigating FX daily volatility via open-market interventions</em></p>
+<section id="main-goals-motivating-interventions-on-the-fx-market">
+<h3>Main Goals Motivating Interventions on the FX market<a class="headerlink" href="#main-goals-motivating-interventions-on-the-fx-market" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>**Price stability**
+    - When large exchange rate movements pass-through inflation, generating temporary shocks
+    
+**Financial stability**
+    - Calm &quot;disorderly market conditions&quot; (see [link](https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx)) for a discussion on how to assess disorderly market conditions)
+    
+    - Smooth capital flows and credit spillovers (impact on carry trade and excess returns)
+    
+    - Alleviate FX funding shortage
+    
+    - Reduce FX speculation
+    
+    
+**Terms of trade**
+
+    - Support external competitiveness (especially during USD weakening phases)
+    
+    - Smooth commodity prices fluctuations
+      
+**Building/managing FX reserves**
+    - *In principle, without market impact*
+
+**Support fellow central banks in their exchange rate operations**
+</pre></div>
+</div>
+<p><img alt="BIS Survey Goals" src="../../_images/bis_fxi_goals.PNG" />
+<em>Source: BIS 2021 <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap104b_rh.pdf">Link</a></em></p>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="implementation">
@@ -563,6 +610,7 @@ document.write(`
 <h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): <a class="reference external" href="https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850">link</a></p></li>
+<li><p>The IMF has published a guidance note on FX interventions on the spot and derivatives market (2021): <a class="reference external" href="https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx">link</a></p></li>
 <li><p>The BIS publishes interesting papers reflecting BIS surveys conducted with central banks. For instance (2019): <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap104b-rh.pdf">link</a></p></li>
 <li><p>A recent and quite comprehensive database on FX Interventions (2021), compiled by IMF colleagues: <a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/19/Foreign-Exchange-Intervention-A-Dataset">link</a></p></li>
 <li><p>Kathryn Dominguez, professor at U-Michigan, specialized on FX interventions: <a class="reference external" href="http://www-personal.umich.edu/~kathrynd/index.html">link</a></p></li>
@@ -640,7 +688,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Conceptual Framework</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-frameworks">Monetary Frameworks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-intermediate-objectives">Goals and Intermediate Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-intermediate-objectives">Goals and Intermediate Objectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-goals-motivating-interventions-on-the-fx-market">Main Goals Motivating Interventions on the FX market</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
