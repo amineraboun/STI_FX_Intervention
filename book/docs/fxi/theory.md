@@ -88,8 +88,8 @@ How to reach the goals via the central bank's operational framework
 
 - **Support fellow central banks in their exchange rate operations**
 
-
-![BIS Survey Goals](../Slides/fxi_theory_practice/img/bis_fxi_goals.PNG)
+BIS Survey on Central Banks FX Interventions Goals
+![BIS Survey Goals](../Slides/fxi_theory_practice/img/bis_fxi_goals.PNG "Title Test")
 *Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
 
 
