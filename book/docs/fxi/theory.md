@@ -3,8 +3,7 @@
 <!-- https://cheatography.com/xaon/cheat-sheets/emacs-markdown-mode/  -->
 # Conceptual Framework
 
-## Monetary Frameworks
-
+## The Trilemma
 
 `````{admonition} The Mundell Trilemma
 :class: warning
@@ -16,8 +15,9 @@ The choice of the monetary framework and the goals of the central bank is constr
 
 Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.
 
+Diagram of the Mundell Trilemma with some countries illustration
 ![Trilemma](../Slides/fxi_theory_practice/img/Trilemma.PNG)
-*Source: author*
+*Source: Lafarguette*
 
 Typically, countries trying to "round the corners of the trilemma", i.e. trying to achieve the three objectives simultaneously, will at a point face severe exchange rate/capital flows pressures if the fundamentals are not aligned. After burning their FX reserves to maintain a misaligned exchange rate level with open capital flows and independent monetary policy, countries will ultimately have to give up either open capital account or the peg. 
 
@@ -35,15 +35,17 @@ Hence, when the bubble bursted (first in Thailand), investors ran, triggering ca
   * Due to insufficient foreign reserves, countries were forced to devaluate, as FX interventions were not possible
   * The huge FX mismatch on banks and corporates balance sheets started a crisis, which was amplified by the interest rate hikes motivated to fight depreciation...
 
-  
+
+Exchange rate dynamics of South-East Asian Countries during the 1997 Asian Financial Crisis
 ![AFC FX Crash](../Slides/fxi_theory_practice/img/afc_fx_crash.PNG)
 *Source: Nikkei Asia and Refinitiv*
 
 
+Evolution of the GDP of South-East Asian Countries during the 1997 Asian Financial Crisis
 ![AFC GDP Crash](../Slides/fxi_theory_practice/img/afc_gdp_crash.png)
 *Source: Mark Roser, Our World in Data*
 
-
+    
 ## Goals and Intermediate Objectives
 
 `````{admonition} Definition: FX Interventions
@@ -88,10 +90,9 @@ How to reach the goals via the central bank's operational framework
 
 - **Support fellow central banks in their exchange rate operations**
 
-BIS Survey on Central Banks FX Interventions Goals
+BIS Survey (2021) on Central Banks FX Interventions Goals
 ![BIS Survey Goals](../Slides/fxi_theory_practice/img/bis_fxi_goals.PNG "Title Test")
 *Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
-
 
 `````{admonition} FXI should be consistent with the central bank's monetary framework
 :class: warning
@@ -111,7 +112,6 @@ FX interventions should not contradict the central bank mandate, else there is a
 
 
 ### FX Intermediate Objectives
-
 The literature (see the BIS below) and international practices typically identify 5 main intermediate objectives:
 
 * **Limit exchange rate volatility**
@@ -126,9 +126,10 @@ The literature (see the BIS below) and international practices typically identif
 
 * Influence the level of the exchange rate (if the main goal of the central bank is indeed an exchange rate nominal anchor)
 
-
-![BIS Survey Objectives](../Slides/fxi_theory_practice/img/bis_intermediate_objectives.PNG)
+BIS Survey (2021) on Central Banks FX Interventions Intermediate Objectives
+![BIS Survey Objectives](../Slides/fxi_theory_practice/img/bis_intermediate_objectives.PNG "another title test")
 *Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
+
 
 
 
