@@ -8,7 +8,7 @@
 
 `````{admonition} The Mundell Trilemma
 :class: warning
-The choice of the monetary framework and the goals of the central bank is constrained by the Mundell Trilemma, that states that countries can only achieve two out of the three objectives:
+The choice of the monetary framework and the goals of the central bank is constrained by the **Mundell Trilemma**, that states that countries can only achieve two out of the three objectives:
   * Independent monetary policy: for instance, determining the interest rate to achieve domestic objectives, such as controlling inflation 
   * Open capital account: capital flows can freely move in and out the country 
   * Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the 
@@ -70,33 +70,46 @@ How to reach the goals via the central bank's operational framework
 
 ### Main Goals Motivating Interventions on the FX market
 
-    **Price stability**
-        - When large exchange rate movements pass-through inflation, generating temporary shocks
-        
-    **Financial stability**
+- **Price stability**
+  - When large exchange rate movements pass-through inflation, generating temporary shocks
+
+- **Financial stability**
         - Calm "disorderly market conditions" (see [link](https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx)) for a discussion on how to assess disorderly market conditions)
-        
         - Smooth capital flows and credit spillovers (impact on carry trade and excess returns)
-        
         - Alleviate FX funding shortage
-        
         - Reduce FX speculation
-        
-        
-    **Terms of trade**
-    
-        - Support external competitiveness (especially during USD weakening phases)
-        
-        - Smooth commodity prices fluctuations
-          
-    **Building/managing FX reserves**
-        - *In principle, without market impact*
-    
-    **Support fellow central banks in their exchange rate operations**
+
+- **Terms of trade**
+    - Support external competitiveness (especially during USD weakening phases)
+    - Smooth commodity prices fluctuations
+
+- **Building/managing FX reserves**
+  - *In principle, without market impact*
+
+- **Support fellow central banks in their exchange rate operations**
 
 
 ![BIS Survey Goals](../Slides/fxi_theory_practice/img/bis_fxi_goals.PNG)
 *Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
+
+
+### Consistency between FXI and the Monetary Framework
+
+!!! warning "FXI should be consistent with the central bank's monetary framework"
+    FX interventions should not contradict the central bank mandate, else there is a risk of policy inconsistency (cf. the Mundell Trilemma) that would jeopardize monetary efficiency and central bank credibility
+    
+**Floating exchange rate regimes** (for instance, with inflation targeting) should use FX interventions for:
+    * Financial Stability
+      * For instance, when domestic agents face severe currency mismatch on their balance sheet, FX volatility is a financial stability threat
+  * Preservation of the monetary objectives
+    * For instance, when the pass-through of large - and temporary - exchange rate movements threaten the inflation target 
+    
+**Hard-peg and currency board** regimes typically intervene on the FX market to maintain the peg, usually via FX windows, at a fixed exchange rate
+
+**Crawling and soft-peg** conduct infrequent FX interventions when the exchange rate deviates outside of the central bank tolerance
+  * However, there is a risk of a conflict between _de-jure_ and _de-facto monetary_ objectives
+
+
 
 
 # Implementation
@@ -130,7 +143,7 @@ How to reach the goals via the central bank's operational framework
 
 - Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
 
-
+- General useful resource: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
 
 
 
