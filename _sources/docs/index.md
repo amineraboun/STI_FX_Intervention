@@ -102,8 +102,8 @@ Do not hesitate to contact us (email address available on our personal websites)
 - General useful resource: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
 
 
-
-
+![STI Photo](../static/sti_photo.jpg)
+*Many thanks to the Singapore Training Institute and in particular Alina Tan for the spotless organization!*
 
 
 
