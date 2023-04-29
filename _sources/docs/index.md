@@ -106,6 +106,10 @@ Do not hesitate to contact us (email address available on our personal websites)
 *Many thanks to the Singapore Training Institute and in particular Alina Tan for the spotless organization!*
 
 
+We are grateful to **Thomas Schmelzer**, a colleague at ADIA Quant team, for his suggestion of using a Jupyter book for building our website. 
+
+
+
 
 
 
