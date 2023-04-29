@@ -93,9 +93,7 @@ How to reach the goals via the central bank's operational framework
 *Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
 
 
-### Consistency between FXI and the Monetary Framework
-
-!!! warning "FXI should be consistent with the central bank's monetary framework"
+.. WARNING:: FXI should be consistent with the central bank's monetary framework
     FX interventions should not contradict the central bank mandate, else there is a risk of policy inconsistency (cf. the Mundell Trilemma) that would jeopardize monetary efficiency and central bank credibility
     
 **Floating exchange rate regimes** (for instance, with inflation targeting) should use FX interventions for:
@@ -104,11 +102,31 @@ How to reach the goals via the central bank's operational framework
   * Preservation of the monetary objectives
     * For instance, when the pass-through of large - and temporary - exchange rate movements threaten the inflation target 
     
-**Hard-peg and currency board** regimes typically intervene on the FX market to maintain the peg, usually via FX windows, at a fixed exchange rate
+**Hard-peg and currency board** regimes typically intervene on the FX market to defend the peg, usually via FX windows, at a fixed exchange rate
 
 **Crawling and soft-peg** conduct infrequent FX interventions when the exchange rate deviates outside of the central bank tolerance
   * However, there is a risk of a conflict between _de-jure_ and _de-facto monetary_ objectives
 
+
+### FX Intermediate Objectives
+
+The literature (see the BIS below) and international practices typically identify 5 main intermediate objectives:
+
+* **Limit exchange rate volatility**
+  * Even if the main goal of the central bank is to maintain price stability, limiting FX volatility is often important. FX volatility affects the price-setting behavior of firms: it causes average imported inflation to rise
+  * Excessive FX volatility can also derail the transmission of monetary policy
+
+* **Provide liquidity** to thin market
+
+* **Smooth the path** of the exchange rate
+
+* Limit FX pressure caused by international investors
+
+* Influence the level of the exchange rate (if the main goal of the central bank is indeed an exchange rate nominal anchor)
+
+
+![BIS Survey Objectives](../Slides/fxi_theory_practice/img/bis_intermediate_objectives.PNG)
+*Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
 
 
 
