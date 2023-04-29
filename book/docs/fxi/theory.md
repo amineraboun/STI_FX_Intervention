@@ -93,9 +93,11 @@ BIS Survey on Central Banks FX Interventions Goals
 *Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
 
 
-.. WARNING:: FXI should be consistent with the central bank's monetary framework
-    FX interventions should not contradict the central bank mandate, else there is a risk of policy inconsistency (cf. the Mundell Trilemma) that would jeopardize monetary efficiency and central bank credibility
-    
+`````{admonition} FXI should be consistent with the central bank's monetary framework
+:class: warning
+FX interventions should not contradict the central bank mandate, else there is a risk of policy inconsistency (cf. the Mundell Trilemma) that would jeopardize monetary efficiency and central bank credibility
+````` 
+
 **Floating exchange rate regimes** (for instance, with inflation targeting) should use FX interventions for:
     * Financial Stability
       * For instance, when domestic agents face severe currency mismatch on their balance sheet, FX volatility is a financial stability threat
