@@ -190,7 +190,7 @@ To sterilize, the central bank has to rely on specific operations and instrument
 Central Bank Analytical Balance Sheet
 ![CB Balance Sheet](../Slides/fxi_theory_practice/img/central_bank_balance_sheet.PNG)
 *Source: Lafarguette*
-
+    
 ### Can All Central Banks Sterilize?
 
 In practice, it may be difficult to fully offset the effects of FX interventions as:
@@ -203,25 +203,29 @@ One potential solution is to use **FX derivatives**
     * Purchasing FX on the spot
     * Swap by selling FX spot, unwinding by buying FX in the future
 
-### The Costs of Sterilization
+### Costs of FX Interventions
 
 Central Bank Analytical Balance Sheet with Remuneration and Costs
 ![CB Balance Sheet Rates](../Slides/fxi_theory_practice/img/central_bank_balance_sheet_rates.PNG)
 *Source: Lafarguette*
 
-**Sterilization is often costly** for the central bank, because:
-  * **Fiscal costs**
-    * Depends on the interest rate differential between domestic and foreign assets, in particular the returns of FX reserves
-    * Typically, the domestic interest rate is often higher than the foreign interest rate (US Treasuries for instance): the remuneration of the foreign reserves is below the cost of the sterilization instruments
-    * This is the cost of the conduct of monetary policy. It is crucial to be consistent, even if it implies a cost for the central bank
-      * Note that some central banks try to pass the costs to the banking sector, either via the required reserves (FX or domestic, high ratio with below-market remuneration) or forced-holdings of sterilization assets remunerated below market rate
-      * This is a form of financial repression, and is not advised...
+`````{admonition} Costs of FX Interventions
+:class: important
+* FX Interventions entail fiscal and valuation costs
+````` 
 
-  * **Valuation costs**
-    * Foreign reserves expose the central bank to foreign exchange risk
-    * If the foreign currency depreciates, the valuation losses on the FX reserves will reduce the central bank equity
-      * For instance, the Swiss National Bank (SNB) had to intervene to prevent an appreciation of the Franc that ended up FX reserves representing 130\% of GDP, 12-times increase since 2012
-      * Valuation losses in 2022 of 95 bn CHF (105 bn USD), or 15 \% of GDP... (were absorbed by SNB very large equity buffer)
+* **Fiscal costs**
+  * Depends on the interest rate differential between domestic and foreign assets, in particular the returns of FX reserves
+  * Typically, the domestic interest rate is often higher than the foreign interest rate (US Treasuries for instance): the remuneration of the foreign reserves is below the cost of the sterilization instruments
+  * This is the cost of the conduct of monetary policy. It is crucial to be consistent, even if it implies a cost for the central bank
+    * Note that some central banks try to pass the costs to the banking sector, either via the required reserves (FX or domestic, high ratio with below-market remuneration) or forced-holdings of sterilization assets remunerated below market rate
+    * This is a form of financial repression, and is not advised...
+
+* **Valuation costs**
+  * Foreign reserves expose the central bank to foreign exchange risk
+  * If the foreign currency depreciates, the valuation losses on the FX reserves will reduce the central bank equity
+    * For instance, the Swiss National Bank (SNB) had to intervene to prevent an appreciation of the Franc that ended up FX reserves representing 130\% of GDP, 12-times increase since 2012
+    * Valuation losses in 2022 of 95 bn CHF (105 bn USD), or 15 \% of GDP... (were absorbed by SNB very large equity buffer)
 
 PBOC Key Interest Rates on the Balance Sheet
 ![PBoC Interest Rates](../Slides/fxi_theory_practice/img/fx_sterilization_cost_china.PNG)
@@ -242,6 +246,24 @@ Franc Suisse against Euro (Down Means CHF Appreciation)
 *Source: Bloomberg*
 
 ## Transmission Channels of FX Interventions
+
+FX interventions influence the exchange rate through two main channels:
+
+* **Signaling channel**
+  * Signal the future monetary policy stance
+  * Signal future exchange rate and FX interventions
+
+* **Portfolio and risk-rebalancing channel**
+
+### Signaling channel
+
+FX Interventions provide investors with "information" about the central bank view of the appropriate exchange rate. They also signal future monetary policy intentions.
+
+`````{admonition} As long as the **central bank is credible**, the signal can influence the exchange rate
+:class: danger
+````` 
+
+
 
 # Implementation
 
