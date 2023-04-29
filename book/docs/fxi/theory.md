@@ -223,12 +223,23 @@ Central Bank Analytical Balance Sheet with Remuneration and Costs
       * For instance, the Swiss National Bank (SNB) had to intervene to prevent an appreciation of the Franc that ended up FX reserves representing 130\% of GDP, 12-times increase since 2012
       * Valuation losses in 2022 of 95 bn CHF (105 bn USD), or 15 \% of GDP... (were absorbed by SNB very large equity buffer)
 
+PBOC Key Interest Rates on the Balance Sheet
+![PBoC Interest Rates](../Slides/fxi_theory_practice/img/fx_sterilization_cost_china.PNG)
+*Source: CEIC*
 
-Central Bank Analytical Balance Sheet with Remuneration and Costs
-![CB Balance Sheet Rates](../Slides/fxi_theory_practice/img/central_bank_balance_sheet_rates.PNG)
-*Source: Lafarguette*
+
+PBOC Foreign Reserves
+![PBoC Foreign Reserves](../Slides/fxi_theory_practice/img/pboc_fx_reserves.PNG)
+*Source: CEIC*
 
 
+Franc Suisse against Euro (Down Means CHF Appreciation)
+![CHF](../Slides/fxi_theory_practice/img/chfeur.jpg)
+*Source: Bloomberg*
+
+Franc Suisse against Euro (Down Means CHF Appreciation)
+![SNB Losses](../Slides/fxi_theory_practice/img/snb_losses.png)
+*Source: Bloomberg*
 
 
 
