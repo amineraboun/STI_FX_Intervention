@@ -132,6 +132,17 @@ BIS Survey (2021) on Central Banks FX Interventions Intermediate Objectives
 
 
 
+`````{admonition} FX interventions consistent with floating exchange rate regimes can typically be designed to smooth exchange rate shocks, either:
+:class: hint
+  * **Permanent shock**: smoothing the exchange rate path dynamic to reach the new equilibrium 
+  * **Temporary shock**: smooth the temporary impact while allowing 
+````` 
+
+
+
+
+
+
 
 # Implementation
 
