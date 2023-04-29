@@ -258,13 +258,14 @@ FX interventions influence the exchange rate through two main channels:
 ### Signaling channel
 
 FX Interventions provide investors with "information" about the central bank view of the appropriate exchange rate. They also signal future monetary policy intentions.
+
 The signal sent by the central bank when conducting FX interventions often plays an important role for steering market participants expectations. 
 
 `````{admonition} As long as the **central bank is credible**, the signal can influence the exchange rate
 :class: danger
 ````` 
 
-Despite the signaling effect, some central banks prefer to keep their interventions secret, even ex-post
+Despite the signaling effect, some central banks prefer to keep their interventions secret, even ex-post, because:
   * Fear of losing credibility if the intervention is unsuccessful
   * "Wants to keep control", tradition of secrecy
   * Shield from political repercussions
@@ -301,17 +302,20 @@ _Empirical evidence tend to suggest that the signaling effect indeed plays an im
 Countries, and in particular EMEs, face implementations issues when framing their FX interventions strategy
 `````
 Typically, the common challenges are:
-  * How to decide about the appropriate timing of FX interventions?
-  * What is the best amount to sell on the market, to maximize efficiency while preserving the sustainability of the central banks' foreign reserves? 
-  * Does FX interventions affect the credibility of inflation-targeting?
-  * Should intervention be discretionary or follow rules?
+  * How to decide about the appropriate **timing** of FX interventions?
+  * What is the **optimal FXI size** to maximize efficiency while preserving the sustainability of the central banks' foreign reserves? 
+  * **Instruments**: intervening through spot or derivatives, or both?  
+  * Should interventions be **discretionary or follow rules**?
     * When using rules, what kind of rules?
-  * Intervening through spot or derivatives, or both?
-  * Should CBs provide targeted FX provision to specific banks or engage in open-market FX interventions?
+  * Should CBs provide targeted FX provision to specific banks or engage in **open-market FX interventions**?
   * Under what conditions is it appropriate to deploy intervention and capital controls jointly?
 
-
-
+## FXI Timing
+* Deciding on the right FXI timing is critical and entail significant risks:
+  * Don't want to intervene too often, at the risk to create market distortions, lose credibility and exhaust FX reserves
+  * Still, need to intervene often enough to preserve financial stability and mitigate volatility, for instance
+* Some simple rules with fixed thresholds (e.g. intervening when the daily variation exceeds +/- 2\%) often guidance, at the risk of creating speculation
+  * [Lafarguette and Veyrune (2021)](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081) designed a rule to decide on the optimal triggers for FX interventions based on risk level  
 
 
 
