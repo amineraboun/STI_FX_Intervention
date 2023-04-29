@@ -205,15 +205,27 @@ One potential solution is to use **FX derivatives**
 
 ### The Costs of Sterilization
 
+Central Bank Analytical Balance Sheet with Remuneration and Costs
+![CB Balance Sheet Rates](../Slides/fxi_theory_practice/img/central_bank_balance_sheet_rates.PNG)
+*Source: Lafarguette*
+
 **Sterilization is often costly** for the central bank, because:
   * **Fiscal costs**
     * Depends on the interest rate differential between domestic and foreign assets, in particular the returns of FX reserves
-    * Typically, the domestic interest rate is often higher than the foreign interest rate (US Treasuries for instance)
-    * Cost of the conduct of monetary policy with the monetary policy mandate. Important to be consistent, even if it implies costs for the central bank
+    * Typically, the domestic interest rate is often higher than the foreign interest rate (US Treasuries for instance): the remuneration of the foreign reserves is below the cost of the sterilization instruments
+    * This is the cost of the conduct of monetary policy. It is crucial to be consistent, even if it implies a cost for the central bank
+      * Note that some central banks try to pass the costs to the banking sector, either via the required reserves (FX or domestic, high ratio with below-market remuneration) or forced-holdings of sterilization assets remunerated below market rate
+      * This is a form of financial repression, and is not advised...
+
+  * **Valuation costs**
+    * Foreign reserves expose the central bank to foreign exchange risk
+    * If the foreign currency depreciates, the valuation losses on the FX reserves will reduce the central bank equity
+      * For instance, the Swiss National Bank (SNB) had to intervene to prevent an appreciation of the Franc that ended up FX reserves representing 130\% of GDP, 12-times increase since 2012
+      * Valuation losses in 2022 of 95 bn CHF (105 bn USD), or 15 \% of GDP... (were absorbed by SNB very large equity buffer)
 
 
 Central Bank Analytical Balance Sheet with Remuneration and Costs
-![CB Balance Sheet](../Slides/fxi_theory_practice/img/central_bank_balance_sheet_rates.PNG)
+![CB Balance Sheet Rates](../Slides/fxi_theory_practice/img/central_bank_balance_sheet_rates.PNG)
 *Source: Lafarguette*
 
 
