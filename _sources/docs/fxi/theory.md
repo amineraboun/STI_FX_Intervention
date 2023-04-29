@@ -1,7 +1,7 @@
 [Full slides of the course](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
 <!-- https://cheatography.com/xaon/cheat-sheets/emacs-markdown-mode/  -->
-# Conceptual Framework
+# Theory of FX Interventions
 
 ## The Trilemma
 
@@ -157,7 +157,7 @@ Conducting FX interventions entail risks that central banks should be able to mi
 
 _Note that the risk-based FX intervention rule developped by [Lafarguette and Veyrune (2021)](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081) is designed to address some of these issues_
 
-
+    
 ## Sterilization of FX Interventions
 
 ### Typology
@@ -258,26 +258,61 @@ FX interventions influence the exchange rate through two main channels:
 ### Signaling channel
 
 FX Interventions provide investors with "information" about the central bank view of the appropriate exchange rate. They also signal future monetary policy intentions.
+The signal sent by the central bank when conducting FX interventions often plays an important role for steering market participants expectations. 
 
 `````{admonition} As long as the **central bank is credible**, the signal can influence the exchange rate
 :class: danger
 ````` 
 
+Despite the signaling effect, some central banks prefer to keep their interventions secret, even ex-post
+  * Fear of losing credibility if the intervention is unsuccessful
+  * "Wants to keep control", tradition of secrecy
+  * Shield from political repercussions
+
+_Empirical evidence tend to suggest that the signaling effect indeed plays an important role, and that secret FX interventions should, in general, be avoided (see later for a discussion)_
 
 
-# Implementation
+### The portfolio rebalancing channel
 
-- Instruments
+* The portfolio rebalancing channel occurs when the central bank manages to shift the relative supply of foreign versus domestic assets on the market. 
+  Because the supply changes, the expected FX returns and FX level is changing as well. 
+      * For example, after a sterilized FXI selling-side, the central bank increases the supply of foreign assets, depreciating the foreign currency
 
-- Rule vs. Discretion
+* Sterilized FX interventions also alter the **risk characteristics** of foreign/domestic assets
+  * Domestic investors are exposed to FX risk when holding foreign assets
+  * Sterilized interventions influence the equilibrium exchange rate via a change in the **risk premia**
 
-- FXI Size
+* The portfolio rebalancing channel is maximized when:
+  * Investors **diversify their holdings** domestic/foreign as a function of **expected returns and variance of returns**
+  * **Foreign and domestic assets are imperfect substitutes**: the uncovered interest parity doesn't hold
 
-- Communication
+|            | Signaling                    | Portfolio Rebalancing                     |
+|------------|------------------------------|-------------------------------------------|
+| Assumption | The central bank is credible | Assets are imperfect substitutes          |
+| Channel    | Market Expectations          | Relative supply and returns, risk premium |
+|            |                              |                                           |
 
-- Intervention Effectiveness
 
-- FX Interventions and Exchange Rate Management
+
+# FXI Implementation
+
+`````{admonition} Challenges
+:class: caution
+Countries, and in particular EMEs, face implementations issues when framing their FX interventions strategy
+`````
+Typically, the common challenges are:
+  * How to decide about the appropriate timing of FX interventions?
+  * What is the best amount to sell on the market, to maximize efficiency while preserving the sustainability of the central banks' foreign reserves? 
+  * Does FX interventions affect the credibility of inflation-targeting?
+  * Should intervention be discretionary or follow rules?
+    * When using rules, what kind of rules?
+  * Intervening through spot or derivatives, or both?
+  * Should CBs provide targeted FX provision to specific banks or engage in open-market FX interventions?
+  * Under what conditions is it appropriate to deploy intervention and capital controls jointly?
+
+
+
+
 
 
 # Resources

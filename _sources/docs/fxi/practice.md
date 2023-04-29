@@ -1,4 +1,4 @@
-# Examples of Countries Policy and Operational FX Interventions Frameworks
+# International Practices
 
 [More details in the slides](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
