@@ -5,10 +5,14 @@
 
 ## Monetary Frameworks
 
+
+`````{admonition} The Mundell Trilemma
+:class: warning
 The choice of the monetary framework and the goals of the central bank is constrained by the Mundell Trilemma, that states that countries can only achieve two out of the three objectives:
   * Independent monetary policy: for instance, determining the interest rate to achieve domestic objectives, such as controlling inflation 
   * Open capital account: capital flows can freely move in and out the country 
   * Fixed exchange rate: the local currency is pegged to an anchor, for instance, the US dollar or the 
+`````
 
 Most advanced economies have abandonned the fixed exchange rate objective after the collapse of the Bretton Woods system, and are therefore pursuing independent monetary objectives (inflation targeting or, in the past, money-base targeting) under an open capital account.
 
@@ -48,9 +52,51 @@ Any official sale or purchase of foreign assets against domestic assets **in the
 `````
 * FX Interventions are usually carried-out by the central bank, but can sometimes be under the responsibility of the Ministry of Finances, such as in Japan ([link](https://www.mof.go.jp/english/policy/international_policy/reference/feio/index.html))
 
+Typically, the central banking literature distinguishes between goals and objectives:
+
+`````{admonition} Central Bank Goal
+:class: important
+Ultimate purpose of the FX intervention. Should be consistent with the monetary framework of the central bank
+````` 
+*For instance, a FX intervention goal for the central bank could be about preserving financial stability*
 
 
+`````{admonition} Intermediate Objectives
+:class: important
+How to reach the goals via the central bank's operational framework
+````` 
+*For instance, mitigating FX daily volatility via open-market interventions*
 
+
+### Main Goals Motivating Interventions on the FX market
+
+    **Price stability**
+        - When large exchange rate movements pass-through inflation, generating temporary shocks
+        
+    **Financial stability**
+        - Calm "disorderly market conditions" (see [link](https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx)) for a discussion on how to assess disorderly market conditions)
+        
+        - Smooth capital flows and credit spillovers (impact on carry trade and excess returns)
+        
+        - Alleviate FX funding shortage
+        
+        - Reduce FX speculation
+        
+        
+    **Terms of trade**
+    
+        - Support external competitiveness (especially during USD weakening phases)
+        
+        - Smooth commodity prices fluctuations
+          
+    **Building/managing FX reserves**
+        - *In principle, without market impact*
+    
+    **Support fellow central banks in their exchange rate operations**
+
+
+![BIS Survey Goals](../Slides/fxi_theory_practice/img/bis_fxi_goals.PNG)
+*Source: BIS 2021 [Link](https://www.bis.org/publ/bppdf/bispap104b_rh.pdf)*
 
 
 # Implementation
@@ -68,12 +114,12 @@ Any official sale or purchase of foreign assets against domestic assets **in the
 - FX Interventions and Exchange Rate Management
 
 
-
-
 # Resources
 
   - A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): [link](https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850)
-        
+
+ - The IMF has published a guidance note on FX interventions on the spot and derivatives market (2021): [link](https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx)           
+
  - The BIS publishes interesting papers reflecting BIS surveys conducted with central banks. For instance (2019): [link](https://www.bis.org/publ/bppdf/bispap104b-rh.pdf)
     
  - A recent and quite comprehensive database on FX Interventions (2021), compiled by IMF colleagues: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/19/Foreign-Exchange-Intervention-A-Dataset)
@@ -83,6 +129,8 @@ Any official sale or purchase of foreign assets against domestic assets **in the
  - Popper (2022) provides a very complete literature review on FX Interventions: [link](https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf)
 
 - Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
+
+
 
 
 
