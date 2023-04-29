@@ -1,4 +1,4 @@
-% Time-stamp: <2023-04-29 19:29:42 A13258Q>
+% Time-stamp: <2023-04-29 19:42:44 A13258Q>
 % Romain Lafarguette 2020, https://romainlafarguette.github.io/
 
 %% ---------------------------------------------------------------------------
@@ -582,8 +582,7 @@
   Typically, central banks, in particular among EMs, face a set of challenges:
   \begin{itemize}
     \item What is the appropriate timing for FX interventions?   
-    \item Amount of FX interventions to preserve FX reserves while maximizing efficiency?
-    \item Does intervention affect the credibility of inflation-targeting?
+    \item FXI size to preserve FX reserves while maximizing efficiency?
     \item Should intervention be discretionary or follow rules?
       \begin{itemize}
       \item If rules, what kind of rules?
@@ -594,27 +593,66 @@
   \end{itemize}
 \end{frame}
 
+\subsection{FXI Timing}
+\begin{frame}
+  \frametitle{FXI Timing}
+  \begin{wideitemize}
+  \item Deciding on the right FXI timing is difficult and entail significant risks:
+    \begin{itemize}
+    \item Don't want to intervene too often, at the risk to create market distortions, lose credibility and exhaust FX reserves
+    \item Still, need to intervene often enough to preserve financial stability and mitigate volatility, for instance
+    \end{itemize}
+  \item Some simple rules with fixed thresholds (e.g. intervening when the daily variation exceeds +/- 2\%) often guidance, at the risk of creating speculation
+  \item \href{https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081}{Lafarguette and Veyrune (2021)} designed a rule to decide on the optimal triggers for FX interventions based on risk level  
+  \end{wideitemize}
+\end{frame}
+
+
+\subsection{FXI Size}
 
 \begin{frame}
-  \frametitle{Different Approaches to Intervention}
-  \begin{itemize}
-  \item \textbf{Brazil}: discretionary operations, reported one week after since 2008.
+  \frametitle{FX Intervention Size}
+  \begin{wideitemize}
+  \item To the best of my knowledge, there is no theory determining the optimal amount
+  \item The general rule is to intervene infrequently, with relatively large amounts (as share of daily market turnover)
     \begin{itemize}
-    \item In 2013-2015, daily sales of NDF contracts
-    \end{itemize}    
-    \item \textbf{Chile}: pre-announced daily purchases of USD 50m with a discretionary intra-day timing
-    \item \textbf{Colombia}: 3-minute Dutch auction (descending price) of sales of USD, 20m per day
-      \begin{itemize}
-      \item discretionary timing: auctions announced in advance, unsold dollars are carried forward the next day
-      \end{itemize}      
-    \item \textbf{Mexico}: Auctions of USD with a minimum price, 3 times daily at pre-announced times and daily amounts (up to 2016)
-      \begin{itemize}
-      \item Bids made public at the end of each auction (auctions last 5 minutes)
-      \item In 2017, new auctions of NDF that pay in pesos
-      \end{itemize}      
-    \item \textbf{Peru}: Discretionary operations, announced at start of intervention trades, amounts published daily at market close
-  \end{itemize}
+    \item Impact the market
+    \item Maximize signaling effect
+    \item Gain credibility
+    \end{itemize}
+  \item Yet, to decide on a specific amount, it is critical to:
+    \begin{itemize}
+    \item Consider the level of foreign reserves, and the adequate reserves level (e.g. ARA metric or any other metric)
+    \item Calibrate as percent of daily FX market turnover
+    \item Assess the liquidity conditions and the FX market impact
+    \end{itemize}
+  \end{wideitemize}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Orders of Magnitude}
+  \begin{wideitemize}
+  \item The BIS has conducted a survey of central banks interventions in 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}
+  \item On average, cumulated FXI intervention during a day represent between 15\% and 20\% of market turnover, with some central banks exceeding 50\%
+    \begin{itemize}
+    \item Representing between 0.3\% and 0.8\% of the monthly FX reserves
+    \end{itemize}
+  \item For regular interveners, frequency of intervention during "normal years" (not COVID) is around 10-15 days per year
+    \begin{itemize}
+    \item But climbed up to 80 days in 2020 !
+    \end{itemize}
+  \end{wideitemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{BIS Survey on Size and Frequency}
+  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/bis_fxi_size.PNG}}
+  \medskip
+  \emph{Source: BIS 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}}
+\end{frame}
+
+
 
 \subsection{Instruments}
 \begin{frame}
@@ -784,50 +822,6 @@
     \item Policies are often \textbf{episodic}: frequent in some periods and then none in other periods
     \item Operations largely "lean against the wind" to react against deviations from target
   \end{wideitemize}  
-\end{frame}
-
-\subsection{FXI Size}
-
-\begin{frame}
-  \frametitle{FX Intervention Size}
-  \begin{wideitemize}
-  \item To the best of my knowledge, there is no theory determining the optimal amount
-  \item The general rule is to intervene infrequently, with relatively large amounts (as share of daily market turnover)
-    \begin{itemize}
-    \item Impact the market
-    \item Maximize signaling effect
-    \item Gain credibility
-    \end{itemize}
-  \item Yet, to decide on a specific amount, it is critical to:
-    \begin{itemize}
-    \item Consider the level of foreign reserves, and the adequate reserves level (e.g. ARA metric or any other metric)
-    \item Calibrate as percent of daily FX market turnover
-    \item Assess the liquidity conditions and the FX market impact
-    \end{itemize}
-  \end{wideitemize}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Orders of Magnitude}
-  \begin{wideitemize}
-  \item The BIS has conducted a survey of central banks interventions in 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}
-  \item On average, cumulated FXI intervention during a day represent between 15\% and 20\% of market turnover, with some central banks exceeding 50\%
-    \begin{itemize}
-    \item Representing between 0.3\% and 0.8\% of the monthly FX reserves
-    \end{itemize}
-  \item For regular interveners, frequency of intervention during "normal years" (not COVID) is around 10-15 days per year
-    \begin{itemize}
-    \item But climbed up to 80 days in 2020 !
-    \end{itemize}
-  \end{wideitemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{BIS Survey on Size and Frequency}
-  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/bis_fxi_size.PNG}}
-  \medskip
-  \emph{Source: BIS 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}}
 \end{frame}
 
 \begin{frame}
