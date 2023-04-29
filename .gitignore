@@ -1,5 +1,6 @@
 .idea
 .venv
-*_build
+
+book/_build
 *.ipynb_checkpoints
 **/__pycache__

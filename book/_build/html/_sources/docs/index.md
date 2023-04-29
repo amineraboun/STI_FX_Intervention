@@ -1,25 +1,56 @@
 # IMF - STI: Risk-Based Framework for FX Intervention  
 
-**International Monatry Fund (IMF) – Singapore Regional Training Institute (STI)**
+Welcome to the website of the IMF course on FX Interventions Rules, delivered at the Singapore Regional Training Institute
 
 **Course on FX Intervention Rules: A Risk-Based Approach (FIRARBF)**
 
 **Singapore, April 17 – 21, 2023**
 
 ## Description
-This is a five-day course that aims to train participants, mostly from central banks, on the theoretical and practical aspects of central bank interventions in foreign exchange markets. The course is organized by the IMF-Singapore Regional Training Institute (STI) and taught by a team of IMF consultants.
+This five-day course aims to train participants, mostly from central banks, on
+the theoretical and practical aspects of central bank interventions in foreign
+exchange  markets.  The course  is  organized  by the  IMF-Singapore  Regional
+Training Institute (STI) and taught by a team of IMF consultants.
 
-The course includes a blend of lectures and workshops that will cover various topics. Participants will gain knowledge about statistical concepts and their applications in Python, as well as data manipulation and visualization, time-series econometrics, volatility and value-at-risk modeling, and techniques for evaluating, selecting, and interpreting models, which can be applied to triggers for central bank intervention in the foreign exchange market
+The course includes a blend of lectures and workshops covering various topics:
+  * Central banking theory on FX interventions
+  * FX Interventions international practices
+  * Time series econometrics and volatility modeling
+  * Programming under Python
 
-Overall, the course aims to provide participants with a solid understanding of the theoretical and practical aspects of central bank interventions in foreign exchange markets, along with hands-on experience in using Python and IMF software infrastructure for modeling conditional foreign exchange intervention triggers. The main takeaways for participants include a deeper understanding of FX interventions, statistical concepts, and Python programming. Participants can use this knowledge to improve their skills in their respective roles and advance their careers in the field of finance.
+This  course also  presents the  model developped  by [Lafarguette  and Veyrune
+(2011)](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081) on risk-based models for FX interventions. The course is accompanied by
+a Python package, available on [pypi](https://pypi.org/project/varfxi/)
+
+Overall, the course aims to provide participants with a solid understanding of
+the theoretical and practical aspects of central bank interventions in foreign
+exchange  markets, along  with hands-on  experience  in using  Python and  IMF
+software infrastructure for modeling conditional foreign exchange intervention
+triggers. The main  takeaways for participants include  a deeper understanding
+of     FX     interventions,      statistical     concepts,     and     Python
+programming. Participants  can use this  knowledge to improve their  skills in
+their respective roles and advance their careers in the field of finance.
+
+## Materials
+
+The materials of  the course consist in slides for  the lecture (links below),
+as well as Python notebooks for practicising programming.
+
+This website  contains all the materials  taught during the class,  as well as
+extra resources for participants.
+
+We designed a full-fledge Python package for modeling volatility for FX interventions, available on [pypi](https://pypi.org/project/varfxi/)
+
 
 ## Team
 
-- [Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Buy-side quant at the Abu Dhabi Investment Authority, former IMF and ECB, IMF External Consultant
+- [Romain Lafarguette, Ph.D.](https://romainlafarguette.github.io/): Buy-side macro-quant at the Abu Dhabi Investment Authority; former IMF economist and ECB market operations expert, IMF External Consultant
 
 - [Amine Raboun, Ph.D.](https://amineraboun.github.io/): Buy-side quant at the Abu Dhabi Investment Authority, IMF External Consultant
 
 - [Zhuohui Chen](https://www.linkedin.com/in/zhuohui-chen-7a7424181): IMF Research Analyst, Monetary and Capital Markets Department
+
+Do not hesitate to contact us (email address available on our personal websites) if you have any question or suggestion. 
 
 
 ## Program
@@ -51,6 +82,24 @@ Overall, the course aims to provide participants with a solid understanding of t
 |9:00 – 11:00|	W–9|**Participants’ Presentations on Case Studies (Plenary)**|
 |11:00 – 11:30|		|**End-of-Course Survey**|
 |11:30 – 12:30|		|**Closing Session and Presentation of Certificates**| 
+
+## Resources
+
+  - A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): [link](https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850)
+
+ - The IMF has published a guidance note on FX interventions on the spot and derivatives market (2021): [link](https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx)           
+
+ - The BIS publishes interesting papers reflecting BIS surveys conducted with central banks. For instance (2019): [link](https://www.bis.org/publ/bppdf/bispap104b-rh.pdf)
+    
+ - A recent and quite comprehensive database on FX Interventions (2021), compiled by IMF colleagues: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/19/Foreign-Exchange-Intervention-A-Dataset)
+
+ - Kathryn Dominguez, professor at U-Michigan, specialized on FX interventions: [link](http://www-personal.umich.edu/~kathrynd/index.html)
+
+ - Popper (2022) provides a very complete literature review on FX Interventions: [link](https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf)
+
+- Lafarguette and Veyrune (2021) who present a risk-based framework for FX interventions: [link](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081)
+
+- General useful resource: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
 
 
 
