@@ -317,7 +317,7 @@ Deciding on the right FXI timing is critical and entail significant risks:
   * [Lafarguette and Veyrune (2021)](https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081) designed a rule to decide on the optimal triggers for FX interventions based on risk level
   * Even under a discretionary framework, quantitative-based metrics can serve as a useful guide
 
-## FXI Rule vs Discretion
+## FXI: Rule vs Discretion
 Rule vs. discretion is an old debate in the academic literature (see [Popper 2022](https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf) for a review)
 
 Often, central banks prefer to operate via **un-disclosed, discretionary interventions**
@@ -343,11 +343,101 @@ In practice, assessing central banks' rules vs. discretion in practice is diffic
   * Policies are often **episodic**: interventions can be frequent during some periods and much less in other periods
   * The FX interventions are largely geared towards "leaning against the wind", to react against deviations from target
 
-
-The BIS conducts regular surveys on central banks practices in FX interventions and ask about rules vs discretion practice. It turns out that, out of the 21 central banks surveyed, only 1/3 used rules for intervening
-![CB Rules vs Discretions](../Slides/fxi_theory_practice/img/bis_discretion_rule.PNG)
+The BIS conducts regular surveys on central banks practices in FX interventions and ask about rules vs discretion practice. 
+Out of the 21 central banks surveyed, only one thir of them used rules for intervening on the FX market. 
+![CB Rules vs Discretion](../Slides/fxi_theory_practice/img/bis_discretion_rule.PNG)
 *Source: [BIS 2021](https://www.bis.org/publ/mc_insights_fxinterventions.pdf)*
 
+
+## FX Intervention Size and Frequency
+
+To the best of our knowledge, there is no theoretical model providing guidance on the  optimal FX intervention  amount to buy or  sell on the  market, either during one intervention or a day (if multiple interventions per day).
+
+The general guidance is to intervene infrequently, with relatively large amounts, measured as share of the daily market turnover. The purpose is to:
+  * Maximize market impact
+  * Maximize the signaling effect
+  * Gain credibility
+
+To decide about the specific amount for a given intervention, it is critical to consider:
+  * The level of the foreign reserves of the central bank, and in particular, its buffer compared to the adequate reserves level (for instance, using the [IMF ARA metric](https://www.imf.org/external/datamapper/datasets/ARA) or any other metric)
+  * Assess the liquidity conditions and the FX market impact
+  * The amount is usually calibrated as percent of the daily FX market turnover
+
+Based on international practices, cumulated FX interventions during a day represent between 15% and 20% of daily market turnover, with some central banks intervening more than 50% of the daily market turnover 
+  * This amount represent between 0.3% and 0.8% of the monthly FX reserves
+
+For regular interveners, the frequency of interventions during "normal years" (excluding for instance COVID year) is around 10 to 15 days per year
+  * But can climb up to 80 business days per year in 2020!
+
+Results on the 2021 BIS Survey on FX intervention size and frequency
+![FX Intervention Size and Frequency](../Slides/fxi_theory_practice/img/bis_fxi_size.PNG)
+*Source: [BIS 2021](https://www.bis.org/publ/mc_insights_fxinterventions.pdf)*
+
+
+## Targeted vs Open-Market Interventions
+
+In general, FX interventions should be conducted via open-market interventions, in order to:
+  * Reduce market distortions
+  * Maximize the signaling effect, transparent operations
+  * Create an level-playing field for market participants to avoid market discrimination
+  * Reduce political pressure and interferences to supply a given participant with FX
+
+However, even if FX interventions are not targeted, banks take-up is unlikely to be uniform (and this is true for FX facilities too).
+
+In some very specific circumstances, some systemically important FX players (banks, large importers/exporters) may require targeted interventions, particularly when the volumes are so large that they would destabilize the market. This is the case, for instance, with large commodities exporters.
+
+
+## FX Instruments
+
+Typically, central banks use a set of instruments to conduct their interventions, including:
+  * FX spot
+  * FX forward and FX non-deliverable forwards (NDF)
+  * FX swaps
+  * FX repos
+  * FX options
+
+Deciding on whether to use spot or derivatives instruments should be based on the pros and cons of each instruments. 
+
+Typically, spot interventions are:
+  * Standard intervention on the spot market
+  * Provides a direct impact on the exchange rate, and no arbitrage transmission needed
+  * Provide immediate FX provision to the market
+  * However, spot FXI are limited by the size of the foreign reserves (when selling)
+  * In some countries, the spot market might be less liquid than the derivative market
+
+Some central banks might prefer to use derivatives instead of spot FXI, because:
+  * Derivative FXI provide an hedge against FX risk
+  * Derivative FXI influence the liquidity on the derivative market, which in turn improves the spot/derivative market arbitrage
+  * Preserve FX reserves if the derivatives are settled in local currency, as in the case of NDF or non-deliverable swaps
+  
+For instance, the BCB (Brazil) was using non-deliverables FX swaps which were:
+  * Settled in local currency and had no impact on foreign reserves
+  * Fills a market gap in longer-term derivatives instruments (serves as a risk management insurance)
+
+Using spot versus derivatives also entail **intertemporal and risk considerations**:
+  * **Spot FXI**: provides immediate FX provision to the market
+  * **Forward FXI**: transfer FX risk immediately
+  * **Option-based FIX**: provides an insurance against FX risk, that may or may not be exercised
+  * **Repos and swap-based FXI**: provide FX for the duration of the repo or swap, providing a hedge against maturity mismatches in FX
+
+Advanced economies (AE) and emerging markets economies (EME) differ on how they implement FX interventions. 
+
+In general, AEs tend to intervene exclusively in the spot market, and often, relatively infrequently, as they operate floating exchange rate regimes (at the exception of Switzerland in the early 2010s that maintained a floor on the CHF).
+
+However, many EMEs intervene in derivatives markets. For instance:
+  * The Bank of Thailand used forward market purchases to support the baht in 1997
+  * The Bank of Mexico sold put options on the USD to accumulate USD reserves in the 1990s
+  * Other Latin America countries in the 1990s also intervened via derivatives, such as Chile, Brazil, Peru
+  * More recently, a growing list of EMEs are still intervening on the derivatives market: Brazil, Colombia, India, Indonesia, Mexico, South-Africa, Thailand
+
+According to the 2021 BIS survey, the forward and swaps were the most used derivatives instruments by central banks for FX interventions, and around 40% of them were using derivatives frequently, and another third occasionally. 
+
+Results on the 2021 BIS Survey on FX intervention instruments
+![FX Intervention Size and Frequency](../Slides/fxi_theory_practice/img/bis_instruments.PNG)
+*Source: [BIS 2021](https://www.bis.org/publ/mc_insights_fxinterventions.pdf)*
+
+
+## Communication around FX interventions
 
 
 

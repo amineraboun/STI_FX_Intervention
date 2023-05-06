@@ -502,7 +502,11 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-implementation">FXI Implementation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-timing">FXI Timing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-rule-vs-discretion">FXI Rule vs Discretion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-rule-vs-discretion">FXI: Rule vs Discretion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-intervention-size-and-frequency">FX Intervention Size and Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeted-vs-open-market-interventions">Targeted vs Open-Market Interventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-instruments">FX Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-around-fx-interventions">Communication around FX interventions</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
@@ -889,7 +893,7 @@ document.write(`
 </ul>
 </section>
 <section id="fxi-rule-vs-discretion">
-<h2>FXI Rule vs Discretion<a class="headerlink" href="#fxi-rule-vs-discretion" title="Permalink to this heading">#</a></h2>
+<h2>FXI: Rule vs Discretion<a class="headerlink" href="#fxi-rule-vs-discretion" title="Permalink to this heading">#</a></h2>
 <p>Rule vs. discretion is an old debate in the academic literature (see <a class="reference external" href="https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf">Popper 2022</a> for a review)</p>
 <p>Often, central banks prefer to operate via <strong>un-disclosed, discretionary interventions</strong></p>
 <ul class="simple">
@@ -917,9 +921,103 @@ document.write(`
 <li><p>Policies are often <strong>episodic</strong>: interventions can be frequent during some periods and much less in other periods</p></li>
 <li><p>The FX interventions are largely geared towards “leaning against the wind”, to react against deviations from target</p></li>
 </ul>
-<p>The BIS conducts regular surveys on central banks practices in FX interventions and ask about rules vs discretion practice. It turns out that, out of the 21 central banks surveyed, only 1/3 used rules for intervening
-<img alt="CB Rules vs Discretions" src="../../_images/bis_discretion_rule.PNG" />
+<p>The BIS conducts regular surveys on central banks practices in FX interventions and ask about rules vs discretion practice.
+Out of the 21 central banks surveyed, only one thir of them used rules for intervening on the FX market.
+<img alt="CB Rules vs Discretion" src="../../_images/bis_discretion_rule.PNG" />
 <em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+</section>
+<section id="fx-intervention-size-and-frequency">
+<h2>FX Intervention Size and Frequency<a class="headerlink" href="#fx-intervention-size-and-frequency" title="Permalink to this heading">#</a></h2>
+<p>To the best of our knowledge, there is no theoretical model providing guidance on the  optimal FX intervention  amount to buy or  sell on the  market, either during one intervention or a day (if multiple interventions per day).</p>
+<p>The general guidance is to intervene infrequently, with relatively large amounts, measured as share of the daily market turnover. The purpose is to:</p>
+<ul class="simple">
+<li><p>Maximize market impact</p></li>
+<li><p>Maximize the signaling effect</p></li>
+<li><p>Gain credibility</p></li>
+</ul>
+<p>To decide about the specific amount for a given intervention, it is critical to consider:</p>
+<ul class="simple">
+<li><p>The level of the foreign reserves of the central bank, and in particular, its buffer compared to the adequate reserves level (for instance, using the <a class="reference external" href="https://www.imf.org/external/datamapper/datasets/ARA">IMF ARA metric</a> or any other metric)</p></li>
+<li><p>Assess the liquidity conditions and the FX market impact</p></li>
+<li><p>The amount is usually calibrated as percent of the daily FX market turnover</p></li>
+</ul>
+<p>Based on international practices, cumulated FX interventions during a day represent between 15% and 20% of daily market turnover, with some central banks intervening more than 50% of the daily market turnover</p>
+<ul class="simple">
+<li><p>This amount represent between 0.3% and 0.8% of the monthly FX reserves</p></li>
+</ul>
+<p>For regular interveners, the frequency of interventions during “normal years” (excluding for instance COVID year) is around 10 to 15 days per year</p>
+<ul class="simple">
+<li><p>But can climb up to 80 business days per year in 2020!</p></li>
+</ul>
+<p>Results on the 2021 BIS Survey on FX intervention size and frequency
+<img alt="FX Intervention Size and Frequency" src="../../_images/bis_fxi_size.PNG" />
+<em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+</section>
+<section id="targeted-vs-open-market-interventions">
+<h2>Targeted vs Open-Market Interventions<a class="headerlink" href="#targeted-vs-open-market-interventions" title="Permalink to this heading">#</a></h2>
+<p>In general, FX interventions should be conducted via open-market interventions, in order to:</p>
+<ul class="simple">
+<li><p>Reduce market distortions</p></li>
+<li><p>Maximize the signaling effect, transparent operations</p></li>
+<li><p>Create an level-playing field for market participants to avoid market discrimination</p></li>
+<li><p>Reduce political pressure and interferences to supply a given participant with FX</p></li>
+</ul>
+<p>However, even if FX interventions are not targeted, banks take-up is unlikely to be uniform (and this is true for FX facilities too).</p>
+<p>In some very specific circumstances, some systemically important FX players (banks, large importers/exporters) may require targeted interventions, particularly when the volumes are so large that they would destabilize the market. This is the case, for instance, with large commodities exporters.</p>
+</section>
+<section id="fx-instruments">
+<h2>FX Instruments<a class="headerlink" href="#fx-instruments" title="Permalink to this heading">#</a></h2>
+<p>Typically, central banks use a set of instruments to conduct their interventions, including:</p>
+<ul class="simple">
+<li><p>FX spot</p></li>
+<li><p>FX forward and FX non-deliverable forwards (NDF)</p></li>
+<li><p>FX swaps</p></li>
+<li><p>FX repos</p></li>
+<li><p>FX options</p></li>
+</ul>
+<p>Deciding on whether to use spot or derivatives instruments should be based on the pros and cons of each instruments.</p>
+<p>Typically, spot interventions are:</p>
+<ul class="simple">
+<li><p>Standard intervention on the spot market</p></li>
+<li><p>Provides a direct impact on the exchange rate, and no arbitrage transmission needed</p></li>
+<li><p>Provide immediate FX provision to the market</p></li>
+<li><p>However, spot FXI are limited by the size of the foreign reserves (when selling)</p></li>
+<li><p>In some countries, the spot market might be less liquid than the derivative market</p></li>
+</ul>
+<p>Some central banks might prefer to use derivatives instead of spot FXI, because:</p>
+<ul class="simple">
+<li><p>Derivative FXI provide an hedge against FX risk</p></li>
+<li><p>Derivative FXI influence the liquidity on the derivative market, which in turn improves the spot/derivative market arbitrage</p></li>
+<li><p>Preserve FX reserves if the derivatives are settled in local currency, as in the case of NDF or non-deliverable swaps</p></li>
+</ul>
+<p>For instance, the BCB (Brazil) was using non-deliverables FX swaps which were:</p>
+<ul class="simple">
+<li><p>Settled in local currency and had no impact on foreign reserves</p></li>
+<li><p>Fills a market gap in longer-term derivatives instruments (serves as a risk management insurance)</p></li>
+</ul>
+<p>Using spot versus derivatives also entail <strong>intertemporal and risk considerations</strong>:</p>
+<ul class="simple">
+<li><p><strong>Spot FXI</strong>: provides immediate FX provision to the market</p></li>
+<li><p><strong>Forward FXI</strong>: transfer FX risk immediately</p></li>
+<li><p><strong>Option-based FIX</strong>: provides an insurance against FX risk, that may or may not be exercised</p></li>
+<li><p><strong>Repos and swap-based FXI</strong>: provide FX for the duration of the repo or swap, providing a hedge against maturity mismatches in FX</p></li>
+</ul>
+<p>Advanced economies (AE) and emerging markets economies (EME) differ on how they implement FX interventions.</p>
+<p>In general, AEs tend to intervene exclusively in the spot market, and often, relatively infrequently, as they operate floating exchange rate regimes (at the exception of Switzerland in the early 2010s that maintained a floor on the CHF).</p>
+<p>However, many EMEs intervene in derivatives markets. For instance:</p>
+<ul class="simple">
+<li><p>The Bank of Thailand used forward market purchases to support the baht in 1997</p></li>
+<li><p>The Bank of Mexico sold put options on the USD to accumulate USD reserves in the 1990s</p></li>
+<li><p>Other Latin America countries in the 1990s also intervened via derivatives, such as Chile, Brazil, Peru</p></li>
+<li><p>More recently, a growing list of EMEs are still intervening on the derivatives market: Brazil, Colombia, India, Indonesia, Mexico, South-Africa, Thailand</p></li>
+</ul>
+<p>According to the 2021 BIS survey, the forward and swaps were the most used derivatives instruments by central banks for FX interventions, and around 40% of them were using derivatives frequently, and another third occasionally.</p>
+<p>Results on the 2021 BIS Survey on FX intervention instruments
+<img alt="FX Intervention Size and Frequency" src="../../_images/bis_instruments.PNG" />
+<em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+</section>
+<section id="communication-around-fx-interventions">
+<h2>Communication around FX interventions<a class="headerlink" href="#communication-around-fx-interventions" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="resources">
@@ -1029,7 +1127,11 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-implementation">FXI Implementation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-timing">FXI Timing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-rule-vs-discretion">FXI Rule vs Discretion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-rule-vs-discretion">FXI: Rule vs Discretion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-intervention-size-and-frequency">FX Intervention Size and Frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeted-vs-open-market-interventions">Targeted vs Open-Market Interventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-instruments">FX Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-around-fx-interventions">Communication around FX interventions</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
