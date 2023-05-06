@@ -502,6 +502,7 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-implementation">FXI Implementation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-timing">FXI Timing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-rule-vs-discretion">FXI Rule vs Discretion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
@@ -517,7 +518,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><span class="xref myst">Full slides of the course</span></p>
+  <p><a class="reference download internal" download="" href="../../_downloads/b6396ae00dac43594a3694a85a36d6ea/fxi_theory_practice.pdf"><span class="xref download myst">Full slides of the course</span></a></p>
 <!-- https://cheatography.com/xaon/cheat-sheets/emacs-markdown-mode/  -->
 <section class="tex2jax_ignore mathjax_ignore" id="theory-of-fx-interventions">
 <h1>Theory of FX Interventions<a class="headerlink" href="#theory-of-fx-interventions" title="Permalink to this heading">#</a></h1>
@@ -810,22 +811,23 @@ document.write(`
 </section>
 <section id="the-portfolio-rebalancing-channel">
 <h3>The portfolio rebalancing channel<a class="headerlink" href="#the-portfolio-rebalancing-channel" title="Permalink to this heading">#</a></h3>
+<p>The portfolio rebalancing channel occurs when the central bank manages to shift the relative supply of foreign versus domestic assets on the market.</p>
 <ul class="simple">
-<li><p>The portfolio rebalancing channel occurs when the central bank manages to shift the relative supply of foreign versus domestic assets on the market.
-Because the supply changes, the expected FX returns and FX level is changing as well.
-* For example, after a sterilized FXI selling-side, the central bank increases the supply of foreign assets, depreciating the foreign currency</p></li>
-<li><p>Sterilized FX interventions also alter the <strong>risk characteristics</strong> of foreign/domestic assets</p>
+<li><p>Because the supply changes, the expected FX returns and FX level is changing as well.</p>
 <ul>
+<li><p>For example, after a sterilized FXI selling-side, the central bank increases the supply of foreign assets, depreciating the foreign currency</p></li>
+</ul>
+</li>
+</ul>
+<p>Sterilized FX interventions also alter the <strong>risk characteristics</strong> of foreign/domestic assets</p>
+<ul class="simple">
 <li><p>Domestic investors are exposed to FX risk when holding foreign assets</p></li>
 <li><p>Sterilized interventions influence the equilibrium exchange rate via a change in the <strong>risk premia</strong></p></li>
 </ul>
-</li>
-<li><p>The portfolio rebalancing channel is maximized when:</p>
-<ul>
+<p>The portfolio rebalancing channel is maximized when:</p>
+<ul class="simple">
 <li><p>Investors <strong>diversify their holdings</strong> domestic/foreign as a function of <strong>expected returns and variance of returns</strong></p></li>
 <li><p><strong>Foreign and domestic assets are imperfect substitutes</strong>: the uncovered interest parity doesn’t hold</p></li>
-</ul>
-</li>
 </ul>
 <table class="table">
 <thead>
@@ -858,46 +860,81 @@ Because the supply changes, the expected FX returns and FX level is changing as 
 <p class="admonition-title">Challenges</p>
 <p>Countries, and in particular EMEs, face implementations issues when framing their FX interventions strategy</p>
 </div>
-<p>Typically, the common challenges are:</p>
+<p>Typically, the common challenges faced by central banks are:</p>
 <ul class="simple">
 <li><p>How to decide about the appropriate <strong>timing</strong> of FX interventions?</p></li>
-<li><p>What is the <strong>optimal FXI size</strong> to maximize efficiency while preserving the sustainability of the central banks’ foreign reserves?</p></li>
-<li><p><strong>Instruments</strong>: intervening through spot or derivatives, or both?</p></li>
 <li><p>Should interventions be <strong>discretionary or follow rules</strong>?</p>
 <ul>
 <li><p>When using rules, what kind of rules?</p></li>
 </ul>
 </li>
+<li><p>What is the <strong>optimal FXI size</strong> to maximize efficiency while preserving the sustainability of the central banks’ foreign reserves?</p></li>
+<li><p><strong>Instruments</strong>: intervening through spot or derivatives, or both?</p></li>
 <li><p>Should CBs provide targeted FX provision to specific banks or engage in <strong>open-market FX interventions</strong>?</p></li>
 <li><p>Under what conditions is it appropriate to deploy intervention and capital controls jointly?</p></li>
 </ul>
 <section id="fxi-timing">
 <h2>FXI Timing<a class="headerlink" href="#fxi-timing" title="Permalink to this heading">#</a></h2>
+<p>Deciding on the right FXI timing is critical and entail significant risks:</p>
 <ul class="simple">
-<li><p>Deciding on the right FXI timing is critical and entail significant risks:</p>
-<ul>
-<li><p>Don’t want to intervene too often, at the risk to create market distortions, lose credibility and exhaust FX reserves</p></li>
-<li><p>Still, need to intervene often enough to preserve financial stability and mitigate volatility, for instance</p></li>
-</ul>
-</li>
+<li><p>The central bank doesn’t want to intervene too often, at the risk to create market distortions, lose credibility and exhaust FX reserves</p></li>
+<li><p>Still, need to intervene often enough to preserve financial stability and mitigate volatility, for instance, when domestic agents are unsufficiently hedged</p></li>
+<li><p>When is the right time for intervening? Monitoring market conditions, spotting market dysfunctions, exchanging information with market participants is often critical</p></li>
 <li><p>Some simple rules with fixed thresholds (e.g. intervening when the daily variation exceeds +/- 2%) often guidance, at the risk of creating speculation</p>
 <ul>
 <li><p><a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081">Lafarguette and Veyrune (2021)</a> designed a rule to decide on the optimal triggers for FX interventions based on risk level</p></li>
+<li><p>Even under a discretionary framework, quantitative-based metrics can serve as a useful guide</p></li>
 </ul>
 </li>
 </ul>
+</section>
+<section id="fxi-rule-vs-discretion">
+<h2>FXI Rule vs Discretion<a class="headerlink" href="#fxi-rule-vs-discretion" title="Permalink to this heading">#</a></h2>
+<p>Rule vs. discretion is an old debate in the academic literature (see <a class="reference external" href="https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf">Popper 2022</a> for a review)</p>
+<p>Often, central banks prefer to operate via <strong>un-disclosed, discretionary interventions</strong></p>
+<ul class="simple">
+<li><p>Idea to “surprise the market”</p></li>
+<li><p>No commitment for intervening, given the central bank some perception that it controls better its level of foreign reserves</p></li>
+<li><p>In general the empirical evidence suggest that the effect of the “surprises” triggered by discretionary FX interventions fades very fast, within hours</p></li>
+</ul>
+<p>On the contrary, some central banks use <strong>rule-based systems</strong> to decide on their FX interventions timing:</p>
+<ul class="simple">
+<li><p>Indicates no explicit intention to target an exchange rate level</p></li>
+<li><p>Aligned with the monetary objectives (if the rule is correctly defined)</p></li>
+<li><p>Maximize the signaling channel, help agents forming their expectations</p></li>
+<li><p>Helps the central bank to shield-off political pressures</p></li>
+<li><p>Should be properly designed to avoid speculative behavior</p></li>
+</ul>
+<p>A few countries have implemented rules-based interventions:</p>
+<ul class="simple">
+<li><p>Mexico, Chile and Columbia: these countries have implemented rules-based programs of pre-announced daily purchases/sales of FX</p></li>
+<li><p>Czech Republic, Swizterland and Russia (early 2010s) used to have “automatic interventions” on electronic trading platforms</p></li>
+</ul>
+<p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12028">Academic evidence, Dominguez et al. 2013</a> from the Czech National Bank Interventions suggest that rule-based interventions were more effective in sterring the exchange rate than discretionary interventions</p>
+<p>In practice, assessing central banks’ rules vs. discretion in practice is difficult, because:</p>
+<ul class="simple">
+<li><p>Central banks often don’t follow a rigid rule: it is therefore difficult to quantify their objectives and rationales</p></li>
+<li><p>Policies are often <strong>episodic</strong>: interventions can be frequent during some periods and much less in other periods</p></li>
+<li><p>The FX interventions are largely geared towards “leaning against the wind”, to react against deviations from target</p></li>
+</ul>
+<p>The BIS conducts regular surveys on central banks practices in FX interventions and ask about rules vs discretion practice. It turns out that, out of the 21 central banks surveyed, only 1/3 used rules for intervening
+<img alt="CB Rules vs Discretions" src="../../_images/bis_discretion_rule.PNG" />
+<em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="resources">
 <h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
+<p>I present below a few key interesting resources regarding central banks interventions on the FX market:</p>
 <ul class="simple">
 <li><p>A textbook presentation of foreing exchange interventions can be found in Sarno and Taylor (2012): <a class="reference external" href="https://www.cambridge.org/core/books/abs/economics-of-exchange-rates/official-intervention-in-the-foreign-exchange-market/539435B26391C092195233098F887850">link</a></p></li>
 <li><p>The IMF has published a guidance note on FX interventions on the spot and derivatives market (2021): <a class="reference external" href="https://www.imf.org/-/media/Files/Publications/covid19-special-notes/en-special-series-on-covid-19-central-bank-support-for-foreign-exchange-markets.ashx">link</a></p></li>
 <li><p>The BIS publishes interesting papers reflecting BIS surveys conducted with central banks. For instance (2019): <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap104b-rh.pdf">link</a></p></li>
 <li><p>A recent and quite comprehensive database on FX Interventions (2021), compiled by IMF colleagues: <a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/19/Foreign-Exchange-Intervention-A-Dataset">link</a></p></li>
-<li><p>Kathryn Dominguez, professor at U-Michigan, specialized on FX interventions: <a class="reference external" href="http://www-personal.umich.edu/~kathrynd/index.html">link</a></p></li>
-<li><p>Popper (2022) provides a very complete literature review on FX Interventions: <a class="reference external" href="https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf">link</a></p></li>
 <li><p>Lafarguette and Veyrune (2021) designed a risk-based framework for FX interventions: <a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081">link</a></p></li>
+<li><p>Popper (2022) provides a very complete literature review on FX Interventions: <a class="reference external" href="https://www.ssc.wisc.edu/~mchinn/Popper_FXI_apr22.pdf">link</a></p></li>
+<li><p>Kathryn Dominguez, professor at U-Michigan, specialized on FX interventions: <a class="reference external" href="http://www-personal.umich.edu/~kathrynd/index.html">link</a></p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0022199618300771">Kuersteiner et al. (2018)</a> provide an in-depth analysis of the effectiveness of sterilized foreign exchange interventions in Colombia, using tick-by-tick data for a clean identification of the FXI impact</p></li>
+<li><p>An interesting academic paper with a policy angle, oriented towards the comparison between FX interventions in Israel and in Switzerland: <a class="reference external" href="https://link.springer.com/article/10.1007/s11079-019-09522-0">Cukierman 2019</a></p></li>
 <li><p>General useful resource: the IMF Glossary <a class="reference external" href="https://www.imf.org/en/About/Glossary">link</a></p></li>
 </ul>
 </section>
@@ -992,6 +1029,7 @@ Because the supply changes, the expected FX returns and FX level is changing as 
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-implementation">FXI Implementation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-timing">FXI Timing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fxi-rule-vs-discretion">FXI Rule vs Discretion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
