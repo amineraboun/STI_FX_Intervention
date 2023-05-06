@@ -1,4 +1,4 @@
-% Time-stamp: <2023-05-06 16:58:45 A13258Q>
+% Time-stamp: <2023-05-06 18:15:20 A13258Q>
 % Romain Lafarguette 2020, https://romainlafarguette.github.io/
 
 %% ---------------------------------------------------------------------------
@@ -668,7 +668,7 @@
   \frametitle{FX Intervention Size}
   \begin{wideitemize}
   \item To the best of my knowledge, there is no theory determining the optimal amount
-  \item The general rule is to intervene infrequently, with relatively large amounts (as share of daily market turnover)
+  \item The general guidance is to intervene infrequently, with relatively large amounts (as share of daily market turnover)
     \begin{itemize}
     \item Impact the market
     \item Maximize signaling effect
@@ -676,9 +676,9 @@
     \end{itemize}
   \item Yet, to decide on a specific amount, it is critical to:
     \begin{itemize}
-    \item Consider the level of foreign reserves, and the adequate reserves level (e.g. ARA metric or any other metric)
-    \item Calibrate as percent of daily FX market turnover
+    \item Consider the level of foreign reserves, and the adequate reserves level (e.g. \href{https://www.imf.org/external/datamapper/datasets/ARA}{\beamergotobutton{ARA metric}} or any other metric)
     \item Assess the liquidity conditions and the FX market impact
+    \item Calibrate as percent of daily FX market turnover      
     \end{itemize}
   \end{wideitemize}
 \end{frame}
@@ -688,7 +688,7 @@
   \frametitle{Orders of Magnitude}
   \begin{wideitemize}
   \item The BIS has conducted a survey of central banks interventions in 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}
-  \item On average, cumulated FXI intervention during a day represent between 15\% and 20\% of market turnover, with some central banks exceeding 50\%
+  \item On average, cumulated FX interventions during a day represent between 15\% and 20\% of market turnover, with some central banks exceeding 50\%
     \begin{itemize}
     \item Representing between 0.3\% and 0.8\% of the monthly FX reserves
     \end{itemize}
@@ -722,13 +722,25 @@
 
 
 \begin{frame}
+  \frametitle{FX Spot}
+  \begin{wideitemize}
+  \item Standard transaction on the spot market
+  \item Direct impact on the exchange rate, no arbitrage transmission needed  
+  \item Provide immediate FX provision to the market
+  \item However, spot FXI are limited by the size of the foreign reserves (when selling)
+  \item In some countries, the spot market might be less liquid than the derivative market
+  \end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
   \frametitle{Spot versus Derivatives?}
   \begin{wideitemize}
   \item Using derivative markets allows the central bank to:
     \begin{itemize}
-    \item Provide hedges against FX risk
+    \item Provide an hedge against FX risk
     \item Influence derivative market liquidity (improve spot/derivative market arbitrage)
-    \item May limit the use of FX reserves if the derivatives are settled in local currency (NDF)
+    \item Preserve FX reserves if the derivatives are settled in local currency (NDF)
     \end{itemize}
   \item Example: the use of non-deliverables FX swaps (NDS) by Brazil:
     \begin{itemize}
@@ -736,17 +748,6 @@
     \item Fills market gap in longer-term derivative instruments (serves as risk management insurance)
     \end{itemize}
   \item Also: Use of forwards, non-deliverables forwards, options, etc.
-  \end{wideitemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{FX Spot}
-  \begin{wideitemize}
-  \item Standard transaction on the spot market
-  \item Direct impact on the exchange rate, no arbitrage transmission needed  
-  \item Provide immediate provision
-  \item Limited by the size of the foreign reserves when selling
-  \item In some countries, the spot market might be less liquid than the derivative market
   \end{wideitemize}
 \end{frame}
 
@@ -790,11 +791,11 @@
 
 
 \begin{frame}
-  \frametitle{Spot vs. Derivatives: Intertemporal Considerations}
+  \frametitle{Spot vs. Derivatives: Intertemporal and Risk Considerations}
   \begin{wideitemize}
     \item \textbf{Spot FXI}: provide immediate FX provision
-    \item \textbf{Forward FXI}: provide FX at a pre-defined future point in time
-    \item \textbf{Option-based FXI}: provide FX during a certain, pre-specified period, in particular turbulent times
+    \item \textbf{Forward FXI}: transfer FX risk immediately
+    \item \textbf{Option-based FXI}: provides an insurance against FX risk, that may or may not be exercised
     \item \textbf{Repo and swap-based FXI}: provide FX for the duration of the repo or swap, providing a hedge against maturity mismatches in FX
   \end{wideitemize}
 \end{frame}
@@ -806,11 +807,11 @@
     \item AEs tend to intervene exclusively in the spot market
     \item Many EME countries intervene in derivative markets
       \begin{itemize}
-      \item First mover: Bank of Spain sold put options on the peseta to fight devaluation pressures in 1993
       \item Bank of Thailand used forward market purchases to support the baht in 1997
       \item Bank of Mexico sold put options on the USD to accumulate USD reserves in 1990s
-      \item Other Latin American countries in the 1990s: Chile, Brazil, Peru
+      \item Other Latin America countries in the 1990s also intervened via derivatives, such as Chile, Brazil, Peru
       \item More recently, a growing list of EMEs: Brazil, Colombia, India, Indonesia, Mexico, South-Africa, Thailand
+      \item First mover: Bank of Spain sold put options on the peseta to fight devaluation pressures in 1993
       \end{itemize}
   \end{wideitemize}
 \end{frame}
@@ -823,18 +824,18 @@
 \end{frame}
 
 
-
 \begin{frame}
   \frametitle{Targeted vs. Open Market Interventions}
   \begin{wideitemize}
-    \item Systematically important banks may require targeted FX provision under specific circumstances
-    \item Even if FX provision facilities are not "targeted", bank take-up is unlikely to be uniform
-    \item Issues:
+    \item In general, FX interventions should be conducted via open-market interventions, in order to:
       \begin{itemize}
-      \item Potential market distortions and market discriminations among institutions
-      \item Political pressures
+      \item Reduce market distortions
+      \item Maximize the signaling effect, transparent operations
+      \item Create an level-playing field for market participants to avoid market discrimination
+      \item Reduce political pressure and interferences to supply a given participant with FX
       \end{itemize}
-  \item Open-market more transparent and less distortive
+    \item However, even if FX interventions are not targeted, banks take-up is unlikely to be uniform (and this is true for FX facilities too)
+    \item In some very specific circumstances, some systemically important FX players (banks, large importers/exporters) may require targeted interventions
   \end{wideitemize}
 \end{frame}
 
