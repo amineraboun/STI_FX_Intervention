@@ -1,4 +1,4 @@
-% Time-stamp: <2023-05-06 18:15:20 A13258Q>
+% Time-stamp: <2023-05-06 19:10:33 A13258Q>
 % Romain Lafarguette 2020, https://romainlafarguette.github.io/
 
 %% ---------------------------------------------------------------------------
@@ -642,6 +642,7 @@
     \end{itemize}
   \item Evidence from the Czech National Bank \href{https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12028}{\beamergotobutton{Link}} "automated interventions" suggest that rule-based interventions were more effective in steering the FX rate than discretionary interventions
   \item In general, empirical evidence suggest that the effect of discretionary, "surprise" intervention fades very fast    
+  \item The impact of "surprise interventions" may be detrimental, especially when liquidity is scarce and volatility already high
   \end{wideitemize}  
 \end{frame}
 
@@ -839,6 +840,23 @@
   \end{wideitemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Profitability of FX Interventions}
+  \begin{wideitemize}
+
+  \item Empirical evidence suggests that profits vary significantly according to the sample periodm but generally, FX intervention is profitable as:
+    \begin{itemize}
+    \item When selling, the central bank is providing FX liquidity at a time of stress, hence can sell expensive
+    \item When buying, the central bank is absorbing FX liquidity when liquidity is ample, hence can buy cheap
+    \end{itemize}
+  \item \href{https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081}{Lafarguette and Veyrune 2021} show that, in the case of Mexico:
+    \begin{itemize}
+    \item Rules-based FX interventions are more profitable than discretionary rules
+    \item Their risk-based intervention rule is the most profitable, as the central bank is buying/selling on the tails of the FX distribution
+    \end{itemize}    
+  \end{wideitemize}  
+\end{frame}
+
 
 \subsection{Communication}
 \begin{frame}
@@ -846,7 +864,7 @@
   \begin{wideitemize}
   \item Little consensus among central banks, in particular on ex-post communication (data, amounts, etc.)
   \item \textbf{Signaling} is an important transmission channel of foreign exchange interventions and can only be achieved with communication and transparency
-  \item The "surprise the market" effect can be detrimental, especially when liquidity is scarce and risk high
+  \item The "surprise the market" effect can be detrimental, especially when liquidity is scarce and volatility is already high
     \begin{itemize}
     \item No evidence in the literature that secret and unexpected interventions are more efficient, after the initial first hours
     \item On the contrary, unexpected interventions fade quite fast
@@ -906,26 +924,26 @@
     \begin{itemize}
     \item Most likely to occur in reaction to unwanted exchange rate changes
     \end{itemize}
-    \item The decision to intervene may also be part of a broader set of policy actions (monetary and/or fiscal policy, capital controls), potentially leading to an \textbf{overestimation bias for intervention}
-    \item Studies using high-frequency data (daily, intra-daily) maybe be less subject to the \textbf{simultaneity bias} but can't assess whether intervention has lasting effects
+    \item The decision to intervene may also be part of a broader set of policy actions (monetary and/or fiscal policy, capital controls), potentially leading to an \textbf{overestimation bias for effectiveness}
+    \item Studies using high-frequency data (intra-daily) maybe be less subject to the \textbf{simultaneity bias} but can't assess whether intervention has lasting effects
   \end{wideitemize}  
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Criteria for Success}
-  \begin{wideitemize}
-    \item FXI should significantly influence either the relative price or the volatility of the currency in the appropriate direction
-      \begin{itemize}
-      \item How large? How persistent? What is the counterfactual
-      \end{itemize}
-    \item Initial approach: non-parametric test by grouping FXI into "episodes" and test whether the exchange rate movements before/after are consistent with the objectives (Dominguez and Frankel 1993, Fatum and Hutchinson 2003)
-      \begin{itemize}
-      \item Concern: timing and duration of intervetion episodes are likely to be \textbf{endogeneous}
-      \item According to these (old) studies, interventions are generally effective in moving exchange rate in the appropriate direction
-      \end{itemize}
-  \end{wideitemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Criteria for Success}
+%   \begin{wideitemize}
+%     \item FXI should significantly influence either the relative price or the volatility of the currency in the appropriate direction
+%       \begin{itemize}
+%       \item How large? How persistent? What is the counterfactual
+%       \end{itemize}
+%     \item Initial approach: non-parametric test by grouping FXI into "episodes" and test whether the exchange rate movements before/after are consistent with the objectives (Dominguez and Frankel 1993, Fatum and Hutchinson 2003)
+%       \begin{itemize}
+%       \item Concern: timing and duration of intervetion episodes are likely to be \textbf{endogeneous}
+%       \item According to these (old) studies, interventions are generally effective in moving exchange rate in the appropriate direction
+%       \end{itemize}
+%   \end{wideitemize}
+% \end{frame}
 
 
 \begin{frame}
@@ -933,16 +951,13 @@
   \begin{wideenumerate}
   \item 60\% success in the ability to \textbf{influence the direction of the exchange rate}
     \begin{itemize}
-    \item Higher if interventions are large and are accompanied by oral intervention
+    \item Higher if interventions are large and are accompanied by pre-announced communication
     \end{itemize}
   \item 80\% success in \textbf{smoothing the path of the exchange rate}
     \begin{itemize}
     \item Reduction in exchange rate variation in the week after the intervention vs the week before
     \end{itemize}
-  \item 80\% success to stability the exchange rate in a narrow band
-    \begin{itemize}
-    \item 2\% band, during the next two weeks
-    \end{itemize}
+  \item 80\% success in \textbf{stabilizing the exchange rate} in a 2\% band, during the next two weeks
   \end{wideenumerate}
 \end{frame}
 
@@ -959,26 +974,15 @@
     \end{itemize}
   \item \textbf{Counterfactual matching approach}: construct a synthetic group as counterfactual
     \begin{itemize}
+    \item Counterfactual uses data from other countries, with weights based on the co-movement with the currency of interest            
     \item Not appropriate for frequent intervention but useful at the event level
-    \item Counterfactual uses data from other countries, with weights based on the pre-announced co-movement with the currency of interest
-    \item Problem in the case of a global shock
+    \item Can not be used in the case of a global shock
     \end{itemize}
     
   \end{wideitemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Profitability of Interventions}
-  \begin{wideitemize}
-  \item \textbf{Friedman (1953)}: a successful central bank in stabilizing the exchange rate should make a profit at the expense of speculators
-    \begin{itemize}
-    \item Suggesting that unprofitable interventions are ineffective
-    \end{itemize}
-  \item \textbf{Edison (1993)}: they show, however, that profitable interventions may have no influence on exchange rates, suggesting flawed Friedman criteria
-  \item Empirical evidence suggests that profits vary significantly according to the sample periodm but generally, intervention is profitable
-  \end{wideitemize}  
-\end{frame}
 
 
 \subsection{FX Interventions and Exchange Rate Management}
