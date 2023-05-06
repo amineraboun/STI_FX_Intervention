@@ -1,4 +1,4 @@
-% Time-stamp: <2023-04-29 19:48:10 A13258Q>
+% Time-stamp: <2023-05-06 16:58:45 A13258Q>
 % Romain Lafarguette 2020, https://romainlafarguette.github.io/
 
 %% ---------------------------------------------------------------------------
@@ -172,7 +172,6 @@
   \end{itemize}
     
 \end{frame}
-
 
 
 \begin{frame}
@@ -361,7 +360,6 @@
 \end{frame}
 
 
-
 \subsection{FX Interventions Typology}
 \begin{frame}
   \frametitle{FX Interventions Typology}
@@ -532,6 +530,7 @@
     \item Shield from political repercussions
     \end{itemize}
   \item As discussed later, empirical evidence tend to suggest that the signaling effect indeed plays an important role, and that secret FX interventions should, in general, be avoided
+    \end{wideitemize}
 \end{frame}
 
    
@@ -574,38 +573,93 @@
 \end{frame}
 
 
+
+
 \section{Implementation}
 
 \begin{frame}
-  \frametitle{Challenges}
+  \frametitle{Challenges for FX Interventions}
 
-%   Typically, central banks, in particular among EMs, face a set of challenges:
-%   \begin{itemize}
-%     \item What is the appropriate timing for FX interventions?   
-%     \item FXI size to preserve FX reserves while maximizing efficiency?
-%     \item Should intervention be discretionary or follow rules?
-%       \begin{itemize}
-%       \item If rules, what kind of rules?
-%       \end{itemize}
-%   \item What should guide the decision between spot vs derivatives instruments?
-%   \item Should CBs provide targeted FX provision to specific banks or engage in open-market FX interventions?
-%   \item Under what conditions is it appropriate to deploy intervention and capital controls jointly?
-%   \end{itemize}
+  Typically, central banks, in particular among EMs, face a set of challenges:
+  \begin{itemize}
+  \item What is the appropriate timing for FX interventions?
+  \item Should intervention be discretionary or follow rules?
+      \begin{itemize}
+      \item If rules, what kind of rules?
+      \end{itemize}    
+    \item What should be the FXI size to preserve FX reserves while maximizing efficiency?
+  \item What should guide the decision between spot vs derivatives instruments?
+  \item Should CBs provide targeted FX provision to specific banks or engage in open-market FX interventions?
+  \item Under what conditions is it appropriate to deploy intervention and capital controls jointly?
+  \end{itemize}
 \end{frame}
 
-\subsection{FXI Timing}
+\subsection{FXI Timing, Rule vs. Discretion}
+\begin{frame}
+  \frametitle{FXI Timing}
+  \begin{wideitemize}
+  \item Deciding on the right FXI timing is difficult and entail significant risks:
+    \begin{itemize}
+    \item Don't want to intervene too often, at the risk to create market distortions, lose credibility and exhaust FX reserves
+    \item Still, need to intervene often enough to preserve financial stability and mitigate volatility, for instance
+    \end{itemize}
+  \item Some simple rules with fixed thresholds (e.g. intervening when the daily variation exceeds +/- 2\%) often guidance, at the risk of creating speculation
+  \item \href{https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081}{Lafarguette and Veyrune (2021)} designed a rule to decide on the optimal triggers for FX interventions based on risk level  
+  \end{wideitemize}
+\end{frame}
+
 
 \begin{frame}
-%   \frametitle{FXI Timing}
-%   \begin{wideitemize}
-%   \item Deciding on the right FXI timing is difficult and entail significant risks:
-%     \begin{itemize}
-%     \item Don't want to intervene too often, at the risk to create market distortions, lose credibility and exhaust FX reserves
-%     \item Still, need to intervene often enough to preserve financial stability and mitigate volatility, for instance
-%     \end{itemize}
-%   \item Some simple rules with fixed thresholds (e.g. intervening when the daily variation exceeds +/- 2\%) often guidance, at the risk of creating speculation
-%   \item \href{https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081}{Lafarguette and Veyrune (2021)} designed a rule to decide on the optimal triggers for FX interventions based on risk level  
-%   \end{wideitemize}
+  \frametitle{Rule vs. Discretion}
+
+  \begin{wideitemize}
+  \item Often, central banks prefer to operate via un-disclosed, discretionary interventions
+    \begin{itemize}
+    \item Idea to "surprise the market"
+    \item No commitment of intervention, perceived control on FX reserves level
+    \end{itemize}
+  \item On the contrary, some central banks use rule-based systems:
+    \begin{itemize}
+    \item Indicates no explicit intention to target an exchange rate level
+    \item Aligned with the monetary objectives (if the rule is correctly defined)
+    \item Maximize signaling channel, help agents forming their expectations
+    \item Helps the central bank to shield-off political pressures
+    \item Should be properly designed to avoid speculative behavior
+    \end{itemize}
+  \end{wideitemize}  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Rule vs. Discretion}
+
+  \begin{wideitemize}
+
+  \item Countries that have implemented rules-based interventions:
+    \begin{itemize}
+    \item Mexico, Chile and Columbia: rules-based programs of pre-announced daily purchases/sales of FX
+    \item Czech Republic and Russia used to have "automatic interventions"
+    \end{itemize}
+  \item Evidence from the Czech National Bank \href{https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12028}{\beamergotobutton{Link}} "automated interventions" suggest that rule-based interventions were more effective in steering the FX rate than discretionary interventions
+  \item In general, empirical evidence suggest that the effect of discretionary, "surprise" intervention fades very fast    
+  \end{wideitemize}  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{BIS Survey on Rule vs Discretion}
+  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/bis_discretion_rule.PNG}}
+  \medskip
+  \emph{Source: BIS 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Assessing Central Banks' Rules/Discretion in Practice}
+  \begin{wideitemize}
+    \item Central banks often don't follow a rigid rule: it is difficult to quantify their objectives and rationales
+    \item Policies are often \textbf{episodic}: frequent in some periods and then none in other periods
+    \item FX interventions largely "lean against the wind" to react against deviations from target
+  \end{wideitemize}  
 \end{frame}
 
 
@@ -769,60 +823,6 @@
 \end{frame}
 
 
-\subsection{Rule vs. Discretion}
-
-\begin{frame}
-  \frametitle{Rule vs. Discretion}
-
-  \begin{wideitemize}
-  \item Often, central banks prefer to operate via un-disclosed, discretionary interventions
-    \begin{itemize}
-    \item Idea to "surprise the market"
-    \item No commitment of intervention, perceived control on FX reserves level
-    \end{itemize}
-  \item On the contrary, some central banks use rule-based systems:
-    \begin{itemize}
-    \item Indicates no explicit intention to target an exchange rate level
-    \item Aligned with the monetary objectives
-    \item Maximize signaling channel, help agents forming their expectations
-    \item Immune to political pressures
-    \item Depending on the set-up might give room to speculators
-    \end{itemize}
-  \end{wideitemize}  
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Rule vs. Discretion}
-
-  \begin{wideitemize}
-
-  \item Countries that have implemented rules-based interventions:
-    \begin{itemize}
-    \item Mexico, Chile and Columbia: rules-based programs of pre-announced daily purchases/sales of FX
-    \item Czech Republic and Russia used to have "automatic interventions"
-    \end{itemize}
-  \item Evidence from the Czech National Bank \href{https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12028}{\beamergotobutton{Link}} "automated interventions" suggest that rule-based interventions were more effective in steering the FX rate than discretionary interventions
-  \item In general, empirical evidence suggest that the effect of discretionary, "surprise" intervention fades very fast    
-  \end{wideitemize}  
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{BIS Survey on Rule vs Discretion}
-  \makebox[\linewidth]{\includegraphics[width=0.75\paperwidth]{img/bis_discretion_rule.PNG}}
-  \medskip
-  \emph{Source: BIS 2021 \href{https://www.bis.org/publ/mc_insights_fxinterventions.pdf}{\beamergotobutton{Link}}}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Assessing Central Banks' Rules/Discretion in Practice}
-  \begin{wideitemize}
-    \item Central banks often don't follow a rigid rule: it is difficult to quantify their objectives and rationales
-    \item Policies are often \textbf{episodic}: frequent in some periods and then none in other periods
-    \item Operations largely "lean against the wind" to react against deviations from target
-  \end{wideitemize}  
-\end{frame}
 
 \begin{frame}
   \frametitle{Targeted vs. Open Market Interventions}
@@ -853,8 +853,6 @@
     \end{itemize}    
   \end{wideitemize}
 \end{frame}
-
-
 
 \begin{frame}
   \frametitle{BIS Survey on Ex-Post Communication}

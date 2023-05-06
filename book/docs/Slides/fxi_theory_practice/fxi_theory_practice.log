@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  29 APR 2023 19:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  6 MAY 2023 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1425,7 +1425,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 114
 (C:\Users\A13258Q\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<img/imf_logo.pdf, id=35, 314.17375pt x 320.19624pt>
+<img/imf_logo.pdf, id=91, 314.17375pt x 320.19624pt>
 File: img/imf_logo.pdf Graphic file (type pdf)
 <use img/imf_logo.pdf>
 Package pdftex.def Info: img/imf_logo.pdf  used on input line 114.
@@ -1445,7 +1445,7 @@ Overfull \vbox (17.52269pt too high) detected at line 140
 ] (fxi_theory_practice.toc) [4
 
 ]
-<img/Trilemma.pdf, id=94, 844.11356pt x 599.35919pt>
+<img/Trilemma.pdf, id=196, 844.11356pt x 599.35919pt>
 File: img/Trilemma.pdf Graphic file (type pdf)
 <use img/Trilemma.pdf>
 Package pdftex.def Info: img/Trilemma.pdf  used on input line 153.
@@ -1455,18 +1455,18 @@ Package pdftex.def Info: img/Trilemma.pdf  used on input line 153.
  <./img/Trilemma.pdf>] [6
 
 ]
-<img/afc_fx_crash.PNG, id=119, 606.265pt x 351.3125pt>
+<img/afc_fx_crash.PNG, id=221, 606.265pt x 351.3125pt>
 File: img/afc_fx_crash.PNG Graphic file (type png)
 <use img/afc_fx_crash.PNG>
-Package pdftex.def Info: img/afc_fx_crash.PNG  used on input line 183.
+Package pdftex.def Info: img/afc_fx_crash.PNG  used on input line 182.
 (pdftex.def)             Requested size: 273.14651pt x 158.28214pt.
  [7
 
  <./img/afc_fx_crash.PNG>]
-<img/afc_gdp_crash.PNG, id=129, 1927.2pt x 1360.08125pt>
+<img/afc_gdp_crash.PNG, id=231, 1927.2pt x 1360.08125pt>
 File: img/afc_gdp_crash.PNG Graphic file (type png)
 <use img/afc_gdp_crash.PNG>
-Package pdftex.def Info: img/afc_gdp_crash.PNG  used on input line 191.
+Package pdftex.def Info: img/afc_gdp_crash.PNG  used on input line 190.
 (pdftex.def)             Requested size: 273.14651pt x 192.75517pt.
  [8
 
@@ -1477,10 +1477,10 @@ Package pdftex.def Info: img/afc_gdp_crash.PNG  used on input line 191.
 ] [11
 
 ]
-<img/bis_fxi_goals.PNG, id=170, 472.26437pt x 277.53688pt>
+<img/bis_fxi_goals.PNG, id=272, 472.26437pt x 277.53688pt>
 File: img/bis_fxi_goals.PNG Graphic file (type png)
 <use img/bis_fxi_goals.PNG>
-Package pdftex.def Info: img/bis_fxi_goals.PNG  used on input line 265.
+Package pdftex.def Info: img/bis_fxi_goals.PNG  used on input line 264.
 (pdftex.def)             Requested size: 254.93564pt x 149.82109pt.
  [12
 
@@ -1489,29 +1489,29 @@ Package pdftex.def Info: img/bis_fxi_goals.PNG  used on input line 265.
 ] [14
 
 ]
-<img/bis_intermediate_objectives.PNG, id=194, 470.75874pt x 240.39813pt>
+<img/bis_intermediate_objectives.PNG, id=296, 470.75874pt x 240.39813pt>
 File: img/bis_intermediate_objectives.PNG Graphic file (type png)
 <use img/bis_intermediate_objectives.PNG>
 Package pdftex.def Info: img/bis_intermediate_objectives.PNG  used on input lin
-e 318.
+e 317.
 (pdftex.def)             Requested size: 254.93564pt x 130.1872pt.
  [15
 
  <./img/bis_intermediate_objectives.PNG>] [16
 
 ]
-<img/peru_permanent_shock.PNG, id=223, 425.59pt x 238.39063pt>
+<img/peru_permanent_shock.PNG, id=325, 425.59pt x 238.39063pt>
 File: img/peru_permanent_shock.PNG Graphic file (type png)
 <use img/peru_permanent_shock.PNG>
-Package pdftex.def Info: img/peru_permanent_shock.PNG  used on input line 338.
+Package pdftex.def Info: img/peru_permanent_shock.PNG  used on input line 337.
 (pdftex.def)             Requested size: 273.14651pt x 153.00961pt.
  [17
 
  <./img/peru_permanent_shock.PNG>]
-<img/peru_transitory_shock.PNG, id=232, 422.07687pt x 244.41313pt>
+<img/peru_transitory_shock.PNG, id=334, 422.07687pt x 244.41313pt>
 File: img/peru_transitory_shock.PNG Graphic file (type png)
 <use img/peru_transitory_shock.PNG>
-Package pdftex.def Info: img/peru_transitory_shock.PNG  used on input line 346.
+Package pdftex.def Info: img/peru_transitory_shock.PNG  used on input line 345.
 
 (pdftex.def)             Requested size: 273.14651pt x 158.17296pt.
  [18
@@ -1522,11 +1522,11 @@ Package pdftex.def Info: img/peru_transitory_shock.PNG  used on input line 346.
 [20
 
 ]
-<img/central_bank_balance_sheet.PNG, id=252, 1059.45813pt x 653.94313pt>
+<img/central_bank_balance_sheet.PNG, id=354, 1059.45813pt x 653.94313pt>
 File: img/central_bank_balance_sheet.PNG Graphic file (type png)
 <use img/central_bank_balance_sheet.PNG>
 Package pdftex.def Info: img/central_bank_balance_sheet.PNG  used on input line
- 393.
+ 391.
 (pdftex.def)             Requested size: 309.56827pt x 191.07553pt.
  [21
 
@@ -1535,56 +1535,56 @@ Package pdftex.def Info: img/central_bank_balance_sheet.PNG  used on input line
 ] [23
 
 ]
-<img/central_bank_balance_sheet_rates.PNG, id=272, 1056.44687pt x 653.44125pt>
+<img/central_bank_balance_sheet_rates.PNG, id=374, 1056.44687pt x 653.44125pt>
 File: img/central_bank_balance_sheet_rates.PNG Graphic file (type png)
 <use img/central_bank_balance_sheet_rates.PNG>
 Package pdftex.def Info: img/central_bank_balance_sheet_rates.PNG  used on inpu
-t line 452.
+t line 450.
 (pdftex.def)             Requested size: 309.56827pt x 191.47728pt.
  [24
 
  <./img/central_bank_balance_sheet_rates.PNG>]
-<img/fx_sterilization_cost_china.PNG, id=280, 913.4125pt x 633.86812pt>
+<img/fx_sterilization_cost_china.PNG, id=382, 913.4125pt x 633.86812pt>
 File: img/fx_sterilization_cost_china.PNG Graphic file (type png)
 <use img/fx_sterilization_cost_china.PNG>
 Package pdftex.def Info: img/fx_sterilization_cost_china.PNG  used on input lin
-e 460.
+e 458.
 (pdftex.def)             Requested size: 309.56827pt x 214.82559pt.
  [25
 
  <./img/fx_sterilization_cost_china.PNG>]
-<img/pboc_fx_reserves.PNG, id=289, 1368.61313pt x 983.17313pt>
+<img/pboc_fx_reserves.PNG, id=391, 1368.61313pt x 983.17313pt>
 File: img/pboc_fx_reserves.PNG Graphic file (type png)
 <use img/pboc_fx_reserves.PNG>
-Package pdftex.def Info: img/pboc_fx_reserves.PNG  used on input line 468.
+Package pdftex.def Info: img/pboc_fx_reserves.PNG  used on input line 466.
 (pdftex.def)             Requested size: 309.56827pt x 222.37456pt.
 
-Overfull \vbox (5.6263pt too high) detected at line 468
+Overfull \vbox (5.6263pt too high) detected at line 466
  []
 
 [26
 
  <./img/pboc_fx_reserves.PNG>]
-<img/chfeur.jpg, id=297, 1924.18875pt x 914.66719pt>
+<img/chfeur.jpg, id=399, 1924.18875pt x 914.66719pt>
 File: img/chfeur.jpg Graphic file (type jpg)
 <use img/chfeur.jpg>
-Package pdftex.def Info: img/chfeur.jpg  used on input line 476.
+Package pdftex.def Info: img/chfeur.jpg  used on input line 474.
 (pdftex.def)             Requested size: 309.56827pt x 147.14526pt.
  [27
 
  <./img/chfeur.jpg>]
-<img/snb_balance_sheet.png, id=304, 1006.76125pt x 566.115pt>
+<img/snb_balance_sheet.png, id=406, 1006.76125pt x 566.115pt>
 File: img/snb_balance_sheet.png Graphic file (type png)
 <use img/snb_balance_sheet.png>
-Package pdftex.def Info: img/snb_balance_sheet.png  used on input line 484.
+Package pdftex.def Info: img/snb_balance_sheet.png  used on input line 482.
 (pdftex.def)             Requested size: 309.56827pt x 174.06853pt.
  [28
 
  <./img/snb_balance_sheet.png>]
-<img/snb_losses.png, id=311, 1006.76125pt x 566.115pt>
+<img/snb_losses.png, id=413, 1006.76125pt x 566.115pt>
 File: img/snb_losses.png Graphic file (type png)
 <use img/snb_losses.png>
-Package pdftex.def Info: img/snb_losses.png  used on input line 491.
+Package pdftex.def Info: img/snb_losses.png  used on input line 489.
 (pdftex.def)             Requested size: 309.56827pt x 174.06853pt.
  [29
 
@@ -1592,32 +1592,452 @@ Package pdftex.def Info: img/snb_losses.png  used on input line 491.
 
 ] [31
 
-])
-Runaway argument?
-\@kernel@before@enddocument \UseOneTimeHook {enddocument}\@kernel@after@enddocu
-ment \ETC.
-! File ended while scanning use of \beamer@collect@@body.
-<inserted text> 
-                \par 
-<*> ./fxi_theory_practice.tex
-                             
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+] [32
 
-! Emergency stop.
-<*> ./fxi_theory_practice.tex
-                             
-*** (job aborted, no legal \end found)
+] [33
 
- 
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 573.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 573.
+ [34
+
+]
+(fxi_theory_practice.toc) [35
+
+] [36
+
+] [37
+
+] [38
+
+] [39
+
+]
+<img/bis_discretion_rule.PNG, id=500, 470.75874pt x 298.61563pt>
+File: img/bis_discretion_rule.PNG Graphic file (type png)
+<use img/bis_discretion_rule.PNG>
+Package pdftex.def Info: img/bis_discretion_rule.PNG  used on input line 654.
+(pdftex.def)             Requested size: 273.14651pt x 173.26553pt.
+ [40
+
+ <./img/bis_discretion_rule.PNG>] [41
+
+] [42
+
+] [43
+
+]
+<img/bis_fxi_size.PNG, id=528, 475.7775pt x 277.53688pt>
+File: img/bis_fxi_size.PNG Graphic file (type png)
+<use img/bis_fxi_size.PNG>
+Package pdftex.def Info: img/bis_fxi_size.PNG  used on input line 707.
+(pdftex.def)             Requested size: 273.14651pt x 159.34106pt.
+ [44
+
+ <./img/bis_fxi_size.PNG>] [45
+
+] [46
+
+] [47
+
+]
+<img/fx_forward_diagram.PNG, id=554, 437.635pt x 602.25pt>
+File: img/fx_forward_diagram.PNG Graphic file (type png)
+<use img/fx_forward_diagram.PNG>
+Package pdftex.def Info: img/fx_forward_diagram.PNG  used on input line 759.
+(pdftex.def)             Requested size: 148.86739pt x 204.85995pt.
+ [48
+
+ <./img/fx_forward_diagram.PNG>]
+<img/fx_call_option.PNG, id=563, 589.20125pt x 411.03563pt>
+File: img/fx_call_option.PNG Graphic file (type png)
+<use img/fx_call_option.PNG>
+Package pdftex.def Info: img/fx_call_option.PNG  used on input line 766.
+(pdftex.def)             Requested size: 273.14651pt x 190.55257pt.
+ [49
+
+ <./img/fx_call_option.PNG>]
+<img/fx_put_option.PNG, id=573, 500.36937pt x 374.39874pt>
+File: img/fx_put_option.PNG Graphic file (type png)
+<use img/fx_put_option.PNG>
+Package pdftex.def Info: img/fx_put_option.PNG  used on input line 773.
+(pdftex.def)             Requested size: 273.14651pt x 204.3889pt.
+ [50
+
+ <./img/fx_put_option.PNG>]
+<img/fx_swaps.jpg, id=582, 433.62pt x 304.7385pt>
+File: img/fx_swaps.jpg Graphic file (type jpg)
+<use img/fx_swaps.jpg>
+Package pdftex.def Info: img/fx_swaps.jpg  used on input line 781.
+(pdftex.def)             Requested size: 194.3332pt x 136.5733pt.
+ [51
+
+ <./img/fx_swaps.jpg>]
+<img/repo_concept.PNG, id=590, 849.1725pt x 370.88562pt>
+File: img/repo_concept.PNG Graphic file (type png)
+<use img/repo_concept.PNG>
+Package pdftex.def Info: img/repo_concept.PNG  used on input line 789.
+(pdftex.def)             Requested size: 273.14651pt x 119.29701pt.
+ [52
+
+ <./img/repo_concept.PNG>] [53
+
+] [54
+
+]
+<img/bis_instruments.PNG, id=611, 473.26813pt x 293.59688pt>
+File: img/bis_instruments.PNG Graphic file (type png)
+<use img/bis_instruments.PNG>
+Package pdftex.def Info: img/bis_instruments.PNG  used on input line 823.
+(pdftex.def)             Requested size: 273.14651pt x 169.45303pt.
+
+[55
+
+ <./img/bis_instruments.PNG>] [56
+
+] [57
+
+]
+<img/bis_communication.PNG, id=632, 470.25688pt x 317.185pt>
+File: img/bis_communication.PNG Graphic file (type png)
+<use img/bis_communication.PNG>
+Package pdftex.def Info: img/bis_communication.PNG  used on input line 862.
+(pdftex.def)             Requested size: 273.14651pt x 184.2336pt.
+ [58
+
+ <./img/bis_communication.PNG>]
+<img/bis_public_information.PNG, id=641, 465.23813pt x 256.96pt>
+File: img/bis_public_information.PNG Graphic file (type png)
+<use img/bis_public_information.PNG>
+Package pdftex.def Info: img/bis_public_information.PNG  used on input line 870
+.
+(pdftex.def)             Requested size: 273.14651pt x 150.86795pt.
+
+[59
+
+ <./img/bis_public_information.PNG>] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+]
+[67
+
+] [68
+
+] [69
+
+] [70
+
+] [71
+
+] (fxi_theory_practice.toc) [72
+
+]
+<img/mexico_timeline.PNG, id=747, 283.0575pt x 220.825pt>
+File: img/mexico_timeline.PNG Graphic file (type png)
+<use img/mexico_timeline.PNG>
+Package pdftex.def Info: img/mexico_timeline.PNG  used on input line 1097.
+(pdftex.def)             Requested size: 182.09767pt x 142.06543pt.
+ [73
+
+ <./img/mexico_timeline.PNG>] [74
+
+] [75
+
+] [76
+
+]
+<img/mexico_put_options.PNG, id=775, 287.57437pt x 169.13188pt>
+File: img/mexico_put_options.PNG Graphic file (type png)
+<use img/mexico_put_options.PNG>
+Package pdftex.def Info: img/mexico_put_options.PNG  used on input line 1174.
+(pdftex.def)             Requested size: 182.09767pt x 107.10075pt.
+ [77
+
+ <./img/mexico_put_options.PNG>] [78
+
+]
+<img/mexico_interbank_rate.PNG, id=790, 734.745pt x 519.44063pt>
+File: img/mexico_interbank_rate.PNG Graphic file (type png)
+<use img/mexico_interbank_rate.PNG>
+Package pdftex.def Info: img/mexico_interbank_rate.PNG  used on input line 1192
+.
+(pdftex.def)             Requested size: 273.14651pt x 193.10944pt.
+ [79
+
+ <./img/mexico_interbank_rate.PNG>] [80
+
+] [81
+
+] [82
+
+]
+<img/brazil_hedge_positions.PNG, id=817, 500.36937pt x 362.85562pt>
+File: img/brazil_hedge_positions.PNG Graphic file (type png)
+<use img/brazil_hedge_positions.PNG>
+Package pdftex.def Info: img/brazil_hedge_positions.PNG  used on input line 124
+4.
+(pdftex.def)             Requested size: 273.14651pt x 198.08736pt.
+ [83
+
+ <./img/brazil_hedge_positions.PNG>]
+<img/brazil_intervention_effect.PNG, id=825, 373.89688pt x 279.54437pt>
+File: img/brazil_intervention_effect.PNG Graphic file (type png)
+<use img/brazil_intervention_effect.PNG>
+Package pdftex.def Info: img/brazil_intervention_effect.PNG  used on input line
+ 1253.
+(pdftex.def)             Requested size: 273.14651pt x 204.22777pt.
+
+Overfull \vbox (6.08786pt too high) detected at line 1253
+ []
+
+[84
+
+ <./img/brazil_intervention_effect.PNG>]
+<img/brazil_two_interventions_effects.PNG, id=833, 1084.55188pt x 383.93437pt>
+File: img/brazil_two_interventions_effects.PNG Graphic file (type png)
+<use img/brazil_two_interventions_effects.PNG>
+Package pdftex.def Info: img/brazil_two_interventions_effects.PNG  used on inpu
+t line 1263.
+(pdftex.def)             Requested size: 273.14651pt x 96.69221pt.
+ [85
+
+ <./img/brazil_two_interventions_effects.PNG>] [86
+
+]
+<img/colombia_options_table.PNG, id=847, 482.80376pt x 281.55188pt>
+File: img/colombia_options_table.PNG Graphic file (type png)
+<use img/colombia_options_table.PNG>
+Package pdftex.def Info: img/colombia_options_table.PNG  used on input line 129
+2.
+(pdftex.def)             Requested size: 254.93564pt x 148.66757pt.
+ [87
+
+ <./img/colombia_options_table.PNG>] [88
+
+] [89
+
+]
+<img/colombia_put_options.PNG, id=867, 296.60812pt x 275.52937pt>
+File: img/colombia_put_options.PNG Graphic file (type png)
+<use img/colombia_put_options.PNG>
+Package pdftex.def Info: img/colombia_put_options.PNG  used on input line 1327.
+
+(pdftex.def)             Requested size: 176.43196pt x 163.88963pt.
+ [90
+
+ <./img/colombia_put_options.PNG>] [91
+
+]
+<img/colombia_decision_tree.PNG, id=882, 285.56688pt x 244.915pt>
+File: img/colombia_decision_tree.PNG Graphic file (type png)
+<use img/colombia_decision_tree.PNG>
+Package pdftex.def Info: img/colombia_decision_tree.PNG  used on input line 135
+6.
+(pdftex.def)             Requested size: 191.09787pt x 163.88963pt.
+ [92
+
+ <./img/colombia_decision_tree.PNG>]
+[93
+
+]
+<img/peru_inflation_target_dollarization.PNG, id=897, 698.10812pt x 366.87062pt
+>
+File: img/peru_inflation_target_dollarization.PNG Graphic file (type png)
+<use img/peru_inflation_target_dollarization.PNG>
+Package pdftex.def Info: img/peru_inflation_target_dollarization.PNG  used on i
+nput line 1380.
+(pdftex.def)             Requested size: 273.14651pt x 143.5436pt.
+ [94
+
+ <./img/peru_inflation_target_dollarization.PNG>]
+<img/peru_dollarization_level.PNG, id=905, 428.09938pt x 299.61937pt>
+File: img/peru_dollarization_level.PNG Graphic file (type png)
+<use img/peru_dollarization_level.PNG>
+Package pdftex.def Info: img/peru_dollarization_level.PNG  used on input line 1
+388.
+(pdftex.def)             Requested size: 273.14651pt x 191.17055pt.
+ [95
+
+ <./img/peru_dollarization_level.PNG>]
+<img/peru_macro_risk_management_tools.PNG, id=913, 562.1pt x 143.03438pt>
+File: img/peru_macro_risk_management_tools.PNG Graphic file (type png)
+<use img/peru_macro_risk_management_tools.PNG>
+Package pdftex.def Info: img/peru_macro_risk_management_tools.PNG  used on inpu
+t line 1396.
+(pdftex.def)             Requested size: 273.14651pt x 69.50471pt.
+ [96
+
+ <./img/peru_macro_risk_management_tools.PNG>]
+<img/peru_exchange_rate_fxi.PNG, id=921, 654.445pt x 365.365pt>
+File: img/peru_exchange_rate_fxi.PNG Graphic file (type png)
+<use img/peru_exchange_rate_fxi.PNG>
+Package pdftex.def Info: img/peru_exchange_rate_fxi.PNG  used on input line 140
+4.
+(pdftex.def)             Requested size: 273.14651pt x 152.49335pt.
+ [97
+
+ <./img/peru_exchange_rate_fxi.PNG>]
+<img/peru_frequency_fxi.PNG, id=930, 731.73375pt x 185.69376pt>
+File: img/peru_frequency_fxi.PNG Graphic file (type png)
+<use img/peru_frequency_fxi.PNG>
+Package pdftex.def Info: img/peru_frequency_fxi.PNG  used on input line 1412.
+(pdftex.def)             Requested size: 273.14651pt x 69.31763pt.
+ [98
+
+ <./img/peru_frequency_fxi.PNG>]
+<img/peru_fxi_size.PNG, id=938, 680.5425pt x 433.62pt>
+File: img/peru_fxi_size.PNG Graphic file (type png)
+<use img/peru_fxi_size.PNG>
+Package pdftex.def Info: img/peru_fxi_size.PNG  used on input line 1420.
+(pdftex.def)             Requested size: 273.14651pt x 174.0404pt.
+ [99
+
+ <./img/peru_fxi_size.PNG>]
+<img/peru_net_purchases_usd.PNG, id=946, 420.06938pt x 329.23pt>
+File: img/peru_net_purchases_usd.PNG Graphic file (type png)
+<use img/peru_net_purchases_usd.PNG>
+Package pdftex.def Info: img/peru_net_purchases_usd.PNG  used on input line 142
+8.
+(pdftex.def)             Requested size: 236.72475pt x 185.53302pt.
+ [100
+
+ <./img/peru_net_purchases_usd.PNG>] [101
+
+]
+<img/peru_effectiveness_interventions.PNG, id=960, 427.09563pt x 344.28625pt>
+File: img/peru_effectiveness_interventions.PNG Graphic file (type png)
+<use img/peru_effectiveness_interventions.PNG>
+Package pdftex.def Info: img/peru_effectiveness_interventions.PNG  used on inpu
+t line 1461.
+(pdftex.def)             Requested size: 236.72475pt x 190.8237pt.
+ [102
+
+ <./img/peru_effectiveness_interventions.PNG>]
+<img/peru_fx_volatility.PNG, id=968, 653.44125pt x 415.5525pt>
+File: img/peru_fx_volatility.PNG Graphic file (type png)
+<use img/peru_fx_volatility.PNG>
+Package pdftex.def Info: img/peru_fx_volatility.PNG  used on input line 1469.
+(pdftex.def)             Requested size: 236.72475pt x 150.54356pt.
+ [103
+
+ <./img/peru_fx_volatility.PNG>]
+<img/peru_beta_volatility.PNG, id=977, 612.78937pt x 313.17pt>
+File: img/peru_beta_volatility.PNG Graphic file (type png)
+<use img/peru_beta_volatility.PNG>
+Package pdftex.def Info: img/peru_beta_volatility.PNG  used on input line 1477.
+
+(pdftex.def)             Requested size: 236.72475pt x 120.97939pt.
+
+[104
+
+ <./img/peru_beta_volatility.PNG>]
+<img/peru_financial_dollarization_instruments.PNG, id=985, 660.96938pt x 264.99
+pt>
+File: img/peru_financial_dollarization_instruments.PNG Graphic file (type png)
+<use img/peru_financial_dollarization_instruments.PNG>
+Package pdftex.def Info: img/peru_financial_dollarization_instruments.PNG  used
+ on input line 1485.
+(pdftex.def)             Requested size: 273.14651pt x 109.51189pt.
+ [105
+
+ <./img/peru_financial_dollarization_instruments.PNG>]
+<img/peru_dedollarization_repos.png, id=993, 380.42125pt x 598.73688pt>
+File: img/peru_dedollarization_repos.png Graphic file (type png)
+<use img/peru_dedollarization_repos.png>
+Package pdftex.def Info: img/peru_dedollarization_repos.png  used on input line
+ 1493.
+(pdftex.def)             Requested size: 273.14651pt x 429.91168pt.
+
+Overfull \vbox (217.77177pt too high) detected at line 1493
+ []
+
+[106
+
+ <./img/peru_dedollarization_repos.png>]
+<img/peru_differential_RRR.PNG, id=1001, 618.31pt x 315.1775pt>
+File: img/peru_differential_RRR.PNG Graphic file (type png)
+<use img/peru_differential_RRR.PNG>
+Package pdftex.def Info: img/peru_differential_RRR.PNG  used on input line 1501
+.
+(pdftex.def)             Requested size: 273.14651pt x 139.23639pt.
+ [107
+
+ <./img/peru_differential_RRR.PNG>] [108
+
+] [109
+
+] [110
+
+]
+<img/thailand_sterilization.PNG, id=1028, 320.19624pt x 174.15062pt>
+File: img/thailand_sterilization.PNG Graphic file (type png)
+<use img/thailand_sterilization.PNG>
+Package pdftex.def Info: img/thailand_sterilization.PNG  used on input line 156
+1.
+(pdftex.def)             Requested size: 273.14651pt x 148.56284pt.
+ [111
+
+ <./img/thailand_sterilization.PNG>] [112
+
+] [113
+
+]
+[114
+
+] [115
+
+]
+\tf@nav=\write6
+\openout6 = `fxi_theory_practice.nav'.
+
+\tf@toc=\write7
+\openout7 = `fxi_theory_practice.toc'.
+
+\tf@snm=\write8
+\openout8 = `fxi_theory_practice.snm'.
+
+ (fxi_theory_practice.aux)
+Package rerunfilecheck Info: File `fxi_theory_practice.out' has not changed.
+(rerunfilecheck)             Checksum: 6548552B4F0DAC817BCB58077E5C7D89;2748.
+ ) 
 Here is how much of TeX's memory you used:
- 25418 strings out of 476334
- 502339 string characters out of 5787028
+ 26115 strings out of 476334
+ 515630 string characters out of 5787028
  1865382 words of memory out of 5000000
- 45193 multiletter control sequences out of 15000+600000
- 591083 words of font info for 84 fonts, out of 8000000 for 9000
+ 45655 multiletter control sequences out of 15000+600000
+ 611400 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,444b,717s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+{C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+ <C:\Users\A13258Q\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\m
+athb6.pk><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmbx10.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmbx9.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmr10.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr12.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmr6.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmr8.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmr9.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmri10.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmri7.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmri8.pfb><C:/Users/A13258Q/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmri9.pfb>
+Output written on fxi_theory_practice.pdf (115 pages, 8950677 bytes).
+PDF statistics:
+ 1171 PDF objects out of 1200 (max. 8388607)
+ 250 named destinations out of 1000 (max. 500000)
+ 543 words of extra memory for PDF output out of 10000 (max. 10000000)
+

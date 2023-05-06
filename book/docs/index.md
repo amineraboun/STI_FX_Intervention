@@ -105,7 +105,7 @@ Do not hesitate to contact us (email address available on our personal websites)
 - General useful resource: the IMF Glossary [link](https://www.imf.org/en/About/Glossary)
 
 ## Misc
-We are grateful to **Thomas Schmelzer**, a colleague at ADIA Quant team, for his suggestion of using a Jupyter book for building our website. 
+We are grateful to **[Thomas Schmelzer](https://twitter.com/Thomster78)**, a colleague at ADIA's Quant team, for his suggestion of using a Jupyter book for building our website. 
 
 
 
