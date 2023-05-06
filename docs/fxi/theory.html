@@ -506,7 +506,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-intervention-size-and-frequency">FX Intervention Size and Frequency</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeted-vs-open-market-interventions">Targeted vs Open-Market Interventions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-instruments">FX Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitability-of-fx-interventions">Profitability of FX interventions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-around-fx-interventions">Communication around FX interventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-intervention-effectiveness">FX Intervention Effectiveness</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
@@ -900,6 +902,7 @@ document.write(`
 <li><p>Idea to “surprise the market”</p></li>
 <li><p>No commitment for intervening, given the central bank some perception that it controls better its level of foreign reserves</p></li>
 <li><p>In general the empirical evidence suggest that the effect of the “surprises” triggered by discretionary FX interventions fades very fast, within hours</p></li>
+<li><p>“Surprising the market” can be detrimental, especially when liquidity is scarce and the volatility already high</p></li>
 </ul>
 <p>On the contrary, some central banks use <strong>rule-based systems</strong> to decide on their FX interventions timing:</p>
 <ul class="simple">
@@ -929,18 +932,15 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 <section id="fx-intervention-size-and-frequency">
 <h2>FX Intervention Size and Frequency<a class="headerlink" href="#fx-intervention-size-and-frequency" title="Permalink to this heading">#</a></h2>
 <p>To the best of our knowledge, there is no theoretical model providing guidance on the  optimal FX intervention  amount to buy or  sell on the  market, either during one intervention or a day (if multiple interventions per day).</p>
+<div class="tip admonition">
+<p class="admonition-title">General guidance</p>
 <p>The general guidance is to intervene infrequently, with relatively large amounts, measured as share of the daily market turnover. The purpose is to:</p>
 <ul class="simple">
 <li><p>Maximize market impact</p></li>
 <li><p>Maximize the signaling effect</p></li>
 <li><p>Gain credibility</p></li>
 </ul>
-<p>To decide about the specific amount for a given intervention, it is critical to consider:</p>
-<ul class="simple">
-<li><p>The level of the foreign reserves of the central bank, and in particular, its buffer compared to the adequate reserves level (for instance, using the <a class="reference external" href="https://www.imf.org/external/datamapper/datasets/ARA">IMF ARA metric</a> or any other metric)</p></li>
-<li><p>Assess the liquidity conditions and the FX market impact</p></li>
-<li><p>The amount is usually calibrated as percent of the daily FX market turnover</p></li>
-</ul>
+</div>
 <p>Based on international practices, cumulated FX interventions during a day represent between 15% and 20% of daily market turnover, with some central banks intervening more than 50% of the daily market turnover</p>
 <ul class="simple">
 <li><p>This amount represent between 0.3% and 0.8% of the monthly FX reserves</p></li>
@@ -952,6 +952,15 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 <p>Results on the 2021 BIS Survey on FX intervention size and frequency
 <img alt="FX Intervention Size and Frequency" src="../../_images/bis_fxi_size.PNG" />
 <em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+<div class="urgent admonition">
+<p class="admonition-title">Critical points to consider</p>
+<p>To decide about the specific amount for a given intervention, it is critical to consider:</p>
+<ul class="simple">
+<li><p>The level of the foreign reserves of the central bank, and in particular, its buffer compared to the adequate reserves level (for instance, using the <a class="reference external" href="https://www.imf.org/external/datamapper/datasets/ARA">IMF ARA metric</a> or any other metric)</p></li>
+<li><p>Assess the liquidity conditions and the FX market impact</p></li>
+<li><p>The amount is usually calibrated as percent of the daily FX market turnover</p></li>
+</ul>
+</div>
 </section>
 <section id="targeted-vs-open-market-interventions">
 <h2>Targeted vs Open-Market Interventions<a class="headerlink" href="#targeted-vs-open-market-interventions" title="Permalink to this heading">#</a></h2>
@@ -967,6 +976,8 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 </section>
 <section id="fx-instruments">
 <h2>FX Instruments<a class="headerlink" href="#fx-instruments" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Instruments for FX interventions</p>
 <p>Typically, central banks use a set of instruments to conduct their interventions, including:</p>
 <ul class="simple">
 <li><p>FX spot</p></li>
@@ -975,6 +986,7 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 <li><p>FX repos</p></li>
 <li><p>FX options</p></li>
 </ul>
+</div>
 <p>Deciding on whether to use spot or derivatives instruments should be based on the pros and cons of each instruments.</p>
 <p>Typically, spot interventions are:</p>
 <ul class="simple">
@@ -995,6 +1007,8 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 <li><p>Settled in local currency and had no impact on foreign reserves</p></li>
 <li><p>Fills a market gap in longer-term derivatives instruments (serves as a risk management insurance)</p></li>
 </ul>
+<div class="warning admonition">
+<p class="admonition-title">Intertemporal and risk considerations</p>
 <p>Using spot versus derivatives also entail <strong>intertemporal and risk considerations</strong>:</p>
 <ul class="simple">
 <li><p><strong>Spot FXI</strong>: provides immediate FX provision to the market</p></li>
@@ -1002,6 +1016,7 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 <li><p><strong>Option-based FIX</strong>: provides an insurance against FX risk, that may or may not be exercised</p></li>
 <li><p><strong>Repos and swap-based FXI</strong>: provide FX for the duration of the repo or swap, providing a hedge against maturity mismatches in FX</p></li>
 </ul>
+</div>
 <p>Advanced economies (AE) and emerging markets economies (EME) differ on how they implement FX interventions.</p>
 <p>In general, AEs tend to intervene exclusively in the spot market, and often, relatively infrequently, as they operate floating exchange rate regimes (at the exception of Switzerland in the early 2010s that maintained a floor on the CHF).</p>
 <p>However, many EMEs intervene in derivatives markets. For instance:</p>
@@ -1013,11 +1028,102 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 </ul>
 <p>According to the 2021 BIS survey, the forward and swaps were the most used derivatives instruments by central banks for FX interventions, and around 40% of them were using derivatives frequently, and another third occasionally.</p>
 <p>Results on the 2021 BIS Survey on FX intervention instruments
-<img alt="FX Intervention Size and Frequency" src="../../_images/bis_instruments.PNG" />
+<img alt="FX Intervention Instruments" src="../../_images/bis_instruments.PNG" />
 <em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+</section>
+<section id="profitability-of-fx-interventions">
+<h2>Profitability of FX interventions<a class="headerlink" href="#profitability-of-fx-interventions" title="Permalink to this heading">#</a></h2>
+<p>Empirical evidence suggests that profits vary significantly according to the sample periodm but generally, FX intervention is profitable as:</p>
+<ul class="simple">
+<li><p>When selling, the central bank is providing FX liquidity at a time of stress, hence can sell expensive</p></li>
+<li><p>When buying, the central bank is absorbing FX liquidity when liquidity is ample, hence can buy cheap</p></li>
+</ul>
+<p><a class="reference external" href="https://www.imf.org/en/Publications/WP/Issues/2021/02/12/Foreign-Exchange-Intervention-Rules-for-Central-Banks-A-Risk-based-Framework-50081">Lafarguette and Veyrune 2021</a> show that, in the case of Mexico:</p>
+<ul class="simple">
+<li><p>Rules-based FX interventions are more profitable than discretionary rules</p></li>
+<li><p>Their risk-based intervention rule is the most profitable, as the central bank is buying/selling on the tails of the FX distribution.</p></li>
+</ul>
 </section>
 <section id="communication-around-fx-interventions">
 <h2>Communication around FX interventions<a class="headerlink" href="#communication-around-fx-interventions" title="Permalink to this heading">#</a></h2>
+<p>There is little consensus among central banks, in particular regarding ex-post communication (data, amounts, etc.).</p>
+<div class="caution admonition">
+<p class="admonition-title">Communication and transparency</p>
+<p><strong>Signaling</strong> is important transmission channel of foreign exchange interventions and can only be achieved with communication and transparency</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Pitfalls</p>
+<p>“Surprising the market” via undisclosed FX interventions can be detrimental, especially when liquidity is scarce and the volatility is already high</p>
+</div>
+<p>To the best of our knowledge, there is no evidence in the literature that secret and unexpected interventions are more efficient, especially after the initial first hours</p>
+<ul class="simple">
+<li><p>On the contrary, unexpected interventions effects tend to fade quite fast</p></li>
+<li><p>Unexpected FX interventions tend to impede anchoring <strong>FX market expectations</strong> and <strong>harm the credibility</strong> of the central bank (“desperate move”)</p></li>
+</ul>
+<p>Based on the 2021 BIS survey on FXI practices, it seems that more than 2/3 of central banks are communicating ex-post about their FX interventions, while only 40% of them are conducting pre-annouced interventions.</p>
+<p>BIS Survey on FXI Communication
+<img alt="FX Intervention Communication" src="../../_images/bis_communication.PNG" />
+<em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+<p>BIS Survey on Publication of FX Interventions
+<img alt="FX Intervention Communication" src="../../_images/bis_public_information.PNG" />
+<em>Source: <a class="reference external" href="https://www.bis.org/publ/mc_insights_fxinterventions.pdf">BIS 2021</a></em></p>
+<p>Some central banks offer public intervention data, for instance through the website of <a class="reference external" href="https://fred.stlouisfed.org/">FRED (Federal Reserve Bank of St Louis)</a>:</p>
+<ul class="simple">
+<li><p>Australia (1983-2006)</p></li>
+<li><p>Germany (1976-1995)</p></li>
+<li><p>Italy (1988-1998)</p></li>
+<li><p>Japan (1991-2022)</p></li>
+<li><p>Mexico (1997-2011)</p></li>
+<li><p>Switzerland (1975-2001)</p></li>
+<li><p>Turkey (2002-2019)</p></li>
+<li><p>United States (1973-2003)</p></li>
+</ul>
+<p>Some central banks also publish information about their FX interventions on their website:</p>
+<ul class="simple">
+<li><p>Argentina</p></li>
+<li><p>Chile</p></li>
+<li><p>Georgia</p></li>
+<li><p>Kyrgyz Republic</p></li>
+<li><p>United Kingdom</p></li>
+</ul>
+</section>
+<section id="fx-intervention-effectiveness">
+<h2>FX Intervention Effectiveness<a class="headerlink" href="#fx-intervention-effectiveness" title="Permalink to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Challenges in assessing FX Intervention Effectiveness</p>
+<p>It is in general very difficult to assess the effectiveness of FX intervention, due to simultaneity issues</p>
+</div>
+<p>The decision to intervene is often not independent from the movements in the exchange rate</p>
+<ul class="simple">
+<li><p>Most likely, FX intervention occur in reaction to unwanted exchange rate changes</p></li>
+</ul>
+<p>The decision to intervene may also be part of a broader set of policy actions (monetary and/or fiscal policy, capital controls, etc.), potentially leading to an <strong>overestimation bias</strong> on FX intervention effectiveness.</p>
+<ul class="simple">
+<li><p>Studies based on high-frequency data (intra-daily) maybe be less subject to the <strong>simultaneity bias</strong> but can’t assess whether intervention has lasting effects</p></li>
+<li><p>The <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap73.htm">BIS 2013</a> has released a paper discussing FXI effectiveness for Chile, Colombia, Mexico, Peru, etc. during the GFC</p></li>
+<li><p>Another example, using the <strong>regression discontinuity</strong> design around a rule threshold, as done by <a class="reference external" href="https://econpapers.repec.org/paper/bdrborrec/965.htm">Kuersteiner et al. 2018</a> on Columbia FX interventions.</p></li>
+<li><p>Other researchers have used <strong>counterfactual matching</strong> to construct a synthetic group as counterfactual</p>
+<ul>
+<li><p>Counterfactual uses data from other countries, with weights based on the co-movemevent with the currency of interest</p></li>
+<li><p>Not appropriate for frequent interventions but useful at the event level</p></li>
+<li><p>Can not be used in the case of a global shock</p></li>
+</ul>
+</li>
+</ul>
+<p>The results of a comprehensive study (not intra-day) by <a class="reference external" href="https://www.aeaweb.org/articles?id=10.1257/mac.20150317">Fratzscher et al. 2019</a> suggest that central banks:</p>
+<ul class="simple">
+<li><p>Have around 60% success in the ability to <strong>influence the direction</strong> of the exchange rate</p>
+<ul>
+<li><p>The success rate is higher if interventions are large and are accompanied by pre-announced communication</p></li>
+</ul>
+</li>
+<li><p>80% success in <strong>smoothing the path of the exchange rate</strong></p>
+<ul>
+<li><p>As observed by a reduction in exchange rate variation in the week after the intervention vs. the week before</p></li>
+</ul>
+</li>
+<li><p>80% success in stabilizing the exchange rate in a 2% narrow band during the next two weeks</p></li>
+</ul>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="resources">
@@ -1131,7 +1237,9 @@ Out of the 21 central banks surveyed, only one thir of them used rules for inter
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-intervention-size-and-frequency">FX Intervention Size and Frequency</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#targeted-vs-open-market-interventions">Targeted vs Open-Market Interventions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-instruments">FX Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitability-of-fx-interventions">Profitability of FX interventions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-around-fx-interventions">Communication around FX interventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-intervention-effectiveness">FX Intervention Effectiveness</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
