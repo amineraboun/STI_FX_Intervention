@@ -537,7 +537,19 @@ The results of a comprehensive study (not intra-day) by [Fratzscher et al. 2019]
   * 80% success in stabilizing the exchange rate in a 2% narrow band during the next two weeks
 
 
+## FX Interventions and Capital Flows Management
 
+Capital flow management (CFM) may increase the efficacy of sterilized FX interventions by reducing foreign and domestic asset substituability
+  * Firms in EME issue more and more foreign currency debt, while EME sovereign debt is increasingly in local currency (with a larger fraction held by foreigners). Therefore:
+    * Currencies and domestic financing conditions are more exposed to swings in capital flows
+    
+In this context, EME may need/want full access to all policy tools given these vulnerabilities
+
+Foreign exchange interventions and capital flows management are rather complementary than substitutes:
+  * FXI is a more flexible tool, with much less market distortions, but often requires enough FX reserves/credibility to be efficient 
+  * CFM is an administrative measure with immediate effect, that can be implemented without FX reserves, but can be highly distortionary and create a stigma 
+
+Capital flows management is a complex topic, and should be applied with care. We don't cover it here. For more information, see [IMF](https://www.imf.org/en/Topics/Capital-Flows)
 
 
 # Resources

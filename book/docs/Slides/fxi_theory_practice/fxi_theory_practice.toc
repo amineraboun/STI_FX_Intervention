@@ -9,11 +9,11 @@
 \beamer@subsectionintoc {2}{3}{Instruments}{45}{0}{2}
 \beamer@subsectionintoc {2}{4}{Communication}{58}{0}{2}
 \beamer@subsectionintoc {2}{5}{Intervention Effectiveness}{62}{0}{2}
-\beamer@subsectionintoc {2}{6}{FX Interventions and Exchange Rate Management}{65}{0}{2}
-\beamer@sectionintoc {3}{Practical Cases}{71}{0}{3}
-\beamer@subsectionintoc {3}{1}{Mexico}{72}{0}{3}
-\beamer@subsectionintoc {3}{2}{Brazil}{79}{0}{3}
-\beamer@subsectionintoc {3}{3}{Colombia}{85}{0}{3}
-\beamer@subsectionintoc {3}{4}{Peru}{92}{0}{3}
-\beamer@subsectionintoc {3}{5}{Thailand}{107}{0}{3}
-\beamer@subsectionintoc {3}{6}{Philippines}{112}{0}{3}
+\beamer@subsectionintoc {2}{6}{FX Interventions and Capital Flows Management}{66}{0}{2}
+\beamer@sectionintoc {3}{Practical Cases}{67}{0}{3}
+\beamer@subsectionintoc {3}{1}{Mexico}{68}{0}{3}
+\beamer@subsectionintoc {3}{2}{Brazil}{75}{0}{3}
+\beamer@subsectionintoc {3}{3}{Colombia}{81}{0}{3}
+\beamer@subsectionintoc {3}{4}{Peru}{88}{0}{3}
+\beamer@subsectionintoc {3}{5}{Thailand}{103}{0}{3}
+\beamer@subsectionintoc {3}{6}{Philippines}{108}{0}{3}
