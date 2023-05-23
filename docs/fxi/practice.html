@@ -456,7 +456,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -472,6 +474,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-fx-reserves">Funding FX reserves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-sterilized-interventions-to-smooth-volatility">FX Sterilized interventions to smooth volatility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bam-other-fx-interventions-instruments">BAM Other FX Interventions Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mexico-fx-interventions">Mexico FX Interventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brazil">Brazil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia">Colombia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peru">Peru</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand">Thailand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philippines">Philippines</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -484,14 +502,104 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="international-practices">
 <h1>International Practices<a class="headerlink" href="#international-practices" title="Permalink to this heading">#</a></h1>
 <p><a class="reference download internal" download="" href="../../_downloads/b6396ae00dac43594a3694a85a36d6ea/fxi_theory_practice.pdf"><span class="xref download myst">More details in the slides</span></a></p>
+<p>** Mexico</p>
+<p>Mexico has transitioned towards a free-float exchange rate after the devaluation of the peso 19th december 1994. At the time, the free-float regime was seen as temporary, but with time it gained substantial support and endured up to today.</p>
+<p>Mexico Path to Free Float Exchange Rate
+<img alt="Trilemma" src="../../_images/mexico_timeline.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch010.xml">IMF</a></em></p>
+<section id="funding-fx-reserves">
+<h2>Funding FX reserves<a class="headerlink" href="#funding-fx-reserves" title="Permalink to this heading">#</a></h2>
+<p>One key aspect of the transition has been to accumulate FX reserves to be able to conduct FX interventions to mitigate FX volatility.</p>
 <ul class="simple">
-<li><p>Mexico</p></li>
-<li><p>Brazil</p></li>
-<li><p>Colombia</p></li>
-<li><p>Peru</p></li>
-<li><p>Thailand</p></li>
-<li><p>Philippines</p></li>
+<li><p>Mexico obtain USD remittances from the Federal Public Entities, especially PEMEX, the national oil company</p></li>
+<li><p>When the level of foreign reserves is deemed inadequate, the central bank has resorted to rules-based approaches to buy/sell US dollar from the market with preannounced auction mechanisms, where timing and prices were known in advance</p>
+<ul>
+<li><p>Buying USD via the <strong>sale of US dollar put options</strong> to the market via monthly auctions (1996-2001 and 2010-2011) with two requirements</p></li>
+<li><p>The option strike price is the <strong>fix exchange rate determined by the Bank of Mexico on the previous business day</strong></p></li>
+<li><p>The option can only be executed only when the peso exchange rate of exercise <strong>has appreciated with respect to its 20-day moving average</strong> (meaning buying when USD is cheap)</p></li>
+<li><p>When the level of foreign reserves was deemed too high due to sterilization costs: selling USD via <strong>spot auctions</strong> half of the amount accumulated during the previous quarter</p></li>
 </ul>
+</li>
+</ul>
+</section>
+<section id="fx-sterilized-interventions-to-smooth-volatility">
+<h2>FX Sterilized interventions to smooth volatility<a class="headerlink" href="#fx-sterilized-interventions-to-smooth-volatility" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Interventions on the spot market via rules-based auctions</p>
+<ul>
+<li><p><strong>US dollar auctions with and without minimum bid price</strong></p>
+<ul>
+<li><p>With minimum bid-price, decided on previous business day +2% (bid are only eligible if they are above this price, yet it is a multiple price auction)</p></li>
+<li><p>Without minimum bid-price and without triggering rule. The auctions are interactive, the participants know the bids during the auction and could improve their bid.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Auctions of USD-denominated credit lines offered to banks, which they could on-lend to corporates (USD 3.2 billion in 2009)</p>
+<ul>
+<li><p><em>The resources came from the swap line with the Fed, not from the BAM reserves themselves</em>. The BAM still takes only the counterparty risk</p></li>
+<li><p>Limit moral-hazard via an auction-based pricing mechanism, revealing true banks’ risks (“<em>no free lunch</em>”)</p></li>
+</ul>
+</li>
+<li><p>Direct USD sales (discretionary) where the tendered amount and triggers are decided by the BAM FX commission</p>
+<ul>
+<li><p>Including with institutions outside of the country (in 2017)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="bam-other-fx-interventions-instruments">
+<h2>BAM Other FX Interventions Instruments<a class="headerlink" href="#bam-other-fx-interventions-instruments" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Foreign Exchange Hedge Auction Program via NDF Auctions Settled in MXN</strong></p>
+<ul>
+<li><p>The BAM wants to sell foreign exchange hedges to participants, without endangering its own FX reserves</p></li>
+<li><p>Market participants bid for the forward exchange rate they need at the maturity of the contract</p>
+<ul>
+<li><p>At the end of contract: if the spot is higher than the assigned forward price (depreciation), the commercial bank makes a profit settled in pesos</p></li>
+<li><p>All ND positions are rolled over unitl the BAM decides to stop them</p></li>
+<li><p>Note that, even though the all transactions are settled in USD, the central bank is short USD. Which is a potential cost (settled in pesos)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Flexible credit line with the IMF to supplement current international reserves</strong></p>
+<ul>
+<li><p>Mexico was one of the first three countries to receive an IMF FCL in 2009 when the program was launched</p></li>
+<li><p>Initially around USD 47 bn, then USD 90 bn in 2016</p></li>
+</ul>
+</li>
+</ul>
+<p>Mexico Put Options
+<img alt="Trilemma" src="../../_images/mexico_put_options.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch010.xml">IMF</a></em></p>
+</section>
+<section id="mexico-fx-interventions">
+<h2>Mexico FX Interventions<a class="headerlink" href="#mexico-fx-interventions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The BAM interventions framework has been considered by policymakers and the literature as efficient, and without FX target in mind</p></li>
+<li><p>Empirical evidence suggest that the central bank has been able to contain extreme volatility episodes</p></li>
+<li><p>Also helping to maintain the policy objective, which is to keep the interbank funding rate at the monetary policy objective</p></li>
+</ul>
+<p>Mexico Interbank Rante
+<img alt="Trilemma" src="../../_images/mexico_interbank_rate.PNG" />
+<em>Source: <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap104p.pdf">IMF</a></em></p>
+</section>
+<section id="brazil">
+<h2>Brazil<a class="headerlink" href="#brazil" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="colombia">
+<h2>Colombia<a class="headerlink" href="#colombia" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="peru">
+<h2>Peru<a class="headerlink" href="#peru" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="thailand">
+<h2>Thailand<a class="headerlink" href="#thailand" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="philippines">
+<h2>Philippines<a class="headerlink" href="#philippines" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -552,6 +660,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funding-fx-reserves">Funding FX reserves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fx-sterilized-interventions-to-smooth-volatility">FX Sterilized interventions to smooth volatility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bam-other-fx-interventions-instruments">BAM Other FX Interventions Instruments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mexico-fx-interventions">Mexico FX Interventions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brazil">Brazil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia">Colombia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peru">Peru</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand">Thailand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philippines">Philippines</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
