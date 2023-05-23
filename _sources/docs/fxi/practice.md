@@ -8,7 +8,7 @@ Mexico has transitioned towards a free-float exchange rate after the devaluation
 
 
 Mexico Path to Free Float Exchange Rate 
-![Trilemma](../Slides/fxi_theory_practice/img/mexico_timeline.PNG)
+![Mexico Path to Free Float](../Slides/fxi_theory_practice/img/mexico_timeline.PNG)
 *Source: [IMF](https://www.elibrary.imf.org/display/book/9781484375686/ch010.xml)*
 
 ### Funding FX reserves
@@ -50,7 +50,7 @@ One key aspect of the transition has been to accumulate FX reserves to be able t
 
 
 Mexico Put Options 
-![Trilemma](../Slides/fxi_theory_practice/img/mexico_put_options.PNG)
+![Mexico Put Options](../Slides/fxi_theory_practice/img/mexico_put_options.PNG)
 *Source: [IMF](https://www.elibrary.imf.org/display/book/9781484375686/ch010.xml)*
 
 
@@ -61,14 +61,55 @@ Mexico Put Options
 * Also helping to maintain the policy objective, which is to keep the interbank funding rate at the monetary policy objective
 
 
-
-Mexico Interbank Rante 
-![Trilemma](../Slides/fxi_theory_practice/img/mexico_interbank_rate.PNG)
+Mexico Interbank Rate 
+![MEX Interbank Rate](../Slides/fxi_theory_practice/img/mexico_interbank_rate.PNG)
 *Source: [IMF](https://www.bis.org/publ/bppdf/bispap104p.pdf)*
 
 
 
 ## Brazil
+
+### Brazil during the GFC
+* During the GFC, the Brazilian central bank used a combination of different instruments to stabilize the BRL
+  * Swaps
+  * Spot market auctions
+  * Repo market auctions
+  * Trade finance loans
+  * Forward market auctions
+  
+* [Kohlscheen and Andrade (JIMF 2014)](https://econpapers.repec.org/article/eeejimfin/v_3a47_3ay_3a2014_3ai_3ac_3ap_3a202-216.htm) find that the currency swaps carried in 2011 Q2-2012 had a significant effect on the BRL/USD
+
+
+### Brazil (2013-2018)
+* The BCB implemented the largest ever intervention in the FX derivatives market in August 2013
+  * Initially to counter-act capital outflows and the BRL depreciation during the "Taper Tantrum"
+
+* The open position of the BCB in these derivatives summed up to **7\% of the Brazilian GDP** (30\% of the international reserves) in the peak of the program in 2015
+* The intervention program was considered successful and other EME have followed: Mexico (February 2017), Turkey (November 2017)
+
+### Brazil 2013: Hedger-of-Last-Resort
+* Due to historical restrictions to buy US dollars in the Brazilian sport market, the country's FX derivative markets became larger than the spot one. 
+* Intervention program: daily sales of USD 500 million worth of currency non-deliverables forwards
+  * USD forwards settled in BRL, also known as BCB swaps, developped by the BCB (the "swaps cambiais")
+  * Traded in the local stock exchange ("B3")
+
+
+Brazil FX Derivatives Players and their Net Exposures
+![Trilemma](../Slides/fxi_theory_practice/img/brazil_hedge_positions.PNG)
+*Source: [Source: Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
+
+
+### Effectiveness
+
+Effects of the August 22 2013 Intervention in the BRL/USD exchange rate
+![BRL Effectiveness](../Slides/fxi_theory_practice/img/brazil_intervention_effect.PNG)
+*Source: [Source: Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
+
+
+Yet the Effect has been Fading Out between 2013 and 2015
+![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/brazil_two_interventions_effects.PNG)
+*Source: [Source: Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
+
 
 ## Colombia
 
