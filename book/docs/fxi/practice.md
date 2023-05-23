@@ -113,10 +113,205 @@ Yet the Effect has been Fading Out between 2013 and 2015
 
 ## Colombia
 
+### Colombia Call and Put Options to Hedge Volatility Risk
+
+* Objective: mitigate FX volatility, after the shift to a flexible exchange rate regime in 1998/99 (used to be crawling bands). *"Offer to the market hedges against extreme circumstances"*
+* Offer **put** (protection against depreciation) and **call** (protection against appreciation) **options**
+  * TRM: representative market Colombian peso/US dollar exchange rate
+  * Strike prices: +5\% Higher (put) or -5\% lower (call) than the 20-day moving average of the TRM 
+  * Threshold takes into account a low probability of activation, due to the +/- 5\% limit
+  * Amount fixed at USD 180 million then USD 200 million
+
+* Some discretion was applied: 
+  * When the Colombian peso was weak, the central bank deactivate the put, because the central bank didn't want to buy USD at this price
+  * Added some discretion when high demand (threshold, etc.)
+
+
+Colombian Central Bank Foreign Exchange Interventions 1999-2017
+![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/colombia_options_table.PNG)
+*Source: [Source: Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
+
+
+### Put Options to Accumulate USD Reserves
+
+* How to accumulate FX reserves at the best price and limiting market impact?
+* Following Mexico's experience, the Colombian central bank auctioned these options at the end of each month (1999-2002 and 2003-2008) to banks, financial corporations and the MoF
+* USD options with \textbf{one-month maturity} and a **strike price equal to the representative market Colombian peso/US dollar exchange rate (TRM)**
+* Agents can only exercise the option when the TRM was below the 20-day average
+  * The central bank could then avoid buying US dollar when the Colombian peso is weaker than the previous 20 days
+
+* Suitable approach to accumulate FX reserves while minimizing market impact
+* Through these auctions, the central bank bought USD 3.4 billion in 8 years
+  * All 49 auctions were oversubscribed, with min/max amount of USD 30 million and USD 250 million
+
+
+Colombian Central Bank Foreign Exchange Interventions 1999-2017
+![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/colombia_put_options.PNG)
+*Source: [Source: Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
+
+
+### Colombia Selling Reserves for Preserving Financial Stability
+
+* Colombia is an inflation targeter operating a flexible exchange rate regime
+
+* Foreign interventions should therefore be motivated by financial stability concerns
+
+* The operating procedure depends on the type of financial stability threats:
+  * If financial agents suffer from **closure in FX credit lines**: the central bank intervenes through \textbf{FX swaps} and acts as a liquidity provider
+    * *FX swaps don't transfer FX risks*
+  * If there is no private provision of FX hedge on the market, the central bank steps in and provide \textbf{USD non-deliverable forwards}
+    * *FX forwards do transfer FX risk*
+  * If the foreign reserves are enough, sell spot. If not, sell USD NDF (settled in local currencies) 
+  
+Colombia Decision Tree for Selling Reserves
+![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/colombia_decision_tree.PNG)
+*Source: [Source: Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
+
+
 ## Peru
+
+### Peru Monetary Framework
+
+* *De jure*, the BCRP (the Peruvian central bank) operates an inflation targeting regime with a floating exchange rate arrangement
+  * The inflation target is fixed at 2\% with a +/- band of 1\%
+  
+* Yet, because of multiple FX interventions, the IMF has been reclassifying temporarily the exchange rate to crawl-like (with back in forth in 2020 and 2021)
+
+* In effect, the BCRP conducts **very frequent foreign exchange interventions**, as noted in [BCRP study 2019](https://www.bis.org/publ/bppdf/bispap104q.pdf) and [BCRP study 2018](https://www.elibrary.imf.org/downloadpdf/book/9781484375686/ch012.pdf) with frequency of interventions between 50 and 188 days (out of 250 business days) depending on the year !
+
+* The main reason is because Peru used to be an \textbf{heavily dollarized economy} and FX volatility creates substantial financial stability risks !
+
+
+Peru Multiple Objectives
+![Peru](../Slides/fxi_theory_practice/img/peru_inflation_target_dollarization.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru Dollarization Level in Peru
+![Peru](../Slides/fxi_theory_practice/img/peru_dollarization_level.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+Peru Macro Risk Management Tools
+![Peru](../Slides/fxi_theory_practice/img/peru_macro_risk_management_tools.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru FX Interventions and Exchange Rate
+![Peru](../Slides/fxi_theory_practice/img/peru_exchange_rate_fxi.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru Frequency of FX Interventions
+![Peru](../Slides/fxi_theory_practice/img/peru_frequency_fxi.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru Size of FXI
+![Peru](../Slides/fxi_theory_practice/img/peru_fxi_size.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru Net Purchases of USD
+![Peru](../Slides/fxi_theory_practice/img/peru_net_purchases_usd.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+### Peru Assessing FXI Efficiency
+
+* Because of financial dollarization, the main objective of FX interventions is to prevent FX volatility
+
+* Look at the volatility of the currencies of other countries in the region as a benchmark
+
+* Indeed, Peru did pretty well in mitigating volatility compared to average volatility of LATAM currencies
+
+* It comes at **a cost though**: frequent central bank FX interventions don't provide incentives for the development of the derivatives market in Peru
+  * ... forcing the central bank to intervene more often to dampen volatility
+  
+* This is why the central bank decided to design \textbf{structural policies} to alleviate the financial dollarization problem
+
+
+Peru Effectiveness of Interventions
+![Peru](../Slides/fxi_theory_practice/img/peru_effectiveness_interventions.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru FXI and FX Volatility
+![Peru](../Slides/fxi_theory_practice/img/peru_fx_volatility.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru FXI to Protect Against Volatility
+![Peru](../Slides/fxi_theory_practice/img/peru_beta_volatility.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Financial De-Dollarization: Instruments
+![Peru](../Slides/fxi_theory_practice/img/peru_financial_dollarization_instruments.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru: Dedollarization Repos
+![Peru](../Slides/fxi_theory_practice/img/peru_dedollarization_repos.png)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
+
+Peru: Structural Dedollarization: Differentiated RRR
+![Peru](../Slides/fxi_theory_practice/img/peru_differential_RRR.PNG)
+*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+
 
 ## Thailand
 
-## Philippines
+### Thailand BOT FXI Objectives
 
+* According to the [BOT-BIS article](https://www.bis.org/publ/bppdf/bispap104x.pdf), the objectives of the BOT are:
+  * Curtail excessive and persistent volatility
+  * Discourage speculation
+  * Deter sharp capital flows
+  * Not intended to influence the exchange rate level, nor gaining competitiveness
+
+### BOT FXI Implementation
+
+* Uses both verbal and actual interventions
+
+* Discretionary timing based on "market developments and market conditions" (volatility, liquidity, etc.)
+  * Looking not only at the spot against USD but also the NEER, the REER and other regional currencies
+
+* Conducted mainly via USD/THB spot on both onshore and offshore markets
+
+* The BOT employs a designated agent to maintain anonymity in the market
+  * Cancel the signaling effect 
+  * Yet the BoT is highly credible, with more than USD 225 bn FX reserves in 2023
+
+
+### BOT Sterilization
+
+* Main instruments: BOT bills and bonds (54%)
+  * Main instrument, supporting market development and curve pricing
+  * 14-day to three-year maturity
+  * Separate segments with the Ministry of Finance to avoid arbitrages
+
+* Bilateral repurchase operations and deposit faciliy (30%)
+
+* FX swaps (16%)
+  * Absorb THB while injecting USD in up to one-years tenors
+  * Mostly used to alleviate USD funding costs in Thailand
+
+
+
+BOT: Total Absorption Instruments Outstanding
+![Peru](../Slides/fxi_theory_practice/img/thailand_sterilization.PNG)
+*Source: Bank of Thailand (2018)*
+
+
+### BOT Communication
+
+
+* The BOT doesn't announce interventions ex-ante nor ex-post
+
+* Consistent with the market anonymity it is looking for
+
+* Yet, it publishes its level of foreign reserves weekly with one-week lag
+  * Direct comunications regarding the effect of FX policy and market operations are also addressed to key influencers - researchers, private analysts and members of the press -
+    * who in turn will make their own communication to the general public
 
