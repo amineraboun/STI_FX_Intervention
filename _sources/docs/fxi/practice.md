@@ -96,19 +96,19 @@ Mexico Interbank Rate
 
 Brazil FX Derivatives Players and their Net Exposures
 ![Trilemma](../Slides/fxi_theory_practice/img/brazil_hedge_positions.PNG)
-*Source: [Source: Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
+*Source: [Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
 
 
 ### Effectiveness
 
 Effects of the August 22 2013 Intervention in the BRL/USD exchange rate
 ![BRL Effectiveness](../Slides/fxi_theory_practice/img/brazil_intervention_effect.PNG)
-*Source: [Source: Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
+*Source: [Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
 
 
 Yet the Effect has been Fading Out between 2013 and 2015
 ![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/brazil_two_interventions_effects.PNG)
-*Source: [Source: Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
+*Source: [Gonzalez, Khametshin, Peydro and Polo (2019)](https://econpapers.repec.org/paper/bcbwpaper/509.htm)*
 
 
 ## Colombia
@@ -129,7 +129,7 @@ Yet the Effect has been Fading Out between 2013 and 2015
 
 Colombian Central Bank Foreign Exchange Interventions 1999-2017
 ![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/colombia_options_table.PNG)
-*Source: [Source: Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
+*Source: [Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
 
 
 ### Put Options to Accumulate USD Reserves
@@ -147,7 +147,7 @@ Colombian Central Bank Foreign Exchange Interventions 1999-2017
 
 Colombian Central Bank Foreign Exchange Interventions 1999-2017
 ![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/colombia_put_options.PNG)
-*Source: [Source: Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
+*Source: [Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
 
 
 ### Colombia Selling Reserves for Preserving Financial Stability
@@ -165,7 +165,7 @@ Colombian Central Bank Foreign Exchange Interventions 1999-2017
   
 Colombia Decision Tree for Selling Reserves
 ![BRL Effectiveness Fades](../Slides/fxi_theory_practice/img/colombia_decision_tree.PNG)
-*Source: [Source: Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
+*Source: [Cardozo, IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml)*
 
 
 ## Peru
@@ -184,36 +184,36 @@ Colombia Decision Tree for Selling Reserves
 
 Peru Multiple Objectives
 ![Peru](../Slides/fxi_theory_practice/img/peru_inflation_target_dollarization.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru Dollarization Level in Peru
 ![Peru](../Slides/fxi_theory_practice/img/peru_dollarization_level.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 Peru Macro Risk Management Tools
 ![Peru](../Slides/fxi_theory_practice/img/peru_macro_risk_management_tools.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru FX Interventions and Exchange Rate
 ![Peru](../Slides/fxi_theory_practice/img/peru_exchange_rate_fxi.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru Frequency of FX Interventions
 ![Peru](../Slides/fxi_theory_practice/img/peru_frequency_fxi.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru Size of FXI
 ![Peru](../Slides/fxi_theory_practice/img/peru_fxi_size.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru Net Purchases of USD
 ![Peru](../Slides/fxi_theory_practice/img/peru_net_purchases_usd.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 ### Peru Assessing FXI Efficiency
@@ -232,32 +232,32 @@ Peru Net Purchases of USD
 
 Peru Effectiveness of Interventions
 ![Peru](../Slides/fxi_theory_practice/img/peru_effectiveness_interventions.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru FXI and FX Volatility
 ![Peru](../Slides/fxi_theory_practice/img/peru_fx_volatility.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru FXI to Protect Against Volatility
 ![Peru](../Slides/fxi_theory_practice/img/peru_beta_volatility.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Financial De-Dollarization: Instruments
 ![Peru](../Slides/fxi_theory_practice/img/peru_financial_dollarization_instruments.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru: Dedollarization Repos
 ![Peru](../Slides/fxi_theory_practice/img/peru_dedollarization_repos.png)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 Peru: Structural Dedollarization: Differentiated RRR
 ![Peru](../Slides/fxi_theory_practice/img/peru_differential_RRR.PNG)
-*Source: [Source: Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
+*Source: [Armas and IMF (2019)](https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml)*
 
 
 ## Thailand
@@ -300,7 +300,7 @@ Peru: Structural Dedollarization: Differentiated RRR
 
 
 BOT: Total Absorption Instruments Outstanding
-![Peru](../Slides/fxi_theory_practice/img/thailand_sterilization.PNG)
+![BOT](../Slides/fxi_theory_practice/img/thailand_sterilization.PNG)
 *Source: Bank of Thailand (2018)*
 
 
