@@ -490,10 +490,24 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effectiveness">Effectiveness</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia">Colombia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peru">Peru</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand">Thailand</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philippines">Philippines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia">Colombia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia-call-and-put-options-to-hedge-volatility-risk">Colombia Call and Put Options to Hedge Volatility Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#put-options-to-accumulate-usd-reserves">Put Options to Accumulate USD Reserves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia-selling-reserves-for-preserving-financial-stability">Colombia Selling Reserves for Preserving Financial Stability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peru">Peru</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peru-monetary-framework">Peru Monetary Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peru-assessing-fxi-efficiency">Peru Assessing FXI Efficiency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand">Thailand</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand-bot-fxi-objectives">Thailand BOT FXI Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-fxi-implementation">BOT FXI Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-sterilization">BOT Sterilization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-communication">BOT Communication</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -647,15 +661,217 @@ document.write(`
 </section>
 <section id="colombia">
 <h2>Colombia<a class="headerlink" href="#colombia" title="Permalink to this heading">#</a></h2>
+<section id="colombia-call-and-put-options-to-hedge-volatility-risk">
+<h3>Colombia Call and Put Options to Hedge Volatility Risk<a class="headerlink" href="#colombia-call-and-put-options-to-hedge-volatility-risk" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Objective: mitigate FX volatility, after the shift to a flexible exchange rate regime in 1998/99 (used to be crawling bands). <em>“Offer to the market hedges against extreme circumstances”</em></p></li>
+<li><p>Offer <strong>put</strong> (protection against depreciation) and <strong>call</strong> (protection against appreciation) <strong>options</strong></p>
+<ul>
+<li><p>TRM: representative market Colombian peso/US dollar exchange rate</p></li>
+<li><p>Strike prices: +5% Higher (put) or -5% lower (call) than the 20-day moving average of the TRM</p></li>
+<li><p>Threshold takes into account a low probability of activation, due to the +/- 5% limit</p></li>
+<li><p>Amount fixed at USD 180 million then USD 200 million</p></li>
+</ul>
+</li>
+<li><p>Some discretion was applied:</p>
+<ul>
+<li><p>When the Colombian peso was weak, the central bank deactivate the put, because the central bank didn’t want to buy USD at this price</p></li>
+<li><p>Added some discretion when high demand (threshold, etc.)</p></li>
+</ul>
+</li>
+</ul>
+<p>Colombian Central Bank Foreign Exchange Interventions 1999-2017
+<img alt="BRL Effectiveness Fades" src="../../_images/colombia_options_table.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml">Source: Cardozo, IMF (2019)</a></em></p>
+</section>
+<section id="put-options-to-accumulate-usd-reserves">
+<h3>Put Options to Accumulate USD Reserves<a class="headerlink" href="#put-options-to-accumulate-usd-reserves" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>How to accumulate FX reserves at the best price and limiting market impact?</p></li>
+<li><p>Following Mexico’s experience, the Colombian central bank auctioned these options at the end of each month (1999-2002 and 2003-2008) to banks, financial corporations and the MoF</p></li>
+<li><p>USD options with \textbf{one-month maturity} and a <strong>strike price equal to the representative market Colombian peso/US dollar exchange rate (TRM)</strong></p></li>
+<li><p>Agents can only exercise the option when the TRM was below the 20-day average</p>
+<ul>
+<li><p>The central bank could then avoid buying US dollar when the Colombian peso is weaker than the previous 20 days</p></li>
+</ul>
+</li>
+<li><p>Suitable approach to accumulate FX reserves while minimizing market impact</p></li>
+<li><p>Through these auctions, the central bank bought USD 3.4 billion in 8 years</p>
+<ul>
+<li><p>All 49 auctions were oversubscribed, with min/max amount of USD 30 million and USD 250 million</p></li>
+</ul>
+</li>
+</ul>
+<p>Colombian Central Bank Foreign Exchange Interventions 1999-2017
+<img alt="BRL Effectiveness Fades" src="../../_images/colombia_put_options.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml">Source: Cardozo, IMF (2019)</a></em></p>
+</section>
+<section id="colombia-selling-reserves-for-preserving-financial-stability">
+<h3>Colombia Selling Reserves for Preserving Financial Stability<a class="headerlink" href="#colombia-selling-reserves-for-preserving-financial-stability" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Colombia is an inflation targeter operating a flexible exchange rate regime</p></li>
+<li><p>Foreign interventions should therefore be motivated by financial stability concerns</p></li>
+<li><p>The operating procedure depends on the type of financial stability threats:</p>
+<ul>
+<li><p>If financial agents suffer from <strong>closure in FX credit lines</strong>: the central bank intervenes through \textbf{FX swaps} and acts as a liquidity provider</p>
+<ul>
+<li><p><em>FX swaps don’t transfer FX risks</em></p></li>
+</ul>
+</li>
+<li><p>If there is no private provision of FX hedge on the market, the central bank steps in and provide \textbf{USD non-deliverable forwards}</p>
+<ul>
+<li><p><em>FX forwards do transfer FX risk</em></p></li>
+</ul>
+</li>
+<li><p>If the foreign reserves are enough, sell spot. If not, sell USD NDF (settled in local currencies)</p></li>
+</ul>
+</li>
+</ul>
+<p>Colombia Decision Tree for Selling Reserves
+<img alt="BRL Effectiveness Fades" src="../../_images/colombia_decision_tree.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch009.xml">Source: Cardozo, IMF (2019)</a></em></p>
+</section>
 </section>
 <section id="peru">
 <h2>Peru<a class="headerlink" href="#peru" title="Permalink to this heading">#</a></h2>
+<section id="peru-monetary-framework">
+<h3>Peru Monetary Framework<a class="headerlink" href="#peru-monetary-framework" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>De jure</em>, the BCRP (the Peruvian central bank) operates an inflation targeting regime with a floating exchange rate arrangement</p>
+<ul>
+<li><p>The inflation target is fixed at 2% with a +/- band of 1%</p></li>
+</ul>
+</li>
+<li><p>Yet, because of multiple FX interventions, the IMF has been reclassifying temporarily the exchange rate to crawl-like (with back in forth in 2020 and 2021)</p></li>
+<li><p>In effect, the BCRP conducts <strong>very frequent foreign exchange interventions</strong>, as noted in <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap104q.pdf">BCRP study 2019</a> and <a class="reference external" href="https://www.elibrary.imf.org/downloadpdf/book/9781484375686/ch012.pdf">BCRP study 2018</a> with frequency of interventions between 50 and 188 days (out of 250 business days) depending on the year !</p></li>
+<li><p>The main reason is because Peru used to be an \textbf{heavily dollarized economy} and FX volatility creates substantial financial stability risks !</p></li>
+</ul>
+<p>Peru Multiple Objectives
+<img alt="Peru" src="../../_images/peru_inflation_target_dollarization.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru Dollarization Level in Peru
+<img alt="Peru" src="../../_images/peru_dollarization_level.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru Macro Risk Management Tools
+<img alt="Peru" src="../../_images/peru_macro_risk_management_tools.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru FX Interventions and Exchange Rate
+<img alt="Peru" src="../../_images/peru_exchange_rate_fxi.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru Frequency of FX Interventions
+<img alt="Peru" src="../../_images/peru_frequency_fxi.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru Size of FXI
+<img alt="Peru" src="../../_images/peru_fxi_size.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru Net Purchases of USD
+<img alt="Peru" src="../../_images/peru_net_purchases_usd.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+</section>
+<section id="peru-assessing-fxi-efficiency">
+<h3>Peru Assessing FXI Efficiency<a class="headerlink" href="#peru-assessing-fxi-efficiency" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Because of financial dollarization, the main objective of FX interventions is to prevent FX volatility</p></li>
+<li><p>Look at the volatility of the currencies of other countries in the region as a benchmark</p></li>
+<li><p>Indeed, Peru did pretty well in mitigating volatility compared to average volatility of LATAM currencies</p></li>
+<li><p>It comes at <strong>a cost though</strong>: frequent central bank FX interventions don’t provide incentives for the development of the derivatives market in Peru</p>
+<ul>
+<li><p>… forcing the central bank to intervene more often to dampen volatility</p></li>
+</ul>
+</li>
+<li><p>This is why the central bank decided to design \textbf{structural policies} to alleviate the financial dollarization problem</p></li>
+</ul>
+<p>Peru Effectiveness of Interventions
+<img alt="Peru" src="../../_images/peru_effectiveness_interventions.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru FXI and FX Volatility
+<img alt="Peru" src="../../_images/peru_fx_volatility.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru FXI to Protect Against Volatility
+<img alt="Peru" src="../../_images/peru_beta_volatility.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Financial De-Dollarization: Instruments
+<img alt="Peru" src="../../_images/peru_financial_dollarization_instruments.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru: Dedollarization Repos
+<img alt="Peru" src="../../_images/peru_dedollarization_repos.png" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+<p>Peru: Structural Dedollarization: Differentiated RRR
+<img alt="Peru" src="../../_images/peru_differential_RRR.PNG" />
+<em>Source: <a class="reference external" href="https://www.elibrary.imf.org/display/book/9781484375686/ch012.xml">Source: Armas and IMF (2019)</a></em></p>
+</section>
 </section>
 <section id="thailand">
 <h2>Thailand<a class="headerlink" href="#thailand" title="Permalink to this heading">#</a></h2>
+<section id="thailand-bot-fxi-objectives">
+<h3>Thailand BOT FXI Objectives<a class="headerlink" href="#thailand-bot-fxi-objectives" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>According to the <a class="reference external" href="https://www.bis.org/publ/bppdf/bispap104x.pdf">BOT-BIS article</a>, the objectives of the BOT are:</p>
+<ul>
+<li><p>Curtail excessive and persistent volatility</p></li>
+<li><p>Discourage speculation</p></li>
+<li><p>Deter sharp capital flows</p></li>
+<li><p>Not intended to influence the exchange rate level, nor gaining competitiveness</p></li>
+</ul>
+</li>
+</ul>
 </section>
-<section id="philippines">
-<h2>Philippines<a class="headerlink" href="#philippines" title="Permalink to this heading">#</a></h2>
+<section id="bot-fxi-implementation">
+<h3>BOT FXI Implementation<a class="headerlink" href="#bot-fxi-implementation" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Uses both verbal and actual interventions</p></li>
+<li><p>Discretionary timing based on “market developments and market conditions” (volatility, liquidity, etc.)</p>
+<ul>
+<li><p>Looking not only at the spot against USD but also the NEER, the REER and other regional currencies</p></li>
+</ul>
+</li>
+<li><p>Conducted mainly via USD/THB spot on both onshore and offshore markets</p></li>
+<li><p>The BOT employs a designated agent to maintain anonymity in the market</p>
+<ul>
+<li><p>Cancel the signaling effect</p></li>
+<li><p>Yet the BoT is highly credible, with more than USD 225 bn FX reserves in 2023</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="bot-sterilization">
+<h3>BOT Sterilization<a class="headerlink" href="#bot-sterilization" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Main instruments: BOT bills and bonds (54%)</p>
+<ul>
+<li><p>Main instrument, supporting market development and curve pricing</p></li>
+<li><p>14-day to three-year maturity</p></li>
+<li><p>Separate segments with the Ministry of Finance to avoid arbitrages</p></li>
+</ul>
+</li>
+<li><p>Bilateral repurchase operations and deposit faciliy (30%)</p></li>
+<li><p>FX swaps (16%)</p>
+<ul>
+<li><p>Absorb THB while injecting USD in up to one-years tenors</p></li>
+<li><p>Mostly used to alleviate USD funding costs in Thailand</p></li>
+</ul>
+</li>
+</ul>
+<p>BOT: Total Absorption Instruments Outstanding
+<img alt="Peru" src="../../_images/thailand_sterilization.PNG" />
+<em>Source: Bank of Thailand (2018)</em></p>
+</section>
+<section id="bot-communication">
+<h3>BOT Communication<a class="headerlink" href="#bot-communication" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The BOT doesn’t announce interventions ex-ante nor ex-post</p></li>
+<li><p>Consistent with the market anonymity it is looking for</p></li>
+<li><p>Yet, it publishes its level of foreign reserves weekly with one-week lag</p>
+<ul>
+<li><p>Direct comunications regarding the effect of FX policy and market operations are also addressed to key influencers - researchers, private analysts and members of the press -</p>
+<ul>
+<li><p>who in turn will make their own communication to the general public</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -737,10 +953,24 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effectiveness">Effectiveness</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia">Colombia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peru">Peru</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand">Thailand</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philippines">Philippines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia">Colombia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia-call-and-put-options-to-hedge-volatility-risk">Colombia Call and Put Options to Hedge Volatility Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#put-options-to-accumulate-usd-reserves">Put Options to Accumulate USD Reserves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colombia-selling-reserves-for-preserving-financial-stability">Colombia Selling Reserves for Preserving Financial Stability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peru">Peru</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peru-monetary-framework">Peru Monetary Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peru-assessing-fxi-efficiency">Peru Assessing FXI Efficiency</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand">Thailand</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thailand-bot-fxi-objectives">Thailand BOT FXI Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-fxi-implementation">BOT FXI Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-sterilization">BOT Sterilization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-communication">BOT Communication</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
