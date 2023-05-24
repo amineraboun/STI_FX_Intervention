@@ -2,7 +2,7 @@
 
 [More details in the slides](../Slides/fxi_theory_practice/fxi_theory_practice.pdf)
 
-** Mexico
+## Mexico
 
 Mexico has transitioned towards a free-float exchange rate after the devaluation of the peso 19th december 1994. At the time, the free-float regime was seen as temporary, but with time it gained substantial support and endured up to today. 
 
