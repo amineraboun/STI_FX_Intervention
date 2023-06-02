@@ -3,7 +3,7 @@
 ## Setup the python environement 
 
 ### On windows with conda:
-There is a possibility to create and manage environments with ANanconda windows application (in a visual way)
+There is a possibility to create and manage environments with ANACONDA windows application (in a visual way)
 
 In the following instruction, change 'myenv' with the name of the environment you would like to set
 
