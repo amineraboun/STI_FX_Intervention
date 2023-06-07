@@ -1,0 +1,10 @@
+jupyterlab
+jupyter-book == 0.15.0
+varfxi == 0.0.2
+yfinance == 0.2.13
+matplotlib == 3.7.1
+statsmodels == 0.13.5
+xlrd == 2.0.1
+arch == 5.3.1
+seaborn == 0.12.2
+tqdm == 4.65.0
